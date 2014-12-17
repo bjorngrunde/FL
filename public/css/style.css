@@ -1,0 +1,221 @@
+body{
+    background: url('../img/bg_blue_forrest.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.img-nav{
+    width: 40px;
+    height: 40px;
+    margin-top: 6px;
+}
+.profile-img-nav {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    height: auto;
+    border-radius: 50%;
+    border:10px solid #151515;
+    overflow: hidden;
+    margrin-right: 10px;
+}
+.epic {
+    color: purple !important;
+}
+.rare{
+    color: #0070de !important;
+}
+.death-knight {
+     color:#C41F3B;
+ }
+.druid {
+    color: #FF7D0A;
+}
+.hunter{
+    color: #ABD473;
+}
+.warlock{
+    color: #9482C9;
+}
+.mage {
+    color:#69CCF0;
+}
+.paladin{
+    color: #F58CBA;
+}
+.shaman {
+    color: #0070de;
+}
+.warrior{
+    color: #C79C6E;
+}
+.priest {
+    color:#fff;
+}
+.monk {
+    color: #00FF96;
+}
+.rogue{
+    color:#FFF569;
+}
+.wrapper-container{
+    position: relative;
+    width: 100%;
+    background: #151515;
+    padding: 20px;
+    border-radius: 10px;
+    border-color: #111111;
+    -webkit-box-shadow: 0 0 7px #000;
+    -moz-box-shadow: 0 0 7px #000;
+    box-shadow: 0 0 7px #000;
+}
+.dark-sh-well {
+    background: #111111;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding-top: 10px;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+
+.dark-sh-well-no-radius {
+    background: #111111;
+    margin-bottom: 20px;
+    border-radius: none;
+    padding: 10px;
+    -moz-box-shadow: 0 0 3px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+}
+
+.dotted {
+    border-top: 6px dotted #3498db;
+}
+
+.divider-invisible {
+    border: none;
+}
+.border-img {
+    border: 2px solid #000000;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.nav-pills li > a:hover{
+    background: #111111;
+}
+.nav-pills > li.active > a {
+    background: #111111;
+}
+.nav-pills > li.active > a:hover {
+    background: #111111;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.dropdown-menu {
+    -moz-box-shadow: 0 0 3px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+}
+.navbar-inverse {
+    -webkit-box-shadow: 0 0 7px #000;
+    -moz-box-shadow: 0 0 7px #000;
+    box-shadow: 0 0 7px #000;
+}
+.thumbnail-mini
+{
+    width: 35px;
+    height: 35px;
+    margin-right:10px;
+}
+.raid-username-table
+{
+    margin-top: 15px;
+}
+.raid-title-with-desc
+{
+    border-radius: 10px;
+    padding: 10px;
+
+    border: 2px solid #000000;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.profile-img-avatar
+{
+    border: 2px solid #000000;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+table > th,
+table > td
+{
+    border: none;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td
+{
+    border:none;
+}
+.table > tbody + tbody
+{
+    border:none;
+}
+.raid-timer-link > .dark-sh-well-no-radius:active,
+.raid-timer-link > .dark-sh-well-no-radius:hover,
+.raid-timer-link > .dark-sh-well-no-radius:focus
+{
+    -moz-box-shadow: 0 0 3px #3498db;
+    -webkit-box-shadow: 0 0 3px #3498db;
+    box-shadow: 0 0 3px #3498db;
+}
+.text-white
+{
+    color:#fff;
+}
+.panel > .panel-body {
+    background-color:none;
+}
+.panel > .panel-heading{
+    background: #151515;
+    border: none;
+    color:#fff;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.panel-default > .panel-heading +.panel-collapse > .panel-body {
+    border-top:none;
+    border-top-color:none;
+}
+.panel-default{
+    background: #111111;
+    border: none;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+select {
+    color: #3498db;
+}
+.group-title {
+    background: #151515;
+    border: none;
+    color:#fff;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.modal-content {
+    background-color: #151515;
+}
+.modal-header {
+    border-bottom: 1px solid #111111;
+}
+.modal-footer {
+    border-top: 1px solid #111111;
+}

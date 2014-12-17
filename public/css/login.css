@@ -1,0 +1,66 @@
+body{
+    background: url('../img/login/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.login-form {
+    background: none;
+}
+.push-down{
+    margin-top: 7em;
+}
+.login-link{
+    color: #fff;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.wrapper-apply {
+    margin-top: 2em;
+}
+.wrapper-avatar img{
+    position: fixed;
+    top: 0;
+    lef: 0;
+    z-index: 999;
+}
+
+.deathknight {
+    color:#C41F3B;
+}
+.druid {
+    color: #FF7D0A;
+}
+.hunter{
+    color: #ABD473;
+}
+.warlock{
+    color: #9482C9;
+}
+.mage {
+    color:#69CCF0;
+}
+.paladin{
+    color: #F58CBA;
+}
+
+.shaman {
+    color: #0070de;
+}
+.warrior{
+    color: #C79C6E;
+}
+
+.priest {
+    color:#fff;
+}
+.monk {
+    color: #00FF96;
+}
+.rogue{
+    color:#FFF569;
+}
