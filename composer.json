@@ -10,7 +10,9 @@
         "zizaco/entrust": "1.2.*@dev",
 		"fbf/laravel-comments": "dev-master",
         "makzumi/calendar": "dev-master",
-		"intervention/image": "~2.0"
+		"intervention/image": "~2.0",
+        "golonka/bbcodeparser": "1.3.*",
+        "fbf/laravel-blog": "0.*"
 	},
 	"autoload": {
 		"classmap": [

@@ -10,7 +10,9 @@
         <p><strong>{{$raid->startTime}}</strong>
          - <strong> {{$raid->endTime}} </strong>   </p>
          @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
+            @if(count($raid->users) > 0)
         <a href="/admin/create/{{$raid->id}}/raidgroup" class="btn btn-danger btn-sm">Skapa Raidgrupp</a>
+            @endif
         @endif
     </div>
     <div class="col-sm-4">
@@ -24,7 +26,11 @@
             <P>{{Session::get('flash_message')}}</P>
         </div>
     @endif
-    @if($hasRaid == true)
+    @if($hasRaid == true && $raidgroup == true)
+        <div class="text-center">
+            <p class="text-info">Du har blivit utvald till raidgruppen. Du kan inte längre ändra din roll.</p>
+        </div>
+    @elseif($hasRaid == true)
     <div class="text-center">
         {{Form::open(['route' => ['change.status', $raid->id]])}}
         {{Form::select('role', ['Tank' => 'Tank', 'Healer' => 'Healer', 'Ranged' => 'Ranged', 'Melee' => 'Melee'],'', ['class' => 'select select-primary'])}}
@@ -56,7 +62,7 @@
             </a>
           </h4>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
             <div class="col-xs-3">
                 <h6>Tank</h6>

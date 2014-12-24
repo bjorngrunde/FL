@@ -5,9 +5,9 @@ class ForumThread extends Eloquent
     protected $table = 'forum_threads';
 	protected $fillable = ['title', 'body', 'group_id', 'category_id', 'author_id'];
 
-    public function user()
+    public function author()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('User', 'author_id');
     }
     public function group()
     {

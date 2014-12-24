@@ -146,7 +146,7 @@
                             <h4 class="modal-title">Ta bort Grupp</h4>
                         </div>
                         <div class="modal-body">
-                            <p>Är du säker på att du vill ta bort denna grupp?  </p>
+                            <p>Är du säker på att du vill ta bort denna grupp? <br /> <small>Alla kategorier och trådar som tillhör gruppen kommer också försvinna!</small> </p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class=" btn btn-danger" data-dismiss="modal">Stäng</button>

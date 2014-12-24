@@ -19,9 +19,6 @@
     <![endif]-->
     <script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
     <script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": false, "renamelinks": false}</script>
-    <script src="../../js/angular.min.js"></script>
-    <script src="../../js/draganddrop/angular-drag-and-drop-lists.min.js"></script>
-    <script src="../../js/flrsApp/flrs.js"></script>
 
 
   </head>
@@ -42,6 +39,7 @@
     <script src="../../js/vendor/jquery.min.js"></script>
    <script src="../../js/flat-ui.min.js"></script>
    <script src="../../js/app.js"></script>
+   @yield('javascript')
 
   </body>
 </html>

@@ -53,8 +53,6 @@ class RaidsController extends Controller
 	public function create()
 	{
         $raids = RaidInstance::all();
-
-
 		return View::make('flrs.create', ['raids' => $raids]);
 	}
 
@@ -66,7 +64,6 @@ class RaidsController extends Controller
         $this->eventValidation->validate($input);
 
         $raid = RaidInstance::whereId(Input::get('id'))->firstOrFail();
-
 
         $event = new Raid;
         $event->title = $raid->title;
@@ -120,21 +117,27 @@ class RaidsController extends Controller
         $raid = Raid::with('users')->find($id);
 
         return View::make('flrs.raidgroup',['raid' => $raid]);
-        /**
+    }
+
+    public function saveRaid($id)
+    {
         $raid = Raid::with('users')->find($id);
+
         if($raid == null)
         {
-            return Redirect::back()->withFlashMessage('Denna raid existerar inte');
+            return Redirect::back()->withFlashMessage();
         }
 
-        foreach($raid->users as $raider)
+        foreach($raid->users as $user)
         {
-            if($raider->raid_role == 'available')
+
+            if(Input::has($user->username))
             {
-                $raider->updateExistingPivot($raid->id, ['raid_role' => 'selected']);
+
+                $user->raids()->updateExistingPivot($raid->id,['raid_status' => Input::get($user->username)]);
             }
         }
-        return Redirect::back()->withFlashMessage('Raidgrupp har skapats!');*/
+        return Redirect::to('/flrs/show/'. $raid->id)->withFlashMessage('Raid har skapats');
     }
     public function adminIndex()
     {
@@ -151,10 +154,17 @@ class RaidsController extends Controller
 	 */
 	public function show($id)
 	{
+        #Har användaren en raid?
         $hasRaid = false;
+        #Är användaren med i en raidgrupp
+        $raidgroup = false;
 
-		$raid = Raid::with('users')->find($id);
-
+        $raid = Raid::with('users')->find($id);
+        if($raid == null)
+        {
+            return Redirect::to('/dashboard')->withFlashMessage('Denna raid existerar inte');
+        }
+        #Snyggar till datum lite
         list($year, $month, $day ) = explode('-',$raid->time);
         switch($month)
         {
@@ -202,10 +212,19 @@ class RaidsController extends Controller
         array_push($datum, $month);
         array_push($datum, $day);
 
-        if( Auth::user()->raids->find($id))
+        #Användaren har raiden i sin pivot, då sätter vi hasRaid till sant
+        if( $user = Auth::user()->raids->find($id))
         {
             $hasRaid = true;
-            return View::make('flrs.show', ['raid' => $raid, 'hasRaid' => $hasRaid,'datum' => $datum]);
+            #om användarens status är selected sätter vi radgroup till sant
+            if($user->pivot->raid_status == 'selected')
+            {
+                $raidgroup =true;
+
+                return View::make('flrs.show', ['raid' => $raid, 'hasRaid' => $hasRaid,'datum' => $datum, 'raidgroup' => $raidgroup]);
+            }
+
+            return View::make('flrs.show', ['raid' => $raid, 'hasRaid' => $hasRaid,'datum' => $datum, 'raidgroup' => $raidgroup]);
         }
 
         return View::make('flrs.show', ['raid' => $raid, 'hasRaid' => $hasRaid, 'datum' => $datum]);

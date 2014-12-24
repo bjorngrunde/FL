@@ -40,6 +40,7 @@ class Wow  {
         {
             return 'Något gick fel: '. $e;
         }
+
         return 'http://eu.battle.net/static-render/eu/'.$data['result']['thumbnail'];
 
     }
@@ -67,14 +68,13 @@ class Wow  {
             $this->client = new OAuth2\Client($this->client_id,$this->client_secret,$this->region,$this->locale, $this->redirect_url);
 
             $data = $this->client->fetch($type, $parameters);
-
-            return $data['result'];
         }
         catch (OAuth2\Exception $e)
         {
             return 'Något gick fel'. $e;
         }
 
+        return $data['result'];
     }
     public function getFeed($user)
     {
