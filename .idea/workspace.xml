@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profiles/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/profiles/edit.blade.php" />
-    </list>
+    <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="" />
     <ignored path="family.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/profiles/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08796764" vertical-offset="87" max-vertical-offset="2465">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.32254803" vertical-offset="87" max-vertical-offset="2465">
+              <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -291,7 +289,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -386,8 +384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/profiles/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08796764" vertical-offset="87" max-vertical-offset="2465">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.32254803" vertical-offset="87" max-vertical-offset="2465">
+          <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
           <folding />
         </state>
       </provider>
