@@ -75,6 +75,7 @@
                         ['class' => 'form-control', 'required' => 'required']) }}
                      {{ $errors->first('klass', '<p class="text-warning">:message </p>') }}
                      </div>
+                     </div>
 
             <div class="col-md-12">
             <div class="form-group text-center">
