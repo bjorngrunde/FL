@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ed86226e9a3be04aff6a2021793917ee",
+    "hash": "55a42e3bc567b3703b90b4fd0586f16f",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -397,16 +397,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.0.15",
+            "version": "2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "e012301c8596118578c4abef178955888d02b435"
+                "reference": "b5350f62f59f8fa24f5d9c1ffbd094a7fd91c0e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/e012301c8596118578c4abef178955888d02b435",
-                "reference": "e012301c8596118578c4abef178955888d02b435",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/b5350f62f59f8fa24f5d9c1ffbd094a7fd91c0e3",
+                "reference": "b5350f62f59f8fa24f5d9c1ffbd094a7fd91c0e3",
                 "shasum": ""
             },
             "require": {
@@ -449,7 +449,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2014-12-12 15:45:28"
+            "time": "2014-12-20 14:14:38"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -543,16 +543,16 @@
         },
         {
             "name": "laracasts/validation",
-            "version": "1.2.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/Validation.git",
-                "reference": "2dcbbc5d6e13763207d45b397320fe56ff52d043"
+                "reference": "2323c9064199039141dedf61c0f6ace33a9cc29f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Validation/zipball/2dcbbc5d6e13763207d45b397320fe56ff52d043",
-                "reference": "2dcbbc5d6e13763207d45b397320fe56ff52d043",
+                "url": "https://api.github.com/repos/laracasts/Validation/zipball/2323c9064199039141dedf61c0f6ace33a9cc29f",
+                "reference": "2323c9064199039141dedf61c0f6ace33a9cc29f",
                 "shasum": ""
             },
             "require": {
@@ -579,20 +579,20 @@
                 }
             ],
             "description": "Easy validation for Laravel applications.",
-            "time": "2014-07-25 17:08:29"
+            "time": "2014-07-25 20:20:38"
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.12",
+            "version": "v4.2.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "70a60f2ff9b96b3fcd88a68ef5382557733fe671"
+                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/70a60f2ff9b96b3fcd88a68ef5382557733fe671",
-                "reference": "70a60f2ff9b96b3fcd88a68ef5382557733fe671",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
+                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
                 "shasum": ""
             },
             "require": {
@@ -694,7 +694,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-12-11 17:14:36"
+            "time": "2014-12-22 20:56:10"
         },
         {
             "name": "laravelbook/ardent",
