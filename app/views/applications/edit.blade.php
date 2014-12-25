@@ -68,13 +68,13 @@
                 {{ $errors->first('klass', '<p class="text-warning">:message </p>') }}
             </div>
             </div>
-             <div class="col-md-6">
-             <div class="form-group">
-                {{Form::label('rank', 'Sätt en rank.')}}
-                {{Form::select('rank', ['Trial' => 'Trial', 'Social' => 'Social', 'Raider' => 'Raider', 'Officer' => 'Officer', 'Guild Master' => 'Guild Master'], 'Trial', ['class' => 'form-control'])}}
-                {{ $errors->first('rank', '<p class="text-warning">:message </p>') }}
-            </div>
-            </div>
+              <div class="col-md-6">
+                     <div class="form-group">
+                     {{ Form::label('role', 'Sätt en behörighet') }}
+                     {{ Form::select('role',['Utvecklare' => 'Utvecklare', 'Admin' => 'Admin','Medlem' => 'Medlem', 'Inaktiv'=>'Inaktiv', 'Bannad' => 'Bannad'],'',
+                        ['class' => 'form-control', 'required' => 'required']) }}
+                     {{ $errors->first('klass', '<p class="text-warning">:message </p>') }}
+                     </div>
 
             <div class="col-md-12">
             <div class="form-group text-center">
