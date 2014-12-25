@@ -59,13 +59,20 @@
                 {{ $errors->first('email', '<p class="text-warning">:message </p>') }}
             </div>
             </div>
-             <div class="col-md-12">
+             <div class="col-md-6">
             <div class="form-group">
                 {{ Form::label('klass', 'Vilken klass?', ['class' => 'text-white']) }}
                 {{ Form::select('klass',['death-knight' => 'Death Knight', 'druid' => 'Druid','hunter' => 'Hunter', 'mage'=>'Mage', 'monk' => 'Monk','priest' =>
                  'Priest','paladin' => 'Paladin', 'rogue' => 'Rogue', 'shaman' => 'Shaman','warlock' => 'Warlock', 'warrior' => 'Warrior' ],null,
                    ['class' => 'form-control', 'required' => 'required']) }}
                 {{ $errors->first('klass', '<p class="text-warning">:message </p>') }}
+            </div>
+            </div>
+             <div class="col-md-6">
+             <div class="form-group">
+                {{Form::label('rank', 'Sätt en rank.')}}
+                {{Form::select('rank', ['Trial' => 'Trial', 'Social' => 'Social', 'Raider' => 'Raider', 'Officer' => 'Officer', 'Guild Master' => 'Guild Master'], 'Trial', ['class' => 'form-control'])}}
+                {{ $errors->first('rank', '<p class="text-warning">:message </p>') }}
             </div>
             </div>
 
