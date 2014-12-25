@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"laracasts/validation": "1.2",
+		"laracasts/validation": "dev-master",
 		"guzzlehttp/guzzle": "~5.0",
         "zizaco/entrust": "1.2.*@dev",
 		"fbf/laravel-comments": "dev-master",
