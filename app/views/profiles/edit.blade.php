@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-12 text-center">
-        <h4>Inställningar för:  <span class="{{$user->profile->klass}}"> {{$user->username}}</span></h4>
+        <h5>Inställningar för:  <span class="{{$user->profile->klass}}"> {{$user->username}}</span></h5>
         @if(Session::has('flash_message'))
         <p class="text-success">{{Session::get('flash_message')}}</p>
         @endif
