@@ -72,7 +72,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function threads()
     {
         return $this->hasMany('ForumThread', 'author_id');
-    }public function forumComments()
+
+    }
+    public function comments()
     {
         return $this->hasMany('ForumComment', 'author_id');
     }

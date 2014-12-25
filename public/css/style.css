@@ -73,7 +73,7 @@ body{
 .dark-sh-well {
     background: #111111;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 4px;
     padding-top: 10px;
     -moz-box-shadow: 0 0 5px #000;
     -webkit-box-shadow: 0 0 5px #000;
@@ -137,7 +137,7 @@ body{
 }
 .raid-title-with-desc
 {
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 10px;
 
     border: 2px solid #000000;
@@ -218,4 +218,14 @@ select {
 }
 .modal-footer {
     border-top: 1px solid #111111;
+}
+.profile-name{
+    text-shadow: 2px 1px 5px #151515;
+}
+
+.profile-top{
+    margin-top: 20px;
+}
+.breadcrumb {
+    background: #151515;
 }

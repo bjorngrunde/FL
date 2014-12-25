@@ -126,7 +126,8 @@ return array(
         'Zizaco\Entrust\EntrustServiceProvider',
         'Fbf\LaravelComments\LaravelCommentsServiceProvider',
         'Makzumi\Calendar\CalendarServiceProvider',
-        'Intervention\Image\ImageServiceProvider'
+        'Intervention\Image\ImageServiceProvider',
+        'Golonka\BBCode\BBCodeParserServiceProvider'
 
 	),
 
@@ -195,7 +196,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
         'Entrust'         => 'Zizaco\Entrust\EntrustFacade',
-        'Image'           => 'Intervention\Image\Facades\Image'
+        'Image'           => 'Intervention\Image\Facades\Image',
+        'BBCode'          => 'Golonka\BBCode\Facades\BBCodeParser'
 
     ),
 

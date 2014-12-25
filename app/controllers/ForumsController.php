@@ -1,5 +1,7 @@
 <?php
+use Family\Forms\ForumCommentForm;
 use Family\Forms\ForumGroupValidation;
+use Family\Forms\NewThreadForm;
 use Illuminate\Routing\Controller;
 
 class ForumsController extends Controller
@@ -8,11 +10,21 @@ class ForumsController extends Controller
      * @var ForumGroupValidation
      */
     private $forumGroupValidation;
+    /**
+     * @var NewThreadForm
+     */
+    private $newThreadForm;
+    /**
+     * @var ForumCommentForm
+     */
+    private $forumCommentForm;
 
-    public function __construct(ForumGroupValidation $forumGroupValidation)
+    public function __construct(ForumGroupValidation $forumGroupValidation, NewThreadForm $newThreadForm, ForumCommentForm $forumCommentForm)
     {
 
         $this->forumGroupValidation = $forumGroupValidation;
+        $this->newThreadForm = $newThreadForm;
+        $this->forumCommentForm = $forumCommentForm;
     }
 
     public function index()
@@ -52,14 +64,169 @@ class ForumsController extends Controller
 
     }
 
+    public function deleteCategory($id)
+    {
+        $category = ForumCategory::find($id);
+        if($category == null)
+        {
+            return Redirect::back()->withFlashMessage('Kategorin existerar inte.');
+        }
+        $threads = $category->threads();
+        $comments = $category->comments();
+
+        $thr = true;
+        $com = true;
+
+        if($threads->count() > 0)
+        {
+            $thr = $threads->delete();
+        }
+        if($comments->count() > 0)
+        {
+            $com = $comments->delete();
+        }
+        if($thr && $com && $category->delete())
+        {
+            return Redirect::to('/forum')->withFlashMessage('Kategorin har tagits bort.');
+        }
+        else
+        {
+            return Redirect::to('/forum')->withFlashMessage('Något gick fel.');
+        }
+    }
+
     public function thread($id)
     {
         $thread = ForumThread::with('comments')->find($id);
-        $author = User::with('profile')->find($thread->author_id);
-
-        return View::make('forum.thread', ['thread' => $thread, 'author' => $author]);
-
+        $comments = ForumComment::whereThread_id($id)->paginate(15);
+        return View::make('forum.thread', compact('comments'),['thread' => $thread] );
     }
+    public function newThread($id)
+    {
+        $category = ForumCategory::find($id);
+        if($category == null)
+        {
+            return Redirect::back()->withFlashMessage('Kategorin existerar inte.');
+        }
+
+        return View::make('forum.newThread', ['category' => $category]);
+    }
+
+    public function newThreadStore($id)
+    {
+        $category = ForumCategory::find($id);
+        if($category == null)
+        {
+            return Redirect::back()->withFlashMessage('Det gick inte att skapa tråden. Kategorin har tagits bort.');
+        }
+
+        $input = Input::all();
+
+        $this->newThreadForm->validate($input);
+
+        $thread = new ForumThread;
+        $thread->title = Input::get('title');
+        $thread->body = Input::get('body');
+        $thread->category_id = $category->id;
+        $thread->author_id = Auth::user()->id;
+        $thread->group_id = $category->group_id;
+        $thread->save();
+
+        return Redirect::to('/forum/thread/'.$thread->id);
+    }
+
+    public function updateThread($id)
+    {
+        $thread = ForumThread::find($id);
+        if($thread == null)
+        {
+            return Redirect::to('/forum')->withFlashMessage('Tråden existerar inte!');
+        }
+
+        $input = Input::all();
+
+        $this->newThreadForm->validate($input);
+
+        $thread->title = Input::get('title');
+        $thread->body = Input::get('body');
+        $thread->save();
+
+        return Redirect::to('/forum/thread/'.$thread->id)->withFlashMessage('Tråden har blivit uppdaterad');
+    }
+
+    public function editThread($id)
+    {
+        $thread = ForumThread::find($id);
+        if($thread == null)
+        {
+            return Redirect::back()->withFlashMessage('Tråden kunde inte hittas');
+        }
+        return View::make('forum.editThread', ['thread' => $thread]);
+    }
+
+    public function deleteThread($id)
+    {
+        $thread = ForumThread::find($id);
+        if($thread == null)
+        {
+            return Redirect::to('/forum')->withFlashMessage('Tråden existerar inte');
+        }
+        $comments = $thread->comments();
+
+        $delCom = true;
+
+        if($comments->count() > 0)
+        {
+            $delCom = $comments->delete();
+        }
+        if($delCom && $thread->delete())
+        {
+            return Redirect::to('/forum')->withFlashMessage('Tråden har tagits bort');
+        }
+        return Redirect::to('/forum')->withFlashMessage('Något gick fel');
+    }
+
+    public function storeComment($id)
+    {
+        $thread = ForumThread::find($id);
+        if($thread == null)
+        {
+            return Redirect::back()->withFlashMessage('Tråden existerar inte längre.');
+        }
+
+        $input = Input::all();
+
+        $this->forumCommentForm->validate($input);
+
+        $comment = new ForumComment;
+        $comment->body = Input::get('body');
+        $comment->author_id = Auth::user()->id;
+        $comment->group_id = $thread->group_id;
+        $comment->thread_id = $thread->id;
+        $comment->category_id = $thread->category_id;
+        if($comment->save())
+        {
+            return Redirect::back()->withFlashMessage('Du har nu kommenterat!');
+        }
+    }
+
+    public function deleteComment($id)
+    {
+        $comment = ForumComment::find($id);
+        if($comment == null)
+        {
+            return Redirect::back()->withFlashMessage('Kommentaren existerar inte!');
+        }
+        if($comment->delete())
+        {
+            return Redirect::back()->withFlashMessage('Kommentaren har tagits bort.');
+        }
+        else
+        {
+            return Redirect::back()->withFlashMessage('Något gick fel.');
+        }
+    }
+
     public function storeGroup()
     {
         $input = Input::all();

@@ -4,13 +4,13 @@
 use Family\Forms\ProfileData;
 use Family\Forms\UserEmail;
 use Family\Forms\UserPassword;
-use Family\Gear\GearToLinks;
+use Family\Gear\ProfileFeed;
 use Family\Wow\Wow;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cache;
 
-class ProfilesController extends BaseController
+class ProfilesController extends Controller
 {
     /**
      * @var Wow
@@ -22,13 +22,13 @@ class ProfilesController extends BaseController
      * @array gearSlots
      */
     private $wow;
-    private $gearToLinks;
-    private $i = 0;
-    private $newsFeed = [];
-    private $gearSlots = [];
     private $userPassword;
     private $userEmail;
     private $profileData;
+    /**
+     * @var ProfileFeed
+     */
+    private $profileFeed;
 
     /**
      * @param Wow $wow
@@ -36,15 +36,16 @@ class ProfilesController extends BaseController
      * @param UserPassword $userPassword
      * @param UserEmail $userEmail
      * @param ProfileData $profileData
+     * @param ProfileFeed $profileFeed
      * @internal param RegistrationForm $registrationForm
      */
-    public function  __construct(Wow $wow, GearToLinks $gearToLinks, UserPassword $userPassword, UserEmail $userEmail, ProfileData $profileData)
+    public function  __construct(Wow $wow, UserPassword $userPassword, UserEmail $userEmail, ProfileFeed $profileFeed, ProfileData $profileData)
     {
 
         $this->wow = $wow;
-        $this->gearToLinks = $gearToLinks;
         $this->userPassword = $userPassword;
         $this->userEmail = $userEmail;
+        $this->profileFeed = $profileFeed;
         $this->profileData = $profileData;
     }
     /**
@@ -53,164 +54,70 @@ class ProfilesController extends BaseController
      */
     public function show($username = null)
 	{
+        $type = 'feed, items, progression, talents';
+
         try
         {
-            $user = User::with('profile')->whereUsername($username)->firstOrFail();
+            $user = User::with('profile', 'threads', 'comments', 'raids')->whereUsername($username)->firstOrFail();
         }
         catch(ModelNotFoundException $e)
         {
             return View::make('404')->withFlashMessage('Ingen användare med detta namn kunde hittas!');
         }
 
-        if(Cache::has($user->username. '-feed'))
-        {
-             $feed = Cache::get($user->username. '-feed');
+        if(Cache::has($user->username. '-profileData')) {
+            $this->profileData = Cache::get($user->username . '-profileData');
         }
         else
         {
-           $feed = $this->wow->getFeed($user->username);
-
+            $this->profileData = $this->wow->getCharacterWithData($user->username, $type);
+            Cache::add($user->username. '-profileData', $this->profileData, 600);
+        }
+        if(Cache::has($user->username. '-feed'))
+        {
+            $feed = Cache::get($user->username . '-feed');
+        }
+        else
+        {
+            $feed = $this->profileFeed->feed($this->profileData['feed']);
             Cache::add($user->username. '-feed', $feed, 600);
-        }
-        /**
-         *  Går igenom varje "typ" i dataflödet
-         *  Lägger till data i newsFeed array
-         *  Cache på items , så vi laddar sidan snabbt
-         *  Använder variabeln $i för att begränsa flödet till 7 items
-         *  Bör flyttas till en service klass när tid finns.
-         */
-
-        foreach($feed as $data)
-        {
-        if($this->i < 7)
-        {
-            if($data['type'] == 'BOSSKILL')
-            {
-                array_push($this->newsFeed, $data["quantity"]. 'st <span class="text-warning" rel="achievement='.$data['achievement']['id'].'">' .$data["achievement"]["title"].'</span>');
-            }
-            elseif($data['type'] == 'ACHIEVEMENT')
-            {
-                array_push($this->newsFeed, 'Skaffade sig achievement: <span class="text-warning">' .$data["achievement"]["title"].'</span>');
-            }
-            elseif($data['type'] == 'CRITERIA')
-            {
-                array_push($this->newsFeed, 'Avslutade steget <span class="text-warning">' .$data["criteria"]["description"]. '</span> för achievement: <span class="text-warning">' .$data["achievement"]["title"].'</span>');
-            }
-            elseif($data['type'] == 'LOOT')
-            {
-                if(Cache::has($data['itemId'].'-item'))
-                {
-                    $item = Cache::get($data['itemId'].'-item');
-                }
-                else
-                {
-                    $item = $this->wow->getItem($data['itemId']);
-
-                    Cache::add($data['itemId'].'-item', $item, 600);
-                }
-                if(array_key_exists('name', $item))
-                {
-                    $loot = 'Lootade  <a href="#" rel="item=' . $item["id"] . '">' . $item["name"] . '</a>';
-                    array_push($this->newsFeed, $loot);
-                }
-            }
-            $this->i += 1;
-        }
         }
         if(Cache::has($user->username. '-gear'))
         {
-            $gear = Cache::get($user->username. '-gear');
+            $gear = Cache::get($user->username . '-gear');
         }
         else
         {
-            $gear = $this->wow->getGear($user->username);
-            Cache::add($user->username. '-gear', $gear, 600);
+            $gear = $this->profileFeed->gear($this->profileData['items']);
+            Cache::add($user->username. '-feed', $gear, 600);
         }
-        /**
-         * Skapade en service klass som extraherar data från varje item och returnerar en ikon med länk med gems enchants osv om de existerar
-         * se Family\Gear\GearToLinks
-         */
-        if(array_key_exists('head', $gear))
+
+        if(Cache::has($user->username. '-talents') && Cache::has($user->username. '-glyphs'))
         {
-            $head = $this->gearToLinks->getLink($gear['head']);
-            array_push($this->gearSlots, $head);
+            $talents = Cache::get($user->username. '-talents');
+            $glyphs = Cache::get($user->username. '-glyphs');
         }
-        if(array_key_exists('neck', $gear))
+        else
         {
-            $neck = $this->gearToLinks->getLink($gear['neck']);
-            array_push($this->gearSlots, $neck);
+            if(array_key_exists('selected', $this->profileData['talents'][0]))
+            {
+                $talents = $this->profileFeed->talents($this->profileData['talents'][0]);
+                Cache::add($user->username. '-talents', $talents, 600);
+                $glyphs = $this->profileFeed->glyphs($this->profileData['talents'][0]['glyphs']);
+                Cache::add($user->username. '-glyphs', $glyphs, 600);
+            }
+            else
+            {
+                $talents = $this->profileFeed->talents($this->profileData['talents'][1]);
+                Cache::add($user->username. '-talents', $talents, 600);
+                $glyphs = $this->profileFeed->glyphs($this->profileData['talents'][1]['glyphs']);
+                Cache::add($user->username. '-glyphs', $glyphs, 600);
+            }
         }
-        if(array_key_exists('shoulder', $gear))
-        {
-            $shoulder = $this->gearToLinks->getLink($gear['shoulder']);
-            array_push($this->gearSlots, $shoulder);
-        }
-        if(array_key_exists('back', $gear))
-        {
-            $back = $this->gearToLinks->getLink($gear['back']);
-            array_push($this->gearSlots, $back);
-        }
-        if(array_key_exists('chest', $gear))
-        {
-            $chest = $this->gearToLinks->getLink($gear['chest']);
-            array_push($this->gearSlots, $chest);
-        }
-        if(array_key_exists('wrist', $gear))
-        {
-            $wrist = $this->gearToLinks->getLink($gear['wrist']);
-            array_push($this->gearSlots, $wrist);
-        }
-        if(array_key_exists('hands', $gear))
-        {
-            $hands = $this->gearToLinks->getLink($gear['hands']);
-            array_push($this->gearSlots, $hands);
-        }
-        if(array_key_exists('waist', $gear))
-        {
-            $waist = $this->gearToLinks->getLink($gear['waist']);
-            array_push($this->gearSlots, $waist);
-        }
-        if(array_key_exists('legs', $gear))
-        {
-            $legs = $this->gearToLinks->getLink($gear['legs']);
-            array_push($this->gearSlots, $legs);
-        }
-        if(array_key_exists('feet', $gear))
-        {
-            $feet = $this->gearToLinks->getLink($gear['feet']);
-            array_push($this->gearSlots, $feet);
-        }
-        if(array_key_exists('finger1', $gear))
-        {
-            $finger1 = $this->gearToLinks->getLink($gear['finger1']);
-            array_push($this->gearSlots, $finger1);
-        }
-        if(array_key_exists('finger2', $gear))
-        {
-            $finger2 = $this->gearToLinks->getLink($gear['finger2']);
-            array_push($this->gearSlots, $finger2);
-        }
-        if(array_key_exists('trinket1', $gear))
-        {
-            $trinket1 = $this->gearToLinks->getLink($gear['trinket1']);
-            array_push($this->gearSlots, $trinket1);
-        }
-        if(array_key_exists('trinket2', $gear))
-        {
-            $trinket2 = $this->gearToLinks->getLink($gear['trinket2']);
-            array_push($this->gearSlots, $trinket2);
-        }
-        if(array_key_exists('mainHand', $gear))
-        {
-            $mainHand = $this->gearToLinks->getLink($gear['mainHand']);
-            array_push($this->gearSlots, $mainHand);
-        }
-        if(array_key_exists('offHand', $gear))
-        {
-            $offhand = $this->gearToLinks->getLink($gear['offHand']);
-            array_push($this->gearSlots, $offhand);
-        }
-        return View::make('profiles.show')->with(['user' => $user, 'newsFeed' => $this->newsFeed, 'gearSlots' => $this->gearSlots]);
+        $forumFeed = $this->profileFeed->forumFeed($user->threads, $user->comments, $user->raids);
+        #$progression = $this->profileFeed->progression($this->profileData['progression']);
+
+        return View::make('profiles.show')->with(['user' => $user, 'feed' => $feed, 'gear' => $gear, 'talents' => $talents, 'glyphs' => $glyphs, 'forumFeed' => $forumFeed]);
 	}
 
     /**
