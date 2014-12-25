@@ -6,9 +6,9 @@ class UserTableSeeder extends Seeder
     {
         $users = [
             [
-                'username' => 'Bubbleoncd',
+                'username' => 'Nigthshade',
                 'password' => '1234',
-                'email'    =>  'some@email.se'
+                'email'    =>  'bjorngrunde@live.se'
             ]
         ];
 
@@ -19,7 +19,7 @@ class UserTableSeeder extends Seeder
             $profile = new Profile;
             $profile->name = 'Björn';
             $profile->lastName = 'Grunde';
-            $profile->klass = 'paladin';
+            $profile->klass = 'druid';
             $profile->rank = 'Raider';
             $profile->thumbnail = 'http://eu.battle.net/static-render/eu/grim-batol/170/95463850-avatar.jpg';
             $profile->avatar = 'http://eu.battle.net/static-render/eu/grim-batol/170/95463850-profilemain.jpg';
