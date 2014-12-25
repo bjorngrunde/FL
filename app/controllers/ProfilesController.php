@@ -17,9 +17,7 @@ class ProfilesController extends Controller
      * @var UserPassword
      * @var ProfileData
      * @var UserEmail
-     * @var GearToLinks
      * @array newsFeed
-     * @array gearSlots
      */
     private $wow;
     private $userPassword;
@@ -32,12 +30,10 @@ class ProfilesController extends Controller
 
     /**
      * @param Wow $wow
-     * @param GearToLinks $gearToLinks
      * @param UserPassword $userPassword
      * @param UserEmail $userEmail
      * @param ProfileData $profileData
      * @param ProfileFeed $profileFeed
-     * @internal param RegistrationForm $registrationForm
      */
     public function  __construct(Wow $wow, UserPassword $userPassword, UserEmail $userEmail, ProfileFeed $profileFeed, ProfileData $profileData)
     {
