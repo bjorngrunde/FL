@@ -1,6 +1,6 @@
 <?php
 
-use Family\Forms\ProfileData;
+use Family\Forms\ProfileForm;
 use Family\Forms\UserEmail;
 use Family\Forms\UserPassword;
 use Illuminate\Routing\Controller;
@@ -11,26 +11,28 @@ class UsersController extends Controller
      * @var userPassword
      */
     private $userPassword;
-    /**
-     * @var ProfileData
-     */
-    private $profileData;
+
     /**
      * @var UserEmail
      */
     private $userEmail;
+    /**
+     * @var ProfileForm
+     */
+    private $profileForm;
 
     /**
      * @param userPassword $userPassword
      * @param UserEmail $userEmail
-     * @param ProfileData $profileData
+     * @param ProfileForm $profileForm
+     * @internal param ProfileData $profileData
      */
-    public function __construct(UserPassword $userPassword,UserEmail $userEmail ,ProfileData $profileData)
+    public function __construct(UserPassword $userPassword,UserEmail $userEmail,ProfileForm $profileForm )
     {
 
         $this->userPassword = $userPassword;
-        $this->profileData = $profileData;
         $this->userEmail = $userEmail;
+        $this->profileForm = $profileForm;
     }
     public function index()
     {
@@ -94,7 +96,7 @@ class UsersController extends Controller
 
             $input = Input::only('name', 'lastName', 'klass', 'rank', 'phone');
 
-            $this->profileData->validate($input);
+            $this->profileForm->validate($input);
 
             $user->profile->name = Input::get('name');
             $user->profile->lastName = Input::get('lastName');
