@@ -140,7 +140,6 @@ class ProfilesController extends Controller
     /**
      * @param $username
      * @return mixed
-     * @throws \Laracasts\Validation\FormValidationException
      */
     public function update($username)
     {
@@ -149,6 +148,10 @@ class ProfilesController extends Controller
         if(!empty($checkPassword))
         {
             $user = User::whereUsername($username)->first();
+            if($user == null)
+            {
+                return Redirect::back()->withFlashMessage('Något gick fel.');
+            }
             $input = Input::only('password', 'password_confirmation');
             $this->userPassword->validate($input);
 
@@ -160,7 +163,10 @@ class ProfilesController extends Controller
         elseif(!empty($checkEmail))
         {
             $user = User::whereUsername($username)->first();
-
+            if($user == null)
+            {
+                return Redirect::back()->withFlashMessage('Något gick fel.');
+            }
             $input = Input::only('email');
             $this->userEmail->validate($input);
 
@@ -176,8 +182,8 @@ class ProfilesController extends Controller
             {
                 return Redirect::back()->withFlashMessage('Något gick fel.');
             }
-
             $input = Input::only('name', 'lastName', 'phone');
+
             $this->profileForm->validate($input);
 
             $user->profile->name = Input::get('name');
