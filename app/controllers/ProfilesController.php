@@ -1,7 +1,7 @@
 <?php
 
 
-use Family\Forms\ProfileData;
+use Family\Forms\ProfileForm;
 use Family\Forms\UserEmail;
 use Family\Forms\UserPassword;
 use Family\Gear\ProfileFeed;
@@ -22,15 +22,18 @@ class ProfilesController extends Controller
     private $wow;
     private $userPassword;
     private $userEmail;
-
+    private $profileData;
     /**
      * @var ProfileFeed
      */
     private $profileFeed;
     /**
+     * @var ProfileForm
+     */
+    private $profileForm;
+    /**
      * @var ProfileData
      */
-    private $profileData;
 
     /**
      * @param Wow $wow
@@ -39,15 +42,14 @@ class ProfilesController extends Controller
      * @param ProfileData $profileData
      * @param ProfileFeed $profileFeed
      */
-    public function  __construct(Wow $wow, UserPassword $userPassword, UserEmail $userEmail, ProfileFeed $profileFeed, ProfileData $profileData)
+    public function  __construct(Wow $wow, UserPassword $userPassword, UserEmail $userEmail, ProfileFeed $profileFeed, ProfileForm $profileForm)
     {
 
         $this->wow = $wow;
         $this->userPassword = $userPassword;
         $this->userEmail = $userEmail;
         $this->profileFeed = $profileFeed;
-
-        $this->profileData = $profileData;
+        $this->profileForm = $profileForm;
     }
     /**
      * @param $username
@@ -177,7 +179,7 @@ class ProfilesController extends Controller
             $user = User::with('profile')->whereUsername($username)->first();
 
             $input = Input::only('name', 'lastName', 'phone');
-            $this->profileData->validate($input);
+            $this->profileForm->validate($input);
 
             $user->profile->name = Input::get('name');
             $user->profile->lastname = Input::get('lastName');
