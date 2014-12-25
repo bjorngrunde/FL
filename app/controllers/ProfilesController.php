@@ -17,7 +17,6 @@ class ProfilesController extends Controller
      * @var UserPassword
      * @var ProfileData
      * @var UserEmail
-     * @array newsFeed
      */
     private $wow;
     private $userPassword;
@@ -31,16 +30,14 @@ class ProfilesController extends Controller
      * @var ProfileForm
      */
     private $profileForm;
-    /**
-     * @var ProfileData
-     */
 
     /**
      * @param Wow $wow
      * @param UserPassword $userPassword
      * @param UserEmail $userEmail
-     * @param ProfileData $profileData
      * @param ProfileFeed $profileFeed
+     * @param ProfileForm $profileForm
+     * @internal param ProfileData $profileData
      */
     public function  __construct(Wow $wow, UserPassword $userPassword, UserEmail $userEmail, ProfileFeed $profileFeed, ProfileForm $profileForm)
     {
@@ -151,9 +148,7 @@ class ProfilesController extends Controller
         $checkEmail = Input::get('email');
         if(!empty($checkPassword))
         {
-
             $user = User::whereUsername($username)->first();
-
             $input = Input::only('password', 'password_confirmation');
             $this->userPassword->validate($input);
 
