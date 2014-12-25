@@ -22,11 +22,15 @@ class ProfilesController extends Controller
     private $wow;
     private $userPassword;
     private $userEmail;
-    private $profileData;
+
     /**
      * @var ProfileFeed
      */
     private $profileFeed;
+    /**
+     * @var ProfileData
+     */
+    private $profileData;
 
     /**
      * @param Wow $wow
@@ -42,6 +46,7 @@ class ProfilesController extends Controller
         $this->userPassword = $userPassword;
         $this->userEmail = $userEmail;
         $this->profileFeed = $profileFeed;
+
         $this->profileData = $profileData;
     }
     /**
