@@ -37,7 +37,7 @@ class ProfilesController extends Controller
      * @param UserEmail $userEmail
      * @param ProfileFeed $profileFeed
      * @param ProfileForm $profileForm
-     * @internal param ProfileData $profileData
+     *
      */
     public function  __construct(Wow $wow, UserPassword $userPassword, UserEmail $userEmail, ProfileFeed $profileFeed, ProfileForm $profileForm)
     {
@@ -172,6 +172,10 @@ class ProfilesController extends Controller
         else
         {
             $user = User::with('profile')->whereUsername($username)->first();
+            if($user == null)
+            {
+                return Redirect::back()->withFlashMessage('Något gick fel.');
+            }
 
             $input = Input::only('name', 'lastName', 'phone');
             $this->profileForm->validate($input);
