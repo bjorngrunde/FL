@@ -21,7 +21,7 @@ class ProfilesController extends Controller
     private $wow;
     private $userPassword;
     private $userEmail;
-    private $profileData;
+    private $WowJsonData;
     /**
      * @var ProfileFeed
      */
@@ -66,12 +66,12 @@ class ProfilesController extends Controller
         }
 
         if(Cache::has($user->username. '-profileData')) {
-            $this->profileData = Cache::get($user->username . '-profileData');
+            $this->WowJsonData = Cache::get($user->username . '-profileData');
         }
         else
         {
-            $this->profileData = $this->wow->getCharacterWithData($user->username, $type);
-            Cache::add($user->username. '-profileData', $this->profileData, 600);
+            $this->WowJsonData = $this->wow->getCharacterWithData($user->username, $type);
+            Cache::add($user->username. '-profileData', $this->WowJsonData, 600);
         }
         if(Cache::has($user->username. '-feed'))
         {
@@ -79,7 +79,7 @@ class ProfilesController extends Controller
         }
         else
         {
-            $feed = $this->profileFeed->feed($this->profileData['feed']);
+            $feed = $this->profileFeed->feed($this->WowJsonData['feed']);
             Cache::add($user->username. '-feed', $feed, 600);
         }
         if(Cache::has($user->username. '-gear'))
@@ -88,7 +88,7 @@ class ProfilesController extends Controller
         }
         else
         {
-            $gear = $this->profileFeed->gear($this->profileData['items']);
+            $gear = $this->profileFeed->gear($this->WowJsonData['items']);
             Cache::add($user->username. '-feed', $gear, 600);
         }
 
@@ -99,18 +99,18 @@ class ProfilesController extends Controller
         }
         else
         {
-            if(array_key_exists('selected', $this->profileData['talents'][0]))
+            if(array_key_exists('selected', $this->WowJsonData['talents'][0]))
             {
-                $talents = $this->profileFeed->talents($this->profileData['talents'][0]);
+                $talents = $this->profileFeed->talents($this->WowJsonData['talents'][0]);
                 Cache::add($user->username. '-talents', $talents, 600);
-                $glyphs = $this->profileFeed->glyphs($this->profileData['talents'][0]['glyphs']);
+                $glyphs = $this->profileFeed->glyphs($this->WowJsonData['talents'][0]['glyphs']);
                 Cache::add($user->username. '-glyphs', $glyphs, 600);
             }
             else
             {
-                $talents = $this->profileFeed->talents($this->profileData['talents'][1]);
+                $talents = $this->profileFeed->talents($this->WowJsonData['talents'][1]);
                 Cache::add($user->username. '-talents', $talents, 600);
-                $glyphs = $this->profileFeed->glyphs($this->profileData['talents'][1]['glyphs']);
+                $glyphs = $this->profileFeed->glyphs($this->WowJsonData['talents'][1]['glyphs']);
                 Cache::add($user->username. '-glyphs', $glyphs, 600);
             }
         }
