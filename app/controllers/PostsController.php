@@ -87,9 +87,10 @@ class PostsController extends Controller
 
         if(Input::hasFile('img'))
         {
-            if(!File::exists('/img/posts'))
+            $path = public_path().'/img/posts';
+            if(!File::exists($path))
             {
-                File::makeDirectory('/img/posts');
+                File::makeDirectory('$path');
             }
             $thumbnailName = time(). '-thumbnail-post.jpg';
 
