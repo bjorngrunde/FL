@@ -33,7 +33,6 @@
 @section('javascript')
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script>
-    tinymce.init({selector:'textarea',
-                  plugins: 'bbcode'});
+    tinymce.init({selector:'textarea'});
 </script>
 @stop
