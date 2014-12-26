@@ -1,8 +1,5 @@
 <?php
-
 namespace Family\Forms;
-
-
 use Laracasts\Validation\FormValidator;
 
 class ProfileForm extends FormValidator
