@@ -53,7 +53,7 @@ Route::group(['before' => 'auth'], function(){
     # Profiler
     Route::get('/profile/{profile}', 'ProfilesController@show');
     Route::get('/profile/{profile}/edit/', ['as' => 'profile.edit', 'uses' =>'ProfilesController@edit']);
-    Route::resource('profiles', 'profilesController', ['only' => ['update']]);
+    Route::resource('profiles', 'ProfilesController', ['only' => ['update']]);
 
     #flrs, front end
     Route::get('/flrs', 'RaidsController@index');
