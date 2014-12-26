@@ -38,6 +38,12 @@ Route::group(['before' => 'checkRole'], function(){
     Route::resource('flrs', 'RaidsController', ['only' => ['update', 'destroy', 'store']]);
     Route::resource('raids', 'RaidsInstanceController', ['only' => ['update' , 'store', 'destroy']]);
 
+    #Nyheter, skapa redigera etc
+    Route::get('/admin/posts/create', 'PostsController@create');
+    Route::get('/admin/posts/index', 'PostsController@index');
+    Route::get('/admin/posts/{id}/edit', 'PostsController@edit');
+    Route::resource('posts', 'PostsController', ['only' => ['update', 'store', 'destroy']]);
+
     # Ta bort kommentarer
     Route::delete('/admin/comment/{id}/delete/', ['as' => 'delete-comment', 'uses' => 'CommentsController@deleteComment']);
 });
@@ -61,6 +67,8 @@ Route::group(['before' => 'auth'], function(){
     Route::post('/flrs/signup/{id}', ['as' => 'signup', 'uses' => 'RaidsController@signup']);
     Route::post('flrs/change/{id}', ['as' => 'change.status', 'uses' => 'RaidsController@change']);
 
+    #nyheter front-end
+    Route::get('/news/post/{id}', 'PostsController@show');
     #FORUM
     Route::group(['prefix' => '/forum'], function(){
         Route::get('/', 'ForumsController@index');

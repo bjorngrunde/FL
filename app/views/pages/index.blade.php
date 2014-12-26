@@ -8,71 +8,34 @@
         <hr class="dotted" />
     </div>
     <!-- Blog post -->
+    @foreach($posts as $post)
     <div class="col-md-12 dark-sh-well-no-radius">
     <div class="col-md-8 col-md-offset-4">
-    <h4>Garrosh är superdöd!</h4>
+    <h4><a href="/news/post/{{$post->id}}">{{$post->title}}</a></h4>
     </div>
+    @if(!empty($post->thumbnail))
         <div class="col-md-4">
-            <img src="/img/blogg/test1.jpg" class="img-responsive blog-post-img" />
+            <img src="{{$post->thumbnail}}" class="img-responsive blog-post-img" />
         </div>
+    @endif
         <div class="col-md-8">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis auctor dolor. Nullam sodales, leo at imperdiet tincidunt,
-            leo turpis iaculis purus, id vulputate ipsum augue sed lorem. </p>
+            {{Str::limit($post->body, 200)}}
         </div>
         <div class="col-md-8 col-md-offset-4">
             <ul class="list-unstyled list-inline">
-                <li><span class="fa-comment"></span> 3 Kommentarer</li>
-                <li><p><span class="fa-calendar"></span> 28 Okt  av <span class="warrior">Bertius</span></p></li>
+                <li><span class="fa-comment"></span> {{count($post->comments)}} Kommentarer</li>
+                <li><p><span class="fa-calendar"></span> Skriven av: <span class="{{$post->user->profile->klass}}">{{$post->user->username}}</span></p></li>
             </ul>
         </div>
         <div class="col-md-12">
+        {{$posts->links()}}
         </div>
         </div>
+    @endforeach
 
-         <!-- Blog post -->
-
-            <div class="col-md-12 dark-sh-well-no-radius">
-            <div class="col-md-8 col-md-offset-4">
-            <h4>Är Zigvids mamma en Warwulf?</h4>
-            </div>
-                <div class="col-md-4">
-                    <img src="/img/blogg/test2.jpg" class="img-responsive blog-post-img" />
-                </div>
-                <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis auctor dolor. Nullam sodales, leo at imperdiet tincidunt,
-                    leo turpis iaculis purus, id vulputate ipsum augue sed lorem. </p>
-                </div>
-                <div class="col-md-8 col-md-offset-4">
-                    <ul class="list-unstyled list-inline">
-                        <li><span class="fui-chat"></span> 137 Kommentarer</li>
-                        <li><p><span class="fui-calendar"></span> 23 Okt  av <span class="paladin">Princip</span></p></li>
-                    </ul>
-                </div>
-                <div class="col-md-12">
-                </div>
-                </div>
-
-         <!-- Blog post -->
-            <div class="col-md-12 dark-sh-well-no-radius">
-            <div class="col-md-8 col-md-offset-4">
-                 <h4>Signa upp i tid, nya regler!</h4>
-            </div>
-                <div class="col-md-4">
-                    <img src="/img/blogg/test3.jpg" class="img-responsive blog-post-img" />
-                </div>
-                <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis auctor dolor. Nullam sodales, leo at imperdiet tincidunt,
-                    leo turpis iaculis purus, id vulputate ipsum augue sed lorem. </p>
-                </div>
-                <div class="col-md-8 col-md-offset-4">
-                    <ul class="list-unstyled list-inline">
-                        <li><span class="fui-chat"></span> 2 Kommentarer</li>
-                        <li><p><span class="fui-calendar"></span> 19 Okt  av <span class="warrior">Swingzor</span></p></li>
-                    </ul>
-                </div>
-                <div class="col-md-12">
-                </div>
-           </div>
+    <div class="col-md-12">
+    {{$posts->links()}}
+    </div>
     </div>
     <div class="col-md-4">
         <div class="col-md-12 text-center">

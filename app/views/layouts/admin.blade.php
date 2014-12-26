@@ -53,5 +53,6 @@
             format: ' HH:i'
         });
     </script>
+    @yield('javascript')
 </body>
 </html>

@@ -16,14 +16,20 @@
                 </ul>
             </li>
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">FLRS <span class="caret"></span> </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/admin/flrs/create">Skapa nytt evenemang</a></li>
-                                <li><a href="/admin/flrs/index">Lista alla evenemang</a></li>
-                                <li><a href="/admin/flrs/add">Lägg till ny Instans</a></li>
-                                <li><a href="/admin/flrs/instance">Lista alla Instanser</a></li>
-
-                            </ul>
-            <li><a href="/admin/blog">Blogg</a></li>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="/admin/flrs/create">Skapa nytt evenemang</a></li>
+                    <li><a href="/admin/flrs/index">Lista alla evenemang</a></li>
+                    <li><a href="/admin/flrs/add">Lägg till ny Instans</a></li>
+                    <li><a href="/admin/flrs/instance">Lista alla Instanser</a></li>
+                </ul>
+             </li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Nyheter<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="/admin/posts/create">Nytt Inlägg</a></li>
+                    <li><a href="/admin/posts/index">Lista alla inlägg</a></li>
+                    <li></li>
+                </ul>
+            </li>
             <li><a href="/admin/forum">Forum</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
