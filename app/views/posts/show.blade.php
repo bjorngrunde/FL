@@ -13,7 +13,7 @@
                  <li><p>Skriven av: <span class="{{$post->user->profile->klass}}">{{$post->user->username}}</span></p></li>
              </ul>
              <div class="col-md-12">
-                  {{$post->body}}
+                  {{nl2br(BBCode::parse($post->body))}}
              </div>
              </div>
             </div>
