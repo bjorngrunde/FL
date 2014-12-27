@@ -55,13 +55,13 @@ class PostsController extends Controller
 
         if(Input::hasFile('img'))
         {
-            $thumbnailName = time(). '-thumbnail-post.jpg';
-
             $thumbnail = Image::make(Input::file('img'));
+            $format = Input::file('img')->getClientOriginalExtension();
+            $thumbnailName = time(). '-thumbnail-post.'.$format;
             $thumbnail->resize(300, 200);
             $thumbnail->save('img/posts/'.$thumbnailName);
 
-            $imageName =time(). '-post.jpg';
+            $imageName =time(). '-post.'.$format;
             $image = Image::make(Input::file('img'));
             $image->save('img/posts/'.$imageName);
 
@@ -92,13 +92,13 @@ class PostsController extends Controller
             {
                 File::makeDirectory($path);
             }
-            $thumbnailName = time(). '-thumbnail-post.jpg';
-
             $thumbnail = Image::make(Input::file('img'));
+            $format = Input::file('img')->getClientOriginalExtension();
+            $thumbnailName = time(). '-thumbnail-post.'.$format;
             $thumbnail->resize(300, 200);
             $thumbnail->save('img/posts/'.$thumbnailName);
 
-            $imageName =time(). '-post.jpg';
+            $imageName =time(). '-post.'.$format;
             $image = Image::make(Input::file('img'));
             $image->save('img/posts/'.$imageName);
 
