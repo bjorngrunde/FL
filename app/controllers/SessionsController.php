@@ -31,7 +31,7 @@ class SessionsController extends BaseController
     {
         $this->loginForm->validate($input = Input::only('email', 'password'));
 
-        if(Auth::attempt($input))
+        if(Auth::attempt($input, true))
         {
             return Redirect::intended('/dashboard');
         }
