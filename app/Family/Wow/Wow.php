@@ -76,30 +76,6 @@ class Wow  {
 
         return $data['result'];
     }
-    public function getFeed($user)
-    {
-        $this->client_id = getenv('BLIZZARD_CLIENT_ID');
-        $this->client_secret = getenv('BLIZZARD_CLIENT_SECRET');
-        $parameters = [
-            'name'      =>  $user,
-            'server'    =>  'Grim-Batol',
-            'fields'    =>  'feed'
-        ];
-
-        $type = 'character';
-
-        try
-        {
-        $this->client = new OAuth2\Client($this->client_id,$this->client_secret,$this->region,$this->locale, $this->redirect_url);
-
-        $data = $this->client->fetch($type, $parameters);
-        }
-        catch(OAuth2\Exception $e)
-        {
-            return 'Något gick fel: '.$e;
-        }
-        return $data['result']['feed'];
-    }
 
     /**
      * @param $id
@@ -127,34 +103,5 @@ class Wow  {
         }
         return $item['result'];
 
-    }
-
-    /**
-     * @param $user
-     * @return mixed
-     * @throws OAuth2\Exception
-     */
-    public function getGear($user)
-    {
-        $this->client_id = getenv('BLIZZARD_CLIENT_ID');
-        $this->client_secret = getenv('BLIZZARD_CLIENT_SECRET');
-        $parameters = [
-            'name'      =>  $user,
-            'server'    =>  'Grim-Batol',
-            'fields'    =>  'items'
-        ];
-
-        $type = 'character';
-        try
-        {
-        $this->client = new OAuth2\Client($this->client_id,$this->client_secret,$this->region,$this->locale, $this->redirect_url);
-
-        $gear = $this->client->fetch($type, $parameters);
-        }
-        catch(OAuth2\Exception $e)
-        {
-            return 'Något gick fel '. $e;
-        }
-        return $gear['result']['items'];
     }
 }

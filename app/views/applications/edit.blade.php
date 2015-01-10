@@ -5,8 +5,8 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <h4>Redigera Ansökan</h4>
-        @if(Session::has('Success'))
-        <p class="text-success">{{ Session::get('Success') }}</p>
+        @if(Session::has('flash_message'))
+        <p class="text-success">{{ Session::get('flash_message') }}</p>
         @else
         <p>Ändrar du beslutet till "Accepterad" så kan du skapa en användare från ansökan.</p>
         @endif

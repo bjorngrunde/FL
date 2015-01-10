@@ -12,10 +12,11 @@ class PagesController extends Controller {
 	 */
 	public function index()
     {
-        $allRaids = Raid::orderBy('id', 'desc')->get();
+        $allRaids = Raid::orderBy('created_at', 'asc')->get();
         $raids = $allRaids->take(3);
 
         $posts = Post::with('user')->orderBy('id', 'desc')->paginate(3);
+
 		Return View::make('pages.index', compact('posts'),['raids' => $raids]);
 	}
 }

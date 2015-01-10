@@ -41,10 +41,9 @@ class RaidsController extends Controller
                $newlink = '<a href="/flrs/show/'.$raid->id.'" >'.$raid->title. ' ('. $raid->mode.')</a>';
                array_push($events[$raid->time], $newlink);
           }
-
        }
-
         $cal = generateCalendar($events);
+
 
         return View::make('flrs.index', ['cal' => $cal]);
 	}

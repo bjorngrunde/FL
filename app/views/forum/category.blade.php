@@ -35,8 +35,8 @@
         </tr>
         </tbody>
         <tbody class="panel-body">
-        @if(count($category->threads) > 0)
-            @foreach($category->threads as $thread)
+        @if(count($threads) > 0)
+            @foreach($threads as $thread)
                     <tr>
                     <td><strong><p><a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a></p></strong></td>
                     <td>{{count($thread->comments)}}</td>

@@ -92,7 +92,7 @@ class ApplicationsController extends Controller
         $status->save();
 
         $status->applications()->save($application);
-        return Redirect::back()->with('Success','Tack för din ansökan, vi hör av oss via mail eller in-game när vi fattat ett beslut.');
+        return Redirect::back()->withFlashMessage('Tack för din ansökan, vi hör av oss via mail eller in-game när vi fattat ett beslut.');
     }
 
     /**

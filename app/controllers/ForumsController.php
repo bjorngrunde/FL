@@ -36,10 +36,9 @@ class ForumsController extends Controller
 
     public function category($id)
     {
-        $category = ForumCategory::with('threads', 'comments')->find($id);
-
-
-        return View::make('forum.category',['category' => $category]);
+        $category = ForumCategory::find($id);
+        $threads = ForumThread::with('comments')->whereCategory_id($id)->orderBy('updated_at', 'desc')->paginate(20);
+        return View::make('forum.category',compact('threads'),['category' => $category]);
     }
 
     public function storeCategory()
@@ -274,75 +273,4 @@ class ForumsController extends Controller
         return Redirect::back()->withFlashMessage('Gruppen har nu tagits bort.');
         }
     }
-
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /forums/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /forums
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /forums/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /forums/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /forums/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /forums/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
 }

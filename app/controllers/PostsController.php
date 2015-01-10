@@ -98,7 +98,7 @@ class PostsController extends Controller
             $thumbnail->resize(300, 200);
             $thumbnail->save('img/posts/'.$thumbnailName);
 
-            $imageName =time(). '-post.'.$format;
+            $imageName = time(). '-post.'.$format;
             $image = Image::make(Input::file('img'));
             $image->save('img/posts/'.$imageName);
 

@@ -15,7 +15,6 @@ class ProfilesController extends Controller
     /**
      * @var Wow
      * @var UserPassword
-     * @var ProfileData
      * @var UserEmail
      */
     private $wow;

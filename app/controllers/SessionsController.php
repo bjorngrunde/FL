@@ -33,6 +33,11 @@ class SessionsController extends BaseController
 
         if(Auth::attempt($input, true))
         {
+            if(Auth::user()->hasRole('Bannad'))
+            {
+                Auth::logout();
+                return Redirect::to('/')->withFlashMessage('Du kan inte logga in. Du har blivit bannad.');
+            }
             return Redirect::intended('/dashboard');
         }
 

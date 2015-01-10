@@ -34,7 +34,7 @@
        <img src="{{$thread->author->profile->thumbnail}}" class="img-circle img-responsive profile-img-avatar center-block" />
        <p class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</p>
        <small>Rank: {{$thread->author->profile->rank}}</small>
-     <br /><small>Inlägg: {{count($thread->author->comments)}}</small>
+     <br /><small>Inlägg: {{count($thread->author->comments) + count($thread->author->threads)}}</small>
         </div>
             <div class="col-sm-10">
 
@@ -62,7 +62,7 @@
              <img src="{{$comment->author->profile->thumbnail}}" class="img-circle img-responsive profile-img-avatar center-block" />
              <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
              <small>Rank: {{$comment->author->profile->rank}}</small>
-              <br /><small>Inlägg: {{count($comment->author->comments)}}</small>
+              <br /><small>Inlägg: {{count($comment->author->comments) + count($thread->author->threads)}}</small>
 
             </div>
             <div class="col-sm-10">

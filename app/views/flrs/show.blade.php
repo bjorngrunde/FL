@@ -53,19 +53,16 @@
     @endif
 
     <div class="col-sm-12">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel-group" role="tablist">
       <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-             <h6>Raidgrupp</h6>
-            </a>
-          </h4>
+        <div class="panel-heading" role="tab">
+          <h6 class="panel-title">
+             Raidgrupp
+          </h6>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
             <div class="col-xs-3">
-                <h6>Tank</h6>
+                <p>Tank</p>
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Tank' && $user->pivot->raid_status == 'selected')
@@ -75,7 +72,7 @@
                 </ul>
                 </div>
                 <div class="col-xs-3">
-                <h6>Melee</h6>
+                <p>Melee</p>
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Melee' && $user->pivot->raid_status == 'selected')
@@ -85,7 +82,7 @@
                 </ul>
                 </div>
                 <div class="col-xs-3">
-                <h6>Ranged</h6>
+                <p>Ranged</p>
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Ranged' && $user->pivot->raid_status == 'selected')
@@ -95,7 +92,7 @@
                 </ul>
                 </div>
                 <div class="col-xs-3">
-                <h6>Healer</h6>
+                <p>Healer</p>
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Healer' && $user->pivot->raid_status == 'selected')
@@ -105,23 +102,21 @@
                 </ul>
                 </div>
           </div>
-          </div>
-        </div>
 
 
 
-      <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingTwo">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-           <h6>Tillgängliga Spelare</h6>
+
+
+
+      <div class="panel-heading" role="tab">
+        <h6 class="panel-title">
+          Tillgängliga Spelare
           </a>
-        </h4>
+        </h6>
       </div>
-      <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
         <div class="panel-body">
         <div class="col-xs-3">
-        <h6>Tank</h6>
+        <p>Tank</p>
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Tank' && $user->pivot->raid_status == 'available')
@@ -131,7 +126,7 @@
         </ul>
         </div>
         <div class="col-xs-3">
-        <h6>Melee</h6>
+        <p>Melee</p>
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Melee' && $user->pivot->raid_status == 'available')
@@ -141,7 +136,7 @@
         </ul>
         </div>
         <div class="col-xs-3">
-        <h6>Ranged</h6>
+        <p>Ranged</p>
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Ranged' && $user->pivot->raid_status == 'available')
@@ -151,7 +146,7 @@
         </ul>
         </div>
         <div class="col-xs-3">
-        <h6>Healer</h6>
+        <p>Healer</p>
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Healer' && $user->pivot->raid_status == 'available')
@@ -161,19 +156,16 @@
         </ul>
         </div>
         </div>
-        </div>
-      </div>
 
 
-    <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-             <h6>Osäkra</h6>
-            </a>
-          </h4>
+
+
+
+    <div class="panel-heading" role="tab">
+          <h6 class="panel-title">
+            Osäkra
+          </h6>
         </div>
-        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
           <div class="panel-body">
           <div class="col-sm-12">
             <ul class="list-unstyled">
@@ -185,18 +177,15 @@
             </ul>
           </div>
           </div>
-        </div>
-      </div>
 
-      <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingFour">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-           <h6>Kan ej</h6>
-          </a>
-        </h4>
+
+
+
+      <div class="panel-heading" role="tab">
+        <h6 class="panel-title">
+            Kan ej
+        </h6>
       </div>
-      <div id="collapseFour" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingFour">
         <div class="panel-body">
         <div class="col-sm-12">
         <ul class="list-unstyled">
@@ -208,7 +197,7 @@
         </ul>
         </div>
         </div>
-      </div>
+        </div>
     </div>
       </div>
       </div>
