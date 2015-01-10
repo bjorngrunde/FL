@@ -21,7 +21,6 @@ class ForumsController extends Controller
 
     public function __construct(ForumGroupValidation $forumGroupValidation, NewThreadForm $newThreadForm, ForumCommentForm $forumCommentForm)
     {
-
         $this->forumGroupValidation = $forumGroupValidation;
         $this->newThreadForm = $newThreadForm;
         $this->forumCommentForm = $forumCommentForm;

@@ -16,7 +16,6 @@ class RaidsController extends Controller
 
     public function __construct(EventValidation $eventValidation)
     {
-
         $this->eventValidation = $eventValidation;
     }
 
@@ -43,7 +42,6 @@ class RaidsController extends Controller
           }
        }
         $cal = generateCalendar($events);
-
 
         return View::make('flrs.index', ['cal' => $cal]);
 	}
@@ -95,7 +93,6 @@ class RaidsController extends Controller
         {
             return Redirect::back()->withFlashMessage('Något gick fel. Instansen existerar inte.');
         }
-
         $user = User::with('raids')->find(Auth::user()->id);
         if($user == null)
         {
@@ -112,9 +109,7 @@ class RaidsController extends Controller
 
     public function createRaid($id)
     {
-
         $raid = Raid::with('users')->find($id);
-
         return View::make('flrs.raidgroup',['raid' => $raid]);
     }
 
@@ -126,13 +121,10 @@ class RaidsController extends Controller
         {
             return Redirect::back()->withFlashMessage();
         }
-
         foreach($raid->users as $user)
         {
-
             if(Input::has($user->username))
             {
-
                 $user->raids()->updateExistingPivot($raid->id,['raid_status' => Input::get($user->username)]);
             }
         }
@@ -153,9 +145,7 @@ class RaidsController extends Controller
 	 */
 	public function show($id)
 	{
-        #Har användaren en raid?
         $hasRaid = false;
-        #Är användaren med i en raidgrupp
         $raidgroup = false;
 
         $raid = Raid::with('users')->find($id);
@@ -163,7 +153,6 @@ class RaidsController extends Controller
         {
             return Redirect::to('/dashboard')->withFlashMessage('Denna raid existerar inte');
         }
-        #Snyggar till datum lite
         list($year, $month, $day ) = explode('-',$raid->time);
         switch($month)
         {
