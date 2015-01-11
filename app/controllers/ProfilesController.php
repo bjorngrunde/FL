@@ -55,6 +55,7 @@ class ProfilesController extends Controller
 	{
         $type = 'feed, items, progression, talents';
 
+
         try
         {
             $user = User::with('profile', 'threads', 'comments', 'raids')->whereUsername($username)->firstOrFail();
@@ -115,8 +116,19 @@ class ProfilesController extends Controller
         }
         $forumFeed = $this->profileFeed->forumFeed($user->threads, $user->comments, $user->raids);
         #$progression = $this->profileFeed->progression($this->profileData['progression']);
+        $averageItemLevel = $this->WowJsonData['items']['averageItemLevel'];
 
-        return View::make('profiles.show')->with(['user' => $user, 'feed' => $feed, 'gear' => $gear, 'talents' => $talents, 'glyphs' => $glyphs, 'forumFeed' => $forumFeed]);
+        $averageItemLevelEquipped = $this->WowJsonData['items']['averageItemLevelEquipped'];
+        return View::make('profiles.show')->with([
+            'user' => $user,
+            'feed' => $feed,
+            'gear' => $gear,
+            'talents' => $talents,
+            'glyphs' => $glyphs,
+            'forumFeed' => $forumFeed,
+            'averageItemLevel' => $averageItemLevel,
+            'averageItemLevelEquipped' => $averageItemLevelEquipped
+        ]);
 	}
 
     /**

@@ -7,6 +7,9 @@
     <div class="col-sm-6">
        <img src="{{$user->profile->thumbnail}}" class="img-responsive img-circle profile-top profile-img-avatar center-block" />
        <h2 class="{{$user->profile->klass}} text-center profile-name">{{$user->username}}<br /><small>{{$user->profile->rank}}</small></h2>
+       <div class="col-md-12">
+       <small>Itemlevel: {{$averageItemLevel}} / {{$averageItemLevelEquipped}} </small>
+       </div>
     </div>
         <div class="col-sm-6"
              <div class="col-sm-12 ">
