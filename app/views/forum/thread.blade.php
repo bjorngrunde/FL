@@ -34,7 +34,7 @@
        <img src="{{$thread->author->profile->thumbnail}}" class="img-circle img-responsive profile-img-avatar center-block" />
        <p class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</p>
        <small>Rank: {{$thread->author->profile->rank}}</small>
-     <br /><small>Inlägg: {{count($thread->author->comments) + count($thread->author->threads)}}</small>
+     <br /><small>Inlägg: {{count(Auth::user()->comments) + count(Auth::user()->threads)}}</small>
         </div>
             <div class="col-sm-10">
 
