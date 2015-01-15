@@ -43,8 +43,8 @@
    <script src="../../js/jquery-ui-1.11.2/jquery-ui.min.js"></script>
    <script>
     $('#auto').autocomplete({
-        source: 'query',
-        minLength: 3
+        source: '/query',
+        minLength: 2
     });
    </script>
    @yield('javascript')
