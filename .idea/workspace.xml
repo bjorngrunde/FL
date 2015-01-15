@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/403.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/404.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/500.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/errors/default.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SearchController.php" afterPath="$PROJECT_DIR$/app/controllers/SearchController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/index.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/errors/404.blade.php" afterPath="$PROJECT_DIR$/app/views/errors/404.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/errors/default.blade.php" afterPath="$PROJECT_DIR$/app/views/errors/default.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -74,13 +69,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="404.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="404.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/errors/404.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.13969171" vertical-offset="0" max-vertical-offset="1038">
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
               <folding>
                 <element signature="e#143#318#0#HTML" expanded="true" />
+                <element signature="e#334#370#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,13 +106,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/errors/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27938342" vertical-offset="0" max-vertical-offset="1038">
-              <caret line="10" column="102" selection-start-line="10" selection-start-column="102" selection-end-line="10" selection-end-column="102" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="638">
+              <caret line="9" column="102" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="102" />
               <folding>
-                <element signature="e#148#323#0#HTML" expanded="true" />
+                <element signature="e#144#319#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,10 +196,10 @@
         <option value="$PROJECT_DIR$/app/controllers/SearchController.php" />
         <option value="$PROJECT_DIR$/app/views/errors/missing.blade.php" />
         <option value="$PROJECT_DIR$/app/start/global.php" />
-        <option value="$PROJECT_DIR$/app/views/errors/404.blade.php" />
         <option value="$PROJECT_DIR$/app/views/errors/403.blade.php" />
         <option value="$PROJECT_DIR$/app/views/errors/500.blade.php" />
         <option value="$PROJECT_DIR$/app/views/errors/default.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/404.blade.php" />
       </list>
     </option>
   </component>
@@ -361,6 +357,38 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="family">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="family">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="family">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="public">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="img">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -803,7 +831,19 @@
       <option name="project" value="LOCAL" />
       <updated>1421348443661</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="FFixade bug och lade till server error pages">
+      <created>1421352208852</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1421352208852</updated>
+    </task>
+    <task id="LOCAL-00046" summary="FFixade bug och lade till server error pages">
+      <created>1421352500021</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1421352500021</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -859,7 +899,8 @@
     <MESSAGE value="Lade till en well" />
     <MESSAGE value="Byggde simpel sökfunktion" />
     <MESSAGE value="Fix bug sök" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug sök" />
+    <MESSAGE value="FFixade bug och lade till server error pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="FFixade bug och lade till server error pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1213,16 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/errors/404.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#143#318#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/errors/403.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
@@ -1245,10 +1276,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/errors/default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27938342" vertical-offset="0" max-vertical-offset="1038">
-          <caret line="10" column="102" selection-start-line="10" selection-start-column="102" selection-end-line="10" selection-end-column="102" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="638">
+          <caret line="9" column="102" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="102" />
           <folding>
-            <element signature="e#148#323#0#HTML" expanded="true" />
+            <element signature="e#144#319#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/404.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13969171" vertical-offset="0" max-vertical-offset="1038">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="e#143#318#0#HTML" expanded="true" />
+            <element signature="e#334#370#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
