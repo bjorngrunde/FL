@@ -24,7 +24,7 @@ class RaidsController extends Controller
      */
     public function index()
 	{
-        $raids = Raid::all();
+        $raids = Raid::where('time', '>=', date('y-m-d'));
 
         $events = [];
 
