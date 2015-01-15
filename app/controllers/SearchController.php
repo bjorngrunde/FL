@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class SearchController extends Controller
 {
     public function index()
@@ -22,12 +24,8 @@ class SearchController extends Controller
     public function searchResult()
     {
         $result = Input::get('auto');
-
-        if($user = User::whereUsername($result)->firstOrFail())
-        {
-            return Redirect::to('/profile/'.$user->username);
-        }
-
+        $user = User::whereUsername($result)->firstOrFail();
+        return Redirect::to('/profile/'.$user->username);
     }
 
 }

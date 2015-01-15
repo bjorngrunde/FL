@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="row">
+ @if(Session::has('flash_message'))
+        <p class="text-success">{{Session::get('flash_message')}}</p>
+    @endif
     <div class="col-md-8">
     <div class="col-md-12 text-center">
         <h4>Nyheter</h4>
