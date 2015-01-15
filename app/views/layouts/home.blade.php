@@ -44,10 +44,7 @@
    <script>
     $('#auto').autocomplete({
         source: 'query',
-        minLength: 3,
-        select:function(e, ui) {
-          console.log('ui');
-        }
+        minLength: 3
     });
    </script>
    @yield('javascript')
