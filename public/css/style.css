@@ -229,3 +229,22 @@ select {
 .breadcrumb {
     background: #151515;
 }
+.navbar-inverse .navbar-form .form-control
+{
+    background: #fff;
+}
+.ui-autocomplete {
+    background: #151515;
+    border: none;
+    border-radius: 3px;
+    color:#fff;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.ui-menu-item.ui-state-focus {
+    border: none;
+    background: #3498db;
+    font-weight: bold;
+    color: #fff;
+}
