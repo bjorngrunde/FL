@@ -254,3 +254,11 @@ select {
 .today > div {
     color: #2ecc71;
 }
+.proff-green {
+    background: #2ECC71;
+    border-radius: 5px;
+    margin-left: 10px;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
