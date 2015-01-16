@@ -20,7 +20,7 @@
                 </tr>
                 <tbody>
                     @foreach($raids as $raid)
-                    <tr class="dark-sh-well">
+                    <tr class="dark-sh-well-no-radius">
                         <td><p>{{$raid->title}}</p></td>
                         <td><p>{{$raid->mode}}</p></td>
                         <td><p>{{$raid->time}}</p></td>

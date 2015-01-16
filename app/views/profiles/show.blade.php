@@ -32,8 +32,34 @@
                  </ul>
             </div>
         </div>
+        <div class="col-md-12">
+             <ul class="nav nav-pills" role="tablist">
+                <li class="active"><a href="#start" role="tab" data-toggle="tab">Profil</a></li>
+                <li><a href="#activities" role="tab" data-toggle="tab">Aktiviteter</a></li>
+                <li><a href="#alts" role="tab" data-toggle="tab">Alts</a></li>
+            </ul>
+        </div>
          <div class="col-sm-12 dark-sh-well">
-         <div class="col-sm-6 ">
+          <div class="tab-content">
+             <div role="tabpanel" class="tab-pane active" id="start">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+             </div>
+         </div>
+         <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="activities">
+
+              </div>
+          </div>
+          <div class="tab-content">
+               <div role="tabpanel" class="tab-pane active" id="alts">
+
+               </div>
+           </div>
+        <!-- <div class="col-sm-6 ">
          <h6>Aktivitet</h6>
          <ul class="list-unstyled">
             @foreach($feed as $content)
@@ -55,5 +81,5 @@
      </div>
     </div>
 </div>
-</div>
+</div>-->
 @stop

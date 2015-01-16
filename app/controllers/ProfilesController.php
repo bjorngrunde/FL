@@ -58,7 +58,7 @@ class ProfilesController extends Controller
 
         try
         {
-            $user = User::with('profile', 'threads', 'comments', 'raids')->whereUsername($username)->firstOrFail();
+            $user = User::with('profile', 'threads', 'comments', 'raids', 'server')->whereUsername($username)->firstOrFail();
         }
         catch(ModelNotFoundException $e)
         {
@@ -70,7 +70,7 @@ class ProfilesController extends Controller
         }
         else
         {
-            $this->WowJsonData = $this->wow->getCharacterWithData($user->username, $type);
+            $this->WowJsonData = $this->wow->getCharacterWithData($user->username, $type, $user->server->server);
             Cache::add($user->username. '-profileData', $this->WowJsonData, 600);
         }
         if(Cache::has($user->username. '-feed'))

@@ -24,13 +24,14 @@ class ProfileFeed extends GearToLinks {
     {
         $this->wow = $wow;
     }
-
     /**
      * @param $feed
      * @return array
      */
     public function feed($feed)
     {
+
+
     foreach($feed as $data)
     {
         if($this->i < 7)

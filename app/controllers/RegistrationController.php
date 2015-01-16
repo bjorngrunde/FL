@@ -54,13 +54,16 @@ class RegistrationController extends BaseController
             #Standard behörighet för nya användare
             $member = Role::whereName(Input::get('role'))->firstOrFail();
             #Hämtar vår input
-            $input = Input::only('username', 'email', 'name', 'lastName', 'rank', 'klass');
+            $input = Input::only('username', 'email', 'name', 'lastName', 'rank', 'klass', 'server');
+
             #Validerar med serviceklassen laracasts\validator
             $this->registrationAutoForm->validate($input);
+            $server = Input::get('server');
+
             #Genererar lösenord
             $password = str_random(12);
             #Hämtar länk från Armory
-            if ($img = $this->wow->getThumbnail(Input::get('username')))
+            if ($img = $this->wow->getThumbnail(Input::get('username'), $server))
             {
                 $avatar = str_replace('avatar', 'profilemain',$img);
 
@@ -77,12 +80,14 @@ class RegistrationController extends BaseController
                 $profile->rank = Input::get('rank');
                 $profile->klass = Input::get('klass');
                 $profile->thumbnail =$img;
-
                 $profile->avatar = $avatar;
-
-
                 $profile->save();
 
+                $server = new Server;
+                $server->server = Input::get('server');
+                $server->save();
+
+                $user->server()->save($server);
                 #Associerar profil med user
                 $user->profile()->save($profile);
                 #lägger till en roll
