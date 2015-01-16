@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
     <link href="/css/vendor/bootstrap.min.css" rel="stylesheet">
     <link href="/css/flat-ui.min.css" rel="stylesheet">
+    <link href="/js/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <style>
         body{padding-top: 75px;}
@@ -39,6 +40,13 @@
     <script src="../../js/vendor/jquery.min.js"></script>
    <script src="../../js/flat-ui.min.js"></script>
    <script src="../../js/app.js"></script>
+   <script src="../../js/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+   <script>
+    $('#auto').autocomplete({
+        source: '/query',
+        minLength: 2
+    });
+   </script>
    @yield('javascript')
 
   </body>

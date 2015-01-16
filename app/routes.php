@@ -56,8 +56,13 @@ Route::group(['before' => 'auth'], function(){
     # Dashboard
     Route::get('/dashboard', 'PagesController@index');
 
+    #SÖK
+
+    Route::get('/query', 'SearchController@query');
+    Route::get('/searchresult', ['as' => 'searchresult', 'uses' => 'SearchController@searchResult']);
+
     # Profiler
-    Route::get('/profile/{profile}', 'ProfilesController@show');
+    Route::get('/profile/{profile}', ['as' => 'profile','uses' => 'ProfilesController@show']);
     Route::get('/profile/{profile}/edit/', ['as' => 'profile.edit', 'uses' =>'ProfilesController@edit']);
     Route::resource('profiles', 'ProfilesController', ['only' => ['update']]);
 

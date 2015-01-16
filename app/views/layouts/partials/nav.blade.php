@@ -9,7 +9,9 @@
         </button>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
+
     <ul class="nav navbar-nav navbar-right text-center">
+
     <li>
        <img src="{{ Auth::user()->profile->thumbnail }}" class="img-circle img-nav" />
     </li>
@@ -33,7 +35,15 @@
         <li><a href="/flrs">FLRS</a></li>
         <li><a href="/forum/">Forum</a></li>
         <li><a href="#">Guild</a></li>
+            </ul>
+         </li>
       </ul>
+      {{Form::open(['route' => 'searchresult', 'method' => 'GET', 'class' => 'navbar-form navbar-left'])}}
+          <div class="form-group">
+               <input type="text" class="form-control input-sm" name="auto" id="auto" >
+          </div>
+                {{Form::submit('Sök', ['class' => 'btn btn-primary btn-sm'])}}
+          {{Form::close()}}
     </div>
     </div>
 </nav>

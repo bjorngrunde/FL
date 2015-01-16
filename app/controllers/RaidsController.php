@@ -43,8 +43,7 @@ class RaidsController extends Controller
        }
         $cal = generateCalendar($events);
 
-
-        return View::make('flrs.index', ['cal' => $cal, 'raids' => $raid]);
+        return View::make('flrs.index', ['cal' => $cal, 'raids' => $raids]);
 	}
 
 
