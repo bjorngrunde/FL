@@ -24,7 +24,7 @@ class RaidsController extends Controller
      */
     public function index()
 	{
-        $raids = Raid::all();
+        $raids = Raid::where('time', '>=', date('y-m-d'))->get();
 
         $events = [];
 
@@ -43,7 +43,8 @@ class RaidsController extends Controller
        }
         $cal = generateCalendar($events);
 
-        return View::make('flrs.index', ['cal' => $cal]);
+
+        return View::make('flrs.index', ['cal' => $cal, 'raids' => $raid]);
 	}
 
 
