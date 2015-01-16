@@ -36,6 +36,13 @@
         {{Form::text('username', null, ['class' => 'form-control', 'required' => 'required'])}}
         {{ $errors->first('username', '<p class="text-warning">:message </p>') }}
         </div>
+        </div>
+         <div class="col-md-6">
+        <div class="form-group">
+        {{Form::label('server', 'Server')}}
+        {{Form::text('server', null, ['class' => 'form-control', 'required' => 'required'])}}
+        {{ $errors->first('server', '<p class="text-warning">:message </p>') }}
+        </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">

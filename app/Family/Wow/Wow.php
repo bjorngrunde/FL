@@ -15,18 +15,21 @@ class Wow  {
     private $locale = 'en_GB';
     private $redirect_url = '';
     private $client;
+
     /**
      * @param $user
+     * @param $server
      * @return string
-     * @throws OAuth2\Exception
      */
-    public function getThumbnail($user)
+    public function getThumbnail($user, $server)
     {
         $this->client_id = getenv('BLIZZARD_CLIENT_ID');
         $this->client_secret = getenv('BLIZZARD_CLIENT_SECRET');
+        $corServer = str_replace(' ', '-',  $server);
+
         $parameters = [
             'name'      =>  $user,
-            'server'    =>  'Grim-Batol',
+            'server'    =>  $corServer,
             'fields'    =>  ''
         ];
         $type = 'character';
@@ -50,14 +53,14 @@ class Wow  {
      * @param $fields
      * @return mixed
      */
-    public function getCharacterWithData($user, $fields)
+    public function getCharacterWithData($user, $fields, $server)
     {
         $this->client_id = getenv('BLIZZARD_CLIENT_ID');
         $this->client_secret = getenv('BLIZZARD_CLIENT_SECRET');
-
+        $corServer = str_replace(' ', '-', $server);
         $parameters = [
             'name'      =>  $user,
-            'server'    =>  'Grim-Batol',
+            'server'    =>  $corServer,
             'fields'    =>  $fields
         ];
 

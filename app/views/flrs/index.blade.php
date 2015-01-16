@@ -20,12 +20,13 @@
                 </tr>
                 <tbody>
                     @foreach($raids as $raid)
-                    <tr>
+                    <tr class="dark-sh-well-no-radius">
                         <td><p>{{$raid->title}}</p></td>
                         <td><p>{{$raid->mode}}</p></td>
                         <td><p>{{$raid->time}}</p></td>
                         <td><p>{{$raid->startTime}}</p></td>
                         <td><p>{{$raid->endTime}}</p></td>
+                        <td><p>Ja</p></td>
                     </tr>
                     @endforeach
                 </tbody>
