@@ -26,7 +26,6 @@ class Wow  {
         $this->client_id = getenv('BLIZZARD_CLIENT_ID');
         $this->client_secret = getenv('BLIZZARD_CLIENT_SECRET');
         $corServer = str_replace(' ', '-',  $server);
-
         $parameters = [
             'name'      =>  $user,
             'server'    =>  $corServer,
