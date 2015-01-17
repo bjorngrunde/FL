@@ -9,7 +9,7 @@ return array(
 	|
 	| Here we just defined the path to the application directory. Most likely
 	| you will never need to change this value as the default setup should
-	| work perfectly fine for the vast majority of all our applications.
+	| work perfectly fine for the vast majority of all our Applys.
 	|
 	*/
 
@@ -22,7 +22,7 @@ return array(
 	|
 	| The public path contains the assets for your web application, such as
 	| your JavaScript and CSS files, and also contains the primary entry
-	| point for web requests into these applications from the outside.
+	| point for web requests into these Applys from the outside.
 	|
 	*/
 

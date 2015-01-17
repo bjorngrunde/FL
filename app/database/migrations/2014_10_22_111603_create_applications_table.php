@@ -12,7 +12,7 @@ class CreateApplicationsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('applications', function(Blueprint $table)
+		Schema::create('Applys', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->string('name');
@@ -46,7 +46,7 @@ class CreateApplicationsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('applications');
+		Schema::drop('Applys');
 	}
 
 }

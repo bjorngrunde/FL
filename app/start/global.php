@@ -50,7 +50,7 @@ App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
 });
-
+/**
 App::error(function(Exception $exception, $code)
 {
     switch($code)
@@ -62,13 +62,13 @@ App::error(function(Exception $exception, $code)
             return Response::view('errors.404',[], 404);
         break;
         case 500:
-            return Response::view('errors.404',[], 500);
+            return Response::view('errors.500',[], 500);
             break;
         default:
             return Response::view('errors.default',[], $code);
     }
 
-});
+});*/
 
 App::error(function(Laracasts\Validation\FormValidationException $exception, $code)
 {

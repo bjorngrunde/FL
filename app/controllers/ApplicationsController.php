@@ -1,26 +1,20 @@
 <?php
+use Family\Applys\PostApplicationCommand;
+use Family\Commanding\CommandBus;
 use Family\Forms\ApplicationForm;
-use Illuminate\Routing\Controller;
 
-class ApplicationsController extends Controller
+class ApplicationsController extends BaseController
 {
 
     private $applicationForm;
+    private $commandBus;
 
-    /**
-     * @param ApplicationForm $applicationForm
-     */
-    function __construct(ApplicationForm $applicationForm)
+    function __construct(CommandBus $commandBus, ApplicationForm $applicationForm)
     {
+        $this->commandBus = $commandBus;
         $this->applicationForm = $applicationForm;
     }
 
-    /**
-     * Display a listing of the resource.
-     * GET /applications
-     *
-     * @return Response
-     */
     public function index()
     {
         $applications = Application::with('status', 'comments')->orderBy('id','DESC')->paginate(25);
@@ -28,29 +22,38 @@ class ApplicationsController extends Controller
         return View::make('applications.index', compact('applications'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * GET /applications/create
-     *
-     * @return Response
-     */
     public function create()
     {
         return View::make('applications.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * POST /applications
-     *
-     * @return Response
-     */
     public function store()
     {
         $input = Input::all();
         $this->applicationForm->validate($input);
 
-        $application = new Application;
+        $command = new PostApplicationCommand(
+            $input['name'],
+            $input['lastName'],
+            $input['username'],
+            $input['email'],
+            $input['server'],
+            $input['talents'],
+            $input['klass'],
+            $input['armory'],
+            $input['played'],
+            $input['played'],
+            $input['playClass'],
+            $input['bio'],
+            $input['raidExperience'],
+            $input['reasonToApplyFl'],
+            $input['oldGuild'],
+            $input['progressRaid'],
+            $input['attendance'],
+            $input['screenshot']
+        );
+        $this->commandBus->execute($command);
+       /* $application = new Application;
         $application->name = Input::get('name');
         $application->lastName = Input::get('lastName');
         $application->username = Input::get('username');
@@ -68,17 +71,7 @@ class ApplicationsController extends Controller
         $application->progressRaid = Input::get('progressRaid');
         $application->attendance = Input::get('attendance');
 
-        if (Input::hasFile('screenshot'))
-        {
-            try
-            {
-                $file = Input::file('screenshot');
-                $filepath = '/img/applications/';
-                $filename =  time() . '-application.jpg';
-                $file = $file->move(public_path($filepath),$filename);
 
-                $application->screenshot = $filepath.$filename;
-            }
             catch (Exception $e)
             {
                 return $e->getMessage();
@@ -91,13 +84,14 @@ class ApplicationsController extends Controller
         $status->app_status = 'default';
         $status->save();
 
-        $status->applications()->save($application);
+        $status->Applys()->save($application);
+       */
         return Redirect::back()->withFlashMessage('Tack för din ansökan, vi hör av oss via mail eller in-game när vi fattat ett beslut.');
     }
 
     /**
      * Display the specified resource.
-     * GET /applications/{id}
+     * GET /Applys/{id}
      *
      * @param  int $id
      * @return Response
@@ -110,7 +104,7 @@ class ApplicationsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * GET /applications/{id}/edit
+     * GET /Applys/{id}/edit
      *
      * @param  int $id
      * @return Response
@@ -123,7 +117,7 @@ class ApplicationsController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * PUT /applications/{id}
+     * PUT /Applys/{id}
      *
      * @param  int $id
      * @return Response
@@ -158,7 +152,7 @@ class ApplicationsController extends Controller
             try
             {
                 $file = Input::file('screenshot');
-                $filepath = '/img/applications/';
+                $filepath = '/img/Applys/';
                 $filename =  time() . '-application.jpg';
                 $file = $file->move(public_path($filepath),$filename);
 
@@ -177,7 +171,7 @@ class ApplicationsController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * DELETE /applications/{id}
+     * DELETE /Applys/{id}
      *
      * @param  int $id
      * @return Response

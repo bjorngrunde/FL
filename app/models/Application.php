@@ -1,12 +1,13 @@
 <?php
 
+use Family\Applys\ApplicationWasPosted;
 use Family\Eventing\EventGenerator;
 
 class Application extends Eloquent
 {
     use EventGenerator;
 
-    protected $table = 'Applications';
+    protected $table = 'applications';
 
     protected $fillable = [
         'name',
@@ -15,6 +16,7 @@ class Application extends Eloquent
         'email',
         'server',
         'talents',
+        'klass',
         'armory',
         'played',
         'playClass',
@@ -24,17 +26,12 @@ class Application extends Eloquent
         'oldGuild',
         'progressRaid',
         'attendance',
-        'screenshot',
-        'other',
-        'klass'
+        'screenshot'
     ];
 
     protected $guarded = [];
 
-    /**
-     * @return mixed
-     */
-    public function post($name, $lastName, $username, $email, $server, $talents, $armory, $played, $playClass, $bio, $raidExperience, $reasonToApplyFl, $oldGuild, $progressRaid, $attendance, $screenshot, $klass)
+    public function post($name, $lastName, $username, $email, $server, $talents, $klass, $armory, $played, $playClass, $bio, $raidExperience, $reasonToApplyFl, $oldGuild, $progressRaid, $attendance, $screenshot)
     {
         $this->name             = $name;
         $this->lastName         = $lastName;
@@ -42,6 +39,7 @@ class Application extends Eloquent
         $this->email            = $email;
         $this->server           = $server;
         $this->talents          = $talents;
+        $this->klass            = $klass;
         $this->armory           = $armory;
         $this->played           = $played;
         $this->playClass        = $playClass;
@@ -51,7 +49,6 @@ class Application extends Eloquent
         $this->oldGuild         = $oldGuild;
         $this->progressRaid     = $progressRaid;
         $this->attendance       = $attendance;
-        $this->klass            = $klass;
         if(Input::hasfile($screenshot))
         {
             try

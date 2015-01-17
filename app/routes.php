@@ -117,7 +117,7 @@ Route::get('/', ['before' =>'guest','as' => 'login', 'uses' => 'SessionsControll
 Route::get('/logout', ['as' => 'logout', 'uses' => 'SessionsController@destroy']);
 Route::resource('session', 'SessionsController', ['only' => ['create', 'store', 'destroy']]);
 
-# Applications
+# Applys
 Route::get('/apply', 'ApplicationsController@create')->before('guest');
 Route::resource('application', 'ApplicationsController');
 
