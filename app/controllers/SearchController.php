@@ -4,11 +4,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class SearchController extends Controller
 {
-    public function index()
-    {
-
-    }
-
     public function query()
     {
         $query = Input::get('term');

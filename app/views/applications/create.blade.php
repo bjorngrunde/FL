@@ -7,9 +7,9 @@
     </div>
 </div>
 
-@if(Session::has('Success'))
+@if(Session::has('flash_message'))
 
-    <h4 class="flash-message text-white text-center">{{ Session::get('Success') }}</h4>
+    <h4 class="flash-message text-white text-center">{{ Session::get('flash_message') }}</h4>
 
 @else
     <div class="row login-form">

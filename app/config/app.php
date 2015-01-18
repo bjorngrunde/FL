@@ -127,7 +127,8 @@ return array(
         'Fbf\LaravelComments\LaravelCommentsServiceProvider',
         'Makzumi\Calendar\CalendarServiceProvider',
         'Intervention\Image\ImageServiceProvider',
-        'Golonka\BBCode\BBCodeParserServiceProvider'
+        'Golonka\BBCode\BBCodeParserServiceProvider',
+        'Family\Eventing\EventingsServiceProvider'
 
 	),
 

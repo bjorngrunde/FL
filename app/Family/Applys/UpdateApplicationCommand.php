@@ -3,8 +3,8 @@
 namespace Family\Applys;
 
 
-class PostApplicationCommand {
-
+class UpdateApplicationCommand {
+    public $id;
     public $name;
     public $lastName;
     public $username;
@@ -22,9 +22,11 @@ class PostApplicationCommand {
     public $progressRaid;
     public $attendance;
     public $screenshot;
+    public $app_status;
 
-    public function __construct($name, $lastName, $username, $email, $server, $talents, $klass, $armory, $played, $playClass, $bio, $raidExperience, $reasonToApplyFl, $oldGuild, $progressRaid, $attendance, $screenshot)
+    public function __construct($id ,$name, $lastName, $username, $email, $server, $talents, $klass, $armory, $played, $playClass, $bio, $raidExperience, $reasonToApplyFl, $oldGuild, $progressRaid, $attendance, $screenshot, $app_status)
     {
+        $this->id   = $id;
         $this->name = $name;
         $this->lastName = $lastName;
         $this->username = $username;
@@ -42,6 +44,7 @@ class PostApplicationCommand {
         $this->progressRaid = $progressRaid;
         $this->attendance = $attendance;
         $this->screenshot = $screenshot;
+        $this->app_status = $app_status;
     }
 
-}
+} 

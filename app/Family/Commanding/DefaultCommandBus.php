@@ -6,7 +6,7 @@ use Illuminate\Foundation\Application;
 
 class DefaultCommandBus implements CommandBus
 {
-    protected $commandTranslator;
+    private $commandTranslator;
     private $application;
 
     function __construct(Application $application, CommandTranslator $commandTranslator)
@@ -17,7 +17,6 @@ class DefaultCommandBus implements CommandBus
     public function execute($command)
     {
         $handler = $this->commandTranslator->toCommandHandler($command);
-
         return $this->application->make($handler)->handle($command);
     }
 } 

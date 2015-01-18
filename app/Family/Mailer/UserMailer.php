@@ -17,4 +17,13 @@ class UserMailer extends Mailer
 
         return $this->sendTo($user, $subject, $view, $data);
     }
+
+    public function applicationRegistered(User $user, $event)
+    {
+        $view = 'emails.applys.applicationCreated';
+        $data = ['username' => $user['username'],'name' => $event->application->name, 'lastName' => $event->application->lastName];
+        $subject = 'En ny ansökan har skapats!';
+
+        return $this->sendTo($user, $subject, $view, $data);
+    }
 }

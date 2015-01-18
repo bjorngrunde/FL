@@ -5,23 +5,13 @@ use Illuminate\Routing\Controller;
 
 class RaidsController extends Controller
 {
-    /**
-     * @var EventValidation
-     */
     private $eventValidation;
-
-    /**
-     * @param EventValidation $eventValidation
-     */
 
     public function __construct(EventValidation $eventValidation)
     {
         $this->eventValidation = $eventValidation;
     }
 
-    /**
-     * @return mixed
-     */
     public function index()
 	{
         $raids = Raid::where('time', '>=', date('y-m-d'))->get();
@@ -136,13 +126,7 @@ class RaidsController extends Controller
 
         return View::make('flrs.adminIndex', compact('raids'));
     }
-	/**
-	 * Display the specified resource.
-	 * GET /event/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+
 	public function show($id)
 	{
         $hasRaid = false;
@@ -218,15 +202,6 @@ class RaidsController extends Controller
         return View::make('flrs.show', ['raid' => $raid, 'hasRaid' => $hasRaid, 'datum' => $datum]);
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /event/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-
-
 	public function edit($id)
 	{
         $raid = Raid::with('comments')->find($id);
@@ -234,13 +209,6 @@ class RaidsController extends Controller
         return View::make('flrs.edit', ['raid' => $raid]);
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /event/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function update($id)
 	{
 		$input = Input::all();
@@ -254,13 +222,6 @@ class RaidsController extends Controller
         return Redirect::back()->withFlashMessage('Evenemanget har uppdaterats!');
 	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /event/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function destroy($id)
 	{
 		$raid = Raid::find($id);

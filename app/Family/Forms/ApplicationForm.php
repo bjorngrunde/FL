@@ -9,8 +9,8 @@ class ApplicationForm  extends FormValidator{
     protected $rules = [
         'name'              =>      'required',
         'lastName'          =>      'required',
-        'email'             =>      'required|email',
-        'username'              =>  'required',
+        'email'             =>      'required|email|unique:applications',
+        'username'              =>  'required|unique:applications',
         'server'            =>      'required',
         'talents'           =>      'required',
         'armory'            =>      'required',
