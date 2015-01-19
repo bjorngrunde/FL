@@ -1,7 +1,7 @@
 <div class="row">
 
 </div>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
 <div class="container">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
@@ -11,7 +11,15 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
 
     <ul class="nav navbar-nav navbar-right text-center">
-    <li><a href="#"> <span class="fui-new"></span> </a></li>
+    <li><li class="dropdown"><a href="#" class="" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"> @if(Auth::user()->notifications()->unread()->count() > 0)<span class="badge bagde-warning">{{Auth::user()->notifications()->unread()->count()}}</span> @endif </small> </span> </a>
+        <ul class="dropdown-menu" style="min-width: 150px;">
+        @foreach(Auth::user()->notifications()->unread()->get() as $notification)
+            <li><a href="#"><small>{{$notification->body}}</small></a>
+                        </li>
+        @endforeach
+
+        </ul>
+    </li>
     <li>
        <img src="{{ Auth::user()->profile->thumbnail }}" class="img-circle img-nav" />
     </li>

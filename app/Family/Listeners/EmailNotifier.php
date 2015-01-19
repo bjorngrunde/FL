@@ -18,8 +18,9 @@ class EmailNotifier extends EventListener {
     }
     public function whenRegistrationWasPosted(RegistrationWasPosted $event)
     {
-        dd($event);
-        $this->mailer->welcome($event, $event->password);
+      # $user = User::whereUsername($event->user->username)->firstOrFail();
+
+        #$this->mailer->welcome($user, $event->password);
     }
 
 

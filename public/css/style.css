@@ -62,13 +62,12 @@ body{
 .wrapper-container{
     position: relative;
     width: 100%;
-    background: #151515;
+    background: #111111;
     padding: 20px;
-    border-radius: 10px;
     border-color: #111111;
-    -webkit-box-shadow: 0 0 7px #000;
-    -moz-box-shadow: 0 0 7px #000;
-    box-shadow: 0 0 7px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+    -moz-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
 }
 .dark-sh-well {
     background: #111111;
@@ -88,10 +87,6 @@ body{
     -moz-box-shadow: 0 0 3px #000;
     -webkit-box-shadow: 0 0 3px #000;
     box-shadow: 0 0 3px #000;
-}
-
-.dotted {
-    border-top: 6px dotted #3498db;
 }
 
 .divider-invisible {

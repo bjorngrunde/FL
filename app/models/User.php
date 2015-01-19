@@ -1,7 +1,6 @@
 <?php
 
 use Family\Eventing\EventGenerator;
-use Family\Wow\Wow;
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
@@ -34,7 +33,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $accessType = Role::whereName($role)->firstOrFail();
         $password = str_random(12);
 
-        if ($img = $this->wow->getThumbnail($username, $server))
+
+        if ($img = Wow::getThumbnail($username, $server))
         {
             $avatar = str_replace('avatar', 'profilemain',$img);
 
@@ -63,7 +63,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
             $this->roles()->attach($accessType->id);
 
-            $this->raise(new RegistrationWasPosted($this));
+            $this->raise(new RegistrationWasPosted($this, $password));
 
             return $this;
         }
@@ -75,34 +75,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $notification = new Notification;
         $notification->user()->associate($this);
         return $notification;
-    }
-
-    public function withSubject($subject)
-    {
-        $this->subject = $subject;
-        return $this;
-    }
-
-    public function withBody($body)
-    {
-        $this->body = $body;
-        return $this;
-    }
-
-    public function withType($type)
-    {
-        $this->type =$type;
-        return $this;
-    }
-
-    public function regarding($object)
-    {
-        if(is_object($object))
-        {
-            $this->object_id = $object->id;
-            $this->object_type = get_class($object);
-        }
-        return $this;
     }
 
     public function setPasswordAttribute($password)
@@ -152,7 +124,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Post', 'user_id');
     }
 
-    public function notifikations()
+    public function notifications()
     {
         return $this->hasMany('Notification');
     }

@@ -1,14 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjorn
- * Date: 15-01-19
- * Time: 09:50
- */
 
 namespace Family\Wow;
 
 
-class WowServiceProvider {
 
-} 
+use Illuminate\Support\ServiceProvider;
+
+class WowServiceProvider extends ServiceProvider {
+
+    public function register()
+    {
+        $this->app->bind('wow', function()
+            {
+                return new \Family\Wow\Wow;
+            });
+    }
+}
