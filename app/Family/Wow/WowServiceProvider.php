@@ -1,9 +1,6 @@
 <?php
 
 namespace Family\Wow;
-
-
-
 use Illuminate\Support\ServiceProvider;
 
 class WowServiceProvider extends ServiceProvider {

@@ -229,6 +229,7 @@ select {
     background: #fff;
 }
 .ui-autocomplete {
+    z-index:10001;
     background: #151515;
     border: none;
     border-radius: 3px;
@@ -239,7 +240,7 @@ select {
 }
 .ui-menu-item.ui-state-focus {
     border: none;
-    background: #3498db;
+    background: #375a7f;
     font-weight: bold;
     color: #fff;
 }
@@ -249,11 +250,13 @@ select {
 .today > div {
     color: #2ecc71;
 }
-.proff-green {
-    background: #2ECC71;
-    border-radius: 5px;
-    margin-left: 10px;
-    -moz-box-shadow: 0 0 5px #000;
-    -webkit-box-shadow: 0 0 5px #000;
-    box-shadow: 0 0 5px #000;
+
+.badge-notify{
+    background:red;
+    position:relative;
+    top: -20px;
+    left: -10px;
+}
+.table-responsive {
+    overflow: inherit;
 }

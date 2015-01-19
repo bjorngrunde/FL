@@ -50,12 +50,14 @@ class Notification extends Eloquent
 
     public function sender()
     {
-        return $this->belongsTo('User', 'sender_id');
+         $this->belongsTo('User', 'sender_id');
+        return $this;
     }
 
     public function from($user)
     {
         $this->sender()->associate($user);
+        return $this;
     }
 
     public function scopeUnread($query)
