@@ -1,12 +1,7 @@
 <?php
-
-
-
 # CSRF FILTERs
 Route::when('/admin/*', 'csrf', ['post', 'delete', 'put']);
 Route::when('/apply', 'csrf', ['post']);
-
-
 
 ########## ADMIN #########################
 Route::group(['before' => 'checkRole'], function(){
@@ -96,13 +91,10 @@ Route::group(['before' => 'auth'], function(){
 
         });
             Route::group(['before' => 'checkRole'], function(){
-
                 Route::get('/group/{id}/delete', ['as'=> 'forum-delete-group', 'uses' => 'ForumsController@deleteGroup']);
                 Route::get('/category/{id}/delete', ['as' => 'forum-delete-category', 'uses' => 'ForumsController@deleteCategory']);
                 Route::get('/comment/{id}/delete', ['as' => 'forum-delete-comment', 'uses' => 'ForumsController@deleteComment']);
-
         });
-
     });
 });
 ################# API #########################################
@@ -117,7 +109,7 @@ Route::get('/', ['before' =>'guest','as' => 'login', 'uses' => 'SessionsControll
 Route::get('/logout', ['as' => 'logout', 'uses' => 'SessionsController@destroy']);
 Route::resource('session', 'SessionsController', ['only' => ['create', 'store', 'destroy']]);
 
-# Applications
+# Applys
 Route::get('/apply', 'ApplicationsController@create')->before('guest');
 Route::resource('application', 'ApplicationsController');
 

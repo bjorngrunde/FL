@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
 
     <ul class="nav navbar-nav navbar-right text-center">
-
+    <li><a href="#"> <span class="fui-new"></span> </a></li>
     <li>
        <img src="{{ Auth::user()->profile->thumbnail }}" class="img-circle img-nav" />
     </li>

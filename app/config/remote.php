@@ -22,7 +22,7 @@ return array(
 	|
 	| These are the servers that will be accessible via the SSH task runner
 	| facilities of Laravel. This feature radically simplifies executing
-	| tasks on your servers, such as deploying out these applications.
+	| tasks on your servers, such as deploying out these Applys.
 	|
 	*/
 

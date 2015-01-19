@@ -55,15 +55,7 @@ class ProfilesController extends Controller
 	{
         $type = 'feed, items, progression, talents';
 
-
-        try
-        {
-            $user = User::with('profile', 'threads', 'comments', 'raids', 'server')->whereUsername($username)->firstOrFail();
-        }
-        catch(ModelNotFoundException $e)
-        {
-            return View::make('404')->withFlashMessage('Ingen användare med detta namn kunde hittas!');
-        }
+        $user = User::with('profile', 'threads', 'comments', 'raids', 'server')->whereUsername($username)->firstOrFail();
 
         if(Cache::has($user->username. '-profileData')) {
             $this->WowJsonData = Cache::get($user->username . '-profileData');

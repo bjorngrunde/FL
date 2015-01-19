@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Björn
- * Date: 2014-10-26
- * Time: 20:53
- */
 
 namespace Family\Forms;
 

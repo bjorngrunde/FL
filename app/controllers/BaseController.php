@@ -1,7 +1,16 @@
 <?php
 
+
+use Family\Commanding\ValidationCommandBus;
+
 class BaseController extends Controller {
 
+    protected $CommandBus;
+
+    function __construct(ValidationCommandBus $commandBus)
+    {
+        $this->CommandBus = $commandBus;
+    }
 	/**
 	 * Setup the layout used by the controller.
 	 *

@@ -5,7 +5,11 @@
     <div class="col-md-12">
     <div class="text-center">
     <h5>Ansökningar listas här.</h5>
+    @if(Session::has('flash_message'))
+    <p class="text-success">{{Session::get('flash_message')}}</p>
+    @else
     <p>Här kan du godkänna eller neka en ansökan. De kan också redigeras, eller tas bort helt.</p>
+    @endif
     </div>
     </div>
     <div class="col-md-12">
