@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Routing\Controller;
 
-class PagesController extends Controller {
+class PagesController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.

@@ -128,7 +128,8 @@ return array(
         'Makzumi\Calendar\CalendarServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Golonka\BBCode\BBCodeParserServiceProvider',
-        'Family\Eventing\EventingsServiceProvider'
+        'Family\Eventing\EventingsServiceProvider',
+        'Family\Wow\WowServiceProvider'
 
 	),
 
@@ -198,7 +199,8 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'Entrust'         => 'Zizaco\Entrust\EntrustFacade',
         'Image'           => 'Intervention\Image\Facades\Image',
-        'BBCode'          => 'Golonka\BBCode\Facades\BBCodeParser'
+        'BBCode'          => 'Golonka\BBCode\Facades\BBCodeParser',
+        'Wow'             => 'Family\Wow\Facades\Wow'
 
     ),
 

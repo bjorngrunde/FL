@@ -6,7 +6,7 @@
     <meta name="description" content=""/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
-    <link href="/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/vendor/less/bootstrap.min.css" rel="stylesheet">
     <link href="/css/flat-ui.min.css" rel="stylesheet">
     <link href="/css/admin-style.css" rel="stylesheet">
     <link href="/css/datepicker/default.css" rel="stylesheet">

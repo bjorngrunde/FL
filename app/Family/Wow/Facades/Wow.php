@@ -1,11 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjorn
- * Date: 15-01-19
- * Time: 10:09
- */
+namespace Family\Wow\Facades;
+use Illuminate\Support\Facades\Facade;
 
-class Wow {
 
+class Wow extends Facade
+{
+    protected static function getFacadeAccessor(){return 'wow';}
 } 
