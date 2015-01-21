@@ -1,24 +1,41 @@
 <?php
 
 
-
+use Family\Forms\ProfileForm;
+use Family\Forms\UserEmail;
+use Family\Forms\UserPassword;
+use Family\Wow\Facades\Wow;
 use Illuminate\Support\Facades\Cache;
 
-class ProfilesController extends BaseController
+class ProfilesController extends Controller
 {
+    /**
+     * @var ProfileForm
+     */
+    private $profileForm;
+    private $userEmail;
+    private $userPassword;
+
+    function __construct(ProfileForm $profileForm, UserEmail $userEmail, UserPassword $userPassword)
+    {
+        $this->profileForm = $profileForm;
+        $this->userEmail = $userEmail;
+        $this->userPassword = $userPassword;
+    }
     public function show($username = null)
 	{
+        $WowJsonData = [];
         $type = 'feed, items, progression, talents';
 
         $user = User::with('profile', 'threads', 'comments', 'raids', 'server')->whereUsername($username)->firstOrFail();
 
         if(Cache::has($user->username. '-profileData')) {
-            $this->WowJsonData = Cache::get($user->username . '-profileData');
+            $WowJsonData = Cache::get($user->username . '-profileData');
         }
         else
         {
-            $this->WowJsonData = Wow::getCharacterWithData($user->username, $type, $user->server->server);
-            Cache::add($user->username. '-profileData', $this->WowJsonData, 600);
+            $WowJsonData = Wow::getCharacterWithData($user->username, $type, $user->server->server);
+            Cache::add($user->username. '-profileData', $WowJsonData, 600);
         }
         if(Cache::has($user->username. '-feed'))
         {
@@ -26,7 +43,7 @@ class ProfilesController extends BaseController
         }
         else
         {
-            $feed = ProfileFeed::feed($this->WowJsonData['feed']);
+            $feed = ProfileFeed::feed($WowJsonData['feed']);
             Cache::add($user->username. '-feed', $feed, 600);
         }
         if(Cache::has($user->username. '-gear'))
@@ -35,7 +52,7 @@ class ProfilesController extends BaseController
         }
         else
         {
-            $gear = ProfileFeed::gear($this->WowJsonData['items']);
+            $gear = ProfileFeed::gear($WowJsonData['items']);
             Cache::add($user->username. '-feed', $gear, 600);
         }
 
@@ -46,26 +63,26 @@ class ProfilesController extends BaseController
         }
         else
         {
-            if(array_key_exists('selected', $this->WowJsonData['talents'][0]))
+            if(array_key_exists('selected', $WowJsonData['talents'][0]))
             {
-                $talents = ProfileFeed::talents($this->WowJsonData['talents'][0]);
+                $talents = ProfileFeed::talents($WowJsonData['talents'][0]);
                 Cache::add($user->username. '-talents', $talents, 600);
-                $glyphs = ProfileFeed::glyphs($this->WowJsonData['talents'][0]['glyphs']);
+                $glyphs = ProfileFeed::glyphs($WowJsonData['talents'][0]['glyphs']);
                 Cache::add($user->username. '-glyphs', $glyphs, 600);
             }
             else
             {
-                $talents = ProfileFeed::talents($this->WowJsonData['talents'][1]);
+                $talents = ProfileFeed::talents($WowJsonData['talents'][1]);
                 Cache::add($user->username. '-talents', $talents, 600);
-                $glyphs = ProfileFeed::glyphs($this->WowJsonData['talents'][1]['glyphs']);
+                $glyphs = ProfileFeed::glyphs($WowJsonData['talents'][1]['glyphs']);
                 Cache::add($user->username. '-glyphs', $glyphs, 600);
             }
         }
         $forumFeed = ProfileFeed::forumFeed($user->threads, $user->comments, $user->raids);
         #$progression = $this->profileFeed->progression($this->profileData['progression']);
-        $averageItemLevel = $this->WowJsonData['items']['averageItemLevel'];
+        $averageItemLevel = $WowJsonData['items']['averageItemLevel'];
 
-        $averageItemLevelEquipped = $this->WowJsonData['items']['averageItemLevelEquipped'];
+        $averageItemLevelEquipped = $WowJsonData['items']['averageItemLevelEquipped'];
         return View::make('profiles.show')->with([
             'user' => $user,
             'feed' => $feed,

@@ -1,8 +1,8 @@
 $(document).ready(function() {
     var i = 0;
-    $.get('notifications', function(data){
+    $.get('http://family.dev:8000/notifications', function(data){
         $.each(data, function(index, value) {
-            $('#notificationMenu').append('<li><a href="#">' + value.subject +'</li>');
+            $('#notificationMenu').append('<li><a href="#" class="dark-sh-well-no-radius">' + value.body +'</a></li>');
             if(value.is_read == 0)
             {
                 i++;
@@ -22,7 +22,7 @@ $(document).ready(function() {
                 $('.badge-notify').addClass('hidden');
             }
         }
-        $.get('removereadnotifications', function(data){
+        $.get('http://family.dev:8000/removereadnotifications', function(data){
             console.log(data);
         })
     })

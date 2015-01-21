@@ -6,13 +6,12 @@
         <p class="text-success">{{Session::get('flash_message')}}</p>
     @endif
     <div class="col-md-8">
-    <div class="col-md-12 text-center">
-        <h4>Nyheter</h4>
-        <hr class="dotted" />
+    <div class="col-md-12 text-center dark-sh-well-no-radius">
+        <h3>Nyheter</h3>
     </div>
     <!-- Blog post -->
     @foreach($posts as $post)
-    <div class="col-md-12 dark-sh-well-no-radius">
+    <div class="col-md-12 ">
     <div class="col-md-8 col-md-offset-4">
     <h4><a href="/news/post/{{$post->id}}">{{$post->title}}</a></h4>
     </div>
@@ -41,26 +40,30 @@
     </div>
     </div>
     <div class="col-md-4">
-        <div class="col-md-12 text-center">
-            <h4>Aktiviteter</h4>
-            <hr class="dotted" />
-        </div>
-        <div class="col-md-12 dark-sh-well-no-radius">
-                <p><span class="rogue">Varah</span> har lämnat en kommentar på <span class="text-info">Är Zigvids mamma en Warwulf?</span> </p>
-                <hr class="divider-invisible" />
-                <p><span class="shaman">Loké</span> har anmält sig till <span class="text-info">Siege of Orgrimmar (Mythic)</span> 30 Okt, 19:30</p>
-                <hr class="divider-invisible" />
-                <p><span class="warlock">Feariar</span> har anmält sig till <span class="text-info">Siege of Orgrimmar (Mythic)</span> 30 Okt, 19:30</p>
-                <hr class="divider-invisible" />
-                <p><span class="monk">Miltón</span> har skapat en tråden <span class="text-info">Det är inte gay, om man tar emot??</span></p>
-                <hr class="divider-invisible" />
-                <p><span class="shaman">Zigvid</span> har lämnat en kommentar på <span class="text-info">Är Zigvids mamma en Warwulf?</span> </p>
-                <hr class="divider-invisible" />
+        <div class="col-md-12 text-center dark-sh-well-no-radius">
+            <h3>Forum</h3>
         </div>
         <div class="col-md-12">
-        <div class="col-md-12 text-center">
-            <h5>Datum</h5>
-            <hr class="dotted"/>
+            @foreach($threads as $thread)
+                @if(count($thread->comments) > 0 )
+                  @foreach($thread->comments as $comment)
+                    @if($comment->updated_at == $thread->updated_at)
+                    <p>
+                    <span class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</span>
+                    har lämnat en kommentar på <a href="/forum/thread/{{$comment->thread_id}}">{{$thread->title}}</a>
+                    </p>
+                    @endif
+                @endforeach
+                @endif
+                <p>
+                <span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span> skapade tråden <a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a>
+                </p>
+
+            @endforeach
+        </div>
+
+        <div class="col-md-12 text-center dark-sh-well-no-radius">
+            <h3>Datum</h3>
         </div>
          @foreach($raids as $raid)
          <a href="flrs/show/{{$raid->id}}" class="raid-timer-link">
@@ -76,7 +79,6 @@
         </div>
         </a>
         @endforeach
-        </div>
     </div>
 </div>
 @stop

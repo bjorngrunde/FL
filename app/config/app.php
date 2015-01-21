@@ -130,7 +130,8 @@ return array(
         'Golonka\BBCode\BBCodeParserServiceProvider',
         'Family\Eventing\EventingsServiceProvider',
         'Family\Wow\WowServiceProvider',
-        'Family\Gear\ProfileFeedServiceProvider'
+        'Family\Gear\ProfileFeedServiceProvider',
+        'Andheiberg\Messenger\MessengerServiceProvider'
 
 	),
 

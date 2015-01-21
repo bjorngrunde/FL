@@ -11,7 +11,9 @@
          - <strong> {{$raid->endTime}} </strong>   </p>
          @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
             @if(count($raid->users) > 0)
+
         <a href="/admin/create/{{$raid->id}}/raidgroup" class="btn btn-danger btn-sm">Skapa Raidgrupp</a>
+
             @endif
         @endif
     </div>
@@ -33,10 +35,12 @@
     @elseif($hasRaid == true)
     <div class="text-center">
         {{Form::open(['route' => ['change.status', $raid->id]])}}
+        <div class="form-group">
         {{Form::select('role', ['Tank' => 'Tank', 'Healer' => 'Healer', 'Ranged' => 'Ranged', 'Melee' => 'Melee'],'', ['class' => 'select select-primary'])}}
         {{Form::select('status', ['available' => 'Tillgänglig', 'unsure' => 'Osäker', 'no' => 'Kan ej'],'', ['class' => 'select select-primary'])}}
+        </div>
         <div class="form-group">
-        {{Form::submit('Ändra Status', ['class' => 'btn btn-primary'])}}
+        {{Form::submit('Ändra Status', ['class' => 'btn btn-primary btn-sm'])}}
         </div>
         {{Form::close()}}
         </div>

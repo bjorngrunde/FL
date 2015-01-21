@@ -48,65 +48,8 @@ class UsersController extends BaseController
         );
 
         $this->CommandBus->execute($command);
-        /*
-        $checkPassword = Input::get('password');
-        $checkEmail = Input::get('email');
-        $checkRole = Input::get('role');
-        if(!empty($checkPassword))
-        {
-            $user = User::whereUsername($username)->firstOrFail();
+        return Redirect::back()->withFlashMessage('Profil har uppdaterats');
 
-            $input = Input::only('password', 'password_confirmation');
-
-            $this->userPassword->validate($input);
-
-            $user->password = Input::get('password');
-            $user->save();
-
-            return Redirect::back()->withFlashMessage('Lösenord har uppdaterats');
-        }
-        elseif(!empty($checkEmail))
-        {
-            $user = User::whereUsername($username)->firstOrFail();
-
-            $input = Input::only('email');
-
-            $this->userEmail->validate($input);
-
-            $user->email = Input::get('email');
-            $user->save();
-
-            return Redirect::back()->withFlashMessage('Email har uppdaterats');
-        }
-        elseif(!empty($checkRole))
-        {
-            $user = User::with('roles')->whereUsername($username)->firstOrFail();
-
-            $user->roles()->detach();
-
-            $role = Role::whereId(Input::get('role'))->firstOrFail();
-
-            $user->roles()->attach($role->id);
-
-            return Redirect::back()->withFlashMessage('Användarens roll har uppdaterats till '. $role->name);
-        }
-        else
-        {
-            $user = User::with('profile')->whereUsername($username)->firstOrFail();
-
-            $input = Input::only('name', 'lastName', 'klass', 'rank', 'phone');
-
-            $this->profileForm->validate($input);
-
-            $user->profile->name = Input::get('name');
-            $user->profile->lastName = Input::get('lastName');
-            $user->profile->klass = Input::get('klass');
-            $user->profile->rank = Input::get('rank');
-            $user->profile->phone = Input::get('phone');
-            $user->profile->save();
-
-            return Redirect::back()->withFlashMessage('Profil har uppdaterats');
-        } */
     }
     public function destroy($username)
     {

@@ -18,18 +18,41 @@ class UpdateUserCommandHandler implements CommandHandler {
     }
     public function handle($command)
     {
-        $user = $this->user->edit(
-            $this->$username,
-            $this->$name,
-            $this->$lastName,
-            $this->$klass,
-            $this->$rank,
-            $this->$phone,
-            $this->$password,
-            $this->$password_confirmation,
-            $this->$email,
-            $this->$role
-        );
-        $this->dispatcher->dispatch($user->releaseEvents());
+        if(!empty($command->password))
+        {
+            $user = $this->user->editPassword(
+                $command->username,
+                $command->password
+            );
+            $this->dispatcher->dispatch($user->releaseEvents());
+        }
+        elseif(!empty($command->email))
+        {
+            $user = $this->user->editEmail(
+                $command->username,
+                $command->email
+            );
+            $this->dispatcher->dispatch($user->releaseEvents());
+        }
+        elseif(!empty($command->role))
+        {
+            $user = $this->user->editRole(
+                $command->username,
+                $command->role
+            );
+            $this->dispatcher->dispatch($user->releaseEvents());
+        }
+        else
+        {
+            $user = $this->user->edit(
+                $command->username,
+                $command->name,
+                $command->lastName,
+                $command->klass,
+                $command->rank,
+                $command->phone
+            );
+            $this->dispatcher->dispatch($user->releaseEvents());
+        }
     }
 }

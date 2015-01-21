@@ -5,8 +5,8 @@ class NotificationsController extends BaseController
 
     public function show()
     {
-        if(Request::ajax())
-        {
+        #if(Request::ajax())
+        #{
             $fetcher = new NotificationFetcher(Auth::user());
             if(count($notifications = $fetcher->onlyUnread()->take(10)->fetch()) > 0)
             {
@@ -17,7 +17,7 @@ class NotificationsController extends BaseController
                 $notifications = $fetcher->onlyRead()->take(10)->fetch();
                 return Response::json($notifications);
             }
-        }
+       # }
     }
 
     public function update()

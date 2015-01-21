@@ -4,8 +4,48 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55a42e3bc567b3703b90b4fd0586f16f",
+    "hash": "96e3632ad92cf48963673e4b244f62f8",
     "packages": [
+        {
+            "name": "andheiberg/messenger",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AndreasHeiberg/laravel-messenger.git",
+                "reference": "50969c64c49190157a88eafe4d7a81c648ea2db5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AndreasHeiberg/laravel-messenger/zipball/50969c64c49190157a88eafe4d7a81c648ea2db5",
+                "reference": "50969c64c49190157a88eafe4d7a81c648ea2db5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.x",
+                "laravel/framework": "4.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Andheiberg\\Messenger": "src/"
+                },
+                "classmap": [
+                    "src/migrations"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Andreas Heiberg",
+                    "email": "heibergandreas@gmail.com"
+                }
+            ],
+            "description": "Basic messaging package for laravel",
+            "time": "2014-08-18 03:22:57"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.0.2",
@@ -92,12 +132,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/FbF/Laravel-Comments.git",
+                "url": "https://github.com/FbF/laravel-comments.git",
                 "reference": "bbf35cdf7f30199757da6bde009d6ccd700e9ccb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FbF/Laravel-Comments/zipball/bbf35cdf7f30199757da6bde009d6ccd700e9ccb",
+                "url": "https://api.github.com/repos/FbF/laravel-comments/zipball/bbf35cdf7f30199757da6bde009d6ccd700e9ccb",
                 "reference": "bbf35cdf7f30199757da6bde009d6ccd700e9ccb",
                 "shasum": ""
             },
@@ -578,7 +618,7 @@
                     "email": "jeffrey@laracasts.com"
                 }
             ],
-            "description": "Easy validation for Laravel applications.",
+            "description": "Easy validation for Laravel Applys.",
             "time": "2014-07-25 20:20:38"
         },
         {
@@ -775,7 +815,9 @@
             },
             "type": "library",
             "autoload": {
-                "classmap": [],
+                "classmap": [
+
+                ],
                 "psr-0": {
                     "Makzumi\\Calendar\\": "src/"
                 }
@@ -2237,15 +2279,20 @@
             "time": "2014-09-01 19:24:09"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "zizaco/entrust": 20,
         "fbf/laravel-comments": 20,
-        "makzumi/calendar": 20
+        "makzumi/calendar": 20,
+        "andheiberg/messenger": 20
     },
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": []
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }

@@ -26,11 +26,10 @@ class NotificationFetcher
             DB::raw('count(distinct(notifications.sender_id)) as sender_count'),
             DB::raw("case
                 when count(DISTINCT(notifications.sender_id)) = 1 then users.username
-                when count(DISTINCT(notifications.sender_id)) = 2 then GROUP_CONCAT(users.username SEPARATOR ' and ')
                 when count(DISTINCT(notifications.sender_id)) > 2 then CONCAT(count(distinct(notifications.sender_id)), ' personer' )
                 end as sender_string"))
             ->join('users', 'users.id', '=', 'notifications.sender_id')
-            ->whereRaw('notifications.user_id = ' . $this->user->id)
+            ->whereRaw('user_id = ' . $this->user->id)
             ->groupBy('type', 'object_id');
 
         $notifications = DB::table(DB::raw(sprintf('(%s) as ng', $notificationsGroup->toSql())))
