@@ -260,3 +260,9 @@ select {
 .table-responsive {
     overflow: inherit;
 }
+.glyphicon.dark-icon {
+    color: #ccc;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}

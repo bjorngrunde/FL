@@ -9,20 +9,7 @@
         </button>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
-
     <ul class="nav navbar-nav navbar-right text-center">
-    <li><a href="#"><span class="glyphicon glyphicon-comment"></span> </a> </li>
-    <li><li class="dropdown">
-    <a href="" class="" data-toggle="dropdown">
-    <span class="glyphicon glyphicon-bell"> </span> @if(Auth::user()->notifications()->unread()->count() > 0)<span class="badge badge-notify">{{Auth::user()->notifications()->unread()->count()}}</span> @endif </a>
-        <ul class="dropdown-menu" style="min-width: 150px;">
-        @foreach(Auth::user()->notifications()->unread()->get() as $notification)
-            <li><a href="/notification"><small>{{$notification->body}}</small></a>
-                        </li>
-        @endforeach
-
-        </ul>
-    </li>
     <li>
        <img src="{{ Auth::user()->profile->thumbnail }}" class="img-circle img-nav" />
     </li>
@@ -46,15 +33,27 @@
         <li><a href="/flrs">FLRS</a></li>
         <li><a href="/forum/">Forum</a></li>
         <li><a href="#">Guild</a></li>
-            </ul>
-         </li>
-      </ul>
-      {{Form::open(['route' => 'searchresult', 'method' => 'GET', 'class' => 'navbar-form navbar-left'])}}
+        <li>
+        {{Form::open(['route' => 'searchresult', 'method' => 'GET', 'class' => 'navbar-form navbar-left'])}}
           <div class="form-group">
                <input type="text" class="form-control input-sm" name="auto" id="auto" >
           </div>
                 {{Form::submit('Sök', ['class' => 'btn btn-primary btn-sm'])}}
           {{Form::close()}}
+          </li>
+            </ul>
+       <ul class="nav navbar-nav navbar-right text-center">
+       <li><a href="#"><span class="glyphicon  glyphicon-comment"></span> </a> </li>
+           <li class="dropdown">
+           <a href="#" class="" id="notification" data-toggle="dropdown">
+           <span class="glyphicon glyphicon-bell dark-icon"> </span>
+           <span class="badge badge-notify"></span>  </a>
+               <ul class="dropdown-menu" id="notificationMenu">
+
+             </ul>
+           </li>
+       </ul>
+
     </div>
     </div>
 </nav>

@@ -2,8 +2,9 @@
 
 
 namespace Family\Gear;
-use Family\Wow\Wow;
-use Illuminate\Support\Facades\Cache;
+
+
+use Family\Wow\Facades\Wow;
 
 class ProfileFeed extends GearToLinks {
     protected $newsFeed = [];
@@ -12,26 +13,9 @@ class ProfileFeed extends GearToLinks {
     protected $glyphsCollection = [];
     protected $forumFeed = [];
     private $i = 0;
-    /**
-     * @var
-     */
-    private $wow;
 
-    /**
-     * @param Wow $wow
-     */
-    public function __construct(Wow $wow)
-    {
-        $this->wow = $wow;
-    }
-    /**
-     * @param $feed
-     * @return array
-     */
     public function feed($feed)
     {
-
-
     foreach($feed as $data)
     {
         if($this->i < 7)
@@ -50,7 +34,7 @@ class ProfileFeed extends GearToLinks {
             }
             elseif($data['type'] == 'LOOT')
             {
-                $item = $this->wow->getItem($data['itemId']);
+                $item = Wow::getItem($data['itemId']);
                 if(array_key_exists('name', $item))
                 {
                 $loot = 'Lootade  <a href="#" rel="item=' . $data["itemId"] . '">' . $item["name"] . '</a>';
@@ -63,10 +47,7 @@ class ProfileFeed extends GearToLinks {
     return $this->newsFeed;
     }
 
-    /**
-     * @param $gear
-     * @return array
-     */
+
     public function gear($gear)
     {
         unset($gear['averageItemLevelEquipped']);
@@ -106,22 +87,6 @@ class ProfileFeed extends GearToLinks {
         return $this->glyphsCollection;
     }
 
-    /** public function title($data)
-     * {
-     * foreach ($data as $title) {
-     * if (array_key_exists('selected', $title)) {
-     * $untrimmed = $title['name'];
-     * $title = ltrim($untrimmed, '%s,');
-     *
-     * return $title;
-     * }
-     * }
-     * }
-     * @param $threads
-     * @param $comments
-     * @param $raids
-     * @return array
-     */
     public function forumFeed($threads, $comments, $raids)
     {
         $threadsArray   =   $threads->toArray();

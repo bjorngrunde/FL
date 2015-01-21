@@ -52,9 +52,11 @@ Route::group(['before' => 'auth'], function(){
     Route::get('/dashboard', 'PagesController@index');
 
     #notiser (lazy way)
-    #Route::get('/notification', 'NotificationsController@checkNotification');
-    #SÖK
+    Route::get('/notifications', 'NotificationsController@show');
+    Route::get('/removereadnotifications','NotificationsController@update');
 
+
+    #SÖK
     Route::get('/query', 'SearchController@query');
     Route::get('/searchresult', ['as' => 'searchresult', 'uses' => 'SearchController@searchResult']);
 

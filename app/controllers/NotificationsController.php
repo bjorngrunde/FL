@@ -1,15 +1,43 @@
 <?php
-
+use Family\Notification\NotificationFetcher;
 class NotificationsController extends BaseController
 {
-    public function checkNotification()
+
+    public function show()
     {
-        $notifications = Auth::user()->notifications()->unread()->get();
-        foreach ($notifications as $notification)
+        if(Request::ajax())
         {
-             $notification->is_read = 1;
-            $notification->save();
+            $fetcher = new NotificationFetcher(Auth::user());
+            if(count($notifications = $fetcher->onlyUnread()->take(10)->fetch()) > 0)
+            {
+                return Response::json($notifications);
+            }
+            else
+            {
+                $notifications = $fetcher->onlyRead()->take(10)->fetch();
+                return Response::json($notifications);
+            }
         }
-        return Redirect::back();
+    }
+
+    public function update()
+    {
+        if(Request::ajax())
+        {
+            $notifications = Notification::whereUser_id(Auth::user()->id)->whereIs_read(0)->get();
+            if(count($notifications) > 0)
+            {
+                foreach($notifications as $notification)
+                {
+                    $notification->is_read = true;
+                    $notification->save();
+                }
+                return Response::json('Notifications is read and removed.');
+            }
+            else
+            {
+                return Response::json('Nothing to remove');
+            }
+        }
     }
 } 

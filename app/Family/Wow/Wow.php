@@ -2,8 +2,6 @@
 
 namespace Family\Wow;
 
-
-use Illuminate\Support\Facades\Facade;
 use OAuth2;
 use OAuth2\GrantType;
 use OAuth2\AuthorizationCode;

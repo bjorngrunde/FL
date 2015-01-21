@@ -3,37 +3,11 @@
 use Family\Forms\ProfileForm;
 use Family\Forms\UserEmail;
 use Family\Forms\UserPassword;
-use Illuminate\Routing\Controller;
+use Family\Users\UpdateUserCommand;
 
-class UsersController extends Controller
+class UsersController extends BaseController
 {
-    /**
-     * @var userPassword
-     */
-    private $userPassword;
 
-    /**
-     * @var UserEmail
-     */
-    private $userEmail;
-    /**
-     * @var ProfileForm
-     */
-    private $profileForm;
-
-    /**
-     * @param userPassword $userPassword
-     * @param UserEmail $userEmail
-     * @param ProfileForm $profileForm
-     * @internal param ProfileData $profileData
-     */
-    public function __construct(UserPassword $userPassword,UserEmail $userEmail,ProfileForm $profileForm )
-    {
-
-        $this->userPassword = $userPassword;
-        $this->userEmail = $userEmail;
-        $this->profileForm = $profileForm;
-    }
     public function index()
     {
         $users = User::orderBy('id', 'DESC')->paginate(25);
@@ -49,6 +23,32 @@ class UsersController extends Controller
 
     public function update($username)
     {
+        $name = Input::get('name');
+        $lastName = Input::get('lastName');
+        $klass = Input::get('klass');
+        $rank = Input::get('rank');
+        $phone = Input::get('phone');
+        $password = Input::get('password');
+        $password_confirmation = Input::get('password_confirmation');
+        $email = Input::get('email');
+        $role = Input::get('role');
+
+        $command = new UpdateUserCommand(
+            $username,
+            $name,
+            $lastName,
+            $klass,
+            $rank,
+            $phone,
+            $password,
+            $password_confirmation,
+            $email,
+            $role
+
+        );
+
+        $this->CommandBus->execute($command);
+        /*
         $checkPassword = Input::get('password');
         $checkEmail = Input::get('email');
         $checkRole = Input::get('role');
@@ -106,7 +106,7 @@ class UsersController extends Controller
             $user->profile->save();
 
             return Redirect::back()->withFlashMessage('Profil har uppdaterats');
-        }
+        } */
     }
     public function destroy($username)
     {
