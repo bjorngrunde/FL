@@ -12,8 +12,10 @@
         "makzumi/calendar": "dev-master",
 		"intervention/image": "~2.0",
         "golonka/bbcodeparser": "1.3.*",
-        "andheiberg/messenger": "dev-master"
-	},
+        "andheiberg/messenger": "dev-master",
+        "jeroen-g/laravel-photo-gallery": "1.*"
+
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",

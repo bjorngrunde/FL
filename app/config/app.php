@@ -131,7 +131,8 @@ return array(
         'Family\Eventing\EventingsServiceProvider',
         'Family\Wow\WowServiceProvider',
         'Family\Gear\ProfileFeedServiceProvider',
-        'Andheiberg\Messenger\MessengerServiceProvider'
+        'Andheiberg\Messenger\MessengerServiceProvider',
+        'JeroenG\LaravelPhotoGallery\LaravelPhotoGalleryServiceProvider'
 
 	),
 

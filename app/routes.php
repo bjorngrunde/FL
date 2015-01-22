@@ -55,7 +55,13 @@ Route::group(['before' => 'auth'], function(){
     Route::get('/notifications', 'NotificationsController@show');
     Route::get('/removereadnotifications','NotificationsController@update');
 
-
+    #Galleri
+    Route::get('gallery', ['as' => 'gallery', 'uses' => 'GalleryController@index']);
+    Route::group(array('prefix' => 'gallery'), function()
+    {
+        Route::resource('album', 'AlbumsController', array('except' => array('index')));
+        Route::resource('album.photo', 'PhotosController', array('except' => array('index')));
+    });
     #SÖK
     Route::get('/query', 'SearchController@query');
     Route::get('/searchresult', ['as' => 'searchresult', 'uses' => 'SearchController@searchResult']);

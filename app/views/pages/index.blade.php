@@ -29,9 +29,6 @@
                 <li><p><span class="fa-calendar"></span> Skriven av: <span class="{{$post->user->profile->klass}}">{{$post->user->username}}</span></p></li>
             </ul>
         </div>
-        <div class="col-md-12">
-        {{$posts->links()}}
-        </div>
         </div>
     @endforeach
 
