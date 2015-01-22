@@ -17,6 +17,7 @@
      <a href="/forum/thread/edit/{{$thread->id}}" class="btn btn-warning btn-sm">Redigera tråd</a>
      <a id="{{$thread->id}}" href="#" class="btn btn-danger btn-sm delete_thread" data-toggle="modal" data-target="#thread_delete">Ta bort</a>
      @endif
+     <a href="#" data-toggle="modal" data-target="#comment_form" class="btn btn-primary btn-sm pull-right">Svara på tråd</a>
 </div>
 </div>
 <div class="row">
@@ -28,7 +29,7 @@
 
 
         </div>
-        <div class="panel-body">
+        <div class="panel-body dark-sh-well-no-radius">
         <div class="col-sm-12">
         <div class="col-sm-2 text-center">
        <img src="{{$thread->author->profile->thumbnail}}" class="img-circle img-responsive profile-img-avatar center-block" />
@@ -41,7 +42,7 @@
              <p>{{BBCode::parse($thread->body)}}</p>
             </div>
             <div class="col-sm-12">
-                <a href="#" data-toggle="modal" data-target="#comment_form" class="btn btn-primary btn-sm pull-right">Svara på tråd</a>
+
             </div>
             <hr class="divider" />
             </div>
@@ -52,7 +53,7 @@
 <div class="row">
     <div class="col-sm-12">
         @foreach($comments as $comment)
-            <div class="col-sm-12 dark-sh-well">
+            <div class="col-sm-12 dark-sh-well-no-radius">
             <div class="col-sm-12">
              @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
                 <a href="#" class="pull-right" data-toggle="modal" data-target="#comment-delete"><span id="{{$comment->id}}" class="fui-cross delete_comment"></span></a>
@@ -71,7 +72,9 @@
             </div>
             </div>
         @endforeach
+        <a href="#" data-toggle="modal" data-target="#comment_form" class="btn btn-primary btn-sm pull-right">Svara på tråd</a>
     </div>
+
     <div class="col-sm-12 text-center">
     {{$comments->links()}}
     </div>

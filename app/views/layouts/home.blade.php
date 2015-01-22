@@ -40,13 +40,16 @@
    <script src="../../js/flat-ui.min.js"></script>
    <script src="../../js/app.js"></script>
    <script src="../../js/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+   <script src="../../js/notifications/notiser.js"></script>
    <script>
     $('#auto').autocomplete({
         source: '/query',
         minLength: 2
     });
    </script>
-   @yield('javascript')
+  <script>
 
+   </script>
+   @yield('javascript')
   </body>
 </html>

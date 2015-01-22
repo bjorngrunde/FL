@@ -8,8 +8,8 @@
     @if(Session::has('flash_message'))
         <p class="text-info">{{Session::get('flash_message')}}</p>
      @endif
-    <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#group_form">Lägg till Grupp</a>
-    <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#category_form">Lägg till Kategori</a>
+    <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#group_form">Lägg till Grupp</a>
+    <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#category_form">Lägg till Kategori</a>
 </div>
     @endif
 </div>

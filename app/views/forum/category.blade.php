@@ -23,8 +23,9 @@
         <tbody class="panel-heading">
         <tr>
             <th><h6>{{$category->title}}</h6></th>
-            <th><P>Svar</P></th>
             <th><p>Skapad av</p></th>
+            <th><P>Svar</P></th>
+            <th><p>Senaste inlägg</p></th>
 
             @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
             <th class="pull-right">
@@ -39,9 +40,18 @@
             @foreach($threads as $thread)
                     <tr>
                     <td><strong><p><a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a></p></strong></td>
+                    <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
                     <td>{{count($thread->comments)}}</td>
-                    <td><img src="{{$thread->author->profile->thumbnail}}" class="img-circle img-responsive thumbnail-mini pull-left" />
-                    <p class="{{$thread->author->profile->klass}}"> {{$thread->author->username}} </p>
+                    <td>
+                        @if(count($thread->comments) > 0)
+                            @foreach($thread->comments as $comment)
+                                @if($comment->updated_at == $thread->updated_at)
+                                    <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
+                                @endif
+                            @endforeach
+                        @else
+                            <p>Inga inlägg än..</p>
+                        @endif
                     </td>
                     </tr>
             @endforeach

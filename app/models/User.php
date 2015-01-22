@@ -1,5 +1,6 @@
 <?php
 
+use Andheiberg\Messenger\Traits\UserCanMessage;
 use Family\Eventing\EventGenerator;
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
@@ -7,15 +8,16 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 use Zizaco\Entrust\HasRole;
 use Family\Registration\RegistrationWasPosted;
+use Family\Users\UserWasUpdated;
 
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	use UserTrait, RemindableTrait, HasRole, EventGenerator;
+	use UserTrait, RemindableTrait, HasRole, EventGenerator, UserCanMessage;
 
 	protected $table = 'users';
 
-    protected $fillable = ['username', 'email', 'password'];
+    protected $fillable = ['username', 'email', 'password', 'user_id'];
 
 	protected $hidden = array('password', 'remember_token');
 
@@ -69,7 +71,54 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         }
 
     }
+    public function editPassword($username, $password)
+    {
+        $user = User::whereUsername($username)->firstOrFail();
 
+        $user->password = $password;
+        $user->save();
+
+        $this->raise(new UserWasUpdated($user, $username));
+
+        return $this;
+    }
+    public function editEmail($username, $email)
+    {
+        $user = User::whereUsername($username)->firstOrFail();
+
+        $user->email = $email;
+        $user->save();
+
+        $this->raise(new UserWasUpdated($user, $username));
+        return $this;
+    }
+    public function editRole($username, $role)
+    {
+        $user = User::with('roles')->whereUsername($username)->firstOrFail();
+
+        $user->roles()->detach();
+
+        $newRole = Role::whereId($role)->firstOrFail();
+
+        $user->roles()->attach($newRole->id);
+
+        $this->raise(new UserWasUpdated($user, $username));
+        return $this;
+    }
+    public function edit($username, $name, $lastName, $klass, $rank, $phone)
+    {
+            $user = User::with('profile')->whereUsername($username)->firstOrFail();
+
+            $user->profile->name = $name;
+            $user->profile->lastName = $lastName;
+            $user->profile->klass = $klass;
+            $user->profile->rank = $rank;
+            $user->profile->phone = $phone;
+            $user->profile->save();
+
+            $this->raise(new UserWasUpdated($user, $username));
+            return $this;
+    }
     public function newNotification()
     {
         $notification = new Notification;
@@ -77,6 +126,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $notification;
     }
 
+    public function hasRaid($id)
+    {
+        $user = User::with('raids')->whereUsername(Auth::user()->username)->firstOrFail();
+
+           foreach($user->raids as $raid)
+           {
+               if($raid->id == $id)
+               {
+                   return true;
+               }
+           }
+        return false;
+    }
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);

@@ -11,7 +11,8 @@
 		"fbf/laravel-comments": "dev-master",
         "makzumi/calendar": "dev-master",
 		"intervention/image": "~2.0",
-        "golonka/bbcodeparser": "1.3.*"
+        "golonka/bbcodeparser": "1.3.*",
+        "andheiberg/messenger": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

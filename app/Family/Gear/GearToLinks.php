@@ -5,10 +5,6 @@ namespace Family\Gear;
 
 class GearToLinks {
 
-    /**
-     * @param array $data
-     * @return string
-     */
     public function getLink($data)
     {
 

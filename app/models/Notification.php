@@ -50,8 +50,7 @@ class Notification extends Eloquent
 
     public function sender()
     {
-         $this->belongsTo('User', 'sender_id');
-        return $this;
+         return $this->belongsTo('User', 'sender_id');
     }
 
     public function from($user)

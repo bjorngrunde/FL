@@ -18,8 +18,8 @@
 		@endif
 	</div>
 
-	<div class="form-group">
-		{{ Form::submit(trans('laravel-comments::messages.form.submit'), array('class' => 'btn btn-primary btn-lg')) }}
+	<div class="form-group text-center">
+		{{ Form::submit(trans('laravel-comments::messages.form.submit'), array('class' => 'btn btn-primary btn-sm')) }}
 	</div>
 
 {{ Form::close() }}

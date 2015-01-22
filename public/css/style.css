@@ -80,7 +80,7 @@ body{
 }
 
 .dark-sh-well-no-radius {
-    background: #111111;
+    background: #151515;
     margin-bottom: 20px;
     border-radius: none;
     padding: 10px;
@@ -259,4 +259,23 @@ select {
 }
 .table-responsive {
     overflow: inherit;
+}
+.glyphicon.dark-icon {
+    color: #ccc;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+
+.text-success {
+    color: #00bc8c;
+}
+.text-warning {
+    color: #F39C12;
+}
+.text-danger {
+    color: #E74C3C;
+}
+.text-info {
+    color: #3498DB;
 }

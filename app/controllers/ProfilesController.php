@@ -4,66 +4,38 @@
 use Family\Forms\ProfileForm;
 use Family\Forms\UserEmail;
 use Family\Forms\UserPassword;
-use Family\Gear\ProfileFeed;
-use Family\Wow\Wow;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Routing\Controller;
+use Family\Wow\Facades\Wow;
 use Illuminate\Support\Facades\Cache;
 
 class ProfilesController extends Controller
 {
     /**
-     * @var Wow
-     * @var UserPassword
-     * @var UserEmail
-     */
-    private $wow;
-    private $userPassword;
-    private $userEmail;
-    private $WowJsonData;
-    /**
-     * @var ProfileFeed
-     */
-    private $profileFeed;
-    /**
      * @var ProfileForm
      */
     private $profileForm;
+    private $userEmail;
+    private $userPassword;
 
-    /**
-     * @param Wow $wow
-     * @param UserPassword $userPassword
-     * @param UserEmail $userEmail
-     * @param ProfileFeed $profileFeed
-     * @param ProfileForm $profileForm
-     *
-     */
-    public function  __construct(Wow $wow, UserPassword $userPassword, UserEmail $userEmail, ProfileFeed $profileFeed, ProfileForm $profileForm)
+    function __construct(ProfileForm $profileForm, UserEmail $userEmail, UserPassword $userPassword)
     {
-
-        $this->wow = $wow;
-        $this->userPassword = $userPassword;
-        $this->userEmail = $userEmail;
-        $this->profileFeed = $profileFeed;
         $this->profileForm = $profileForm;
+        $this->userEmail = $userEmail;
+        $this->userPassword = $userPassword;
     }
-    /**
-     * @param $username
-     * @return mixed
-     */
     public function show($username = null)
 	{
+        $WowJsonData = [];
         $type = 'feed, items, progression, talents';
 
         $user = User::with('profile', 'threads', 'comments', 'raids', 'server')->whereUsername($username)->firstOrFail();
 
         if(Cache::has($user->username. '-profileData')) {
-            $this->WowJsonData = Cache::get($user->username . '-profileData');
+            $WowJsonData = Cache::get($user->username . '-profileData');
         }
         else
         {
-            $this->WowJsonData = $this->wow->getCharacterWithData($user->username, $type, $user->server->server);
-            Cache::add($user->username. '-profileData', $this->WowJsonData, 600);
+            $WowJsonData = Wow::getCharacterWithData($user->username, $type, $user->server->server);
+            Cache::add($user->username. '-profileData', $WowJsonData, 600);
         }
         if(Cache::has($user->username. '-feed'))
         {
@@ -71,7 +43,7 @@ class ProfilesController extends Controller
         }
         else
         {
-            $feed = $this->profileFeed->feed($this->WowJsonData['feed']);
+            $feed = ProfileFeed::feed($WowJsonData['feed']);
             Cache::add($user->username. '-feed', $feed, 600);
         }
         if(Cache::has($user->username. '-gear'))
@@ -80,7 +52,7 @@ class ProfilesController extends Controller
         }
         else
         {
-            $gear = $this->profileFeed->gear($this->WowJsonData['items']);
+            $gear = ProfileFeed::gear($WowJsonData['items']);
             Cache::add($user->username. '-feed', $gear, 600);
         }
 
@@ -91,26 +63,26 @@ class ProfilesController extends Controller
         }
         else
         {
-            if(array_key_exists('selected', $this->WowJsonData['talents'][0]))
+            if(array_key_exists('selected', $WowJsonData['talents'][0]))
             {
-                $talents = $this->profileFeed->talents($this->WowJsonData['talents'][0]);
+                $talents = ProfileFeed::talents($WowJsonData['talents'][0]);
                 Cache::add($user->username. '-talents', $talents, 600);
-                $glyphs = $this->profileFeed->glyphs($this->WowJsonData['talents'][0]['glyphs']);
+                $glyphs = ProfileFeed::glyphs($WowJsonData['talents'][0]['glyphs']);
                 Cache::add($user->username. '-glyphs', $glyphs, 600);
             }
             else
             {
-                $talents = $this->profileFeed->talents($this->WowJsonData['talents'][1]);
+                $talents = ProfileFeed::talents($WowJsonData['talents'][1]);
                 Cache::add($user->username. '-talents', $talents, 600);
-                $glyphs = $this->profileFeed->glyphs($this->WowJsonData['talents'][1]['glyphs']);
+                $glyphs = ProfileFeed::glyphs($WowJsonData['talents'][1]['glyphs']);
                 Cache::add($user->username. '-glyphs', $glyphs, 600);
             }
         }
-        $forumFeed = $this->profileFeed->forumFeed($user->threads, $user->comments, $user->raids);
+        $forumFeed = ProfileFeed::forumFeed($user->threads, $user->comments, $user->raids);
         #$progression = $this->profileFeed->progression($this->profileData['progression']);
-        $averageItemLevel = $this->WowJsonData['items']['averageItemLevel'];
+        $averageItemLevel = $WowJsonData['items']['averageItemLevel'];
 
-        $averageItemLevelEquipped = $this->WowJsonData['items']['averageItemLevelEquipped'];
+        $averageItemLevelEquipped = $WowJsonData['items']['averageItemLevelEquipped'];
         return View::make('profiles.show')->with([
             'user' => $user,
             'feed' => $feed,
@@ -123,10 +95,6 @@ class ProfilesController extends Controller
         ]);
 	}
 
-    /**
-     * @param $username
-     * @return mixed
-     */
     public function edit($username)
     {
         if(Auth::user()->username == $username)

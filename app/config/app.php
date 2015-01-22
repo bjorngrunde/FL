@@ -129,7 +129,9 @@ return array(
         'Intervention\Image\ImageServiceProvider',
         'Golonka\BBCode\BBCodeParserServiceProvider',
         'Family\Eventing\EventingsServiceProvider',
-        'Family\Wow\WowServiceProvider'
+        'Family\Wow\WowServiceProvider',
+        'Family\Gear\ProfileFeedServiceProvider',
+        'Andheiberg\Messenger\MessengerServiceProvider'
 
 	),
 
@@ -200,7 +202,8 @@ return array(
         'Entrust'         => 'Zizaco\Entrust\EntrustFacade',
         'Image'           => 'Intervention\Image\Facades\Image',
         'BBCode'          => 'Golonka\BBCode\Facades\BBCodeParser',
-        'Wow'             => 'Family\Wow\Facades\Wow'
+        'Wow'             => 'Family\Wow\Facades\Wow',
+        'ProfileFeed'     => 'Family\Gear\Facades\ProfileFeed'
 
     ),
 

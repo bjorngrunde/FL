@@ -2,18 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2015_01_19_182859_add_sender_id_to_notifications_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2015_01_19_204800_add_user_id_to_users_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/NotificationsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Family/Forms/RoleForm.php" />
+      <change type="DELETED" beforePath="C:\Users\Bjorn\Projects\family\app\views\404.blade.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/errors/404.blade.php" afterPath="$PROJECT_DIR$/app/views/errors/404.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php" afterPath="$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Notification.php" afterPath="$PROJECT_DIR$/app/models/Notification.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Wow/WowServiceProvider.php" afterPath="$PROJECT_DIR$/app/Family/Wow/WowServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/admin.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/admin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/vendor/less/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/css/vendor/less/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/partials/nav.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/partials/nav.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" afterPath="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/NotificationsController.php" afterPath="$PROJECT_DIR$/app/controllers/NotificationsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PagesController.php" afterPath="$PROJECT_DIR$/app/controllers/PagesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ProfilesController.php" afterPath="$PROJECT_DIR$/app/controllers/ProfilesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Users/UpdateUserCommandHandler.php" afterPath="$PROJECT_DIR$/app/Family/Users/UpdateUserCommandHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Users/UpdateUserValidator.php" afterPath="$PROJECT_DIR$/app/Family/Users/UpdateUserValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/User.php" afterPath="$PROJECT_DIR$/app/models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/controllers/UsersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forum/category.blade.php" afterPath="$PROJECT_DIR$/app/views/forum/category.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/packages/fbf/laravel-comments/form.blade.php" afterPath="$PROJECT_DIR$/app/views/packages/fbf/laravel-comments/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/home.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/flrs/index.blade.php" afterPath="$PROJECT_DIR$/app/views/flrs/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forum/index.blade.php" afterPath="$PROJECT_DIR$/app/views/forum/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/index.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/notifications/notiser.js" afterPath="$PROJECT_DIR$/public/js/notifications/notiser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/flrs/show.blade.php" afterPath="$PROJECT_DIR$/app/views/flrs/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/vendor/less/variables.less" afterPath="$PROJECT_DIR$/public/css/vendor/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forum/thread.blade.php" afterPath="$PROJECT_DIR$/app/views/forum/thread.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -39,101 +53,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="variables.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/vendor/less/variables.less">
+      <file leaf-file-name="NotificationFetcher.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="24476" max-vertical-offset="24998">
-              <caret line="844" column="27" selection-start-line="844" selection-start-column="27" selection-end-line="844" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="2465">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/NotificationsController.php">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="580">
-              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="5597">
+              <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3596">
-              <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="348">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_01_19_204800_add_user_id_to_users_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_19_204800_add_user_id_to_users_table.php">
+      <file leaf-file-name="Message.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/Andheiberg/Messenger/Models/Message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1131">
-              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+            <state vertical-scroll-proportion="-1.2416745" vertical-offset="1305" max-vertical-offset="2378">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/forum/index.blade.php">
+      <file leaf-file-name="2013_05_23_114020_create_conversations_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/migrations/2013_05_23_114020_create_conversations_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="4756">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1073">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/partials/nav.blade.php">
+      <file leaf-file-name="2013_05_23_114039_create_messages_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/migrations/2013_05_23_114039_create_messages_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="1914">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1218">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <file leaf-file-name="2013_05_24_140404_create_participants_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/migrations/2013_05_24_140404_create_participants_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="7743">
-              <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1218">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_01_19_182859_add_sender_id_to_notifications_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_19_182859_add_sender_id_to_notifications_table.php">
+      <file leaf-file-name="2015_01_20_202528_add_user_id_to_notifications_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_20_202528_add_user_id_to_notifications_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1131">
-              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Notification.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Notification.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="2987">
-              <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminNotifier.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0209324" vertical-offset="0" max-vertical-offset="1421">
-              <caret line="40" column="69" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -152,57 +146,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/SearchController.php" />
-        <option value="$PROJECT_DIR$/app/config/family.php" />
-        <option value="$PROJECT_DIR$/app/Family/Eventing/EventingsServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/controllers/RaidsController.php" />
-        <option value="$PROJECT_DIR$/app/Family/Commanding/CommandTranslator.php" />
-        <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
-        <option value="$PROJECT_DIR$/app/Family/Commanding/CommandBus.php" />
-        <option value="$PROJECT_DIR$/app/Family/Commanding/DefaultCommandBus.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/PostApplicationValidation.php" />
-        <option value="$PROJECT_DIR$/app/Family/Commanding/ValidationCommandBus.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/PostApplicationValidator.php" />
-        <option value="$PROJECT_DIR$/app/Family/Forms/ApplicationForm.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/UpdateApplicationCommand.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/UpdatedApplicationCommandHandler.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/ApplicationWasUpdated.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/RemoveApplicationCommand.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/UpdateApplicationCommandHandler.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/RemoveApplicationCommandHandler.php" />
-        <option value="$PROJECT_DIR$/app/Family/Applys/ApplicationWasRemoved.php" />
-        <option value="$PROJECT_DIR$/app/models/Application.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ApplicationsController.php" />
-        <option value="$PROJECT_DIR$/app/views/applications/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Family/Forms/RegistrationAutoForm.php" />
-        <option value="$PROJECT_DIR$/app/controllers/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/app/Family/Registration/PostRegistrationValidator.php" />
-        <option value="$PROJECT_DIR$/app/Family/Registration/PostRegistrationCommand.php" />
-        <option value="$PROJECT_DIR$/app/Family/Registration/PostRegistrationCommandHandler.php" />
-        <option value="$PROJECT_DIR$/app/start/global.php" />
-        <option value="$PROJECT_DIR$/app/Family/Wow/Wow.php" />
-        <option value="$PROJECT_DIR$/app/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Family/Wow/Facades/Wow.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_01_18_135257_create_Notifications_Table.php" />
-        <option value="$PROJECT_DIR$/app/models/User.php" />
-        <option value="$PROJECT_DIR$/app/Family/Listeners/EmailNotifier.php" />
-        <option value="$PROJECT_DIR$/app/Family/Registration/RegistrationWasPosted.php" />
-        <option value="$PROJECT_DIR$/app/controllers/PagesController.php" />
-        <option value="$PROJECT_DIR$/app/views/pages/index.blade.php" />
         <option value="$PROJECT_DIR$/public/css/vendor/variables.less" />
         <option value="$PROJECT_DIR$/public/css/vendor/bootstrap.css" />
-        <option value="$PROJECT_DIR$/app/views/layouts/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Family/Wow/WowServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/admin.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/vendor/less/variables.less" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/app/controllers/NotificationsController.php" />
-        <option value="$PROJECT_DIR$/app/views/layouts/partials/nav.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_01_19_204800_add_user_id_to_users_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_01_19_182859_add_sender_id_to_notifications_table.php" />
+        <option value="$PROJECT_DIR$/app/Family/Notification/Facades/NotificationFetcher.php" />
+        <option value="$PROJECT_DIR$/app/Family/Listeners/EmailNotifier.php" />
+        <option value="$PROJECT_DIR$/app/Family/Notification/NotificationFetcherServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/views/layouts/index.blade.php" />
         <option value="$PROJECT_DIR$/app/models/Notification.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_01_19_204800_add_user_id_to_users_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_01_20_202528_add_user_id_to_notifications_table.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/public/css/vendor/less/variables.less" />
+        <option value="$PROJECT_DIR$/app/views/layouts/partials/nav.blade.php" />
+        <option value="$PROJECT_DIR$/app/Family/Gear/GearToLinks.php" />
+        <option value="$PROJECT_DIR$/app/Family/Gear/ProfileFeedServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Family/Wow/Wow.php" />
+        <option value="$PROJECT_DIR$/app/Family/Gear/Facades/ProfileFeed.php" />
+        <option value="$PROJECT_DIR$/app/Family/Gear/ProfileFeed.php" />
+        <option value="$PROJECT_DIR$/app/Family/Users/UserWasUpdated.php" />
+        <option value="$PROJECT_DIR$/app/Family/helpers.php" />
+        <option value="$PROJECT_DIR$/app/Family/Users/UpdateUserCommand.php" />
+        <option value="$PROJECT_DIR$/app/controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/app/Family/Users/UpdateUserCommandHandler.php" />
+        <option value="$PROJECT_DIR$/app/Family/Forms/RoleForm.php" />
+        <option value="$PROJECT_DIR$/app/Family/Users/UpdateUserValidator.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/app/views/layouts/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/PagesController.php" />
+        <option value="$PROJECT_DIR$/app/views/pages/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ProfilesController.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/404.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/flrs/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/flrs/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/packages/fbf/laravel-comments/form.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/forum/thread.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/forum/category.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/forum/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/notifications/notiser.js" />
+        <option value="$PROJECT_DIR$/app/controllers/NotificationsController.php" />
+        <option value="$PROJECT_DIR$/app/start/global.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_01_21_205552_add_user_id_to_users_table.php" />
         <option value="$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php" />
+        <option value="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/models/User.php" />
+        <option value="$PROJECT_DIR$/app/models/Message.php" />
+        <option value="$PROJECT_DIR$/app/models/Conversation.php" />
+        <option value="$PROJECT_DIR$/app/models/Participant.php" />
       </list>
     </option>
   </component>
@@ -303,119 +297,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Listeners" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -427,7 +309,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="style.cs&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;app&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;appli&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/ApplicationsController.php&#10;applic&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;rout&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;user&#9;null&#9;null&#10;ro&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;rou&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;command&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Commanding/CommandHandler.php&#10;st&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;regis&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/RegistrationController.php&#10;variabl&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;sty&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;varia&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;style&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;variables.le&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;pages&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PagesController.php&#10;Sessions&#9;null&#9;null&#10;sessionC&#9;null&#9;null&#10;posts&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PostsController.php&#10;pos&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PostsController.php&#10;cre&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/views/posts/create.blade.php&#10;style.c&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;raidsc&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/RaidsController.php&#10;Post&#9;null&#9;null&#10;profileda&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="route&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;User&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;variable&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;style&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;nav&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/views/layouts/partials/nav.blade.php&#10;variabl&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;va&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;style.cs&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;app&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;appli&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/ApplicationsController.php&#10;applic&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;rout&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;user&#9;null&#9;null&#10;ro&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;rou&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;command&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Commanding/CommandHandler.php&#10;st&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;regis&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/RegistrationController.php&#10;sty&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;varia&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;variables.le&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;pages&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PagesController.php&#10;Sessions&#9;null&#9;null&#10;sessionC&#9;null&#9;null&#10;posts&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PostsController.php&#10;pos&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PostsController.php&#10;cre&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/views/posts/create.blade.php&#10;style.c&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;raidsc&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/RaidsController.php&#10;Post&#9;null&#9;null&#10;profileda&#9;null&#9;null" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -865,13 +747,26 @@
       <option name="project" value="LOCAL" />
       <updated>1421684330359</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Merge branch&#10;">
+      <created>1421705718900</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1421705718900</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Merge branch&#10;">
+      <created>1421801393157</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1421801393158</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08981481" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -887,7 +782,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08981481" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -951,394 +845,437 @@
     <MESSAGE value="update profiles&#10;" />
     <MESSAGE value="domain design" />
     <MESSAGE value="Merge branch 'master' of https://github.com/bjorngrunde/FL&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/bjorngrunde/FL&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;" />
+    <MESSAGE value="Merge branch&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/controllers/RegistrationController.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/Wow/WowServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="957">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PostsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="3625">
-          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Forms/ApplicationForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="957">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/applications/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49666983" vertical-offset="0" max-vertical-offset="1943">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Commanding/CommandBus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.093819804" vertical-offset="0" max-vertical-offset="1343">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2032763" vertical-offset="1387" max-vertical-offset="3129">
-          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Forms/RegistrationAutoForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1051">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Applys/PostApplicationCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1341">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Commanding/CommandTranslator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Commanding/DefaultCommandBus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
-          <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Commanding/CommandHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Applys/PostApplicationCommandHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1341">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Eventing/EventDispatcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1073">
-          <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Eventing/EventGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="812">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/family.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1341">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Applys/PostApplicationValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Commanding/ValidationCommandBus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="693">
-          <caret line="23" column="69" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.38629878" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="20" column="115" selection-start-line="20" selection-start-column="115" selection-end-line="20" selection-end-column="115" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Eventing/EventListener.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21923937" vertical-offset="0" max-vertical-offset="1341">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1218">
+          <caret line="9" column="82" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/RaidsInstanceController.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/Registration/PostRegistrationCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6263982" vertical-offset="882" max-vertical-offset="3276">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="2178" max-vertical-offset="4830">
-          <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/start/global.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90604025" vertical-offset="801" max-vertical-offset="2142">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Wow/Wow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15659955" vertical-offset="0" max-vertical-offset="2415">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Eventing/EventingsServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
-          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ApplicationsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7024608" vertical-offset="696" max-vertical-offset="2100">
-          <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/golonka/bbcodeparser/src/Golonka/BBCode/Facades/BBCodeParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1341">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1051">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/Registration/PostRegistrationCommandHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8277405" vertical-offset="3132" max-vertical-offset="4473">
-          <caret line="202" column="53" selection-start-line="202" selection-start-column="53" selection-end-line="202" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="2583">
-          <caret line="90" column="109" selection-start-line="90" selection-start-column="109" selection-end-line="90" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Permission.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1341">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="336">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_18_135257_create_Notifications_Table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="966">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="987" max-vertical-offset="2919">
-          <caret line="75" column="48" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1189">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#7#42#0#PHP" expanded="false" />
+            <element signature="e#40#77#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
-          <caret line="18" column="79" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Family/Registration/RegistrationWasPosted.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20357941" vertical-offset="0" max-vertical-offset="1341">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
           <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Listeners/EmailNotifier.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/ForumsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25055927" vertical-offset="0" max-vertical-offset="1341">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="8033">
+          <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/vendor/less/mixins/grid.less">
+    <entry file="file://$PROJECT_DIR$/app/Family/Users/UpdateUserCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2688">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1160">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="776" max-vertical-offset="2001">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <folding>
+            <element signature="e#7#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Applys/PostApplicationCommandHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.076117985" vertical-offset="80" max-vertical-offset="1305">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Wow/Facades/Wow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Wow/WowServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="580">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="1653">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/admin.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/Users/UserWasUpdated.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1798">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/Users/UpdateUserValidator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2523">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.77925783" vertical-offset="602" max-vertical-offset="1740">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+          <folding>
+            <element signature="e#33#62#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Forms/RoleForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2759277" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/forum/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/Forms/ApplicationForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="4756">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Registration/PostRegistrationValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Users/UpdateUserCommandHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.358706" vertical-offset="167" max-vertical-offset="1827">
+          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+          <folding>
+            <element signature="e#33#70#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.50289017" vertical-offset="522" max-vertical-offset="3161">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1417826246000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1417826246000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/vendor/less/variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.88" vertical-offset="0" max-vertical-offset="24998">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="7743">
-          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="7127" max-vertical-offset="8294">
+          <caret line="275" column="3" selection-start-line="275" selection-start-column="3" selection-end-line="275" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/vendor/less/variables.less">
+    <entry file="file://$PROJECT_DIR$/app/Family/Listeners/EmailNotifier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="24476" max-vertical-offset="24998">
-          <caret line="844" column="27" selection-start-line="844" selection-start-column="27" selection-end-line="844" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="1247">
+          <caret line="34" column="71" selection-start-line="34" selection-start-column="71" selection-end-line="34" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/partials/nav.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1914">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="602" max-vertical-offset="1740">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/NotificationsController.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/ProfilesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="580">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.4414843" vertical-offset="203" max-vertical-offset="5046">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#8#37#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4414843" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="16" column="92" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3596">
-          <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2030" max-vertical-offset="3654">
+          <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_19_204800_add_user_id_to_users_table.php">
+    <entry file="file://$PROJECT_DIR$/app/views/errors/404.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1131">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="e#160#335#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/packages/fbf/laravel-comments/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="928">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_19_182859_add_sender_id_to_notifications_table.php">
+    <entry file="file://$PROJECT_DIR$/app/views/forum/thread.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1131">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="4988">
+          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Notification.php">
+    <entry file="file://$PROJECT_DIR$/app/views/forum/category.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="2987">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="609" max-vertical-offset="2900">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/forum/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3073218" vertical-offset="0" max-vertical-offset="4756">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/flrs/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6146436" vertical-offset="522" max-vertical-offset="6322">
+          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/flrs/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38629878" vertical-offset="232" max-vertical-offset="1769">
+          <caret line="22" column="96" selection-start-line="22" selection-start-column="96" selection-end-line="22" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1079" max-vertical-offset="2581">
+          <caret line="69" column="152" selection-start-line="69" selection-start-column="152" selection-end-line="69" selection-end-column="152" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/notifications/notiser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="4" column="88" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/NotificationsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="1392">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="957" max-vertical-offset="2987">
+          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0209324" vertical-offset="0" max-vertical-offset="1421">
-          <caret line="40" column="69" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2139" max-vertical-offset="3335">
+          <caret line="105" column="21" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
+          <folding>
+            <element signature="e#37#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63463366" vertical-offset="0" max-vertical-offset="1682">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8344434" vertical-offset="3270" max-vertical-offset="6264">
+          <caret line="143" column="72" selection-start-line="143" selection-start-column="72" selection-end-line="143" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_18_135257_create_Notifications_Table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75166506" vertical-offset="283" max-vertical-offset="1334">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="2465">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/migrations/2013_05_23_114020_create_conversations_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1073">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/migrations/2013_05_23_114039_create_messages_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1218">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/migrations/2013_05_24_140404_create_participants_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1218">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_20_202528_add_user_id_to_notifications_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1131">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Conversation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13796385" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13796385" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ConversationsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.41389152" vertical-offset="435" max-vertical-offset="3944">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Participant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16555661" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="5597">
+          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1051">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/andheiberg/messenger/src/Andheiberg/Messenger/Models/Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2416745" vertical-offset="1305" max-vertical-offset="2378">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

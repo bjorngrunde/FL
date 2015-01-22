@@ -18,21 +18,24 @@ class EmailNotifier extends EventListener {
     }
     public function whenRegistrationWasPosted(RegistrationWasPosted $event)
     {
-      # $user = User::whereUsername($event->user->username)->firstOrFail();
+       $user = User::whereUsername($event->user->username)->firstOrFail();
 
-        #$this->mailer->welcome($user, $event->password);
+        $this->mailer->welcome($user, $event->password);
     }
 
 
     public function whenApplicationWasPosted(ApplicationWasPosted $event)
     {
-        $users = User::with('roles')->get();
+        $users = User::whereHas('roles', function($q){
+            $q->where('role_id', '=', 1)->orWhere('role_id', '=', 2);
+        })->get();
 
-        foreach ($users as $user)
+        foreach($users as $user)
         {
-            if($user->hasRole('Utvecklare') || $user->hasRole('Admin') )
+            if($user->hasRole('Admin') || $user->hasRole('Utvecklare'))
             {
                 $this->mailer->applicationRegistered($user, $event);
+
             }
         }
     }
