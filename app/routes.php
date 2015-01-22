@@ -51,6 +51,8 @@ Route::group(['before' => 'auth'], function(){
     # Dashboard
     Route::get('/dashboard', 'PagesController@index');
 
+    #notiser (lazy way)
+    #Route::get('/notification', 'NotificationsController@checkNotification');
     #SÖK
 
     Route::get('/query', 'SearchController@query');

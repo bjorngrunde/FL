@@ -34,11 +34,11 @@ class AdminNotifier extends EventListener
         {
            if($user->hasRole('Admin') || $user->hasRole('Utvecklare'))
            {
-
                $user->newNotification()
+                   ->from(Auth::user())
                    ->withType('RegistrationWasPosted')
                    ->withSubject('En ny användare har skapats')
-                   ->withBody(Auth::user()->username.' har skapat en ny användare.')
+                   ->withBody('{{user}} har skapat en ny användare.')
                    ->regarding($event->user)
                    ->deliver();
            }
