@@ -89,6 +89,15 @@ body{
     box-shadow: 0 0 3px #000;
 }
 
+.dark-sh-well-no-radius-img {
+    background: #151515;
+    margin-bottom: 20px;
+    border-radius: none;
+    -moz-box-shadow: 0 0 3px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+}
+
 .divider-invisible {
     border: none;
 }

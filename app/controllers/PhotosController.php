@@ -2,6 +2,7 @@
 
 use JeroenG\LaravelPhotoGallery\Validators as Validators;
 
+
 class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosController {
 
 	/**
@@ -37,11 +38,11 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 	 */
 	public function create()
 	{
-		$albumArray = $this->album->all()->toArray();
+		$albumArray = Album::whereUser_id(Auth::user()->id)->get();
 		$dropdown[0] = '';
 
 		if (empty($albumArray)) {
-			$dropdown[0] = Lang::get('gallery::gallery.none') . Lang::choice('gallery::gallery.album', 2);
+			$dropdown[0] = Lang::get('gallery.none') . Lang::choice('gallery.album', 2);
 		}
 
 		foreach ($albumArray as $album) {
@@ -67,8 +68,10 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 		if($validation->passes())
 		{
 			$filename = str_random(4) . Input::file('photo_path')->getClientOriginalName();
-			$destination = "uploads/photos/";
-            $upload = Input::file('photo_path')->move($destination, $filename);
+			Image::make(Input::file('photo_path'))->save('uploads/photos/'. $filename);
+            Image::make(Input::file('photo_path'))->resize(300,200)->save('uploads/thumbnails/'. $filename);
+
+           /* $upload = Input::file('photo_path')->move($destination, $filename);
 
 			if( $upload == false )
 			{
@@ -76,7 +79,7 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
        			->withInput()
        			->withErrors($validation->errors)
        			->with('message', \Lang::get('gallery::gallery.errors'));
-			}
+			} */
 
 			$this->photo->create($input, $filename);
 			return Redirect::route("gallery.album.show", array('id' => $input['album_id']));

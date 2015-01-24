@@ -3,6 +3,7 @@
 namespace Family\Gallery;
 
 use Photo;
+use Auth;
 
 class EloquentPhotoRepository implements PhotoRepository {
 	
@@ -32,7 +33,9 @@ class EloquentPhotoRepository implements PhotoRepository {
 		$newPhoto->photo_name = $input['photo_name'];
 		$newPhoto->photo_description = $input['photo_description'];
 		$newPhoto->photo_path = $filename;
+        $newPhoto->thumbnail = $filename;
 		$newPhoto->album_id = $input['album_id'];
+        $newPhoto->user_id = Auth::user()->id;
 		return $newPhoto->save();
 	}
 
