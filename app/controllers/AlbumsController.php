@@ -57,17 +57,19 @@ class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsCo
         if ($validation->passes())
         {
             $filename = str_random(4) . Input::file('thumbnail')->getClientOriginalName();
-            $destination = "uploads/thumbnails/";
-            $upload = Input::file('thumbnail')->move($destination, $filename);
+            Image::make(Input::file('thumbnail'))->resize(300, 200)->save('uploads/thumbnails/'. $filename);
 
-            if ($upload == false)
+            #$destination = "uploads/thumbnails/";
+            #$upload = Input::file('thumbnail')->move($destination, $filename);
+
+           /* if ($upload == false)
             {
                 return Redirect::to('gallery.album.create')
                     ->withInput()
                     ->withErrors($validation->errors)
                     ->with('message', Lang::get('gallery::gallery.errors'));
             }
-
+*/
             $this->album->create($input, $filename);
             return Redirect::route('gallery')
                 ->with('flash_message', Lang::get('gallery::gallery.success'));

@@ -15,7 +15,7 @@ class CommentsController extends Controller
             if ($comment->delete()) {
                 return Redirect::back()->withFlashMessage('Kommentaren har tagits bort');
             }
-            return Redirect::back()->withFlashMessage('Något gick fel. :(');
+            return Redirect::back()->withFlashMessage('Något gick fel. :');
         }
     }
 }

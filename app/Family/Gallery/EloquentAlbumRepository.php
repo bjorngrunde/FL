@@ -14,12 +14,12 @@ class EloquentAlbumRepository implements AlbumRepository {
 
 	public function find($id)
 	{
-		return Album::find($id);
+		return Album::with('user')->find($id);
 	}
 
 	public function findOrFail($id)
 	{
-		return Album::findOrFail($id);
+		return Album::with('user')->findOrFail($id);
 	}
 
 	public function create($input, $filename)

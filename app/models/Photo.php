@@ -1,6 +1,6 @@
 <?php
 
-class Photo extends \Eloquent {
+class Photo extends Eloquent {
     
     /**
      * The table used by this model

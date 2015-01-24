@@ -8,5 +8,7 @@ return array(
 	'Post',
     'Application',
     'Raid',
+    'Album',
+    'Photo'
 
 );

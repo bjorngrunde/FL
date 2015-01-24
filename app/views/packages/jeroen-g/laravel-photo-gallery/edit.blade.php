@@ -4,7 +4,7 @@
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <b>{{ Lang::get('gallery::gallery.edit') . ' ' . Lang::choice("gallery::gallery.$type", 1) }}</b>
+            <b>{{ Lang::get('gallery.edit') . ' ' . Lang::choice("gallery.$type", 1) }}</b>
         </div>
         <div class="panel-body">
 
