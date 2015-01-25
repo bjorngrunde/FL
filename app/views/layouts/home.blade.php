@@ -38,7 +38,7 @@
     @include('layouts/partials/admin_footer')
 </section>
     <script src="../../js/vendor/jquery.min.js"></script>
-   <script src="../../js/flat-ui.min.js"></script>
+   <script src="../../js/bootstrap.min.js"></script>
    <script src="../../js/app.js"></script>
    <script src="../../js/jquery-ui-1.11.2/jquery-ui.min.js"></script>
    <script src="../../js/notifications/notiser.js"></script>

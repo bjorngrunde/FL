@@ -2,6 +2,7 @@
 
 use Andheiberg\Messenger\Traits\UserCanMessage;
 use Family\Eventing\EventGenerator;
+use Family\Users\UserWasRemoved;
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
@@ -24,14 +25,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public function post($name, $lastName, $username, $email, $rank, $klass, $server, $role)
     {
-        if($role == 'Utvecklare')
-        {
-            if(!Auth::user()->hasRole('Utvecklare'))
-            {
-                return Redirect::back()->withFlashMessage('Du har inte behörighet att ange den rollen');
-            }
-        }
-
         $accessType = Role::whereName($role)->firstOrFail();
         $password = str_random(12);
 
@@ -118,6 +111,36 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
             $this->raise(new UserWasUpdated($user, $username));
             return $this;
+    }
+
+    public function remove($username)
+    {
+        $user = User::with('profile', 'server', 'threads', 'comments', 'raids')->whereUsername($username)->firstOrFail();
+        $comments = Fbf\LaravelComments\Comment::whereUser_id($user->id)->delete();
+        $photos = Photo::whereUser_id($user->id)->delete();
+        $albums = Album::whereUser_id($user->id)->delete();
+
+        $user->profile->delete();
+        $user->server->delete();
+        if(count($user->threads) > 0)
+        {
+            $user->threads()->delete();
+        }
+        if(count($user->comments) > 0)
+        {
+
+            $user->comments()->delete();
+        }
+        if(count($user->raids) > 0)
+        {
+            $user->raids()->detach();
+        }
+        $user->delete();
+
+
+
+        $this->raise(new UserWasRemoved($user));
+        return $this;
     }
     public function newNotification()
     {

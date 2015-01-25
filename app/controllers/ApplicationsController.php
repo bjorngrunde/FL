@@ -81,7 +81,7 @@ class ApplicationsController extends BaseController
             $input['app_status']
         );
         $this->CommandBus->execute($command);
-        return Redirect::back()->with('Success','Du har nu uppdaterat ansökan.');
+        return Redirect::back()->with('flash_message','Du har nu uppdaterat ansökan.');
     }
 
     public function destroy($id = null)
@@ -89,7 +89,7 @@ class ApplicationsController extends BaseController
         $command = new RemoveApplicationCommand($id);
         $this->CommandBus->execute($command);
 
-        return Redirect::back()->with('flash_message', 'Ansökan bortagen!');
+        return Redirect::to('/admin/applications')->with('flash_message', 'Ansökan bortagen!');
     }
 
 }

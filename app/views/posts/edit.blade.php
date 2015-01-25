@@ -3,11 +3,18 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h5 class="text-center">Skapa ett inlägg</h5>
-            @if(Session::has('flash_message'))
-                <p class="text-success">{{Session::get('flash_message')}}</p>
-            @endif
+            <h3 class="text-center">Rediger en nyhet</h3>
         </div>
+         <div class="col-md-6">
+               <ol class="breadcrumb">
+                <li><a href="/admin">Admin Dashboard</a></li>
+                <li><a href="/admin/posts/index">Nyheter</a></li>
+                <li class="active">Redigera Nyhet</li>
+               </ol>
+               </div>
+               <div class="col-md-6">
+                <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+               </div>
         <div class="col-md-12">
             {{Form::model($post,['method' => 'PATCH','route' =>[ 'posts.update', $post->id], 'files' => true])}}
             <div class="form-group">

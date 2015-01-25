@@ -22,7 +22,7 @@
 $(document).ready(function() {
 	$('a.lightbox').iLightbox({
 		type: 'image',
-		loop: false,
+		loop: true,
 		arrows: true,
 		closeBtn: true,
 		title: true,
@@ -39,7 +39,7 @@ $(document).ready(function() {
 			iframe: '<div class="iLightbox-media iLightbox-iframe"></div>',
 			title: '<div class="iLightbox-details"></div>',
 			error: '<div class="iLightbox-error">The requested content cannot be loaded.<br/>Please try again later.</div>',
-			closeBtn: '<a href="#" class="iLightbox-close"></a>',
+			closeBtn: '<a href="#" class="iLightbox-close">X</a>',
 			prevBtn: '<div class="iLightbox-btnPrev"><a href="javascript:;">Föregående</a></div>',
 			nextBtn: '<div class="iLightbox-btnNext"><a href="javascript:;">Nästa</a></div>'
 		}

@@ -3,6 +3,7 @@
 use Family\Forms\ProfileForm;
 use Family\Forms\UserEmail;
 use Family\Forms\UserPassword;
+use Family\Users\RemoveUserCommand;
 use Family\Users\UpdateUserCommand;
 
 class UsersController extends BaseController
@@ -10,8 +11,18 @@ class UsersController extends BaseController
 
     public function index()
     {
-        $users = User::orderBy('id', 'DESC')->paginate(25);
+        $users = User::orderBy('id', 'DESC')->paginate(15);
         return View::make('users.index', compact('users'));
+    }
+
+    public function show($id)
+    {
+        $user = User::with('profile', 'server', 'threads', 'comments','raids')->whereId($id)->firstOrFail();
+        if($user == null)
+        {
+            return Redirect::back()->withFlashMessage('Något gick fel. Användaren existerar inte');
+        }
+        return View::make('users.show', ['user' => $user]);
     }
 
     public function edit($username)
@@ -53,12 +64,9 @@ class UsersController extends BaseController
     }
     public function destroy($username)
     {
-        $user = User::with('profile')->whereUsername($username)->firstOrFail();
+        $command = new RemoveUserCommand($username);
+        $this->CommandBus->execute($command);
 
-        $user->profile->delete();
-
-        $user->delete();
-
-        return Redirect::back()->withFlashMessage('Användaren har tagits bort');
+        return Redirect::to('/admin/users/')->withFlashMessage('Användaren har tagits bort');
     }
 }

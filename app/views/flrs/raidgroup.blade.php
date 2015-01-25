@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
-        <h5 class="text-center">Skapa Raidgrupp för {{$raid->title}} med datum {{$raid->time}}</h5>
+        <h3 class="text-center">Skapa Raidgrupp för {{$raid->title}} med datum {{$raid->time}}</h3>
        {{Form::open(['method' => 'POST', 'route' => ['save.raidgroup', $raid->id]])}}
        <div class="col-sm-12">
 
@@ -69,7 +69,7 @@
                 </ul>
             </div>
             <div class="text-center col-md-12">
-                {{Form::submit('Skapa Raidgrupp', ['class' => 'btn btn-primary btn-lg'])}}
+                {{Form::submit('Skapa Raidgrupp', ['class' => 'btn btn-primary btn-sm'])}}
             </div>
         </div>
         {{Form::close()}}

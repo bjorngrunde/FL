@@ -46,14 +46,16 @@
                   @foreach($thread->comments as $comment)
                     @if($comment->updated_at == $thread->updated_at)
                     <p>
-                    <span class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</span>
+                    <a href="/profile/{{$comment->author->username}}">
+                    <span class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</span></a>
                     har lämnat en kommentar på <a href="/forum/thread/{{$comment->thread_id}}">{{$thread->title}}</a>
                     </p>
                     @endif
                 @endforeach
                 @endif
                 <p>
-                <span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span> skapade tråden <a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a>
+                <a href="/profile/{{$thread->author->username}}">
+                <span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></a> skapade tråden <a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a>
                 </p>
 
             @endforeach

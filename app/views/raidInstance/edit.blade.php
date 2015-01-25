@@ -1,14 +1,20 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="well well-lg">
 <div class="row">
-<div class="col-md-12 text-center">
-    <h4>Redigera instansen: {{$instance->title}}</h4>
-    @if(Session::has('flash_message'))
-        <p class="text-success">{{Session::get('flash_message')}}</p>
-    @endif
-</div>
+<div class="col-md-12">
+        <h3 class="text-center">Redigera Instans</h3>
+    </div>
+     <div class="col-md-6">
+           <ol class="breadcrumb">
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/flrs/instance">Instanser</a></li>
+            <li class="active">Redigera Instans</li>
+           </ol>
+           </div>
+           <div class="col-md-6">
+            <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+           </div>
 </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -23,11 +29,10 @@
                 {{Form::file('backgroundImg')}}
                 </div>
                 <div class="form-group text-center">
-                    {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+                    {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
                 </div>
                 {{Form::close()}}
             </div>
         </div>
     </div>
-</div>
 @stop

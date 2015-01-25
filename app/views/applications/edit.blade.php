@@ -1,36 +1,29 @@
 @extends('layouts.admin')
 
 @section('content')
-
 <div class="row">
-    <div class="col-md-12 text-center">
-        <h4>Redigera Ansökan</h4>
-        @if(Session::has('flash_message'))
-        <p class="text-success">{{ Session::get('flash_message') }}</p>
-        @else
-        <p>Ändrar du beslutet till "Accepterad" så kan du skapa en användare från ansökan.</p>
-        @endif
+<div class="col-md-12 text-center">
+    <h3>Redigera ansökan för: {{$application->name. ' ' .$application->lastName}}</h3>
     </div>
+     <div class="col-md-6">
+       <ol class="breadcrumb">
+        <li><a href="/admin">Admin Dashboard</a></li>
+        <li><a href="/admin/applications/"> Ansökningar</a></li>
+        <li><a href="/admin/applications/{{$application->id}}">Ansökan - {{$application->name . ' '. $application->lastName}}</a></li>
+        <li class="active">Redigera</li>
+       </ol>
+       </div>
+       <div class="col-md-6">
+        <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+       </div>
     </div>
-
     <div class="row">
         <div class="col-md-12">
           @if($application->status->app_status == 'approved')
-          {{ Form::model($application, ['method'=>'POST', 'route' => ['registration.store'],'files' => true]) }}
+          {{ Form::model($application, ['method'=>'POST', 'route' => ['registration.store']]) }}
           <div class="col-md-12 text-center">
+          <p>Status är Godkänd. Skapa en ny användare.</p>
           </div>
-            <div class="col-md-6">
-            <div class="form-group">
-                <p class="text-center">Ändra status på ansökan</p>
-                {{ Form::select('app_status', ['default' => 'Väntar på beslut', 'denied' => 'Nekad', 'approved' => 'Accepterad'], $application->status->app_status, ['class' => 'form-control']) }}
-            </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                <p class="text-center">Sätt en rank</p>
-                {{Form::select('rank', ['Trial' => 'Trial', 'Social' => 'Social', 'Raider' => 'Raider', 'Officer' => 'Officer', 'Guild Master' => 'Guild Master'], 'Trial', ['class' => 'form-control'])}}
-                </div>
-            </div>
              <div class="col-md-6">
             <div class="form-group">
                 {{ Form::label('name', 'Förnamn') }}
@@ -47,14 +40,14 @@
             </div>
             <div class="col-md-6">
             <div class="form-group">
-                {{ Form::label('username', 'Din huvudkaraktär') }}
+                {{ Form::label('username', 'Huvudkaraktär') }}
                 {{ Form::text('username', null,  ['class' => 'form-control', 'required' => 'required']) }}
                 {{ $errors->first('username', '<p class="text-warning">:message </p>') }}
             </div>
             </div>
              <div class="col-md-6">
             <div class="form-group">
-                {{ Form::label('email', 'Din Email') }}
+                {{ Form::label('email', 'Email') }}
                 {{ Form::email('email', null, ['class' => 'form-control', 'required' => 'required']) }}
                 {{ $errors->first('email', '<p class="text-warning">:message </p>') }}
             </div>
@@ -68,7 +61,7 @@
             </div>
              <div class="col-md-6">
             <div class="form-group">
-                {{ Form::label('klass', 'Vilken klass?', ['class' => 'text-white']) }}
+                {{ Form::label('klass', 'Klass?') }}
                 {{ Form::select('klass',['death-knight' => 'Death Knight', 'druid' => 'Druid','hunter' => 'Hunter', 'mage'=>'Mage', 'monk' => 'Monk','priest' =>
                  'Priest','paladin' => 'Paladin', 'rogue' => 'Rogue', 'shaman' => 'Shaman','warlock' => 'Warlock', 'warrior' => 'Warrior' ],null,
                    ['class' => 'form-control', 'required' => 'required']) }}
@@ -76,25 +69,32 @@
             </div>
             </div>
               <div class="col-md-6">
-                     <div class="form-group">
-                     {{ Form::label('role', 'Sätt en behörighet') }}
-                     {{ Form::select('role',['Utvecklare' => 'Utvecklare', 'Admin' => 'Admin','Medlem' => 'Medlem', 'Inaktiv'=>'Inaktiv', 'Bannad' => 'Bannad'],'',
-                        ['class' => 'form-control', 'required' => 'required']) }}
-                     {{ $errors->first('klass', '<p class="text-warning">:message </p>') }}
-                     </div>
-                     </div>
+                 <div class="form-group">
+                 {{ Form::label('role', 'Sätt en behörighet') }}
+                 {{ Form::select('role',['Utvecklare' => 'Utvecklare', 'Admin' => 'Admin','Medlem' => 'Medlem', 'Inaktiv'=>'Inaktiv', 'Bannad' => 'Bannad'],'',
+                    ['class' => 'form-control', 'required' => 'required']) }}
+                 {{ $errors->first('klass', '<p class="text-warning">:message </p>') }}
+                 </div>
+             </div>
+             <div class="col-md-6">
+                 <div class="form-group">
+                 {{Form::label('rank', 'Sätt en rank')}}
+                 {{Form::select('rank', ['Trial' => 'Trial', 'Social' => 'Social', 'Raider' => 'Raider', 'Officer' => 'Officer', 'Guild Master' => 'Guild Master'], 'Trial', ['class' => 'form-control'])}}
+                 </div>
+             </div>
 
             <div class="col-md-12">
             <div class="form-group text-center">
-            {{ Form::submit('Skapa användare', ['class' => 'btn btn-primary btn-lg']) }}
+            {{ Form::submit('Skapa användare', ['class' => 'btn btn-primary btn-sm']) }}
             </div>
             </div>
+            {{Form::close()}}
            @else
            {{ Form::model($application, ['method'=>'PATCH', 'route' => ['application.update', $application->id ],'files' => true]) }}
 
             <div class="col-md-12">
             <div class="form-group">
-                <h4 class="text-center">Ändra status på ansökan</h4>
+                {{Form::label('app_status', 'Ändra Status')}}
                 {{ Form::select('app_status', ['default' => 'Väntar på beslut', 'denied' => 'Nekad', 'approved' => 'Accepterad'], $application->status->app_status, ['class' => 'form-control']) }}
             </div>
             </div>
@@ -220,8 +220,8 @@
             </div>
             </div>
             <div class="col-md-12">
-            <div class="form-group">
-                {{ Form::submit('Spara', ['class' => 'btn btn-primary btn-lg']) }}
+            <div class="form-group text-center">
+                {{ Form::submit('Spara', ['class' => 'btn btn-primary btn-sm']) }}
             @endif
             </div>
             </div>

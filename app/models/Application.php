@@ -125,10 +125,11 @@ class Application extends Eloquent
         return $this;
 
     }
-    public function remove()
+    public function remove($id)
     {
-        $this->status->delete();
-        $this->delete();
+        $application = Application::with('status')->whereId($id)->firstOrFail();
+        $application->status->delete();
+        $application->delete();
 
         $this->raise(new ApplicationWasRemoved($this));
 

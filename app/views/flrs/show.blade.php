@@ -47,10 +47,12 @@
        @else
     <div class="text-center">
         {{Form::open(['route' => ['signup', $raid->id]])}}
+        <div class="form-group">
         {{Form::select('role', ['Tank' => 'Tank', 'Healer' => 'Healer', 'Ranged' => 'Ranged', 'Melee' => 'Melee'],'', ['class' => 'select select-primary'])}}
         {{Form::select('status', ['available' => 'Tillgänglig', 'unsure' => 'Osäker', 'no' => 'Kan ej'],'', ['class' => 'select select-primary'])}}
+        </div>
         <div class="form-group">
-        {{Form::submit('Signa upp', ['class' => 'btn btn-primary'])}}
+        {{Form::submit('Signa upp', ['class' => 'btn btn-primary btn-sm'])}}
         </div>
         {{Form::close()}}
         </div>

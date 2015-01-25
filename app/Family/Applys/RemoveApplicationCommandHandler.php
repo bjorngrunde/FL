@@ -18,8 +18,8 @@ class RemoveApplicationCommandHandler implements CommandHandler
 
     public function handle($command)
     {
-        $application = $this->application->with('status')->findOrFail($command->id);
-        $application->remove();
+
+        $application = $this->application->remove($command->id);
 
         $this->dispatcher->dispatch($application->releaseEvents());
     }
