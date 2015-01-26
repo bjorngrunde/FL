@@ -3,11 +3,19 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <h5 class="text-center">Skapa en användare</h5>
-        @if(Session::has('flash_message'))
-            <p class="text-success text-center">{{Session::get('flash_message')}}</p>
-        @endif
+        <h3 class="text-center">Skapa ny användare</h3>
     </div>
+     <div class="col-md-6">
+           <ol class="breadcrumb">
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/users/">Användare</a></li>
+            <li class="active">Skapa ny användare</li>
+           </ol>
+           </div>
+           <div class="col-md-6">
+            <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+           </div>
+        </div>
     {{Form::open(['route' => 'registration.store'])}}
     <div class="col-md-6">
         <div class="form-group">
@@ -67,9 +75,10 @@
            ['class' => 'form-control', 'required' => 'required']) }}
         {{ $errors->first('klass', '<p class="text-warning">:message </p>') }}
         </div>
+        </div>
         <div class="col-md-12">
         <div class="form-group text-center">
-           {{Form::submit('Skapa Användare', ['class' => 'btn btn-primary btn-lg'])}}
+           {{Form::submit('Skapa Användare', ['class' => 'btn btn-primary btn-sm'])}}
            {{Form::close()}}
        </div>
    </div>

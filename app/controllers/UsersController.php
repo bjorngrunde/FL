@@ -44,6 +44,15 @@ class UsersController extends BaseController
         $email = Input::get('email');
         $role = Input::get('role');
 
+        if($rank == 'Guild Master')
+        {
+            if(Auth::user()->profile->rank != 'Guild Master' )
+            {
+                Return Redirect::back()->withFlashMessage('Du kan inte sno Guild Master Titeln');
+            }
+        }
+
+
         $command = new UpdateUserCommand(
             $username,
             $name,

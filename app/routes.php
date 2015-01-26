@@ -15,8 +15,8 @@ Route::group(['before' => 'checkRole'], function(){
 
     # Admin registrera användare
     Route::get('/admin/users', 'UsersController@index');
-    Route::get('/admin/users/{id}', 'UsersController@show');
     Route::get('/admin/users/create', 'RegistrationController@create');
+    Route::get('/admin/users/{id}', 'UsersController@show');
     Route::resource('registration', 'RegistrationController', ['only' => ['store', 'create']]);
 
     Route::get('/admin/users/{username}/edit/', 'UsersController@edit');
