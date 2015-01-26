@@ -39,7 +39,7 @@
 <div class="row">
     <div class="col-md-12 text-white">
     <div class="wrapper-apply text-center">
-        <h4>Ansök till Family Legion</h4>
+        <h2>Ansök till Family Legion</h2>
        <a href="/apply" class="btn btn-primary btn-sm">Ansök här!</a>
     </div>
     </div>

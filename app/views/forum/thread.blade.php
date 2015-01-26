@@ -25,7 +25,8 @@
         <div class="panel panel-default">
         <div class="panel-heading">
 
-            <h6>{{$thread->title}}</h6>
+            <h3>{{$thread->title}}</h3>
+            <small>{{$thread->created_at}}</small>
 
 
         </div>
@@ -64,6 +65,7 @@
              <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
              <small>Rank: {{$comment->author->profile->rank}}</small>
               <br /><small>Inlägg: {{count($comment->author->comments) + count($comment->author->threads)}}</small>
+              <br /><br /><small>{{$comment->created_at}}</small>
 
             </div>
             <div class="col-sm-10">

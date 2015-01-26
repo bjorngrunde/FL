@@ -65,7 +65,7 @@
         <div class="col-sm-6 text-center">
             <h2>Snabblänkar</h2>
             <ul class="list-unstyled">
-                <li class="well well-sm"><a href="/admin/user/create"><h4>Skapa en användare </h4></a></li>
+                <li class="well well-sm"><a href="/admin/users/create"><h4>Skapa en användare </h4></a></li>
                 <li class="well well-sm"><a href="/admin/flrs/create"><h4>Skapa en raid </h4></a></li>
                 <li class="well well-sm"><a href="/admin/posts/create"><h4>Skapa en nyhet </h4></a></li>
             </ul>

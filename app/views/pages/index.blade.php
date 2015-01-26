@@ -31,7 +31,6 @@
         </div>
         </div>
     @endforeach
-
     <div class="col-md-12">
     {{$posts->links()}}
     </div>

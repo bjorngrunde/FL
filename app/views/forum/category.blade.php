@@ -39,7 +39,8 @@
         @if(count($threads) > 0)
             @foreach($threads as $thread)
                     <tr>
-                    <td><strong><p><a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a></p></strong></td>
+                    <td><strong><p><a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a></p></strong>
+                    </td>
                     <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
                     <td>{{count($thread->comments)}}</td>
                     <td>
