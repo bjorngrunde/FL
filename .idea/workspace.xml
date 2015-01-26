@@ -2,6 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/alerts.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/background-variant.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/border-radius.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/buttons.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/center-block.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/clearfix.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/forms.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/gradients.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/grid-framework.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/grid.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/hide-text.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/image.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/labels.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/list-group.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/media.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/nav-divider.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/nav-vertical-align.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/normalize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/opacity.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/pagination.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/panels.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/print.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/progress-bar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/reset-filter.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/resize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/responsive-embed.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/responsive-visibility.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/size.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/tab-focus.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/table-row.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/text-emphasis.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/text-overflow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/variables.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/vendor/css/mixins/vendor-prefixes.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -405,7 +442,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lightbox" />
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="family" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1079,7 +1142,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422112439974</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="lang">
+      <created>1422255071053</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1422255071053</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1093,7 +1162,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09729944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09729944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="9.259259E-4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
