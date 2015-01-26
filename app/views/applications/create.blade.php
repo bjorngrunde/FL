@@ -142,7 +142,7 @@
             </div>
             <div class="col-md-12">
             <div class="form-group">
-                {{ Form::submit('Skicka in ansökan', ['class' => 'btn btn-primary btn-lg']) }}
+                {{ Form::submit('Skicka in ansökan', ['class' => 'btn btn-primary btn-sm']) }}
             </div>
             </div>
 

@@ -1,12 +1,21 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="row well well-lg">
-<div class="col-md-12">
-    <h4>Skapa ett evenemang!</h4>
-    @if(Session::has('flash_message'))
-        <p class="text-success">{{Session::get('flash_message')}}</p>
-    @endif
+<div class="row">
+ <div class="col-md-12">
+        <h3 class="text-center">Skapa en raid</h3>
+    </div>
+     <div class="col-md-6">
+           <ol class="breadcrumb">
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/flrs/index">Raids</a></li>
+            <li class="active">Skapa Raid</li>
+           </ol>
+           </div>
+           <div class="col-md-6">
+            <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+           </div>
+    <div class="col-md-12">
     <div class="col-sm-8 col-md-8">
         {{Form::open(['route' => 'flrs.store'])}}
         <div class="form-group">
@@ -54,7 +63,7 @@
         </div>
         <div class="col-sm-12 col-md-12">
         <div class="form-group">
-        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
         </div>
         </div>
         {{Form::close()}}

@@ -13,7 +13,10 @@
     <li>
        <img src="{{ Auth::user()->profile->thumbnail }}" class="img-circle img-nav" />
     </li>
-        <li class="dropdown"><a href="#" class="" data-toggle="dropdown"><span class="{{Auth::user()->profile->klass}}">{{Auth::user()->username}}<span class="caret"></span></span> </a>
+        <li class="dropdown">
+        <a href="#" class="" data-toggle="dropdown">
+        <span class="{{Auth::user()->profile->klass}}">{{Auth::user()->username}}<span class="caret"></span></span>
+        </a>
             <ul class="dropdown-menu">
                 <li class="text-center">
                 <a href="/profile/{{Auth::user()->username}}">Profil</a></li>
@@ -29,16 +32,21 @@
     </ul>
      <ul class="nav navbar-nav text-center">
         <li><a href="/dashboard">Hem</a></li>
-        <li><a href="#">Nyheter</a></li>
         <li><a href="/flrs">FLRS</a></li>
         <li><a href="/forum/">Forum</a></li>
-        <li><a href="#">Guild</a></li>
+        <li class="dropdown"><a href="#" class="" data-toggle="dropdown">Guild <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Information</a> </li>
+                <li><a href="#">Medlemmar</a> </li>
+                <li><a href="/gallery">Mediabank</a> </li>
+            </ul>
+         </li>
         <li>
         {{Form::open(['route' => 'searchresult', 'method' => 'GET', 'class' => 'navbar-form navbar-left'])}}
-          <div class="form-group">
-               <input type="text" class="form-control input-sm" name="auto" id="auto" >
+          <div class="form-group has-feedback">
+                {{Form::text('auto', null, ['class' => 'form-control input-sm blue', 'id' => 'auto'])}}
+               <i class="glyphicon glyphicon-search blue form-control-feedback"></i>
           </div>
-                {{Form::submit('Sök', ['class' => 'btn btn-primary btn-sm'])}}
           {{Form::close()}}
           </li>
             </ul>

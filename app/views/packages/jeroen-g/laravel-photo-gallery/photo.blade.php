@@ -16,7 +16,7 @@
     	    {{ $photo->photo_description }}
     	    </div>
     	    <div class="col-md-12">
-    	    @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || Auth::user()->id == $photo->photo_id)
+    	    @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || Auth::id() == $photo->user_id)
             {{ Form::open(array('route' => array("gallery.album.photo.destroy", $photo->album_id, $photo->photo_id))) }}
             <div class="form-group">
                     {{ link_to_route("gallery.album.photo.edit", Lang::get('gallery.edit'), array('albumId' => $photo->album_id, 'photoId' => $photo->photo_id), array('class' => 'btn btn-info btn-sm')) }}

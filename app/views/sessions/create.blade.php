@@ -20,13 +20,16 @@
                 {{Form::label('', '',['class' => 'login-field-icon fui-user'])}}
                 {{errors_for('email', $errors)}}
              </div>
-             <div class="form-group">
+             <div class="form-group text-center">
                 {{Form::password('password', ['class' => 'form-control login-field', 'placeholder' => 'Lösenord'])}}
                 {{Form::label('','', ['class' => 'login-field-icon fui-lock'])}}
+                <a class="login-link" href="password/remind">Supit bort lösenordet?</a>
                 {{errors_for('password', $errors)}}
              </div>
-             {{Form::submit('Logga in', ['class' => 'btn btn-primary btn-lg btn-block'])}}
-             <a class="login-link" href="password/remind">Supit bort lösenordet?</a>
+             <div class="form-group text-center">
+             {{Form::submit('Logga in', ['class' => 'btn btn-primary btn-sm'])}}<br />
+
+            </div>
             {{Form::close()}}
 
         </div>
@@ -37,7 +40,7 @@
     <div class="col-md-12 text-white">
     <div class="wrapper-apply text-center">
         <h4>Ansök till Family Legion</h4>
-       <a href="/apply" class="btn btn-primary btn-lg">Ansök här!</a>
+       <a href="/apply" class="btn btn-primary btn-sm">Ansök här!</a>
     </div>
     </div>
 </div>

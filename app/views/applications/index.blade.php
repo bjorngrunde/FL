@@ -2,53 +2,50 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12">
-    <div class="text-center">
-    <h5>Ansökningar listas här.</h5>
-    @if(Session::has('flash_message'))
-    <p class="text-success">{{Session::get('flash_message')}}</p>
-    @else
-    <p>Här kan du godkänna eller neka en ansökan. De kan också redigeras, eller tas bort helt.</p>
-    @endif
-    </div>
+<div class="col-md-12 text-center">
+<h3>Hantera Ansökningar</h3>
+</div>
+    <div class="col-md-6">
+   <ol class="breadcrumb">
+    <li><a href="/admin">Admin Dashboard</a></li>
+    <li class="active">Ansökningar</li>
+   </ol>
+   </div>
+   <div class="col-md-6">
+    <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+   </div>
     </div>
     <div class="col-md-12">
         <table class="table table-hover">
             <tr>
-                <th>Namn </th>
-                <th>Karaktär</th>
-                <th>Status</th>
-                <th>Kommentarer</th>
-                <th>Visa</th>
-                <th>Redigera</th>
-                <th>Ta bort</th>
+                <th><p>#</p></th>
+                <th><p>Namn</p></th>
+                <th><p>Efternamn</p></th>
+                <th><p>Status</p></th>
+                <th><p>Kommentarer</p></th>
+                <th><p>Åtgärd</p></th>
             </tr>
             <tbody>
             @if(isset($applications))
                 @foreach($applications as $application)
                 <tr>
+                    <td>{{$application->id}}</td>
                     <td>{{ $application->name }}</td>
-                    <td>{{ $application->username }}</td>
+                    <td>{{ $application->lastName }}</td>
                     <td>
                      @if (!empty($application->status))
                         @if($application->status->app_status == 'default')
-                             Väntar på beslut
+                             <p class="text-info"> Väntar på beslut</p>
                         @elseif($application->status->app_status =='denied')
-                             Nekad
+                             <p class="text-danger">Nekad</p>
                          @elseif($application->status->app_status == 'approved')
-                            Accepterad
+                           <p class="text-success"> Accepterad </p>
                          @endif
                      @else
                        <p>Ingens status hittades</p>
                      @endif
                     <td>{{count($application->comments)}}</td>
-                    <td><a href="/admin/applications/{{$application->id}}" class="btn btn-primary btn-sm"> Visa</a></td>
-                    <td><a href="/admin/applications/{{$application->id}}/edit" class="btn btn-warning btn-sm"> Redigera</a> </td>
-                    <td>
-                    {{Form::open(['method' => 'DELETE', 'route' => ['application.destroy', $application->id]]) }}
-                    {{Form::submit('Ta Bort', ['class' => 'btn btn-danger btn-sm'])}}
-                    {{Form::close()}}
-                    </td>
+                    <td><a href="/admin/applications/{{$application->id}}">Visa</a></td>
                 </tr>
                @endforeach
             @endif

@@ -3,14 +3,21 @@
 @section('content')
 
 <div class="row">
-<div class="col-md-12 text-center">
-    <h4>Redigera evenemanget: {{$raid->title}}</h4>
-    @if(Session::has('flash_message'))
-        <p class="text-success">{{Session::get('flash_message')}}</p>
-    @endif
+<div class="col-md-12">
+        <h3 class="text-center">Redigera raid</h3>
+    </div>
+     <div class="col-md-6">
+           <ol class="breadcrumb">
+            <li><a href="/admin">Admin Dashboard</a></li>
+            <li><a href="/admin/flrs/index">Raids</a></li>
+            <li class="active">Redigera Raid</li>
+           </ol>
+           </div>
+           <div class="col-md-6">
+            <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+           </div>
 </div>
-</div>
-<div class="row  well well-lg">
+<div class="row">
     <div class="col-sm-8 col-md-8">
         {{Form::model($raid,['method' => 'PATCH','route' =>[ 'flrs.update', $raid->id]])}}
         <div class="form-group">
@@ -54,7 +61,7 @@
         </div>
         <div class="col-sm-12 col-md-12">
         <div class="form-group">
-        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
         </div>
 
         {{Form::close()}}

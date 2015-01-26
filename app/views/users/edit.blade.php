@@ -2,12 +2,21 @@
 
 @section('content')
 <div class="row">
-<div class="col-md-12 text-center">
-    <h5>Redigera användaren: {{$user->username}}</h5>
-    @if(Session::has('flash_message'))
-        <p class="text-success">{{Session::get('flash_message')}}</p>
-    @endif
+<div class="col-md-12">
+    <h3 class="text-center">Redigera användaren : {{$user->profile->name. ' ' . $user->profile->lastName}}</h3>
 </div>
+ <div class="col-md-6">
+       <ol class="breadcrumb">
+        <li><a href="/admin">Admin Dashboard</a></li>
+        <li><a href="/admin/users/">Användare</a></li>
+        <li><a href="/admin/users/{{$user->id}}">Användare: {{$user->profile->name . ' ' . $user->profile->lastName}}</a> </li>
+        <li class="active">Redigera</li>
+       </ol>
+       </div>
+       <div class="col-md-6">
+        <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
+       </div>
+    </div>
     <div class="col-md-12">
         <ul class="nav nav-pills" role="tablist">
             <li class="active"><a href="#home" role="tab" data-toggle="tab">Profil</a></li>
@@ -48,7 +57,7 @@
                     {{errors_for('klass', $errors)}}
                 </div>
                 <div class="form-group col-md-12 text-center">
-                    {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+                    {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
                 </div>
 
             {{Form::close()}}
@@ -64,7 +73,7 @@
                         {{errors_for('email', $errors)}}
                     </div>
                     <div class="form-group col-md-6 col-md-offset-3 text-center">
-                        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+                        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
                     </div>
 
                 {{Form::close()}}
@@ -81,7 +90,7 @@
                     {{Form::password('password_confirmation', ['class' => 'form-control'])}}
                 </div>
                 <div class="form-group col-md-6 col-md-offset-3 text-center">
-                    {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+                    {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
                 </div>
             {{Form::close()}}
           </div>
@@ -93,7 +102,7 @@
                 {{Form::select('role', [5 => 'Bannad', 4 => 'Inaktiv', 3 => 'Medlem', 2 => 'Admin', 1 => 'Utvecklare'],null,['class' => 'form-control'])}}
                </div>
                <div class="form-group text-center">
-                {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+                {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
                </div>
                </div>
                 {{Form::close()}}

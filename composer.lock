@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff07d678958fa21adc8c1103b660ccb8",
+    "hash": "46ebe68bc956f755006083e1213b7ac3",
     "packages": [
         {
             "name": "anahkiasen/flickering",
@@ -231,12 +231,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/FbF/Laravel-Comments.git",
+                "url": "https://github.com/FbF/laravel-comments.git",
                 "reference": "bbf35cdf7f30199757da6bde009d6ccd700e9ccb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FbF/Laravel-Comments/zipball/bbf35cdf7f30199757da6bde009d6ccd700e9ccb",
+                "url": "https://api.github.com/repos/FbF/laravel-comments/zipball/bbf35cdf7f30199757da6bde009d6ccd700e9ccb",
                 "reference": "bbf35cdf7f30199757da6bde009d6ccd700e9ccb",
                 "shasum": ""
             },
@@ -764,7 +764,7 @@
                     "email": "jeffrey@laracasts.com"
                 }
             ],
-            "description": "Easy validation for Laravel applications.",
+            "description": "Easy validation for Laravel Applys.",
             "time": "2014-07-25 20:20:38"
         },
         {
@@ -961,7 +961,9 @@
             },
             "type": "library",
             "autoload": {
-                "classmap": [],
+                "classmap": [
+
+                ],
                 "psr-0": {
                     "Makzumi\\Calendar\\": "src/"
                 }
@@ -2564,7 +2566,9 @@
             "time": "2014-09-01 19:24:09"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "zizaco/entrust": 20,
@@ -2572,8 +2576,10 @@
         "makzumi/calendar": 20,
         "andheiberg/messenger": 20
     },
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": []
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }

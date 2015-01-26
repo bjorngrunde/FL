@@ -6,6 +6,7 @@ namespace Family\Listeners;
 use Family\Applys\ApplicationWasPosted;
 use Family\Eventing\EventListener;
 use Family\Registration\RegistrationWasPosted;
+use Family\Users\UserWasRemoved;
 use Family\Users\UserWasUpdated;
 use User;
 use Auth;
@@ -54,7 +55,6 @@ class AdminNotifier extends EventListener
                     ->withType('RegistrationWasRemoved')
                     ->withSubject('En ansökan togs bort!')
                     ->withBody('{{users}} har tagit bot en ansökan.')
-                    ->regarding($event->application)
                     ->deliver();
                 }
             }
@@ -77,7 +77,7 @@ class AdminNotifier extends EventListener
                        ->from(Auth::user())
                        ->withType('RegistrationWasPosted')
                        ->withSubject('En ny användare har skapats')
-                       ->withBody('{{users}} har skapat en ny användare.')
+                       ->withBody('{{users}} har skapat användaren '.$event->user->username)
                        ->regarding($event->user)
                        ->deliver();
                }
@@ -104,6 +104,29 @@ class AdminNotifier extends EventListener
                             ->regarding($event->user)
                             ->deliver();
                     }
+            }
+        }
+    }
+
+    public function whenUserWasRemoved(UserWasRemoved $event)
+    {
+        $users = User::whereHas('roles', function($q){
+            $q->where('role_id', '=', 1)->orWhere('role_id', '=', 2);
+        })->get();
+
+        foreach($users as $user)
+        {
+            if($user->hasRole('Admin') || $user->hasRole('Utvecklare'))
+            {
+                if($user->username != Auth::user()->username)
+                {
+                    $user->newNotification()
+                        ->from(Auth::user())
+                        ->withType('UserWasRemoved')
+                        ->withSubject('En användare har tagits bort')
+                        ->withBody('{{users}} har tagit bort användaren '. $event->user->username)
+                        ->deliver();
+                }
             }
         }
     }
