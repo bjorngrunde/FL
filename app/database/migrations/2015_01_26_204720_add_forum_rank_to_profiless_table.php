@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserIdToPhotosTable extends Migration {
+class AddForumRankToProfilessTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class AddUserIdToPhotosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('photos', function(Blueprint $table)
+		Schema::table('profiles', function(Blueprint $table)
 		{
-            $table->integer('user_id')->nullable()->unsinged();
+			$table->integer('forum_rank');
 		});
 	}
 
@@ -25,9 +25,9 @@ class AddUserIdToPhotosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('photos', function(Blueprint $table)
+		Schema::table('profiles', function(Blueprint $table)
 		{
-            $table->dropColumn('user_id');
+			//
 		});
 	}
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddThumbnailToPhotosTable extends Migration {
+class AddRankToForumCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class AddThumbnailToPhotosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('photos', function(Blueprint $table)
+		Schema::table('forum_categories', function(Blueprint $table)
 		{
-			$table->string('thumbnail');
+			$table->integer('rank');
 		});
 	}
 
@@ -25,9 +25,9 @@ class AddThumbnailToPhotosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('photos', function(Blueprint $table)
+		Schema::table('forum_categories', function(Blueprint $table)
 		{
-			$table->dropColumn('thumbnail1');
+			$table->dropColumn('rank');
 		});
 	}
 
