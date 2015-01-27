@@ -23,9 +23,7 @@
                     <a href="/admin/users/{{$user->username}}/edit" class="btn btn-warning btn-sm">Redigera</a>
                 </li>
                  <li>
-                     {{Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->username]]) }}
-                     {{Form::submit('Ta Bort', ['class' => 'btn btn-danger btn-sm'])}}
-                     {{Form::close()}}
+                 <a id="{{$user->id}}" href="#" class="btn btn-danger btn-sm delete_user" data-toggle="modal" data-target="#user_delete">Ta bort</a>
                  </li>
                  </ul>
              </div>
@@ -60,4 +58,29 @@
                     </div>
             </div>
           </div>
+
+          <div class="modal fade" id="user_delete" tabindex="-1" role="dialog" aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">
+                                      <span aria-hidden="true">&times;</span>
+                                      <span class="sr-only">Close</span>
+                                      </button>
+                                      <h4 class="modal-title">Ta bort användaren {{$user->username}} ?</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                      <p>Är du säker på att du vill ta bort denna användare? <br /> <small>All data som användaren skapat kommer också försvinna.</small> </p>
+                                  </div>
+                                  <div class="modal-footer">
+                                       <div class="form-group">
+                                      {{Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->username]]) }}
+                                      <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal">Stäng</button>
+                                       {{Form::submit('Ta Bort', ['class' => 'btn btn-danger btn-sm'])}}
+                                       {{Form::close()}}
+                                       </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
 @stop

@@ -28,7 +28,24 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $accessType = Role::whereName($role)->firstOrFail();
         $password = str_random(12);
 
-
+        switch($rank)
+        {
+            case 'Trial':
+                $forumRank = 5;
+                break;
+            case 'Social':
+                $forumRank = 4;
+                break;
+            case 'Raider':
+                $forumRank = 3;
+                break;
+            case 'Officer':
+                $forumRank = 2;
+                break;
+            case 'Guild Mster':
+                $forumRank = 2;
+                break;
+        }
         if ($img = Wow::getThumbnail($username, $server))
         {
             $avatar = str_replace('avatar', 'profilemain',$img);
@@ -46,6 +63,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
             $profile->klass = $klass;
             $profile->thumbnail =$img;
             $profile->avatar = $avatar;
+            $profile->forum_rank = $forumRank;
             $profile->save();
 
             $server = new Server;
@@ -100,13 +118,32 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
     public function edit($username, $name, $lastName, $klass, $rank, $phone)
     {
-            $user = User::with('profile')->whereUsername($username)->firstOrFail();
+        $user = User::with('profile')->whereUsername($username)->firstOrFail();
+
+        switch($rank) {
+            case 'Trial':
+                $forumRank = 5;
+                break;
+            case 'Social':
+                $forumRank = 4;
+                break;
+            case 'Raider':
+                $forumRank = 3;
+                break;
+            case 'Officer':
+                $forumRank = 2;
+                break;
+            case 'Guild Mster':
+                $forumRank = 2;
+                break;
+        }
 
             $user->profile->name = $name;
             $user->profile->lastName = $lastName;
             $user->profile->klass = $klass;
             $user->profile->rank = $rank;
             $user->profile->phone = $phone;
+            $user->profile->forum_rank = $forumRank;
             $user->profile->save();
 
             $this->raise(new UserWasUpdated($user, $username));

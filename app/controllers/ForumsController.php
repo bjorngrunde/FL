@@ -36,8 +36,16 @@ class ForumsController extends Controller
     public function category($id)
     {
         $category = ForumCategory::find($id);
-        $threads = ForumThread::with('comments')->whereCategory_id($id)->orderBy('updated_at', 'desc')->paginate(20);
-        return View::make('forum.category',compact('threads'),['category' => $category]);
+       if(!Auth::user()->profile->forum_rank <= $category->rank)
+        {
+            $threads = ForumThread::with('comments')->whereCategory_id($id)->orderBy('updated_at', 'desc')->paginate(20);
+            return View::make('forum.category',compact('threads'),['category' => $category]);
+        }
+       else
+       {
+           return Redirect::back()->withFlashMessage('Du har inte tillträde till denna tråd');
+       }
+
     }
 
     public function storeCategory()
@@ -54,6 +62,7 @@ class ForumsController extends Controller
         }
         $category->group_id = Input::get('id');
         $category->author_id = Auth::user()->id;
+        $category->rank = Input::get('rank');
 
         $category->save();
 
@@ -233,6 +242,7 @@ class ForumsController extends Controller
         $group = new ForumGroup;
         $group->title = Input::get('title');
         $group->author_id = Auth::user()->id;
+        $group->rank = Input::get('rank');
         $group->save();
 
         return Redirect::back()->withFlashMessage('Du har nu lagt till gruppen: '. $group->title);
