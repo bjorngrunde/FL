@@ -84,8 +84,8 @@ body{
     margin-bottom: 20px;
     border-radius: none;
     padding: 10px;
-    -moz-box-shadow: 0 0 3px #000;
     -webkit-box-shadow: 0 0 3px #000;
+    -moz-box-shadow: 0 0 3px #000;
     box-shadow: 0 0 3px #000;
 }
 
@@ -249,7 +249,7 @@ select {
 }
 .ui-menu-item.ui-state-focus {
     border: none;
-    background: #375a7f;
+    background: #3498DB;
     font-weight: bold;
     color: #fff;
 }
@@ -269,13 +269,6 @@ select {
 .table-responsive {
     overflow: inherit;
 }
-.glyphicon.dark-icon {
-    color: #ccc;
-    -moz-box-shadow: 0 0 5px #000;
-    -webkit-box-shadow: 0 0 5px #000;
-    box-shadow: 0 0 5px #000;
-}
-
 .text-success {
     color: #00bc8c;
 }
@@ -288,23 +281,17 @@ select {
 .text-info {
     color: #3498DB;
 }
-.inner-addon {
-    position: relative;
-}
-
-/* style icon */
-.inner-addon .glyphicon {
-    position: absolute;
-    padding: 10px;
-    pointer-events: none;
-}
-/* align icon */
-.left-addon .glyphicon  { left:  0px;}
-.right-addon .glyphicon { right: 0px;}
-
-/* add padding  */
-.left-addon input  { padding-left:  30px; }
-.right-addon input { padding-right: 30px; }
 .blue {
     color:#3498DB;
+}
+.margin-bot-img{
+    margin-bottom: 15px;
+}
+a{
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
 }

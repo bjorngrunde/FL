@@ -18,28 +18,7 @@
     <div class="table-responsive">
         <table class="table panel panel-default">
         @foreach($groups as $group)
-            @if($group->title == "Officer Forum")
-                @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
-        <tbody class="panel-heading">
-        <tr>
-            <th><p class="panel-title">{{$group->title}}</p></th>
-            <td><P>Trådar</P></td>
-            <td><p>Inlägg</p></td>
-            <td class="pull-right"><a id="{{$group->id}}" href="#" class="btn btn-danger btn-xs delete_group" data-toggle="modal" data-target="#group_delete">Ta bort</a> </td>
-        </tr>
-        </tbody>
-        <tbody class="panel-body">
-            @foreach($group->categories as $category)
-            <tr>
-                    <td><strong><p><a href="/forum/category/{{$category->id}}" >{{$category->title}}</a><br/><small>{{$category->subtitle}}</small></p></strong></td>
-                    <td>{{count($category->threads)}}</td>
-                    <td>123</td>d>
-            </tr>
-
-            @endforeach
-            </tbody>
-            @endif
-            @else
+            @if(Auth::user()->profile->forum_rank <= $group->rank)
             <tbody class="panel-heading">
             <tr>
                 <th><p class="panel-title">{{$group->title}}</p></th>
@@ -84,6 +63,10 @@
                         {{Form::label('title','Namn')}}
                         {{Form::text('title', null, ['class' => 'form-control'])}}
                         </div>
+                        <div class="form-group">
+                         {{Form::label('rank', 'Vilka ska ha tllgång till Kategorin')}}
+                         {{Form::select('rank', [ 6 => 'Alla', 5 => 'Trial', 4 => 'Social', 3 => 'Raider', 2 => 'Officer'], 6, ['class' => 'form-control'])}}
+                        </div>
                         {{Form::close()}}
                     </div>
                     <div class="modal-footer">
@@ -122,13 +105,16 @@
                                 <option value="{{ $group->id}}">{{$group->title}}</option>
                                 @endforeach
                              </select>
-
+                            </div>
+                            <div class="form-group">
+                             {{Form::label('rank', 'Vilka ska ha tllgång till Kategorin')}}
+                             {{Form::select('rank', [ 6 => 'Alla', 5 => 'Trial', 4 => 'Social', 3 => 'Raider', 2 => 'Officer'], 6, ['class' => 'form-control'])}}
                             </div>
                             {{Form::close()}}
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class=" btn btn-danger" data-dismiss="modal">Stäng</button>
-                            <button type="button" class=" btn btn-primary" data-dismiss="modal" id="form_category_submit">Spara</button>
+                            <button type="button" class=" btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                            <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal" id="form_category_submit">Spara</button>
                         </div>
                     </div>
                 </div>
