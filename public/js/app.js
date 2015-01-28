@@ -10,6 +10,18 @@ $(document).ready(function(){
         $("#target_comment_form").submit();
     });
 
+    $("#btn_thread_move").click(function(){
+        $("#target_move_form").submit();
+    });
+
+    $("#btn_thread_copy").click(function(){
+        $("#target_copy_form").submit();
+    });
+
+    $("#form_comment_quote_submit").click(function(){
+        $("#target_comment_quote_form").submit();
+    });
+
     $(".delete_group").click(function(event){
 
         $("#btn_delete_group").prop('href', '/forum/group/' + event.target.id + '/delete');

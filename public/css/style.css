@@ -287,11 +287,19 @@ select {
 .margin-bot-img{
     margin-bottom: 15px;
 }
-a{
+a {
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
     /* ...and now for the proper property */
     transition:.5s;
+}
+h1 small,
+h2 small,
+h3 small,
+h4,small
+h5 small,
+h6 small {
+    color: #fff;
 }

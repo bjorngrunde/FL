@@ -29,7 +29,7 @@ class ForumsController extends Controller
     public function index()
     {
         $groups = ForumGroup::with('categories', 'threads', 'comments', 'user')->get();
-        #$categories = ForumCategory::all();
+
         return View::make('forum.index', ['groups' => $groups]);
     }
 
@@ -104,9 +104,10 @@ class ForumsController extends Controller
 
     public function thread($id)
     {
-        $thread = ForumThread::with('comments')->find($id);
+        $thread = ForumThread::with('comments', 'locked')->find($id);
+        $categories = ForumCategory::all();
         $comments = ForumComment::whereThread_id($id)->paginate(15);
-        return View::make('forum.thread', compact('comments'),['thread' => $thread] );
+        return View::make('forum.thread', compact('comments'),['thread' => $thread, 'categories' => $categories] );
     }
     public function newThread($id)
     {
@@ -137,7 +138,15 @@ class ForumsController extends Controller
         $thread->category_id = $category->id;
         $thread->author_id = Auth::user()->id;
         $thread->group_id = $category->group_id;
+
         $thread->save();
+
+        $locked = new ForumLocked;
+        $locked->locked = false;
+        $locked->thread_id = $thread->id;
+        $locked->save();
+
+        $thread->locked()->save($locked);
 
         return Redirect::to('/forum/thread/'.$thread->id);
     }
@@ -161,6 +170,23 @@ class ForumsController extends Controller
         return Redirect::to('/forum/thread/'.$thread->id)->withFlashMessage('Tråden har blivit uppdaterad');
     }
 
+    public function lock($id)
+    {
+        $thread = ForumLocked::whereThread_id($id)->firstOrFail();
+        $thread->locked = 1;
+        $thread->save();
+
+        return Redirect::back()->withFlashMessage('Du har nu låst en tråd');
+    }
+
+    public function unlock($id)
+    {
+        $thread = ForumLocked::whereThread_id($id)->firstOrFail();
+        $thread->locked = 0;
+        $thread->save();
+
+        return Redirect::back()->withFlashMessage('Du har nu låst upp en tråd');
+    }
     public function editThread($id)
     {
         $thread = ForumThread::find($id);
@@ -281,5 +307,53 @@ class ForumsController extends Controller
         {
         return Redirect::back()->withFlashMessage('Gruppen har nu tagits bort.');
         }
+    }
+
+    public function move($id)
+    {
+        $input = Input::get('categories');
+        $category = ForumCategory::find($input);
+        $thread = ForumThread::find($id);
+        $comments = ForumComment::whereThread_id($id)->get();
+
+        foreach($comments as $comment)
+        {
+            $comment->thread_id = $thread->id;
+            $comment->category_id = $category->id;
+            $comment->group_id = $category->group_id;
+            $comment->save();
+        }
+
+        $thread->category_id = $category->id;
+        $thread->group_id = $category->group_id;
+        $thread->save();
+
+        return Redirect::to('/forum/category/'.$category->id)->withFlashMessage('Din tråd har flyttats');
+    }
+
+    public function copy($id)
+    {
+        $input = Input::get('categories');
+        $category = ForumCategory::find($input);
+        $oldThread = ForumThread::find($id);
+
+        $newThread = new ForumThread;
+        $newThread->title = $oldThread->title;
+        $newThread->body = $oldThread->body;
+        $newThread->author_id = $oldThread->author_id;
+        $newThread->category_id = $category->id;
+        $newThread->group_id = $category->group_id;
+
+        $newThread->save();
+
+        $locked = new ForumLocked;
+        $locked->locked = false;
+        $locked->thread_id = $newThread->id;
+        $locked->save();
+
+        $newThread->locked()->save($locked);
+
+        return Redirect::back()->withFlashMessage('DU har nu kopierat tråden '. $oldThread->title. ' till kategorin '. $category->title);
+
     }
 }

@@ -21,6 +21,10 @@ class ForumThread extends Eloquent
 
     public function comments()
     {
-        return $this->hasMany('ForumComment', 'thread_id');
+        return $this->hasMany('ForumComment', 'thread_id')->orderBy('created_at', 'desc');
+    }
+    public function locked()
+    {
+        return $this->hasOne('ForumLocked', 'thread_id');
     }
 }

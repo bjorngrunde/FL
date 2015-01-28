@@ -98,6 +98,10 @@ Route::group(['before' => 'auth'], function(){
             Route::post('/new/thread/save/{id}', ['as' => 'newThread.store', 'uses' => 'ForumsController@newThreadStore']);
             Route::post('/thread/update/{id}', ['as' => 'threadUpdate', 'uses' => 'ForumsController@updateThread']);
             Route::post('/thread/new/comment/{id}', ['as' => 'forum-store-comment', 'uses' => 'ForumsController@storeComment']);
+            Route::post('/thread/lock/{id}',['as' => 'thread.lock', 'uses' =>'ForumsController@lock']);
+            Route::post('/thread/unlock/{id}',['as' => 'thread.unlock', 'uses' =>'ForumsController@unlock']);
+            Route::post('/thread/move/{id}', ['as' => 'thread.move', 'uses' => 'ForumsController@move']);
+            Route::post('/thread/copy/{id}', ['as' => 'thread.copy', 'uses' => 'ForumsController@copy']);
 
 
         });
