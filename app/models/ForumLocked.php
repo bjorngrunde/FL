@@ -1,11 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjorn
- * Date: 15-01-28
- * Time: 09:37
- */
 
-class ForumLocked {
 
+class ForumLocked extends Eloquent
+{
+    protected $table = 'forum_locked';
+
+    protected $fillable = ['thread_id', 'locked'];
+
+    public function threads()
+    {
+        return $this->belongsTo('ForumThread');
+    }
 } 

@@ -2,11 +2,13 @@
 
 @section('content')
 <div class="row">
-<ul class="nav navbar-nav">
-        <li {{ (Request::is('gallery') ? 'class="active"' : '') }}>{{ link_to_route('gallery', 'Översikt') }}</li>
-        <li {{ (Request::is('gallery/album/create') ? 'class="active"' : '') }}>{{ link_to_route('gallery.album.create', 'Nytt album') }}</li>
-        <li {{ (Request::is('gallery/album/*/photo/create') ? 'class="active"' : '') }}>{{ link_to_route('gallery.album.photo.create', 'Nytt foto') }}</li>
+<div class="col-sm-12">
+<ul class="list-inline list-unstyled">
+        <li {{ (Request::is('gallery') ? 'class="active"' : '') }}>{{ link_to_route('gallery', 'Översikt', ['class' => 'btn btn-primary btn-sm']) }}</li>
+        <li {{ (Request::is('gallery/album/create') ? 'class="active"' : '') }}>{{ link_to_route('gallery.album.create', 'Nytt album', ['class' => 'btn btn-primary btn-sm']) }}</li>
+        <li {{ (Request::is('gallery/album/*/photo/create') ? 'class="active"' : '') }}>{{ link_to_route('gallery.album.photo.create', 'Nytt foto', ['class' => 'btn btn-primary btn-sm']) }}</li>
     </ul>
+    </div>
     <div class="col-md-12">
 @yield('gallerySection')
 </div>

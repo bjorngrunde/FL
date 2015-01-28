@@ -47,7 +47,7 @@ class Album extends Eloquent {
 
     public function comments()
     {
-        return $this->morphMany('Fbf\LaravelComments\Comment', 'commentable');
+        return $this->morphMany('Fbf\LaravelComments\Comment', 'commentable')->orderBy('created_at', 'desc');
     }
 
 }

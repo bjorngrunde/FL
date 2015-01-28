@@ -39,7 +39,11 @@
         @if(count($threads) > 0)
             @foreach($threads as $thread)
                     <tr>
-                    <td><strong><p><a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a></p></strong>
+                    <td><strong><p>
+                                @if($thread->locked->locked == 1)
+                                <span class="glyphicon glyphicon-remove"></span>
+                                @endif
+                                <a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a></p></strong>
                     </td>
                     <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
                     <td>{{count($thread->comments)}}</td>
@@ -48,6 +52,7 @@
                             @foreach($thread->comments as $comment)
                                 @if($comment->updated_at == $thread->updated_at)
                                     <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
+                                    <?php break; ?>
                                 @endif
                             @endforeach
                         @else
@@ -65,6 +70,7 @@
             @endif
             </tbody>
             </table>
+
             </div>
         </div>
     </div>
