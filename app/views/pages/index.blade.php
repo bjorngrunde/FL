@@ -59,18 +59,22 @@
               @if(count($thread->comments) > 0 )
                 @foreach($thread->comments as $comment)
                   @if($comment->updated_at == $thread->updated_at)
+                  @if(Auth::user()->profile->forum_rank <= $comment->group->rank)
                   <p>
                   <a href="/profile/{{$comment->author->username}}">
                   <span class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</span></a>
                   har lämnat en kommentar på <a href="/forum/thread/{{$comment->thread_id}}">{{$thread->title}}</a>
                   </p>
                   @endif
+                  @endif
               @endforeach
               @endif
+               @if(Auth::user()->profile->forum_rank <= $thread->group->rank)
               <p>
               <a href="/profile/{{$thread->author->username}}">
               <span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></a> skapade tråden <a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a>
               </p>
+              @endif
           @endforeach
       </div>
     </div>

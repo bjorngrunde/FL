@@ -45,11 +45,7 @@
 <div class="col-md-12">
         <div class="panel panel-default">
         <div class="panel-heading">
-
             <h3> @if($thread->locked->locked == 1)<span class="glyphicon glyphicon-remove "></span>@endif {{$thread->title}}</h3>
-            <small>{{$thread->created_at}}</small>
-
-
         </div>
         <div class="panel-body dark-sh-well-no-radius">
         <div class="col-sm-12">
@@ -58,6 +54,7 @@
        <p class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</p>
        <small>Rank: {{$thread->author->profile->rank}}</small>
      <br /><small>Inlägg: {{count($thread->author->threads) + count($thread->author->comments)}}</small>
+     <br /> <br /><small>{{$thread->created_at}}</small>
         </div>
             <div class="col-sm-10">
 

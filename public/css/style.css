@@ -303,3 +303,6 @@ h5 small,
 h6 small {
     color: #fff;
 }
+#Container .mix{
+    display: none;
+}
