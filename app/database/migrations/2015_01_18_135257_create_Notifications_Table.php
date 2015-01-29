@@ -21,7 +21,7 @@ class CreateNotificationsTable extends Migration {
             $table->text('body')->nullable();
             $table->integer('object_id')->unsigned();
             $table->string('object_type', 128);
-
+            $table->integer('sender_id')->nullable()->unsigned();
             $table->boolean('is_read')->default(0);
             $table->dateTime('sent_at')->nullable();
             $table->timestamps();
