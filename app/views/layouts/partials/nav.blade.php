@@ -36,8 +36,7 @@
         <li><a href="/forum/">Forum</a></li>
         <li class="dropdown"><a href="#" class="" data-toggle="dropdown">Guild <span class="caret"></span> </a>
             <ul class="dropdown-menu">
-                <li><a href="#">Information</a> </li>
-                <li><a href="#">Medlemmar</a> </li>
+                <li><a href="/members">Medlemmar</a> </li>
                 <li><a href="/gallery">Mediabank</a> </li>
             </ul>
          </li>

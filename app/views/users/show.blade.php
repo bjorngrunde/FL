@@ -31,31 +31,32 @@
           <div class="row">
           <div class="col-md-12">
 
-            <div class="col-sm-6 well well-sm">
-            <h5>Generell info</h5>
+            <div class="col-sm-6">
+            <h4>{{$user->profile->name. ' '. $user->profile->lastName}}</h4>
                     <ul class="list-unstyled">
-                        <li><P>Namn: {{$user->profile->name. ' '. $user->profile->lastName}}</P></li>
-                        <li><P>Karaktär: {{$user->username}}</P></li>
-                        <li><P>Klass: {{ucfirst($user->profile->klass)}}</P></li>
-                        <li><P>Rank: {{$user->profile->rank}}</P></li>
-                        <li><P>Server: {{$user->server->server}}</P></li>
-                        <li><P>Telefon: @if($user->profile->phone  == '')
+                        <li><h5>Karaktär: {{$user->username}}</h5></li>
+                        <li><h5>Klass: {{ucfirst($user->profile->klass)}}</h5></li>
+                        <li><h5>Rank: {{$user->profile->rank}}</h5></li>
+                        <li><h5>Server: {{$user->server->server}}</h5></li>
+                        <li><h5>Telefon: @if($user->profile->phone  == '')
                              Denna användaren har inte lagt till ett nummer.
                              @else
-                            {{$user->profile->phone}}</P>
+                            {{$user->profile->phone}}</h5>
                              @endif
                             </li>
-                    <li><P>Email: {{$user->email}}</P></li>
+                    <li><h5>Email: {{$user->email}}</h5></li>
+                    <li><h5>Forumtrådar: {{count($user->threads)}} st</h5></li>
+                    <li><h5>Foruminlägg: {{count($user->comments)}} st</h5></li>
+                    <li><h5>Signade Raids: {{count($user->raids)}} st</h5></li>
                     </ul>
                 </div>
 
-                 <div class="col-md-6 well well-sm">
-                    <ul class="list-unstyled">
-                        <li><p>Forumtrådar: {{count($user->threads)}} st</p></li>
-                        <li><p>Foruminlägg: {{count($user->comments)}} st</p></li>
-                        <li><p>Signade Raids: {{count($user->raids)}} st</p></li>
-                    </ul>
+                 <div class="col-md-6">
+                    <h4>Statistik</h4>
                     </div>
+            </div>
+            <div class="col-md-12">
+
             </div>
           </div>
 

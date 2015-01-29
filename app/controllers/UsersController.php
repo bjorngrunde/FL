@@ -15,6 +15,13 @@ class UsersController extends BaseController
         return View::make('users.index', compact('users'));
     }
 
+    public function members()
+    {
+        $users = User::with('profile', 'server')->get();
+
+        return View::make('users.members', ['users' => $users]);
+    }
+
     public function show($id)
     {
         $user = User::with('profile', 'server', 'threads', 'comments','raids')->whereId($id)->firstOrFail();

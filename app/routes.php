@@ -8,6 +8,9 @@ Route::group(['before' => 'checkRole'], function(){
     # Admin Area
     Route::get('/admin', 'AdminController@index');
 
+    #Stats
+    Route::get('/admin/users/stats', 'StatisticsController@userData');
+
     # Admin Ansökningar
     Route::get('/admin/applications', 'ApplicationsController@index');
     Route::get('/admin/applications/{id}','ApplicationsController@show');
@@ -56,6 +59,7 @@ Route::group(['before' => 'auth'], function(){
     Route::get('/notifications', 'NotificationsController@show');
     Route::get('/removereadnotifications','NotificationsController@update');
 
+
     #Galleri
     Route::get('gallery', ['as' => 'gallery', 'uses' => 'GalleryController@index']);
     Route::group(array('prefix' => 'gallery'), function()
@@ -66,6 +70,9 @@ Route::group(['before' => 'auth'], function(){
     #SÖK
     Route::get('/query', 'SearchController@query');
     Route::get('/searchresult', ['as' => 'searchresult', 'uses' => 'SearchController@searchResult']);
+
+    #Medlemmar
+    Route::get('/members', 'UsersController@members');
 
     # Profiler
     Route::get('/profile/{profile}', ['as' => 'profile','uses' => 'ProfilesController@show']);

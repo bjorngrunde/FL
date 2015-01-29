@@ -3,8 +3,8 @@
 
 <div class="row">
     <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-            <b>{{ $photo->photo_name }}</b>
+        <div class="panel-heading clearfix text-center">
+            <h4>{{ $photo->photo_name }}</h4>
             <div class="pull-right">
                 <a class="btn btn-primary btn-sm" href="/gallery/album/{{$photo->album_id}}">{{ Lang::get('gallery.return') }}</a>
             </div>
@@ -12,7 +12,7 @@
         <div class="panel-body">
             <img class="img-responsive" src='{{asset('/uploads/photos/'.$photo->photo_path) }}' />
         </div>
-        <div class="col-sm-12 clearfix">
+        <div class="panel-footer">
     	    {{ $photo->photo_description }}
     	    </div>
     	    <div class="col-md-12">
