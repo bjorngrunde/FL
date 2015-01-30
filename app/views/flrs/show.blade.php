@@ -72,7 +72,7 @@
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Tank' && $user->pivot->raid_status == 'selected')
-                    <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
+                    <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
                     @endif
                 @endforeach
                 </ul>
@@ -82,7 +82,7 @@
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Melee' && $user->pivot->raid_status == 'selected')
-                    <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"><p class="{{$user->profile->klass}}">{{$user->username}}  </p></a> </li>
+                    <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"><p class="{{$user->profile->klass}}">{{$user->username}}  </p></a> </li>
                     @endif
                 @endforeach
                 </ul>
@@ -92,7 +92,7 @@
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Ranged' && $user->pivot->raid_status == 'selected')
-                    <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
+                    <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
                     @endif
                 @endforeach
                 </ul>
@@ -102,7 +102,7 @@
                 <ul class="list-unstyled">
                 @foreach($raid->users as $user)
                     @if($user->pivot->raid_role == 'Healer' && $user->pivot->raid_status == 'selected')
-                    <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
+                    <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
                     @endif
                 @endforeach
                 </ul>
@@ -126,7 +126,7 @@
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Tank' && $user->pivot->raid_status == 'available')
-            <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
+            <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
             @endif
         @endforeach
         </ul>
@@ -136,7 +136,7 @@
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Melee' && $user->pivot->raid_status == 'available')
-            <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}}</p></a> </li>
+            <li class="clearfix list-margin"><img class="img-circle thumbnail-mini pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}}</p></a> </li>
             @endif
         @endforeach
         </ul>
@@ -146,7 +146,7 @@
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Ranged' && $user->pivot->raid_status == 'available')
-            <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"><a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
+            <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"><a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
             @endif
         @endforeach
         </ul>
@@ -156,7 +156,7 @@
         <ul class="list-unstyled">
         @foreach($raid->users as $user)
             @if($user->pivot->raid_role == 'Healer' && $user->pivot->raid_status == 'available')
-            <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"><a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
+            <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"><a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
             @endif
         @endforeach
         </ul>
@@ -174,10 +174,10 @@
         </div>
           <div class="panel-body">
           <div class="col-sm-12">
-            <ul class="list-unstyled">
+            <ul class="list-unstyled list-inline">
             @foreach($raid->users as $user)
                 @if($user->pivot->raid_status == 'unsure')
-                <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
+                <li  class="clearfix list-margin"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a> </li>
                 @endif
             @endforeach
             </ul>
@@ -194,10 +194,10 @@
       </div>
         <div class="panel-body">
         <div class="col-sm-12">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled list-inline">
         @foreach($raid->users as $user)
         @if($user->pivot->raid_status == 'no')
-          <li><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a></li>
+          <li  class="clearfix"><img class="img-circle thumbnail-mini  pull-left" src="{{$user->profile->thumbnail}}"> <a href="/profile/{{$user->username}}"> <p class="{{$user->profile->klass}}">{{$user->username}} </p></a></li>
           @endif
         @endforeach
         </ul>

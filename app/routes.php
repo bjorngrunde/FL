@@ -9,7 +9,8 @@ Route::group(['before' => 'checkRole'], function(){
     Route::get('/admin', 'AdminController@index');
 
     #Stats
-    Route::get('/admin/users/stats', 'StatisticsController@userData');
+    Route::get('/admin/users/stats', ['as' => 'admin.stats', 'uses' =>'StatisticsController@userData']);
+    Route::post('/admin/stats/attendance/{id}', ['as' => 'stats.attendance', 'uses' => 'StatisticsController@attendance']);
 
     # Admin Ansökningar
     Route::get('/admin/applications', 'ApplicationsController@index');
