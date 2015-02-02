@@ -34,15 +34,15 @@
         </div>
     @elseif($hasRaid == true)
     <div class="col-md-12 text-center">
-        {{Form::open(['route' => ['change.status', $raid->id], 'class' => 'form-inline'])}}
+        {{Form::open(['route' => ['change.status', $raid->id]])}}
         <div class="form-group">
         {{Form::select('role', ['Tank' => 'Tank', 'Healer' => 'Healer', 'Ranged' => 'Ranged', 'Melee' => 'Melee'],'', ['class' => 'select select-primary'])}}
         {{Form::select('status', ['available' => 'Tillgänglig', 'unsure' => 'Osäker', 'no' => 'Kan ej'],'', ['class' => 'select select-primary'])}}
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-6 col-sm-offset-3">
         {{Form::text('notes', null, ['class' => 'form-control input-sm', 'placeholder' => 'Meddelande'])}}
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-12">
         {{Form::submit('Ändra Status', ['class' => 'btn btn-primary btn-sm'])}}
         </div>
         {{Form::close()}}
@@ -54,11 +54,11 @@
         {{Form::select('role', ['Tank' => 'Tank', 'Healer' => 'Healer', 'Ranged' => 'Ranged', 'Melee' => 'Melee'],'', ['class' => 'select select-primary'])}}
         {{Form::select('status', ['available' => 'Tillgänglig', 'unsure' => 'Osäker', 'no' => 'Kan ej'],'', ['class' => 'select select-primary'])}}
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-6 col-sm-offset-3">
         {{Form::label('notes', 'Meddelande')}}
-        {{Form::text('notes', null, ['class' => 'form-control'])}}
+        {{Form::text('notes', null, ['class' => 'form-control input-sm'])}}
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-12">
         {{Form::submit('Signa upp', ['class' => 'btn btn-primary btn-sm'])}}
         </div>
         {{Form::close()}}
