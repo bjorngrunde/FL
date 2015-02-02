@@ -11,7 +11,7 @@ class Raid extends Eloquent {
 
     public function users()
     {
-        return $this->belongsToMany('User', 'raid_user', 'raid_id', 'user_id')->withPivot('raid_role', 'raid_status');
+        return $this->belongsToMany('User', 'raid_user', 'raid_id', 'user_id')->withPivot('raid_role', 'raid_status', 'notes');
     }
 
     public function comments()

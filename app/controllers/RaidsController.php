@@ -71,7 +71,8 @@ class RaidsController extends Controller
 
         $role = Input::get('role');
         $status = Input::get('status');
-        $raid->users()->attach(Auth::user()->id, ['raid_role' => $role, 'raid_status' => $status]);
+        $notes = Input::get('notes');
+        $raid->users()->attach(Auth::user()->id, ['raid_role' => $role, 'raid_status' => $status, 'notes' => $notes]);
 
         return Redirect::back()->withFlashMessage('Du har nu signat upp!');
     }
@@ -91,8 +92,8 @@ class RaidsController extends Controller
 
         $role = Input::get('role');
         $status = Input::get('status');
-
-        $user->raids()->updateExistingPivot($raid->id,['raid_role' => $role, 'raid_status' => $status]);
+        $notes = Input::get('notes');
+        $user->raids()->updateExistingPivot($raid->id,['raid_role' => $role, 'raid_status' => $status,  'notes' => $notes]);
 
         return Redirect::back()->withFlashMessage('Du har nu ändrat din status!');
     }
@@ -189,12 +190,12 @@ class RaidsController extends Controller
         {
             $hasRaid = true;
             #om användarens status är selected sätter vi radgroup till sant
-            if($user->pivot->raid_status == 'selected')
+           /* if($user->pivot->raid_status == 'selected')
             {
                 $raidgroup =true;
 
                 return View::make('flrs.show', ['raid' => $raid, 'hasRaid' => $hasRaid,'datum' => $datum, 'raidgroup' => $raidgroup]);
-            }
+            } */
 
             return View::make('flrs.show', ['raid' => $raid, 'hasRaid' => $hasRaid,'datum' => $datum, 'raidgroup' => $raidgroup]);
         }
