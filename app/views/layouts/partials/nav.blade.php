@@ -50,10 +50,10 @@
           </li>
             </ul>
        <ul class="nav navbar-nav navbar-right text-center">
-       <li><a href="#"><span class="glyphicon  glyphicon-comment"></span> </a> </li>
+       <li><a href="/conversations/index"><span class="fa fa-envelope"></span>@if(count(Conversation::withNewMessages()->get()) > 0)  <span class="badge badge-notify">{{count(Conversation::withNewMessages()->get())}}</span>  @endif </a> </li>
            <li class="dropdown">
            <a href="#" class="" id="notification" data-toggle="dropdown">
-           <span class="glyphicon glyphicon-bell dark-icon"> </span>
+           <span class="fa fa-bell"> </span>
            <span class="badge badge-notify"></span>  </a>
                <ul class="dropdown-menu" id="notificationMenu">
 
