@@ -13,10 +13,16 @@
 @section('content')
 
 <div class="row">
+<div class="col-sm-12">
+    <ul class="list-inline list-unstyled">
+        <li><a href="" class="btn btn-primary btn-sm">Lägg till fler personer</a> </li>
+        <li><a href="" class="btn btn-primary btn-sm">Skapa ny konversation</a> </li>
+    </ul>
+</div>
     <div class="col-sm-8">
     <h4 class="text-center">Senaste Konversation</h4>
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading text-center">
                 <h4>{{$conversation->subject}}</h4>
             </div>
             <div class="panel-body">
@@ -86,7 +92,7 @@
     $('#scrollbar').perfectScrollbar({
         suppressScrollX: true
     });
-    $('#scrollbar').animate({ scrollTop: $(document).height() }, "fast");
+    $('#scrollbar').animate({ scrollTop: $('#scrollbar').height() + $(document).height() }, "fast");
   return false
 });
 

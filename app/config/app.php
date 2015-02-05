@@ -132,7 +132,8 @@ return array(
         'Family\Wow\WowServiceProvider',
         'Family\Gear\ProfileFeedServiceProvider',
         'Andheiberg\Messenger\MessengerServiceProvider',
-        'JeroenG\LaravelPhotoGallery\LaravelPhotoGalleryServiceProvider'
+        'JeroenG\LaravelPhotoGallery\LaravelPhotoGalleryServiceProvider',
+        'Khill\Lavacharts\Laravel\LavachartsServiceProvider'
 
 	),
 
