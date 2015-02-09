@@ -27,7 +27,7 @@ class ConversationsController extends Controller {
 
         if ($conversations->isEmpty())
         {
-            return Redirect::route('conversations.create');
+            return Redirect::to('/conversations/create');
         }
 
         return Redirect::route('conversations.show', [$conversations->last()->id]);
@@ -44,6 +44,34 @@ class ConversationsController extends Controller {
         $conversations = Conversation::forUser()->orderBy('updated_at', 'desc')->get();
 
         return View::make('conversations.create', compact('conversations'));
+    }
+
+    public function addMember($id)
+    {
+        $conversation = Conversation::find($id);
+
+        $input = Input::get('hidden-recipient');
+        $members = explode(',',$input);
+        foreach($members as $member)
+        {
+            $user = User::whereUsername($member)->first();
+            if($user == null)
+            {
+                return Redirect::back()->withFlashMessage('En användare kunde inte hittas. Försök igen');
+            }
+            elseif(Participant::where('conversation_id', '=', $conversation->id)->where('user_id', '=', $user->id)->first())
+            {
+                return Redirect::back()->withFlashMessage('Användaren '. $user->username. ' finns redan i konversationen');
+            }
+            else
+            {
+            $participant = new Participant;
+            $participant->conversation_id = $id;
+            $participant->user_id = $user->id;
+            $participant->save();
+            }
+        }
+        return Redirect::back()->withFlashMessage('Användare har lagts till i konversationen');
     }
 
     /**
@@ -70,16 +98,29 @@ class ConversationsController extends Controller {
             'user_id' => Auth::user()->id
         ]);
 
-        if ($this->input->has('recipient'))
+        if (Input::has('hidden-recipient'))
         {
-            $recipient = User::where('email', $input['recipient'])->first();
-            Participant::create([
-                'conversation_id' => $conversation->id,
-                'user_id' => $recipient->id,
+            $hidden = Input::get('hidden-recipient');
+            $users = explode(',', $hidden);
+
+            foreach($users as $user)
+            {
+            $recipient = User::where('username', $user)->first();
+
+                if($recipient == null)
+                {
+
+                }
+                else{
+                    Participant::create([
+                    'conversation_id' => $conversation->id,
+                    'user_id' => $recipient->id,
             ]);
+                }
+            }
         }
 
-        return Redirect::route('conversations.index');
+        return Redirect::to('/conversations/index');
     }
 
     /**
@@ -91,6 +132,7 @@ class ConversationsController extends Controller {
     public function show($id)
     {
         $user = Auth::user();
+        $newMessages    = Conversation::withNewMessages()->get();
         $conversations = Conversation::forUser()->orderBy('updated_at', 'desc')->get();
         $conversation  = Conversation::find($id);
 
@@ -98,7 +140,7 @@ class ConversationsController extends Controller {
         $me->last_read = new DateTime;
         $me->save();
 
-        return View::make('conversations.show', compact('conversations', 'conversation'));
+        return View::make('conversations.show', compact('conversations', 'conversation', 'newMessages'));
     }
 
     /**
@@ -118,11 +160,16 @@ class ConversationsController extends Controller {
      */
     public function storeMessage($conversation)
     {
+
         $message = Message::create([
             'conversation_id' => $conversation,
             'user_id' => Auth::user()->id,
             'body' => Input::get('message'),
         ]);
+
+        $me = Participant::me()->where('conversation_id', $conversation)->first();
+        $me->last_read = new DateTime;
+        $me->save();
 
         return Redirect::route('conversations.show', $conversation);
     }

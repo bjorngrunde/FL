@@ -57,9 +57,15 @@ Route::group(['before' => 'auth'], function(){
     Route::get('/dashboard', 'PagesController@index');
 
     #PM (Personal Message)
-    Route::get('conversations/index', 'ConversationsController@index');
+    Route::get('/conversations/index', 'ConversationsController@index');
     Route::get('/conversations/show/{id}', ['as' => 'conversations.show', 'uses' => 'ConversationsController@show']);
-    Route::post('/message/send/{conversation}', ['as' => 'message.store', 'uses' => 'ConversationsController@storeMessage']);
+    Route::get('/conversations/create', 'ConversationsController@create');
+
+
+    Route::post('/message/send/{conversation}',['before' => 'csrf', 'as' => 'message.store', 'uses' => 'ConversationsController@storeMessage']);
+    Route::post('/conversations/store', ['as' => 'conversation.store', 'uses' => 'ConversationsController@store']);
+    Route::post('/conversation/add_member/{id}', ['as' => 'conversation.add.member', 'uses' => 'ConversationsController@addMember']);
+
 
     #notiser (lazy way)
     Route::get('/notifications', 'NotificationsController@show');

@@ -41,4 +41,7 @@ $(document).ready(function(){
         $("#btn_delete_thread").prop('href', '/forum/thread/' + event.target.id + '/delete');
     });
 
+    $("#btn_add_member").click(function(){
+        $("#target_add_member").submit();
+    });
 });

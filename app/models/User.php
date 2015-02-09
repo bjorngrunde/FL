@@ -199,6 +199,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
            }
         return false;
     }
+    public function hasMessage()
+    {
+      #  $conversation = Participant::where('user_id', '=', Auth::user()->id)->where('is_read')
+    }
+
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
