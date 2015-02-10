@@ -5,37 +5,19 @@ use JeroenG\LaravelPhotoGallery\Validators as Validators;
 
 class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosController {
 
-	/**
-	 * The album model
-	 *
-	 * @var \JeroenG\LaravelPhotoGallery\Models\Album
-	 **/
+
 	protected $album;
 
-	/**
-	 * The photo model
-	 *
-	 * @var \JeroenG\LaravelPhotoGallery\Models\Photo
-	 **/
+
 	protected $photo;
 
-	/**
-	 * Instantiate the controller
-	 *
-	 * @param \JeroenG\LaravelPhotoGallery\Models\Album $album
-	 * @param \JeroenG\LaravelPhotoGallery\Models\Photo $photo
-	 * @return void
-	 **/
+
 	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	/**
-	 * Show the form for creating a new photo.
-	 *
-	 * @return \Illuminate\View\View
-	 */
+
 	public function create()
 	{
 		$albumArray = Album::whereUser_id(Auth::user()->id)->get();
@@ -54,11 +36,7 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 		->nest('form', 'gallery::forms.new-photo', $data);
 	}
 
-	/**
-	 * Store a newly created photo in storage.
-	 *
-	 * @return \Illuminate\View\View
-	 */
+
 	public function store()
 	{
 		$input = Input::all();
@@ -92,26 +70,14 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 		}
 	}
 
-	/**
-	 * Display the specified photo.
-	 *
-	 * @param int $albumId Id of the album
-	 * @param int $photoId Id of the photo
-	 * @return \Illuminate\View\View
-	 */
+
 	public function show($albumId, $photoId)
 	{
 		$photo = $this->photo->findOrFail($photoId);
 		return View::make('gallery::photo', array('photo' => $photo));
 	}
 
-	/**
-	 * Show the form for editing the specified photo.
-	 *
-	 * @param int $albumId Id of the album
-	 * @param int $photoId Id of the photo
-	 * @return \Illuminate\View\View
-	 */
+
 	public function edit($albumId, $photoId)
 	{
 		$photo = $this->photo->find($photoId);
@@ -126,13 +92,7 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 		->nest('form', 'gallery::forms.edit-photo', $data);
 	}
 
-	/**
-	 * Update the specified photo in the database.
-	 *
-	 * @param int $albumId Id of the album
-	 * @param int $photoId Id of the photo
-	 * @return \Illuminate\View\View
-	 */
+
 	public function update($albumId, $photoId)
 	{
 		$input = Input::except('_method');
@@ -154,13 +114,6 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
         }
 	}
 
-	/**
-	 * Remove the specified photo from the database.
-	 *
-	 * @param int $albumId Id of the album
-	 * @param int $photoId Id of the photo
-	 * @return \Illuminate\View\View
-	 */
 	public function destroy($albumId, $photoId)
 	{
         $this->photo->delete($photoId);

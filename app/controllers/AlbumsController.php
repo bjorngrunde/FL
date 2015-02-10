@@ -4,38 +4,15 @@ use JeroenG\LaravelPhotoGallery\Validators as Validators;
 
 class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsController
 {
-
-    /**
-     * The album model
-     *
-     * @var \JeroenG\LaravelPhotoGallery\Models\Album
-     **/
     protected $album;
 
-    /**
-     * The photo model
-     *
-     * @var \JeroenG\LaravelPhotoGallery\Models\Photo
-     **/
     protected $photo;
 
-    /**
-     * Instantiate the controller
-     *
-     * @param \JeroenG\LaravelPhotoGallery\Models\Album $album
-     * @param \JeroenG\LaravelPhotoGallery\Models\Photo $photo
-     * @return void
-     **/
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * Show the form for creating a new album.
-     *
-     * @return \Illuminate\View\View
-     */
     public function create()
     {
         $data = array('type' => 'album');
@@ -43,11 +20,7 @@ class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsCo
             ->nest('form', 'gallery::forms.new-album');
     }
 
-    /**
-     * Store a newly created album in storage.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function store()
     {
         $input = Input::all();
@@ -81,17 +54,8 @@ class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsCo
                 ->withErrors($validation->errors)
                 ->with('flash_message', Lang::get('gallery::gallery.errors'));
         }
-
-
-
 	}
 
-	/**
-	 * Display the specified albums' photos.
-	 *
-	 * @param int $id Id of the album
-	 * @return \Illuminate\View\View
-	 */
 	public function show($id)
 	{
 		$album = $this->album->findOrFail($id);
@@ -99,12 +63,6 @@ class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsCo
 		return View::make('gallery::album', array('album' => $album, 'albumPhotos' => $albumPhotos));
 	}
 
-	/**
-	 * Show the form for editing the specified album.
-	 *
-	 * @param int $id Id of the album
-	 * @return \Illuminate\View\View
-	 */
 	public function edit($id)
 	{
 		$album = $this->album->find($id);
@@ -119,12 +77,6 @@ class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsCo
 		->nest('form', 'gallery::forms.edit-album', $data);
 	}
 
-	/**
-	 * Update the specified album in the database.
-	 *
-	 * @param int $id Id of the album
-	 * @return \Illuminate\View\View
-	 */
 	public function update($id)
 	{
 		$input = \Input::except('_method');
@@ -146,12 +98,6 @@ class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsCo
         }
 	}
 
-	/**
-	 * Remove the specified album from the database.
-	 *
-	 * @param int $id Id of the album
-	 * @return \Illuminate\View\View
-	 */
 	public function destroy($id)
 	{
 		$this->album->delete($id);

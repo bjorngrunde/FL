@@ -185,11 +185,10 @@ class RaidsController extends Controller
         array_push($datum, $month);
         array_push($datum, $day);
 
-        #Användaren har raiden i sin pivot, då sätter vi hasRaid till sant
         if( $user = Auth::user()->raids->find($id))
         {
             $hasRaid = true;
-            #om användarens status är selected sätter vi radgroup till sant
+
            /* if($user->pivot->raid_status == 'selected')
             {
                 $raidgroup =true;

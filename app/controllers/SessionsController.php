@@ -4,22 +4,14 @@ use Family\Forms\LoginForm;
 
 class SessionsController extends BaseController
 {
-    /**
-     * @var LoginForm
-     */
     private $loginForm;
 
-    /**
-     * @param LoginForm $loginForm
-     */
+
     function __construct(LoginForm $loginForm)
     {
         $this->loginForm = $loginForm;
     }
 
-    /**
-     * @return mixed
-     */
 
     public function create()
     {

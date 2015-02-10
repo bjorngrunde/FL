@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Cache;
 
 class ProfilesController extends Controller
 {
-    /**
-     * @var ProfileForm
-     */
+
     private $profileForm;
     private $userEmail;
     private $userPassword;
@@ -108,10 +106,6 @@ class ProfilesController extends Controller
         }
     }
 
-    /**
-     * @param $username
-     * @return mixed
-     */
     public function update($username)
     {
         $checkPassword = Input::get('password');

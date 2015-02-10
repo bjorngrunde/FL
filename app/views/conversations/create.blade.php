@@ -9,7 +9,11 @@
 <div class="row">
     <div class="col-sm-12 text-center">
         <h4>Skicka meddelande</h4>
+        @if(Session::has('flash_message'))
+        <h5 class="text-center text-primary">{{Session::get('flash_message')}}</h5>
+        @else
         <p>Skicka ett meddelande till en eller flera användare.</p>
+        @endif
     </div>
     <div class="col-sm-6 col-sm-offset-3">
     {{Form::open(['method' => 'POST', 'route' => 'conversation.store'])}}

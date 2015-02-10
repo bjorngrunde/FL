@@ -3,11 +3,6 @@
 
 class ConversationsController extends Controller {
 
-    /**
-     * Create a BaseController instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         #parent::__construct();
@@ -15,11 +10,6 @@ class ConversationsController extends Controller {
         $this->beforeFilter('auth');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
     public function index()
     {
         $user = Auth::user();
@@ -33,11 +23,7 @@ class ConversationsController extends Controller {
         return Redirect::route('conversations.show', [$conversations->last()->id]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
+
     public function create()
     {
         $user = Auth::user();
@@ -74,14 +60,10 @@ class ConversationsController extends Controller {
         return Redirect::back()->withFlashMessage('Användare har lagts till i konversationen');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
     public function store()
     {
         $input = Input::all();
+
 
         $conversation = Conversation::create([
             'subject' => $input['subject'],
@@ -109,9 +91,46 @@ class ConversationsController extends Controller {
 
                 if($recipient == null)
                 {
+                    if($oldParticipants = Participant::where('conversation_id', '=', $conversation->id)->get())
+                    {
+                        foreach($oldParticipants as $oldParticipant)
+                        {
+                            $oldParticipant->delete();
+                        }
+                    }
+                    if($oldMessages = Message::where('conversation_id', '=', $conversation->id)->get())
+                    {
+                        foreach($oldMessages as $oldMessage)
+                        {
+                            $oldMessage->delete();
+                        }
+                    }
+                    $conversation->delete();
 
+                    return Redirect::back()->withFlashMessage('Skapandet av konversationen avbröts, en användare kunde inte hittas.');
                 }
-                else{
+                elseif($recipient->username == Auth::user()->username)
+                {
+                    if($oldParticipants = Participant::where('conversation_id', '=', $conversation->id)->get())
+                    {
+                        foreach($oldParticipants as $oldParticipant)
+                        {
+                            $oldParticipant->delete();
+                        }
+                    }
+                    if($oldMessages = Message::where('conversation_id', '=', $conversation->id)->get())
+                    {
+                        foreach($oldMessages as $oldMessage)
+                        {
+                            $oldMessage->delete();
+                        }
+                    }
+                    $conversation->delete();
+
+                    return Redirect::back()->withFlashMessage('Du kan inte lägga till dig själv i konversationen. Skapandet avbröts.');
+                }
+                else
+                {
                     Participant::create([
                     'conversation_id' => $conversation->id,
                     'user_id' => $recipient->id,
@@ -123,17 +142,11 @@ class ConversationsController extends Controller {
         return Redirect::to('/conversations/index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
     public function show($id)
     {
         $user = Auth::user();
         $newMessages    = Conversation::withNewMessages()->get();
-        $conversations = Conversation::forUser()->orderBy('updated_at', 'desc')->get();
+        $conversations = Conversation::forUser()->orderBy('updated_at', 'desc')->paginate(5);
         $conversation  = Conversation::find($id);
 
         $me = Participant::me()->where('conversation_id', $conversation->id)->first();
@@ -143,21 +156,11 @@ class ConversationsController extends Controller {
         return View::make('conversations.show', compact('conversations', 'conversation', 'newMessages'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
     public function createMessage($conversation)
     {
         return View::make('conversations.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
     public function storeMessage($conversation)
     {
 
@@ -172,6 +175,16 @@ class ConversationsController extends Controller {
         $me->save();
 
         return Redirect::route('conversations.show', $conversation);
+    }
+
+    public function destroyParticipant($id)
+    {
+        $conversation = Conversation::find($id);
+
+        $participant = Participant::where('conversation_id', '=', $conversation->id)->where('user_id', '=', Auth::user()->id)->firstOrFail();
+        $participant->delete();
+
+        return Redirect::to('/conversations/index')->withFlashMessage('Du har nu lämnat konversationen '. $conversation->subject);
     }
 
 }

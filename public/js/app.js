@@ -41,6 +41,11 @@ $(document).ready(function(){
         $("#btn_delete_thread").prop('href', '/forum/thread/' + event.target.id + '/delete');
     });
 
+    $(".leave_chat").click(function(event){
+
+        $("#btn_leave_chat").prop('href', '/conversation/leave/' + event.target.id);
+    });
+
     $("#btn_add_member").click(function(){
         $("#target_add_member").submit();
     });

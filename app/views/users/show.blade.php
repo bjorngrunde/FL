@@ -22,10 +22,10 @@
                 <li>
                     <a href="/admin/users/{{$user->username}}/edit" class="btn btn-warning btn-sm">Redigera</a>
                 </li>
-                 <li>
-                 <a id="{{$user->id}}" href="#" class="btn btn-danger btn-sm delete_user" data-toggle="modal" data-target="#user_delete">Ta bort</a>
-                 </li>
-                 </ul>
+                <li>
+                    <a id="{{$user->id}}" href="#" class="btn btn-danger btn-sm delete_user" data-toggle="modal" data-target="#user_delete">Ta bort</a>
+                </li>
+                </ul>
              </div>
           </div>
           <div class="row">

@@ -17,6 +17,7 @@
     <ul class="list-inline list-unstyled">
         <li><a href="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add_member">Lägg till fler personer</a> </li>
         <li><a href="/conversations/create" class="btn btn-primary btn-sm">Skapa ny konversation</a> </li>
+        <li><a id="{{$conversation->id}}" href="#" class="btn btn-danger btn-sm leave_chat" data-toggle="modal" data-target="#leave_chat">Lämna denna konversation</a></li>
     </ul>
 </div>
     <div class="col-sm-8">
@@ -39,7 +40,7 @@
                     </div>
                      <div class="col-sm-2 text-center">
                     <img src="{{$message->user->profile->thumbnail}}" class="img-responsive img-nav img-circle center-block" />
-                    <p><span class="{{$message->user->profile->klass}}">{{$message->user->username}}</span></p>
+                    <p><a href="/profile/{{$message->user->username}}"><span class="{{$message->user->profile->klass}}">{{$message->user->username}}</span></a></p>
                     @if($index+1 == count($conversation->messages))
                     <div id="last"></div>
                     @endif
@@ -49,7 +50,7 @@
                     <div class="row">
                     <div class="col-sm-2 text-center">
                     <img src="{{$message->user->profile->thumbnail}}" class="img-responsive img-nav img-circle center-block" />
-                    <p><span class="{{$message->user->profile->klass}}">{{$message->user->username}}</span></p>
+                    <p><a href="/profile/{{$message->user->username}}"><span class="{{$message->user->profile->klass}}">{{$message->user->username}}</span></a></p>
                     </div>
                     <div class="col-sm-7 dark-sh-well-no-radius">
                     <p>{{$message->body}}</p>
@@ -88,39 +89,63 @@
                @endforeach</h5>
              <ul class="list-unstyled list-inline">
             @foreach($chat->participants as $participant)
-                <li><small><span class="{{$participant->user->profile->klass}}">{{$participant->user->username}}</span> </small></li>
+                <li><small><a href="/profile/{{$participant->user->username}}"> <span class="{{$participant->user->profile->klass}}">{{$participant->user->username}}</span> </a></small></li>
             @endforeach
             </ul>
         </div>
     @endforeach
+    <div class="col-sm-12 text-center">
+        {{$conversations->links()}}
+    </div>
     </div>
 </div>
 
- <div class="modal fade" id="add_member" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">
-                                            <span aria-hidden="true">&times;</span>
-                                            <span class="sr-only">Close</span>
-                                            </button>
-                                            <h4 class="modal-title">Lägg till personer</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                           {{Form::open(['method' => 'POST', 'route' =>['conversation.add.member', $conversation->id], 'id' => 'target_add_member'])}}
-                                              <div class="form-group">
-                                              {{Form::label('recipient', 'Mottagare')}}
-                                              {{Form::text('recipient', null, ['class' => 'form-control tm-input tm-input-info tm-input-small', 'id' => 'sender', 'placeholder' => 'Välj mottagare'])}}
-                                              </div>
-                                              {{Form::close()}}
-                                              </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
-                                            <a id="btn_add_member" class="btn btn-primary btn-sm">Spara</a>
-                                        </div>
-                                    </div>
-                                </div>
+<div class="modal fade" id="add_member" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Lägg till personer</h4>
+            </div>
+            <div class="modal-body">
+               {{Form::open(['method' => 'POST', 'route' =>['conversation.add.member', $conversation->id], 'id' => 'target_add_member'])}}
+                  <div class="form-group">
+                  {{Form::label('recipient', 'Mottagare')}}
+                  {{Form::text('recipient', null, ['class' => 'form-control tm-input tm-input-info tm-input-small', 'id' => 'sender', 'placeholder' => 'Välj mottagare'])}}
+                  </div>
+                  {{Form::close()}}
+                  </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                <a id="btn_add_member" class="btn btn-primary btn-sm">Spara</a>
+            </div>
+            </div>
+        </div>
+    </div>
+     <div class="modal fade" id="leave_chat" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Lämna konversation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Är du säker på att du vill lämna denna konversation?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Nej</button>
+                    <a id="btn_leave_chat" class="btn btn-primary btn-sm">Lämna</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 @stop

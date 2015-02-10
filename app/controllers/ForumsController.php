@@ -6,17 +6,11 @@ use Illuminate\Routing\Controller;
 
 class ForumsController extends Controller
 {
-    /**
-     * @var ForumGroupValidation
-     */
+
     private $forumGroupValidation;
-    /**
-     * @var NewThreadForm
-     */
+
     private $newThreadForm;
-    /**
-     * @var ForumCommentForm
-     */
+
     private $forumCommentForm;
 
     public function __construct(ForumGroupValidation $forumGroupValidation, NewThreadForm $newThreadForm, ForumCommentForm $forumCommentForm)

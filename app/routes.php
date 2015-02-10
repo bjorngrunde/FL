@@ -60,6 +60,7 @@ Route::group(['before' => 'auth'], function(){
     Route::get('/conversations/index', 'ConversationsController@index');
     Route::get('/conversations/show/{id}', ['as' => 'conversations.show', 'uses' => 'ConversationsController@show']);
     Route::get('/conversations/create', 'ConversationsController@create');
+    Route::get('/conversation/leave/{id}', ['as' => 'conversation.leave', 'uses' => 'ConversationsController@destroyParticipant']);
 
 
     Route::post('/message/send/{conversation}',['before' => 'csrf', 'as' => 'message.store', 'uses' => 'ConversationsController@storeMessage']);
