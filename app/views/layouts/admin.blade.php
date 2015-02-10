@@ -11,6 +11,7 @@
     <link href="/css/datepicker/default.css" rel="stylesheet">
     <link href="/css/datepicker/default.date.css" rel="stylesheet">
     <link href="/css/datepicker/default.time.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
         body {
         padding-top:65px;
