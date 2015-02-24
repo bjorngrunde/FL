@@ -122,6 +122,7 @@ Route::group(['before' => 'auth'], function(){
             Route::post('/thread/unlock/{id}',['as' => 'thread.unlock', 'uses' =>'ForumsController@unlock']);
             Route::post('/thread/move/{id}', ['as' => 'thread.move', 'uses' => 'ForumsController@move']);
             Route::post('/thread/copy/{id}', ['as' => 'thread.copy', 'uses' => 'ForumsController@copy']);
+            Route::post('/thread/setSticky/{id}', ['as' => 'forum.set.sticky', 'uses' => 'ForumsController@setSticky']);
 
 
         });

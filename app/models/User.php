@@ -42,7 +42,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
             case 'Officer':
                 $forumRank = 2;
                 break;
-            case 'Guild Mster':
+            case 'Guild Master':
                 $forumRank = 2;
                 break;
         }
@@ -133,7 +133,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
             case 'Officer':
                 $forumRank = 2;
                 break;
-            case 'Guild Mster':
+            case 'Guild Master':
                 $forumRank = 2;
                 break;
         }
@@ -198,10 +198,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
                }
            }
         return false;
-    }
-    public function hasMessage()
-    {
-      #  $conversation = Participant::where('user_id', '=', Auth::user()->id)->where('is_read')
     }
 
     public function setPasswordAttribute($password)
@@ -268,6 +264,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function conversations()
     {
         return $this->hasMany('Conversation');
+    }
+
+    public function points()
+    {
+        return $this->hasOne('Point');
     }
 }
 

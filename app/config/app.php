@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'KNAkC0l1jv19QF0ivI8pj54DmeiFYi2x',
+	'key' => 'KNAkC0l1jkp19QF0ivI8pj54DmeFYi2x',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 

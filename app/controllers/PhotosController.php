@@ -21,7 +21,7 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 	public function create()
 	{
 		$albumArray = Album::whereUser_id(Auth::user()->id)->get();
-		$dropdown[0] = '';
+		$dropdown[0] = 'Välj Album';
 
 		if (empty($albumArray)) {
 			$dropdown[0] = Lang::get('gallery.none') . Lang::choice('gallery.album', 2);

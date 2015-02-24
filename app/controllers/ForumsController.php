@@ -32,7 +32,9 @@ class ForumsController extends Controller
         $category = ForumCategory::find($id);
        if(!Auth::user()->profile->forum_rank <= $category->rank)
         {
-            $threads = ForumThread::with('comments')->whereCategory_id($id)->orderBy('updated_at', 'desc')->paginate(20);
+            $threads = ForumThread::whereCategory_id($id)->with('comments', 'sticky')->orderBy('updated_at', 'desc')->paginate(20);
+
+            #$threads = ForumThread::with('comments', 'sticky')->whereCategory_id($id)->orderBy('updated_at', 'desc')->paginate(20);
             return View::make('forum.category',compact('threads'),['category' => $category]);
         }
        else
@@ -98,7 +100,7 @@ class ForumsController extends Controller
 
     public function thread($id)
     {
-        $thread = ForumThread::with('comments', 'locked')->find($id);
+        $thread = ForumThread::with('comments', 'locked', 'sticky')->find($id);
         $categories = ForumCategory::all();
         $comments = ForumComment::whereThread_id($id)->paginate(15);
         return View::make('forum.thread', compact('comments'),['thread' => $thread, 'categories' => $categories] );
@@ -140,8 +142,13 @@ class ForumsController extends Controller
         $locked->thread_id = $thread->id;
         $locked->save();
 
-        $thread->locked()->save($locked);
+        $sticky = new Sticky;
+        $sticky->forum_thread_id = $thread->id;
+        $sticky->isSticky = false;
+        $sticky->save();
 
+        $thread->locked()->save($locked);
+        $thread->sticky()->save($sticky);
         return Redirect::to('/forum/thread/'.$thread->id);
     }
 
@@ -322,7 +329,7 @@ class ForumsController extends Controller
         $thread->group_id = $category->group_id;
         $thread->save();
 
-        return Redirect::to('/forum/category/'.$category->id)->withFlashMessage('Din tråd har flyttats');
+        return Redirect::to('/forum/category/'.$category->id)->withFlashMessage('Din tråd har flyttats till '. $category->title);
     }
 
     public function copy($id)
@@ -348,6 +355,42 @@ class ForumsController extends Controller
         $newThread->locked()->save($locked);
 
         return Redirect::back()->withFlashMessage('DU har nu kopierat tråden '. $oldThread->title. ' till kategorin '. $category->title);
+
+    }
+
+    public function setSticky($id)
+    {
+        $thread = ForumThread::find($id);
+
+        if($thread == null)
+        {
+            return Redirect::back()->withFlashMessage('Något gick fel. Trådjäveln finns inte.');
+        }
+
+        if($sticky = Sticky::where('forum_thread_id', $id)->first())
+        {
+            if($sticky->isSticky == 1)
+            {
+                $sticky->isSticky = 0;
+                $sticky->save();
+                return Redirect::back()->withFlashMessage('Du har tagit bort nålen för denna tråd.');
+            }
+            else
+            {
+                $sticky->isSticky = 1;
+                $sticky->save();
+                return Redirect::back()->withFlashMessage('Tråden har nu blivit fastnålad');
+            }
+        }
+        else
+        {
+            $sticky = new Sticky;
+            $sticky->forum_thread_id = $thread->id;
+            $sticky->isSticky = 1;
+            $sticky->save();
+            return Redirect::back()->withFlashMessage('Denna tråd är nu fastnålad');
+        }
+
 
     }
 }

@@ -12,27 +12,38 @@
     @if(Session::has('flash_message'))
         <p class="text-info text-center">{{Session::get('flash_message')}}</p>
      @endif
-    <ul class="list-unstyled list-inline">
-     @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || $thread->author_id == Auth::user()->id)
-    <li><a href="/forum/thread/edit/{{$thread->id}}" class="btn btn-warning btn-sm">Redigera tråd</a></li>
-     <li><a id="{{$thread->id}}" href="#" class="btn btn-danger btn-sm delete_thread" data-toggle="modal" data-target="#thread_delete">Ta bort</a></li>
-     @endif
-     @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
-     <li><a id="" href="#" class="btn btn-primary btn-sm move_thread" data-toggle="modal" data-target="#thread_move">Flytta tråd</a></li>
-     <li><a id="" href="#" class="btn btn-primary btn-sm copy_thread" data-toggle="modal" data-target="#thread_copy">Kopiera tråd</a></li>
-        @if($thread->locked->locked != 1)
-      <li>
-     {{Form::open(['method' => 'POST', 'route' => ['thread.lock', $thread->id]])}}
-     {{Form::submit('Lås tråd', ['class' => 'btn btn-primary btn-sm'])}}
-     {{Form::close()}}</li>
-     @else
+     <ul class="list-inline list-unstyled">
      <li>
+     <div class="btn-group" role="group" aria-label="...">
+     @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || $thread->author_id == Auth::user()->id)
+     <button type="button" href="/forum/thread/edit/{{$thread->id}}" class="btn btn-primary btn-sm"><span class="fa fa-edit fa-2x"></span> </button>
+     <button type="button" id="{{$thread->id}}" href="#" class="btn btn-primary btn-sm delete_thread" data-toggle="modal" data-target="#thread_delete"><span class="fa fa-trash-o fa-2x"></span> </button>
+     @endif
+     </div>
+     </li>
+     <li><div class="btn-group" role="group" aria-label="...">
+     @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
+     <button type="button" id="" href="#" class="btn btn-primary btn-sm move_thread" data-toggle="modal" data-target="#thread_move"><span class="fa fa-arrows fa-2x"></span> </button>
+     <button type="button" id="" href="#" class="btn btn-primary btn-sm copy_thread" data-toggle="modal" data-target="#thread_copy"><span class="fa fa-copy fa-2x"></span></button>
+      </div>
+      </li>
+      <li>
+      {{Form::open(['method' => 'POST', 'route' => ['forum.set.sticky', $thread->id] ])}}
+      <button type="submit" class="btn btn-primary btn-sm"><span class="fa fa-thumb-tack fa-2x"></span> </button>
+      {{Form::close()}}
+      <li>
+     @if($thread->locked->locked != 1)
+     {{Form::open(['method' => 'POST', 'route' => ['thread.lock', $thread->id]])}}
+     <button type="submit" class="btn btn-primary btn-sm"><span class="fa fa-lock fa-2x"></span> </button>
+     {{Form::close()}}
+     @else
      {{Form::open(['method' => 'POST', 'route' => ['thread.unlock', $thread->id]])}}
-     {{Form::submit('Lås upp tråd', ['class' => 'btn btn-primary btn-sm'])}}
-     {{Form::close()}}</li>
+      <button type="submit" class="btn btn-primary btn-sm"><span class="fa fa-unlock fa-2x"></span> </button>
+     {{Form::close()}}
      @endif
      @endif
-     </ul>
+     </li>
+    </ul>
      @if($thread->locked->locked != 1)
      <ul class="list-inline list-unstyled pull-right">
      <li><a href="#" data-toggle="modal" data-target="#comment_form" class="btn btn-primary btn-sm ">Svara på tråd</a></li>
@@ -45,7 +56,7 @@
 <div class="col-md-12">
         <div class="panel panel-default">
         <div class="panel-heading">
-            <h3> @if($thread->locked->locked == 1)<span class="glyphicon glyphicon-remove "></span>@endif {{$thread->title}}</h3>
+            <h3> @if($thread->locked->locked == 1)<span class="fa fa-lock"></span>@endif @if($thread->sticky->isSticky == 1) <span class="fa fa-thumb-tack"></span>@endif  {{$thread->title}}</h3>
         </div>
         <div class="panel-body dark-sh-well-no-radius">
         <div class="col-sm-12">
@@ -135,8 +146,8 @@
                             {{Form::close()}}
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class=" btn btn-danger" data-dismiss="modal">Stäng</button>
-                            <button type="button" class=" btn btn-primary" data-dismiss="modal" id="form_comment_submit">Spara</button>
+                            <button type="button" class=" btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                            <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal" id="form_comment_submit">Spara</button>
                         </div>
                     </div>
                 </div>
@@ -163,8 +174,8 @@
                             {{Form::close()}}
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class=" btn btn-danger" data-dismiss="modal">Stäng</button>
-                            <button type="button" class=" btn btn-primary" data-dismiss="modal" id="form_comment_quote_submit">Spara</button>
+                            <button type="button" class=" btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                            <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal" id="form_comment_quote_submit">Spara</button>
                         </div>
                     </div>
                 </div>
@@ -184,8 +195,8 @@
                                             <p>Är du säker på att du vill ta bort denna kommentar?</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Stäng</button>
-                                            <a id="btn_delete_comment" class="btn btn-primary">Ta bort</a>
+                                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                                            <a id="btn_delete_comment" class="btn btn-primary btn-sm">Ta bort</a>
                                         </div>
                                     </div>
                                 </div>
@@ -215,8 +226,8 @@
                                         </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Stäng</button>
-                                            <a id="btn_thread_move" class="btn btn-primary">Flytta</a>
+                                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                                            <a id="btn_thread_move" class="btn btn-primary btn-sm">Flytta</a>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +247,7 @@
                                         <div class="modal-body">
                                             {{Form::open(['method' => 'post', 'route' => ['thread.copy', $thread->id], 'id' => 'target_copy_form'])}}
                                             <div class="form-group">
-                                            {{Form::label('categories', 'Välj vart du ska flytta tråden')}}
+                                            {{Form::label('categories', 'Välj vart du ska kopiera tråden')}}
                                             <select name="categories" class="form-control">
                                                 @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{$category->title}}</option>
@@ -246,8 +257,8 @@
                                         </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Stäng</button>
-                                            <a id="btn_thread_copy" class="btn btn-primary">Kopiera</a>
+                                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                                            <a id="btn_thread_copy" class="btn btn-primary btn-sm">Kopiera</a>
                                         </div>
                                     </div>
                                 </div>
@@ -268,8 +279,8 @@
                                             <p>Är du säker på att du vill ta bort denna tråd?</p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Stäng</button>
-                                            <a id="btn_delete_thread" class="btn btn-primary">Ta bort</a>
+                                            <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                                            <a id="btn_delete_thread" class="btn btn-primary btn-sm">Ta bort</a>
                                         </div>
                                     </div>
                                 </div>

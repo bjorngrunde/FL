@@ -5,7 +5,7 @@
 <style>
 #scrollbar {
     position: relative;
-    height: 500px;
+    height: 400px;
     overflow: hidden;
 }
 </style>
