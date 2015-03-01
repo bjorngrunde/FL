@@ -30,7 +30,7 @@ class AlbumsController extends \JeroenG\LaravelPhotoGallery\Controllers\AlbumsCo
         if ($validation->passes())
         {
             $filename = str_random(4) . Input::file('thumbnail')->getClientOriginalName();
-            Image::make(Input::file('thumbnail'))->resize(300, 200)->save('default/public/uploads/thumbnails/'. $filename);
+            Image::make(Input::file('thumbnail'))->resize(300, 200)->save('public/uploads/thumbnails/'. $filename);
 
             #$destination = "uploads/thumbnails/";
             #$upload = Input::file('thumbnail')->move($destination, $filename);
