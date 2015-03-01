@@ -110,7 +110,7 @@ class RaidsController extends Controller
 
         if($raid == null)
         {
-            return Redirect::back()->withFlashMessage();
+            return Redirect::back()->withFlashMessage('Raiden existerar inte!');
         }
         foreach($raid->users as $user)
         {

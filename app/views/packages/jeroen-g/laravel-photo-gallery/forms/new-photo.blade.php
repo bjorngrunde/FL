@@ -1,3 +1,6 @@
+@if(Session::has('flash_message'))
+<div class="text-center">{{ Session::get('flash_message') }}</div>
+@endif
 {{ Form::open(array('route' => 'gallery.album.photo.store', 'method' => 'POST', 'files' => true)) }}
         
     <div class="form-group">

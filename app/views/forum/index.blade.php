@@ -6,7 +6,7 @@
     @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
 <div class="col-md-12">
     @if(Session::has('flash_message'))
-        <p class="text-info">{{Session::get('flash_message')}}</p>
+        <p class="text-info text-center">{{Session::get('flash_message')}}</p>
      @endif
     <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#group_form">Lägg till Grupp</a>
     <a class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#category_form">Lägg till Kategori</a>
@@ -45,7 +45,6 @@
     </div>
 </div>
 </div>
-
     @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
         <div class="modal fade" id="group_form" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">

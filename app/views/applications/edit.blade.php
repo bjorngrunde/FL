@@ -5,17 +5,17 @@
 <div class="col-md-12 text-center">
     <h3>Redigera ansökan för: {{$application->name. ' ' .$application->lastName}}</h3>
     </div>
-     <div class="col-md-6">
-       <ol class="breadcrumb">
+        <div class="col-md-6">
+        <ol class="breadcrumb">
         <li><a href="/admin">Admin Dashboard</a></li>
         <li><a href="/admin/applications/"> Ansökningar</a></li>
         <li><a href="/admin/applications/{{$application->id}}">Ansökan - {{$application->name . ' '. $application->lastName}}</a></li>
         <li class="active">Redigera</li>
-       </ol>
-       </div>
-       <div class="col-md-6">
+        </ol>
+        </div>
+        <div class="col-md-6">
         <a href="/admin" class="btn btn-primary btn-sm pull-right">Admin Dashboard</a>
-       </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">

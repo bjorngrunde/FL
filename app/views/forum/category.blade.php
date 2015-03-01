@@ -11,7 +11,7 @@
 </div>
 <div class="col-md-12">
     @if(Session::has('flash_message'))
-        <p class="text-info">{{Session::get('flash_message')}}</p>
+        <p class="text-info text-center">{{Session::get('flash_message')}}</p>
      @endif
       <a href="/forum/new/thread/{{$category->id}}" class="btn btn-primary btn-sm">Skapa tråd</a>
 </div>
@@ -38,28 +38,50 @@
         <tbody class="panel-body">
         @if(count($threads) > 0)
             @foreach($threads as $thread)
-                    <tr>
-                    <td><strong><p>
-                                @if($thread->locked->locked == 1)
-                                <span class="glyphicon glyphicon-remove"></span>
-                                @endif
-                                <a href="/forum/thread/{{$thread->id}}">{{$thread->title}}</a></p></strong>
-                    </td>
-                    <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
-                    <td>{{count($thread->comments)}}</td>
+            @if($thread->sticky->isSticky == 1)
+                <tr>
                     <td>
-                        @if(count($thread->comments) > 0)
-                            @foreach($thread->comments as $comment)
-                                @if($comment->updated_at == $thread->updated_at)
-                                    <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
-                                    <?php break; ?>
-                                @endif
-                            @endforeach
+                <strong><p><a href="/forum/thread/{{$thread->id}}">@if($thread->locked->locked == 1) <span class="fa fa-lock"></span> @endif <span class="fa fa-thumb-tack"> </span> {{$thread->title}} </a></p></strong>
+                </td>
+                <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
+                <td>{{count($thread->comments)}}</td>
+                <td>
+                    @if(count($thread->comments) > 0)
+                        @foreach($thread->comments as $comment)
+                            @if($comment->updated_at == $thread->updated_at)
+                                <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
+                                <?php break; ?>
+                            @endif
+                        @endforeach
                         @else
-                            <p>Inga inlägg än..</p>
-                        @endif
+                        <p>Inga inlägg än..</p>
+                    @endif
                     </td>
-                    </tr>
+                </tr>
+                @endif
+                @endforeach
+            @foreach($threads as $thread)
+             @if($thread->sticky->isSticky == 0)
+            <tr>
+            <td>
+            <strong><p><a href="/forum/thread/{{$thread->id}}">@if($thread->locked->locked == 1) <span class="fa fa-lock"></span> @endif {{$thread->title}}</a></p></strong>
+            </td>
+            <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
+            <td>{{count($thread->comments)}}</td>
+            <td>
+                @if(count($thread->comments) > 0)
+                    @foreach($thread->comments as $comment)
+                        @if($comment->updated_at == $thread->updated_at)
+                            <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
+                            <?php break; ?>
+                        @endif
+                    @endforeach
+                @else
+                    <p>Inga inlägg än..</p>
+                @endif
+            </td>
+            </tr>
+            @endif
             @endforeach
         @else
         <tr>

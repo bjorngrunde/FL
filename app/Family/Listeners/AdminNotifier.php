@@ -80,7 +80,8 @@ class AdminNotifier extends EventListener
                             ->withBody('{{users}} har nekat '. $event->application->name. ' '. $this->lastName. ' ansökan.')
                             ->regarding($event->application)
                             ->deliver();
-                    }else
+                    }
+                    else
                     {
                         $user->newNotification()
                             ->from(Auth::user())
@@ -150,16 +151,16 @@ class AdminNotifier extends EventListener
         {
             if($user->hasRole('Admin') || $user->hasRole('Utvecklare'))
             {
-                    if($user->username != Auth::user()->username)
-                    {
-                        $user->newNotification()
-                            ->from(Auth::user())
-                            ->withType('UserWasUpdated')
-                            ->withSubject('En användare har redigerats')
-                            ->withBody('{{users}} har redigerat användaren '. $event->user->username)
-                            ->regarding($event->user)
-                            ->deliver();
-                    }
+                if($user->username != Auth::user()->username)
+                {
+                    $user->newNotification()
+                        ->from(Auth::user())
+                        ->withType('UserWasUpdated')
+                        ->withSubject('En användare har redigerats')
+                        ->withBody('{{users}} har redigerat användaren '. $event->user->username)
+                        ->regarding($event->user)
+                        ->deliver();
+                }
             }
         }
     }

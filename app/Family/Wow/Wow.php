@@ -66,7 +66,7 @@ class Wow {
 
         try
         {
-            $this->client = new OAuth2\Client($this->client_id,$this->client_secret,$this->region,$this->locale, $this->redirect_url);
+            $this->client = new OAuth2\Client($this->client_id, $this->client_secret, $this->region, $this->locale, $this->redirect_url);
 
             $data = $this->client->fetch($type, $parameters);
         }

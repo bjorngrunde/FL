@@ -57,7 +57,7 @@ class ConversationsController extends Controller {
             $participant->save();
             }
         }
-        return Redirect::back()->withFlashMessage('Användare har lagts till i konversationen');
+        return Redirect::back()->withFlashMessage($user->username.' har lagts till i konversationen');
     }
 
     public function store()

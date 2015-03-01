@@ -35,6 +35,7 @@ class UpdateUserValidator
         $checkEmail = $command->email;
         $checkPassword = $command->password;
         $checkRole = $command->role;
+
         if(!empty($checkPassword))
         {
             $this->password->validate($command);

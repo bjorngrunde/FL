@@ -8,9 +8,7 @@
 </div>
 
 @if(Session::has('flash_message'))
-
     <h4 class="flash-message text-white text-center">{{ Session::get('flash_message') }}</h4>
-
 @else
     <div class="row login-form">
     <div class="col-md-12 text-white text-center">
@@ -18,7 +16,6 @@
         </div>
         <div class="col-md-12">
             {{ Form::open(['route' => 'application.store', 'files' => true]) }}
-
             <div class="col-md-6">
             <div class="form-group">
                 {{ Form::label('name', 'Förnamn', ['class' => 'text-white']) }}
@@ -145,7 +142,6 @@
                 {{ Form::submit('Skicka in ansökan', ['class' => 'btn btn-primary btn-sm']) }}
             </div>
             </div>
-
             {{Form::close()}}
         </div>
     </div>

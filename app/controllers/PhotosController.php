@@ -21,7 +21,7 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 	public function create()
 	{
 		$albumArray = Album::whereUser_id(Auth::user()->id)->get();
-		$dropdown[0] = '';
+		$dropdown[0] = 'Välj Album';
 
 		if (empty($albumArray)) {
 			$dropdown[0] = Lang::get('gallery.none') . Lang::choice('gallery.album', 2);
@@ -40,7 +40,8 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
 	public function store()
 	{
 		$input = Input::all();
-
+        if($input['album_id'] != 0)
+        {
 		$validation = new Validators\Photo;
 
 		if($validation->passes())
@@ -68,6 +69,11 @@ class PhotosController extends \JeroenG\LaravelPhotoGallery\Controllers\PhotosCo
             ->withInput()->withErrors($validation->errors)
             ->with('message', \Lang::get('gallery::gallery.errors'));
 		}
+        }
+        else
+        {
+            return Redirect::back()->withInput()->withFlashMessage('Du måste välja ett Album. Har du inte ett album så måste du skapa ett först!');
+        }
 	}
 
 

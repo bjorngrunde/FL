@@ -27,4 +27,8 @@ class ForumThread extends Eloquent
     {
         return $this->hasOne('ForumLocked', 'thread_id');
     }
+    public function sticky()
+    {
+        return $this->hasOne('Sticky')->orderBy('isSticky', 'asc');
+    }
 }
