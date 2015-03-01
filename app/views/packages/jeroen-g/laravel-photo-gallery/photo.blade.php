@@ -12,7 +12,7 @@
         <div class="panel-body">
             <img class="img-responsive" src='{{asset('/uploads/photos/'.$photo->photo_path) }}' />
         </div>
-        <div class="panel-footer">
+        <div class="panel-body">
     	    {{ $photo->photo_description }}
     	    </div>
     	    <div class="col-md-12">
