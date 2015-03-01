@@ -42,7 +42,7 @@
     <script src="../../js/vendor/jquery-2.1.3.min.js"></script>
    <script src="../../js/bootstrap.min.js"></script>
    <script src="../../js/app.js"></script>
-   <script src="../../js/jquery-ui-1.11.3/jquery-ui.min.js"></script>
+  <!-- <script src="../../js/jquery-ui-1.11.3/jquery-ui.min.js"></script>-->
    <script src="../../js/notifications/notiser.js"></script>
    <script>
     $('#auto').autocomplete({
