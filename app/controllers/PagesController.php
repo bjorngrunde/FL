@@ -11,7 +11,7 @@ class PagesController extends BaseController {
 	 */
 	public function index()
     {
-        $allRaids = Raid::orderBy('created_at', 'desc')->get();
+        $allRaids = Raid::where('time', '>=', date('y-m-d'))->orderBy('created_at', 'desc')->get();
         $raids = $allRaids->take(3);
 
         $forumthreads = ForumThread::with('comments', 'group')->orderBy('updated_at', 'desc')->get();
