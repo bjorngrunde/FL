@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var i = 0;
-    var url = 'http://family.dev:8000/';
+    var url = 'http://178.62.115.229/';
     $.get(url+'notifications', function(data){
         $.each(data, function(index, value) {
             $('#notificationMenu').append('<li><a href="#" class="dark-sh-well-no-radius">' + value.body +'</a></li>');
