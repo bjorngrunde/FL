@@ -92,9 +92,7 @@
                  </div>
                 </div>
             </div>
-            <div class="col-md-12">
-               <canvas id="stats" width="800" height="400"></canvas>
-            </div>
+
           </div>
 
           <div class="modal fade" id="user_delete" tabindex="-1" role="dialog" aria-hidden="true">
@@ -157,28 +155,5 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
-<script>
 
-$(document).ready(function(){
-
-    var ctx = $("#stats").get(0).getContext("2d");
-
-    var data = {
-        labels: ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti'],
-        datasets: [
-            {
-                label: "Raids",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [76, 16, 96, 88, 96, 100, 50]
-            }
-           ]
-       }
-    var newChart = new Chart(ctx).Line(data);
-});
-</script>
 @stop
