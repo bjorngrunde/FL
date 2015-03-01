@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
     <link href="/css/vendor/less/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="/js/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
+    <link href="/js/jquery-ui-1.11.3/jquery-ui.css" rel="stylesheet">
     <link href="/css/lightbox/jquery.lightbox.css" rel="stylesheet">
     @yield('css')
     <link href="/css/style.css" rel="stylesheet">
@@ -39,10 +39,10 @@
 <section class="container">
     @include('layouts/partials/admin_footer')
 </section>
-    <script src="../../js/vendor/jquery.min.js"></script>
+    <script src="../../js/vendor/jquery-2.1.3.min.js"></script>
    <script src="../../js/bootstrap.min.js"></script>
    <script src="../../js/app.js"></script>
-   <script src="../../js/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+   <script src="../../js/jquery-ui-1.11.3/jquery-ui.min.js"></script>
    <script src="../../js/notifications/notiser.js"></script>
    <script>
     $('#auto').autocomplete({
