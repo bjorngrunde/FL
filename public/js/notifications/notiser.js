@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var i = 0;
-    $.get('http://178.62.115.229/notifications', function(data){
+    var url = 'http://family.dev:8000/';
+    $.get(url+'notifications', function(data){
         $.each(data, function(index, value) {
             $('#notificationMenu').append('<li><a href="#" class="dark-sh-well-no-radius">' + value.body +'</a></li>');
             if(value.is_read == 0)
@@ -22,7 +23,7 @@ $(document).ready(function() {
                 $('.badge-notify').addClass('hidden');
             }
         }
-        $.get('http://178.62.115.229/removereadnotifications', function(data){
+        $.get(url+'removereadnotifications', function(data){
             console.log(data);
         })
     })
