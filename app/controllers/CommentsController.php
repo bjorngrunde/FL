@@ -2,25 +2,14 @@
 
 class CommentsController extends \Fbf\LaravelComments\CommentsController
 {
-    /**
-     * @var Comment
-     */
+
     protected $comment;
 
-    /**
-     * @param Comment $comment
-     */
     public function __construct(Comment $comment)
     {
         $this->comment = $comment;
     }
 
-    /**
-     * Saves a comment
-     *
-     * @throws Exception
-     * @return \Redirect
-     */
     public function create()
     {
         $return = Input::get('return');

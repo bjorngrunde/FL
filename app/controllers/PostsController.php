@@ -5,14 +5,10 @@ use Illuminate\Routing\Controller;
 
 class PostsController extends Controller
 {
-    /**
-     * @var PostsForm
-     */
+
     private $postsForm;
 
-    /**
-     * @param PostsForm $postsForm
-     */
+
     public function __construct(PostsForm $postsForm)
     {
 

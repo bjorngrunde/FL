@@ -56,6 +56,18 @@ Route::group(['before' => 'auth'], function(){
     # Dashboard
     Route::get('/dashboard', 'PagesController@index');
 
+    #PM (Personal Message)
+    Route::get('/conversations/index', 'ConversationsController@index');
+    Route::get('/conversations/show/{id}', ['as' => 'conversations.show', 'uses' => 'ConversationsController@show']);
+    Route::get('/conversations/create', 'ConversationsController@create');
+    Route::get('/conversation/leave/{id}', ['as' => 'conversation.leave', 'uses' => 'ConversationsController@destroyParticipant']);
+
+
+    Route::post('/message/send/{conversation}',['before' => 'csrf', 'as' => 'message.store', 'uses' => 'ConversationsController@storeMessage']);
+    Route::post('/conversations/store', ['as' => 'conversation.store', 'uses' => 'ConversationsController@store']);
+    Route::post('/conversation/add_member/{id}', ['as' => 'conversation.add.member', 'uses' => 'ConversationsController@addMember']);
+
+
     #notiser (lazy way)
     Route::get('/notifications', 'NotificationsController@show');
     Route::get('/removereadnotifications','NotificationsController@update');

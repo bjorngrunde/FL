@@ -22,10 +22,10 @@
                 <li>
                     <a href="/admin/users/{{$user->username}}/edit" class="btn btn-warning btn-sm">Redigera</a>
                 </li>
-                 <li>
-                 <a id="{{$user->id}}" href="#" class="btn btn-danger btn-sm delete_user" data-toggle="modal" data-target="#user_delete">Ta bort</a>
-                 </li>
-                 </ul>
+                <li>
+                    <a id="{{$user->id}}" href="#" class="btn btn-danger btn-sm delete_user" data-toggle="modal" data-target="#user_delete">Ta bort</a>
+                </li>
+                </ul>
              </div>
           </div>
           <div class="row">
@@ -125,45 +125,46 @@
 
 @section('javascript')
 <script src="/js/Chart.min.js"></script>
+
 <script>
         $('.date1').pickadate();
         $('.date2').pickadate();
     </script>
 <script>
-    jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
 
-      $('#attendance').on('submit',function(){
-         $('.fa-spinner').remove();
-         $('.percent-calc').remove();
-         $('#result').append('<br /><br/><i class="fa fa-spinner fa-spin"></i>');
+    $('#attendance').on('submit',function(){
+        $('.fa-spinner').remove();
+        $('.percent-calc').remove();
+        $('#result').append('<br /><br/><i class="fa fa-spinner fa-spin"></i>');
         $.post(
             $(this).prop('action'),
             {
-            "date1": $('#date1').val(),
-            "date2": $('#date2').val()
+                "date1": $('#date1').val(),
+                "date2": $('#date2').val()
             },
             function(data)
             {
-            if(data['msg'] == 'success')
-            {
-                $('.fa-spinner').remove();
-                $("#result").html('<h1 class="percent-calc">'+ data['percentage'] +'</h1><h5 class="percent-calc">Under denna period var det totalt <b>' + data["totalRaids"] + '</b> st raids. <br /> {{$user->profile->name}} {{$user->profile->lastName}} har deltagit i <b>' + data["totalUserRaids"] + '</b> st raids. <br /> Vilket resulterar i en närvaro på <b>' + data['percentage'] +  '</b></h5>')
-            }
+                if(data['msg'] == 'success')
+                {
+                    $('.fa-spinner').remove();
+                    $("#result").html('<h1 class="percent-calc">'+ data['percentage'] +'</h1><h5 class="percent-calc">Under denna period var det totalt <b>' + data["totalRaids"] + '</b> st raids. <br /> {{$user->profile->name}} {{$user->profile->lastName}} har deltagit i <b>' + data["totalUserRaids"] + '</b> st raids. <br /> Vilket resulterar i en närvaro på <b>' + data['percentage'] +  '</b></h5>')
+                }
             }, 'json'
         );
 
         return false;
-      });
     });
+});
 </script>
 <script>
-/*
+
 $(document).ready(function(){
 
     var ctx = $("#stats").get(0).getContext("2d");
 
     var data = {
-        labels: ,
+        labels: ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti'],
         datasets: [
             {
                 label: "Raids",
@@ -173,21 +174,11 @@ $(document).ready(function(){
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [16, 16, 16, 16, 16, 16, 3]
-            },
-            {
-                label: "Signups",
-                fillColor: "rgba(151,187,205,0.2)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [11, 14, 13, 16, 2, 10, 2]
+                data: [76, 16, 96, 88, 96, 100, 50]
             }
-        ]
+           ]
        }
     var newChart = new Chart(ctx).Line(data);
-});*/
+});
 </script>
 @stop

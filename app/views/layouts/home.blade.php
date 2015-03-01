@@ -7,8 +7,10 @@
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
     <link href="/css/vendor/less/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="/js/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
     <link href="/css/lightbox/jquery.lightbox.css" rel="stylesheet">
+    @yield('css')
     <link href="/css/style.css" rel="stylesheet">
     <style>
         body{padding-top: 75px;}

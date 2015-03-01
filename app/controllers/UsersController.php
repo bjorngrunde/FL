@@ -24,9 +24,6 @@ class UsersController extends BaseController
 
     public function show($id)
     {
-
-        #$raids = Raid::where('time', '>=', '2015-01-01')->where('time', '<=', '2015-02-25')->get();
-        #dd($raids->toArray());
         $user = User::with('profile', 'server', 'threads', 'comments','raids')->whereId($id)->firstOrFail();
         $raid = Raid::all();
         if($user == null)

@@ -18,7 +18,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	protected $table = 'users';
 
-    protected $fillable = ['username', 'email', 'password', 'user_id'];
+    protected $fillable = ['username', 'email', 'password'];
 
 	protected $hidden = array('password', 'remember_token');
 
@@ -199,6 +199,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
            }
         return false;
     }
+    public function hasMessage()
+    {
+      #  $conversation = Participant::where('user_id', '=', Auth::user()->id)->where('is_read')
+    }
+
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
@@ -253,11 +258,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public function albums()
     {
-        $this->hasMany('Album');
+       return $this->hasMany('Album');
     }
     public function photos()
     {
-        $this->hasMany('Photo');
+       return $this->hasMany('Photo');
+    }
+
+    public function conversations()
+    {
+        return $this->hasMany('Conversation');
     }
 }
 
