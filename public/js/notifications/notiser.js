@@ -22,7 +22,7 @@ $(document).ready(function() {
                 $('.badge-notify').addClass('hidden');
             }
         }
-        $.get('http://family.dev:8000/removereadnotifications', function(data){
+        $.get('http://178.62.115.229/removereadnotifications', function(data){
             console.log(data);
         })
     })
