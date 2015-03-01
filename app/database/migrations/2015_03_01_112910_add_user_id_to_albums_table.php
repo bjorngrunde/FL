@@ -25,7 +25,10 @@ class AddUserIdToAlbumsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropColumn('user_id');
+        Schema::table('albums', function(Blueprint $table)
+        {
+            $table->dropColumn('user_id');
+        });
 	}
 
 }

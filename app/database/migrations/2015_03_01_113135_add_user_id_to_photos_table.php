@@ -25,7 +25,10 @@ class AddUserIdToPhotosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropColumn('user_id');
+        Schema::table('photos', function(Blueprint $table)
+        {
+            $table->dropColumn('user_id');
+        });
 	}
 
 }
