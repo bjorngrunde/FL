@@ -49,6 +49,28 @@
 
    </div>
     <div class="col-md-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Kommande Raids</h3>
+    </div>
+    <div class="panel-body">
+     @foreach($raids as $raid)
+             <a href="flrs/show/{{$raid->id}}" class="raid-timer-link">
+            <div class="col-md-12 dark-sh-well-no-radius" style="background:url({{$raid->backgroundImg}}) no-repeat center center; background-size: cover;">
+
+                <div class="col-md-5">
+                    <p class="text-white">{{$raid->time}}</p>
+                </div>
+                <div class="col-md-7">
+                    <p class="text-white">{{$raid->title}} <small>{{$raid->mode}}</small></p>
+                </div>
+                <hr class="divider-invisible" />
+            </div>
+            </a>
+            @endforeach
+            </div>
+        </div>
+
        <div class="panel panel-default">
        <div class="panel-heading">
             <h3 class="panel-title">Forumaktivitet</h3>
@@ -79,28 +101,6 @@
       </div>
     </div>
 </div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Kommande Raids</h3>
-    </div>
-    <div class="panel-body">
-     @foreach($raids as $raid)
-             <a href="flrs/show/{{$raid->id}}" class="raid-timer-link">
-            <div class="col-md-12 dark-sh-well-no-radius" style="background:url({{$raid->backgroundImg}}) no-repeat center center; background-size: cover;">
-
-                <div class="col-md-5">
-                    <p class="text-white">{{$raid->time}}</p>
-                </div>
-                <div class="col-md-7">
-                    <p class="text-white">{{$raid->title}} <small>{{$raid->mode}}</small></p>
-                </div>
-                <hr class="divider-invisible" />
-            </div>
-            </a>
-            @endforeach
-            </div>
-        </div>
     </div>
 </div>
 @stop
