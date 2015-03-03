@@ -16,7 +16,7 @@
      <li>
      <div class="btn-group" role="group" aria-label="...">
      @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || $thread->author_id == Auth::user()->id)
-     <button type="button" href="/forum/thread/edit/{{$thread->id}}" class="btn btn-primary btn-sm"><span class="fa fa-edit fa-2x"></span> </button>
+     <a type="button" href="/forum/thread/edit/{{$thread->id}}" class="btn btn-primary btn-sm"><span class="fa fa-edit fa-2x"></span> </a>
      <button type="button" id="{{$thread->id}}" href="#" class="btn btn-primary btn-sm delete_thread" data-toggle="modal" data-target="#thread_delete"><span class="fa fa-trash-o fa-2x"></span> </button>
      @endif
      </div>
