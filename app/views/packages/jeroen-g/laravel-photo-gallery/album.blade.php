@@ -23,6 +23,7 @@
                     <small class="text-center">{{$photo->photo_description}}</small>
                 </div>
     		@endforeach
+    	</div>
         <div class="col-md-12">
     	   <?php echo $albumPhotos->links(); ?>
         </div>
@@ -32,6 +33,5 @@
         <div class="col-md-12">
          @include('laravel-comments::comments', ['commentable' => $album, 'comments' => $album->comments])
         </div>
-</div>
     </div>
 @stop
