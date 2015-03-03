@@ -1,7 +1,7 @@
 @extends('layouts.gallery')
 @section('gallerySection')
     <div class="panel panel-default">
-        <div class="panel-heading clearfix">
+        <div class="panel-heading">
             <b>{{ Lang::get('gallery.overview') . ' ' . Lang::choice('gallery.album', 1) . ': ' . $album->album_name }}</b>
             <div class="pull-right">
               @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || Auth::id() == $album->user_id)
