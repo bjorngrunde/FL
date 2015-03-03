@@ -184,7 +184,7 @@
                     </div>
                 </div>
             </div>
-            @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
+            @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || Auth::user()->username == $comment->author->username)
                             <div class="modal fade" id="comment-delete" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
