@@ -16,7 +16,7 @@
         <div class="panel-body">
 
         @if($albumPhotos->count())
-            <div class="row">
+            <div class="container-fluid ">
             <div class="clearfix">
             @foreach($albumPhotos as $photo)
                 <div class="col-sm-4">
