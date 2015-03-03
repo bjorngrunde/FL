@@ -88,7 +88,7 @@
             <div class="col-sm-12 dark-sh-well-no-radius">
             <div class="col-sm-12">
              @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || Auth::user()->username == $comment->author->username)
-                <a href="#" class="pull-right" data-toggle="modal" data-target="#comment-delete"><span id="{{$comment->id}}" class="fa fa-cross delete_comment"></span></a>
+                <a href="#" class="pull-right" data-toggle="modal" data-target="#comment-delete"><span id="{{$comment->id}}" class="fa fa-times delete_comment"></span></a>
             @endif
             </div>
             <div class="col-sm-2 text-center">
