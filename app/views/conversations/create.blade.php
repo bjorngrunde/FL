@@ -9,6 +9,7 @@
 <div class="row">
     <div class="col-sm-12 text-center">
         <h4>Skicka meddelande</h4>
+        <p>För att lägga till personer i en konversation, skriv deras namn tills de dyker upp i menyn. Markera personen och tryck TAB. Upprepa om du vill lägga till flera personer.</p>
         @if(Session::has('flash_message'))
         <h5 class="text-center text-primary">{{Session::get('flash_message')}}</h5>
         @else
