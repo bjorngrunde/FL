@@ -16,8 +16,8 @@
         <div class="panel-body">
 
         @if($albumPhotos->count())
-            <div class="container-fluid ">
-            <div class="clearfix">
+            <div class="container-fluid">
+            <div class="row pull-left">
             @foreach($albumPhotos as $photo)
                 <div class="col-sm-4 col-md-4 col-lg-4">
                     <a href="{{ asset('uploads/photos/' .$photo->thumbnail)}}" data-lightbox-gallery="{{$album->album_name}}" data-lightbox-title="{{$photo->photo_name}}" class="lightbox">
