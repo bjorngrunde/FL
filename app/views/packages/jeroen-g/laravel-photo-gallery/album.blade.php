@@ -18,7 +18,7 @@
         @if($albumPhotos->count())
             <!--<div class="row">-->
             @foreach($albumPhotos as $index => $photo)
-                @if($index+1 % 4 == 0)
+                @if($index+1 % 3 == 0)
                     <div class="row">
                 @endif
                 <div class="col-sm-4 text-center">
@@ -27,7 +27,7 @@
                     <a href="/gallery/album/{{$album->album_id}}/photo/{{$photo->photo_id}}"><h5>{{$photo->photo_name}}</h5></a></b>
                     <small>{{$photo->photo_description}}</small>
                 </div>
-                @if($index+1 % 4 == 0)
+                @if($index+1 % 3 == 0)
                     </div>
                 @endif
     		@endforeach
