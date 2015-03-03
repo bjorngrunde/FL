@@ -16,22 +16,16 @@
         <div class="panel-body">
 
         @if($albumPhotos->count())
-            <!--<div class="row">-->
-            @foreach($albumPhotos as $index => $photo)
-                @if($index+1 % 3 == 0)
-                    <div class="row">
-                @endif
-                <div class="col-sm-4 text-center">
+            <div class="row">
+            @foreach($albumPhotos as $photo)
+                <div class="col-sm-4">
                     <a href="{{ asset('uploads/photos/' .$photo->thumbnail)}}" data-lightbox-gallery="{{$album->album_name}}" data-lightbox-title="{{$photo->photo_name}}" class="lightbox">
                     <img src="{{asset('uploads/thumbnails/'. $photo->thumbnail)}}" class="img-responsive"/> </a>
-                    <a href="/gallery/album/{{$album->album_id}}/photo/{{$photo->photo_id}}"><h5>{{$photo->photo_name}}</h5></a></b>
-                    <small>{{$photo->photo_description}}</small>
+                    <a href="/gallery/album/{{$album->album_id}}/photo/{{$photo->photo_id}}"><h5 class="text-center">{{$photo->photo_name}}</h5></a></b>
+                    <small class="text-center">{{$photo->photo_description}}</small>
                 </div>
-                @if($index+1 % 3 == 0)
-                    </div>
-                @endif
     		@endforeach
-            <!--</div>-->
+            </div>
         </div>
         <div class="col-md-12">
     	   <?php echo $albumPhotos->links(); ?>
