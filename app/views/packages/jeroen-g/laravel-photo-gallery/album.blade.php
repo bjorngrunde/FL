@@ -19,7 +19,7 @@
             <div class="container-fluid ">
             <div class="clearfix">
             @foreach($albumPhotos as $photo)
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-md-4 col-lg-4">
                     <a href="{{ asset('uploads/photos/' .$photo->thumbnail)}}" data-lightbox-gallery="{{$album->album_name}}" data-lightbox-title="{{$photo->photo_name}}" class="lightbox">
                     <img src="{{asset('uploads/thumbnails/'. $photo->thumbnail)}}" class="img-responsive"/> </a>
                     <a href="/gallery/album/{{$album->album_id}}/photo/{{$photo->photo_id}}"><h5 class="text-center">{{$photo->photo_name}}</h5></a></b>
