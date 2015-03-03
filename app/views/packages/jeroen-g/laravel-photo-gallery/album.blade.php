@@ -28,7 +28,7 @@
                     <small>{{$photo->photo_description}}</small>
                 </div>
                 @if($index+1 % 4 == 0)
-                    <div class="row">
+                    </div>
                 @endif
     		@endforeach
             <!--</div>-->
