@@ -17,6 +17,7 @@
 
         @if($albumPhotos->count())
             <div class="row">
+            <div class="clearfix">
             @foreach($albumPhotos as $photo)
                 <div class="col-sm-4">
                     <a href="{{ asset('uploads/photos/' .$photo->thumbnail)}}" data-lightbox-gallery="{{$album->album_name}}" data-lightbox-title="{{$photo->photo_name}}" class="lightbox">
@@ -26,18 +27,17 @@
                 </div>
     		@endforeach
             </div>
+            </div>
         </div>
         <div class="col-md-12">
     	   <?php echo $albumPhotos->links(); ?>
         </div>
     	@else
         	{{ Lang::get('gallery.none') . Lang::choice('gallery.photo', 2) }}
-
     	@endif
-
         <div class="col-md-12">
-
          @include('laravel-comments::comments', ['commentable' => $album, 'comments' => $album->comments])
         </div>
+
     </div>
 @stop
