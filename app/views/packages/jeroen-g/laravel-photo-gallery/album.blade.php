@@ -16,19 +16,17 @@
         <div class="panel-body">
 
         @if($albumPhotos->count())
-            <div class="row">
-            <ul class="list-inline list-unstyled">
+            <!--<div class="row">-->
             @foreach($albumPhotos as $photo)
-               <li class="col-sm-4"> <div class="text-center">
+                <div class="col-sm-4 text-center">
                     <a href="{{ asset('uploads/photos/' .$photo->thumbnail)}}" data-lightbox-gallery="{{$album->album_name}}" data-lightbox-title="{{$photo->photo_name}}" class="lightbox">
                     <img src="{{asset('uploads/thumbnails/'. $photo->thumbnail)}}" class="img-responsive"/> </a>
                     <a href="/gallery/album/{{$album->album_id}}/photo/{{$photo->photo_id}}"><h5>{{$photo->photo_name}}</h5></a></b>
                     <small>{{$photo->photo_description}}</small>
 
-                </div></li>
+                </div>
     		@endforeach
-    		</ul>
-            </div>
+            <!--</div>-->
         </div>
         <div class="col-md-12">
     	   <?php echo $albumPhotos->links(); ?>
