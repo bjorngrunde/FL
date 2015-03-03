@@ -62,7 +62,7 @@
         <div class="col-sm-12">
         <div class="col-sm-2 text-center">
        <img src="{{$thread->author->profile->thumbnail}}" class="img-circle img-responsive profile-img-avatar center-block" />
-       <p class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</p>
+       <a href="/profile/{{$thread->author->username}}"><p class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</p></a>
        <small>Rank: {{$thread->author->profile->rank}}</small>
      <br /><small>Inlägg: {{count($thread->author->threads) + count($thread->author->comments)}}</small>
      <br /> <br /><small>{{$thread->created_at}}</small>
@@ -87,13 +87,13 @@
         @foreach($comments as $comment)
             <div class="col-sm-12 dark-sh-well-no-radius">
             <div class="col-sm-12">
-             @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
-                <a href="#" class="pull-right" data-toggle="modal" data-target="#comment-delete"><span id="{{$comment->id}}" class="fui-cross delete_comment"></span></a>
+             @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare' || Auth::user())->username == $comment->author->username)
+                <a href="#" class="pull-right" data-toggle="modal" data-target="#comment-delete"><span id="{{$comment->id}}" class="fa fa-cross delete_comment"></span></a>
             @endif
             </div>
             <div class="col-sm-2 text-center">
              <img src="{{$comment->author->profile->thumbnail}}" class="img-circle img-responsive profile-img-avatar center-block" />
-             <p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p>
+             <a href="/profile/{{$comment->author->username}}"><p class="{{$comment->author->profile->klass}}">{{$comment->author->username}}</p></a>
              <small>Rank: {{$comment->author->profile->rank}}</small>
               <br /><small>Inlägg: {{count($comment->author->comments) + count($comment->author->threads)}}</small>
               <br /><br /><small>{{$comment->created_at}}</small>
@@ -289,7 +289,6 @@
 @stop
 @section('javascript')
 <script>
-
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
