@@ -13,7 +13,7 @@
              @endif
             </div>
         </div>
-        <div class="panel-body">
+        <div class="panel-body col-md-12">
 
         @if($albumPhotos->count())
             <!--<div class="row">-->
