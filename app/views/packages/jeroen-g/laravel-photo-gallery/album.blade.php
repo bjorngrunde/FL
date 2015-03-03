@@ -14,10 +14,7 @@
             </div>
         </div>
         <div class="panel-body">
-
         @if($albumPhotos->count())
-            <div class="container-fluid">
-            <div class="row pull-left">
             @foreach($albumPhotos as $photo)
                 <div class="col-sm-4 col-md-4 col-lg-4">
                     <a href="{{ asset('uploads/photos/' .$photo->thumbnail)}}" data-lightbox-gallery="{{$album->album_name}}" data-lightbox-title="{{$photo->photo_name}}" class="lightbox">
@@ -26,9 +23,6 @@
                     <small class="text-center">{{$photo->photo_description}}</small>
                 </div>
     		@endforeach
-            </div>
-            </div>
-        </div>
         <div class="col-md-12">
     	   <?php echo $albumPhotos->links(); ?>
         </div>
@@ -38,6 +32,6 @@
         <div class="col-md-12">
          @include('laravel-comments::comments', ['commentable' => $album, 'comments' => $album->comments])
         </div>
-
+</div>
     </div>
 @stop
