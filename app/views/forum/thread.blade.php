@@ -105,7 +105,7 @@
             </div>
             <div class="col-sm-10">
 
-                <p>{{ BBCode::parse($comment->body) }}</p>
+                <p id="{{$comment->id}}">{{ BBCode::parse($comment->body) }}</p>
 
             </div>
             </div>
