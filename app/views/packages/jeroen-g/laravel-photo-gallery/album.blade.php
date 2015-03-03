@@ -32,7 +32,7 @@
         </div>
     	@else
         	{{ Lang::get('gallery.none') . Lang::choice('gallery.photo', 2) }}
-            </div>
+
     	@endif
 
         <div class="col-md-12">
