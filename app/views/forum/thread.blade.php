@@ -88,10 +88,10 @@
             <div class="col-sm-12 dark-sh-well-no-radius">
             <div class="col-sm-12">
              <ul class="list-inline list-unstyled pull-right">
-                <li><a href="#" data-toggle="modal" data-target="#comment-quote"><span id="{{$comment->id}}" class="fa fa-quote-left delete-comment"></span></a></li>
+                <li><a href="#" data-toggle="modal tooltip" data-placement="top" title="Citera" data-target="#comment-quote"><span id="{{$comment->id}}" class="fa fa-quote-left delete-comment"></span></a></li>
              @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || Auth::user()->username == $comment->author->username)
-                <li><a href="#"  data-toggle="modal" data-target="#comment-edit"><span id="{{$comment->id}}" class="fa fa-pencil delete_comment"></span></a></li>
-                <li><a href="#"  data-toggle="modal" data-target="#comment-delete"><span id="{{$comment->id}}" class="fa fa-times delete_comment"></span></a></li>
+                <li><a href="#"  data-toggle="modal tooltip" data-placement="top" title="Redigera" data-target="#comment-edit"><span id="{{$comment->id}}" class="fa fa-pencil delete_comment"></span></a></li>
+                <li><a href="#"  data-toggle="modal tooltip" data-placement="top" title="Ta bort" data-target="#comment-delete"><span id="{{$comment->id}}" class="fa fa-times delete_comment"></span></a></li>
             @endif
              </ul>
             </div>
