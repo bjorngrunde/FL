@@ -52,7 +52,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-12 text-center">
            {{ $applications->links(); }}
     </div>
 </div>
