@@ -126,11 +126,9 @@ Route::group(['before' => 'auth'], function(){
 
 
         });
-            Route::group(['before' => 'checkRole'], function(){
                 Route::get('/group/{id}/delete', ['as'=> 'forum-delete-group', 'uses' => 'ForumsController@deleteGroup']);
                 Route::get('/category/{id}/delete', ['as' => 'forum-delete-category', 'uses' => 'ForumsController@deleteCategory']);
                 Route::get('/comment/{id}/delete', ['as' => 'forum-delete-comment', 'uses' => 'ForumsController@deleteComment']);
-        });
     });
 });
 ################# API #########################################

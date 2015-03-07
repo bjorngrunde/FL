@@ -9,9 +9,11 @@
         <li {{ (Request::is('gallery/album/*/photo/create') ? 'class="active"' : '') }}>{{ link_to_route('gallery.album.photo.create', 'Nytt foto',null, ['class' => 'btn btn-primary btn-sm']) }}</li>
     </ul>
     </div>
-    <div class="col-md-12">
+    </div>
+    <div class="row">
+
 @yield('gallerySection')
-</div>
+
 </div>
 
 </div>

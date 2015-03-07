@@ -8,7 +8,7 @@ class ApplicationsController extends BaseController
 
     public function index()
     {
-        $applications = Application::with('status', 'comments')->orderBy('id','DESC')->paginate(25);
+        $applications = Application::with('status', 'comments')->orderBy('id','DESC')->paginate(10);
         return View::make('applications.index', compact('applications'));
     }
 
