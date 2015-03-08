@@ -46,7 +46,7 @@ class UserNotifier extends EventListener
                 ->from(Auth::user())
                 ->withType('CommentWasPosted')
                 ->withSubject('En ny kommentar på din tråd!')
-                ->withBody('<li><a href="/forum/thread/' . $thread->id . '"> {{users}} har lämnat en kommentar på din tråd: <br />' . $thread->title . '</a></li>')
+                ->withBody('<li><a href="/forum/thread/' . $thread->id . '"> {{users}} har lämnat en kommentar på din tråd: <br /><span class="epic">' . $thread->title . '</span></a></li>')
                 ->regarding($event->comment)
                 ->deliver();
         }
@@ -62,7 +62,7 @@ class UserNotifier extends EventListener
                 ->from(Auth::user())
                 ->withType('CommentWasPosted')
                 ->withSubject('En ny kommentar')
-                ->withBody('<li><a href="/forum/thread/'.$thread->id.'"> {{users}} har lämnat en kommentar på en tråden:<br />'.$thread->title.'</a></li>')
+                ->withBody('<li><a href="/forum/thread/'.$thread->id.'"> {{users}} har lämnat en kommentar på:<br /><span class="epic">'.$thread->title.'</span></a></li>')
                 ->regarding($event->comment)
                 ->deliver();
             }
