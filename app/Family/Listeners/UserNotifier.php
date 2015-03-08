@@ -16,7 +16,7 @@ class UserNotifier extends EventListener
         $user = User::find($event->forumThread->author_id);
 
         $user->newNotification()
-            ->withType('ThreadWasPosted')
+            ->withType('ForumThreadWasPosted')
             ->withSubject('En ny tråd har skapats')
             ->withBody('<span class="'.Auth::user()->profile->klass.'">'.Auth::user()->username.'</span> har skapat en ny tråd, <a href="/forum/thread/'. $event->forumThread->id. '">'. $event->forumThread->title.'</a>')
             ->regarding($event->forumThread)
@@ -28,7 +28,7 @@ class UserNotifier extends EventListener
         $user = User::find(Auth::user()->id);
 
         $user->newNotification()
-            ->withType('ThreadWasUpdated')
+            ->withType('ForumThreadWasUpdated')
             ->withSubject('En tråd har redigerats')
             ->withBody('<span class="'.Auth::user()->profile->klass.'">'.Auth::user()->username.'</span> har redigerat tråden, <a href="/forum/thread/'. $event->forumThread->id. '">'. $event->forumThread->title.'</a>')
             ->regarding($event->forumThread)
@@ -67,6 +67,13 @@ class UserNotifier extends EventListener
                 ->deliver();
             }
         }
+        $author = Auth::user();
+        $author->newNotification()
+            ->withType('ForumCommentWasPosted')
+            ->withSubject('En ny kommentar')
+            ->withBody('<span class="'.Auth::user()->profile->klass.'">'.Auth::user()->username.'</span> har lämnat en kommentar på tråden, <a href="/forum/thread/'. $thread->id. '">'. $thread->title.'</a>')
+            ->regarding($event->comment)
+            ->deliver();
 
     }
 } 

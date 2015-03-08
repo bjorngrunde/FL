@@ -14,7 +14,7 @@ class PagesController extends BaseController {
         $allRaids = Raid::where('time', '>=', date('y-m-d'))->orderBy('created_at', 'asc')->get();
         $raids = $allRaids->take(3);
 
-        $forum = Notification::whereObject_type('ForumThread', 'ForumComment')->orderBy('created_at', 'desc')->take(15)->get();
+        $forum = Notification::where('Type', 'like', 'Forum%')->orderBy('created_at', 'desc')->take(15)->get();
 
         $posts = Post::with('user')->orderBy('id', 'desc')->paginate(3);
 

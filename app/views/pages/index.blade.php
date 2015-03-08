@@ -81,7 +81,7 @@
          @foreach($forum as $item)
          <li>
             {{$item->body}}
-            </li>
+            </li><br />
          @endforeach
             </ul>
       </div>
