@@ -1,7 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjorn
- * Date: 15-03-08
- * Time: 15:00
- */ 
+
+namespace Family\Forum;
+use ForumThread;
+class ThreadWasPosted
+{
+    public $forumThread;
+
+    function __construct(ForumThread $forumThread)
+    {
+
+        $this->forumThread = $forumThread;
+    }
+}

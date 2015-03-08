@@ -3,11 +3,14 @@ use Family\Forms\ForumCommentForm;
 use Family\Forms\ForumGroupValidation;
 use Family\Forms\NewThreadForm;
 use Illuminate\Routing\Controller;
+use Family\Forum\PostThreadCommand;
+use Family\Forum\UpdateThreadCommand;
+use Family\Forum\PostCommentCommand;
 
-class ForumsController extends Controller
+class ForumsController extends BaseController
 {
 
-    private $forumGroupValidation;
+   /* private $forumGroupValidation;
 
     private $newThreadForm;
 
@@ -18,7 +21,7 @@ class ForumsController extends Controller
         $this->forumGroupValidation = $forumGroupValidation;
         $this->newThreadForm = $newThreadForm;
         $this->forumCommentForm = $forumCommentForm;
-    }
+    }*/
 
     public function index()
     {
@@ -48,7 +51,7 @@ class ForumsController extends Controller
     {
         $input = Input::all();
 
-        $this->forumGroupValidation->validate($input);
+        #$this->forumGroupValidation->validate($input);
 
         $category = new ForumCategory;
         $category->title  = Input::get('title');
@@ -124,32 +127,16 @@ class ForumsController extends Controller
             return Redirect::back()->withFlashMessage('Det gick inte att skapa tråden. Kategorin har tagits bort.');
         }
 
-        $input = Input::all();
+        $title = Input::get('title');
+        $body = Input::get('body');
+        $category_id = $category->id;
+        $author_id = Auth::user()->id;
+        $group_id = $category->group_id;
 
-        $this->newThreadForm->validate($input);
+        $command = new PostThreadCommand($title, $body, $category_id, $author_id, $group_id);
 
-        $thread = new ForumThread;
-        $thread->title = Input::get('title');
-        $thread->body = Input::get('body');
-        $thread->category_id = $category->id;
-        $thread->author_id = Auth::user()->id;
-        $thread->group_id = $category->group_id;
-
-        $thread->save();
-
-        $locked = new ForumLocked;
-        $locked->locked = false;
-        $locked->thread_id = $thread->id;
-        $locked->save();
-
-        $sticky = new Sticky;
-        $sticky->forum_thread_id = $thread->id;
-        $sticky->isSticky = false;
-        $sticky->save();
-
-        $thread->locked()->save($locked);
-        $thread->sticky()->save($sticky);
-        return Redirect::to('/forum/thread/'.$thread->id);
+        $this->CommandBus->execute($command);
+        Return Redirect::to('forum/category/'. $category->id);
     }
 
     public function updateThread($id)
@@ -160,13 +147,12 @@ class ForumsController extends Controller
             return Redirect::to('/forum')->withFlashMessage('Tråden existerar inte!');
         }
 
-        $input = Input::all();
+        $title = Input::get('title');
+        $body = Input::get('body');
 
-        $this->newThreadForm->validate($input);
+        $command = new UpdateThreadCommand($title, $body);
 
-        $thread->title = Input::get('title');
-        $thread->body = Input::get('body');
-        $thread->save();
+        $this->CommandBus->execute($command);
 
         return Redirect::to('/forum/thread/'.$thread->id)->withFlashMessage('Tråden har blivit uppdaterad');
     }
@@ -228,20 +214,18 @@ class ForumsController extends Controller
             return Redirect::back()->withFlashMessage('Tråden existerar inte längre.');
         }
 
-        $input = Input::all();
+        $body = Input::get('body');
+        $author = Auth::user()->id;
+        $groupId = $thread->group_id;
+        $threadId = $thread->id;
+        $categoryId = $thread->category_id;
 
-        $this->forumCommentForm->validate($input);
+        $command = new PostCommentCommand($body, $author, $groupId, $threadId, $categoryId);
 
-        $comment = new ForumComment;
-        $comment->body = Input::get('body');
-        $comment->author_id = Auth::user()->id;
-        $comment->group_id = $thread->group_id;
-        $comment->thread_id = $thread->id;
-        $comment->category_id = $thread->category_id;
-        if($comment->save())
-        {
-            return Redirect::back()->withFlashMessage('Du har nu kommenterat!');
-        }
+        $this->CommandBus->execute($command);
+
+        return Redirect::back()->withFlashMessage('Du har nu kommenterat!');
+
     }
 
     public function deleteComment($id)

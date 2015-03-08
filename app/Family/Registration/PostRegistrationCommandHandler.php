@@ -32,5 +32,6 @@ class PostRegistrationCommandHandler implements CommandHandler
            $command->role
        );
         $this->dispatcher->dispatch($user->releaseEvents());
+
     }
 }

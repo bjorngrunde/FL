@@ -1,7 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjorn
- * Date: 15-03-08
- * Time: 16:39
- */ 
+
+namespace Family\Forum;
+
+class UpdateThreadCommand
+{
+    public $title;
+    public $body;
+
+    function __construct($title, $body)
+    {
+        $this->title = $title;
+        $this->body = $body;
+    }
+}

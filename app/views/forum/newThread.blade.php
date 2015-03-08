@@ -16,7 +16,7 @@
         {{Form::textarea('body', null, ['class' => 'form-control'])}}
         </div>
         <div class="form-group text-center">
-        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-lg'])}}
+        {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
         </div>
         {{Form::close()}}
     </div>

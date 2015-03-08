@@ -1,7 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjorn
- * Date: 15-03-08
- * Time: 16:52
- */ 
+
+namespace Family\Forum;
+
+use Family\Forms\NewThreadForm;
+use Family\Forum\UpdateThreadCommand;
+class UpdateThreadValidator
+{
+    private $form;
+
+    public function __construct(NewThreadForm $form)
+    {
+        $this->form = $form;
+    }
+
+    public function validate(UpdateThreadCommand $command)
+    {
+        $this->form->validate($command);
+    }
+}

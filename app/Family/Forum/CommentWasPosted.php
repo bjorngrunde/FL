@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bjorn
- * Date: 15-03-08
- * Time: 17:49
- */ 
+
+namespace Family\Forum;
+use ForumComment;
+class CommentWasPosted
+{
+    public $comment;
+
+    public function __construct(ForumComment $comment)
+    {
+        $this->comment = $comment;
+    }
+}

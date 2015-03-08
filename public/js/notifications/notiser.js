@@ -1,9 +1,9 @@
 $(document).ready(function() {
     var i = 0;
-    var url = 'http://beta.thefamilylegion.se/';
+    var url = 'http://family.dev:8000/';
     $.get(url+'notifications', function(data){
         $.each(data, function(index, value) {
-            $('#notificationMenu').append('<li><a href="#" class="dark-sh-well-no-radius">' + value.body +'</a></li>');
+            $('#notificationMenu').append(value.body);
             if(value.is_read == 0)
             {
                 i++;

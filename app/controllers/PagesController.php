@@ -11,16 +11,16 @@ class PagesController extends BaseController {
 	 */
 	public function index()
     {
-        $allRaids = Raid::where('time', '>=', date('y-m-d'))->orderBy('created_at', 'desc')->get();
+        $allRaids = Raid::where('time', '>=', date('y-m-d'))->orderBy('created_at', 'asc')->get();
         $raids = $allRaids->take(3);
 
-        $forumthreads = ForumThread::with('comments', 'group')->orderBy('updated_at', 'desc')->get();
-        $threads = $forumthreads->take(6);
+        $forum = Notification::whereObject_type('ForumThread', 'ForumComment')->orderBy('created_at', 'desc')->take(15)->get();
+
         $posts = Post::with('user')->orderBy('id', 'desc')->paginate(3);
 
         $gallery = Photo::orderBy('created_at', 'desc')->get();
         $photos = $gallery->take(6);
 
-		Return View::make('pages.index', compact('posts'),['raids' => $raids, 'threads' => $threads, 'photos' => $photos]);
+		Return View::make('pages.index', compact('posts'),['raids' => $raids, 'forum' => $forum, 'photos' => $photos]);
 	}
 }
