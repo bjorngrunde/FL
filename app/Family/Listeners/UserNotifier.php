@@ -62,7 +62,7 @@ class UserNotifier extends EventListener
                 ->from(Auth::user())
                 ->withType('CommentWasPosted')
                 ->withSubject('En ny kommentar')
-                ->withBody('<li><a href="/forum/thread/'.$thread->id.'"> {{users}} har lämnat en kommentar på en tråd du deltar i</a></li>')
+                ->withBody('<li><a href="/forum/thread/'.$thread->id.'"> {{users}} har lämnat en kommentar på en tråden:<br />'.$thread->title.'</a></li>')
                 ->regarding($event->comment)
                 ->deliver();
             }

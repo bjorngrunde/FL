@@ -3,6 +3,7 @@
 use Family\Eventing\EventGenerator;
 use Family\Forum\ThreadWasPosted;
 use Family\Forum\ThreadWasUpdated;
+
 class ForumThread extends Eloquent
 {
     use EventGenerator;
