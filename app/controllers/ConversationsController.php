@@ -51,10 +51,17 @@ class ConversationsController extends Controller {
             }
             else
             {
-            $participant = new Participant;
-            $participant->conversation_id = $id;
-            $participant->user_id = $user->id;
-            $participant->save();
+                $participant = new Participant;
+                $participant->conversation_id = $id;
+                $participant->user_id = $user->id;
+                $participant->save();
+
+                $message = new Message;
+                $message->conversation_id = $conversation->id;
+                $message->user_id = $user->id;
+                $message->body = "Har gått med i konversationen";
+                $message->save();
+
             }
         }
         return Redirect::back()->withFlashMessage($user->username.' har lagts till i konversationen');
@@ -180,6 +187,12 @@ class ConversationsController extends Controller {
     public function destroyParticipant($id)
     {
         $conversation = Conversation::find($id);
+
+        $message = new Message;
+        $message->conversation_id = $conversation->id;
+        $message->user_id = Auth::user()->id;
+        $message->body = "Har lämnat Konversationen";
+        $message->save();
 
         $participant = Participant::where('conversation_id', '=', $conversation->id)->where('user_id', '=', Auth::user()->id)->firstOrFail();
         $participant->delete();
