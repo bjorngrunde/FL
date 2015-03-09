@@ -228,6 +228,16 @@ class ForumsController extends BaseController
 
     }
 
+    public function editComment($id)
+    {
+        $comment = ForumComment::find($id);
+        $body = Input::get('body');
+        $comment->body = $body;
+        $comment->save();
+
+        return Redirect::back()->withFlashMessage('Du har nu redigerat en kommentar!');
+    }
+
     public function deleteComment($id)
     {
         $comment = ForumComment::find($id);
@@ -248,7 +258,7 @@ class ForumsController extends BaseController
     public function storeGroup()
     {
         $input = Input::all();
-        $this->forumGroupValidation->validate($input);
+        #$this->forumGroupValidation->validate($input);
 
         $group = new ForumGroup;
         $group->title = Input::get('title');

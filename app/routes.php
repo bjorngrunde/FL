@@ -123,6 +123,7 @@ Route::group(['before' => 'auth'], function(){
             Route::post('/thread/move/{id}', ['as' => 'thread.move', 'uses' => 'ForumsController@move']);
             Route::post('/thread/copy/{id}', ['as' => 'thread.copy', 'uses' => 'ForumsController@copy']);
             Route::post('/thread/setSticky/{id}', ['as' => 'forum.set.sticky', 'uses' => 'ForumsController@setSticky']);
+            Route::post('/thread/comment/edit/{id}', ['as' => 'forum-edit-comment', 'uses' => 'ForumsController@editComment']);
 
 
         });

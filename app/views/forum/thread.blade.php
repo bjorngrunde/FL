@@ -88,9 +88,9 @@
             <div class="col-sm-12 dark-sh-well-no-radius">
             <div class="col-sm-12">
              <ul class="list-inline list-unstyled pull-right">
-                <li><a href="#" data-toggle="modal" data-target="#comment-quote"><span id="{{$comment->id}}" data-toggle="tooltip" data-placement="top" title="Citera" class="fa fa-quote-left delete-comment"></span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#comment-quote-form" data-comment-id="{{$comment->id}}" data-comment-user="{{$comment->author->username}}"><span id="{{$comment->id}}" data-toggle="tooltip" data-placement="top" title="Citera" class="fa fa-quote-left delete-comment"></span></a></li>
              @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare') || Auth::user()->username == $comment->author->username)
-                <li><a href="#"  data-toggle="modal" data-target="#comment-edit"><span id="{{$comment->id}}" data-toggle="tooltip" data-placement="top" title="Redigera"  class="fa fa-pencil delete_comment"></span></a></li>
+                <li><a href="#"  data-toggle="modal" data-target="#comment_edit_form" data-comment-id="{{$comment->id}}"><span  data-toggle="tooltip" data-placement="top" title="Redigera"  class="fa fa-pencil delete_comment"></span></a></li>
                 <li><a href="#"  data-toggle="modal" data-target="#comment-delete"><span id="{{$comment->id}}" data-toggle="tooltip" data-placement="top" title="Ta Bort" class="fa fa-times delete_comment"></span></a></li>
             @endif
              </ul>
@@ -105,7 +105,7 @@
             </div>
             <div class="col-sm-10">
 
-                <p id="{{$comment->id}}">{{ BBCode::parse($comment->body) }}</p>
+                <p class="{{$comment->id}}">{{ BBCode::parse($comment->body) }}</p>
 
             </div>
             </div>
@@ -145,7 +145,7 @@
                             {{Form::open(['method' => 'post', 'route' => ['forum-store-comment', $thread->id],'id' => 'target_comment_form'])}}
                             <div class="form-group">
 
-                            {{Form::textarea('body', null, ['class' => 'form-control',])}}
+                            {{Form::textarea('body', null, ['class' => 'form-control'])}}
                             </div>
                             {{Form::close()}}
                         </div>
@@ -156,6 +156,63 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="comment-quote-form" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title">Citera</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    <p> <small>Använd BBcode för att lägga in bilder, tex: <span class="text-info">[img] </span>länk<span class="text-info">[/img]</span> <br /> Använd ren syntax, tex:<span class="text-info"> [url]</span> www.familylegion.se <span class="text-info">[/url]</span> istället för <span class="text-info">[url=familylegion.com]</small>
+            </p>
+                                        {{Form::open(['method' => 'post', 'route' => ['forum-store-comment', $thread->id],'id' => 'target_comment_quote_form'])}}
+                                        <div class="form-group">
+
+                                        {{Form::textarea('body', null, ['class' => 'form-control'])}}
+                                        </div>
+                                        {{Form::close()}}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class=" btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                                        <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal" id="form_comment_quote_submit">Spara</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+            <div class="modal fade" id="comment_edit_form" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title">Redigera Kommentar</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    <p> <small>Använd BBcode för att lägga in bilder, tex: <span class="text-info">[img] </span>länk<span class="text-info">[/img]</span> <br /> Använd ren syntax, tex:<span class="text-info"> [url]</span> www.familylegion.se <span class="text-info">[/url]</span> istället för <span class="text-info">[url=familylegion.com]</small>
+            </p>
+                                        <form method="POST" action="" id="target_comment_edit_form">
+                                        {{Form::token()}}
+                                        <div class="form-group">
+                                            <textarea name="body" class="form-control" val="" rows="6"></textarea>
+                                        </div>
+                                        </form>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class=" btn btn-danger btn-sm" data-dismiss="modal">Stäng</button>
+                                        <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal" id="form_comment_edit_submit">Uppdatera</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
             <div class="modal fade" id="comment_quote_form" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
