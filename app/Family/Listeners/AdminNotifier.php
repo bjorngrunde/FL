@@ -29,7 +29,7 @@ class AdminNotifier extends EventListener
             if($user->hasRole('Admin') || $user->hasRole('Utvecklare'))
             {
                     $user->newNotification()
-                        ->withType('ApplicationsWasPosted')
+                        ->withType('AdminApplicationsWasPosted')
                         ->withSubject('En ansökan har inkommit!')
                         ->withBody('<li><a href="/admin/applications/'.$event->application->id.'"> Ny ansökan har inkommit </a></li>')
                         ->regarding($event->application)
@@ -65,7 +65,7 @@ class AdminNotifier extends EventListener
                     {
                         $user->newNotification()
                             ->from(Auth::user())
-                            ->withType('ApplicationsWasUpdated')
+                            ->withType('AdminApplicationsWasUpdated')
                             ->withSubject('En ansökan har blivit godkänd')
                             ->withBody('<li><a href="/admin/application/'.$event->application->id.'"> {{users}} har godkänt '. $event->application->name. ' '. $this->lastName. ' ansökan.</a></li>')
                             ->regarding($event->application)
@@ -75,7 +75,7 @@ class AdminNotifier extends EventListener
                     {
                         $user->newNotification()
                             ->from(Auth::user())
-                            ->withType('ApplicationsWasUpdated')
+                            ->withType('AdminApplicationsWasUpdated')
                             ->withSubject('En ansökan har blivit nekad')
                             ->withBody('<li><a href="/admin/application/'.$event->application->id.'"> {{users}} har nekat '. $event->application->name. ' '. $this->lastName. ' ansökan. </a></li>')
                             ->regarding($event->application)
@@ -85,7 +85,7 @@ class AdminNotifier extends EventListener
                     {
                         $user->newNotification()
                             ->from(Auth::user())
-                            ->withType('ApplicationsWasUpdated')
+                            ->withType('AdminApplicationsWasUpdated')
                             ->withSubject('En ansökan har blivit updaterad')
                             ->withBody('<li><a href="/admin/application/'.$event->application->id.'"> {{users}} har updaterat'. $event->application->name. ' '. $this->lastName. ' ansökan.</a></li>')
                             ->regarding($event->application)
@@ -109,7 +109,7 @@ class AdminNotifier extends EventListener
                 {
                 $user->newNotification()
                     ->from(Auth::user())
-                    ->withType('RegistrationWasRemoved')
+                    ->withType('AdminRegistrationWasRemoved')
                     ->withSubject('En ansökan togs bort!')
                     ->withBody('<li><a href="#"> {{users}} har tagit bot en ansökan.</a></li>')
                     ->deliver();
@@ -132,7 +132,7 @@ class AdminNotifier extends EventListener
                {
                    $user->newNotification()
                        ->from(Auth::user())
-                       ->withType('RegistrationWasPosted')
+                       ->withType('AdminRegistrationWasPosted')
                        ->withSubject('En ny användare har skapats')
                        ->withBody('<li><a href="/admin/users/'.$event->user->id .'"> {{users}} har skapat användaren '.$event->user->username. '</a></li>')
                        ->regarding($event->user)
@@ -155,7 +155,7 @@ class AdminNotifier extends EventListener
                 {
                     $user->newNotification()
                         ->from(Auth::user())
-                        ->withType('UserWasUpdated')
+                        ->withType('AdminUserWasUpdated')
                         ->withSubject('En användare har redigerats')
                         ->withBody('<li><a href="/admin/users/'.$event->user->id .'">{{users}} har redigerat användaren '. $event->user->username.'</a></li>')
                         ->regarding($event->user)
@@ -179,7 +179,7 @@ class AdminNotifier extends EventListener
                 {
                     $user->newNotification()
                         ->from(Auth::user())
-                        ->withType('UserWasRemoved')
+                        ->withType('AdminUserWasRemoved')
                         ->withSubject('En användare har tagits bort')
                         ->withBody('<li><a href="#">{{users}} har tagit bort användaren '. $event->user->username.'</a></li>')
                         ->deliver();
