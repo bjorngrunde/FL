@@ -13,6 +13,8 @@ class NotificationFetcher
 
     protected $unread = false;
 
+    protected $type = '';
+
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -43,6 +45,10 @@ class NotificationFetcher
         {
             $notifications->where('ng.is_read', '=', 0);
         }
+        if($this->type != '')
+        {
+            $notifications->where('type', 'like', $this->type);
+        }
 
         return $this->toCollection($notifications->get());
     }
@@ -61,6 +67,12 @@ class NotificationFetcher
         return new Collection($notificationModels);
     }
 
+    public function setType($data)
+    {
+        $this->type = $data;
+
+        return $this;
+    }
     public function onlyUnread()
     {
         $this->unread = true;

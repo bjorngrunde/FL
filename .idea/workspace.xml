@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php" afterPath="$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" afterPath="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -52,21 +52,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-              <caret line="9" column="110" selection-start-line="9" selection-start-column="110" selection-end-line="9" selection-end-column="110" />
+            <state vertical-scroll-proportion="0.20973782" vertical-offset="0" max-vertical-offset="801">
+              <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminNotifier.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminNotifier.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5543071" vertical-offset="39" max-vertical-offset="3927">
-              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="3927">
+              <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotificationFetcher.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="2058">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,16 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="3546" max-vertical-offset="4368">
               <caret line="194" column="25" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="6993">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -190,7 +190,6 @@
         <option value="$PROJECT_DIR$/app/Family/Forum/PostCommentCommandHandler.php" />
         <option value="$PROJECT_DIR$/app/models/ForumComment.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/CommentWasPosted.php" />
-        <option value="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" />
         <option value="$PROJECT_DIR$/public/js/notifications/notiser.js" />
         <option value="$PROJECT_DIR$/app/views/pages/index.blade.php" />
         <option value="$PROJECT_DIR$/app/models/ForumThread.php" />
@@ -201,8 +200,9 @@
         <option value="$PROJECT_DIR$/app/controllers/ForumsController.php" />
         <option value="$PROJECT_DIR$/app/views/forum/thread.blade.php" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php" />
+        <option value="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.php" />
       </list>
     </option>
   </component>
@@ -665,7 +665,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="admin&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/AdminNotifier.php&#10;rout&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;rou&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/ForumsController.php&#10;app&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/js/app.js&#10;thre&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;page&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;conver&#9;null&#9;null&#10;style&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;u&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;no&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Notification/NotificationFetcher.php&#10;forumthr&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumThread.php&#10;thread&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;forumCont&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/ForumsController.php&#10;inde&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/pages/index.blade.php&#10;us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;pa&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;Forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumComment.php&#10;comme&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Forum/PostCommentCommandHandler.php&#10;Us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;user&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;gallery&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/layouts/gallery.blade.php&#10;User&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;va&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/vendor/less/variables.less&#10;routes&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;st&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;a&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;adm&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;admi&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;Use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;alb&#9;FILE&#9;file:///Users/bjorn/Code/FL/vendor/jeroen-g/laravel-photo-gallery/src/JeroenG/LaravelPhotoGallery/Repositories/EloquentAlbumRepository.php&#10;route&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;variable&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;nav&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/views/layouts/partials/nav.blade.php&#10;variabl&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;style.cs&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;appli&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/ApplicationsController.php&#10;applic&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;ro&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;command&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Commanding/CommandHandler.php&#10;regis&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/RegistrationController.php&#10;sty&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;varia&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;variables.le&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;pages&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PagesController.php&#10;Sessions&#9;null&#9;null&#10;sessionC&#9;null&#9;null&#10;posts&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PostsController.php" />
+    <property name="SearchEverywhereHistoryKey" value="notif&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Notification/NotificationFetcher.php&#10;admin&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/AdminNotifier.php&#10;rout&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;rou&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/ForumsController.php&#10;app&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/js/app.js&#10;thre&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;page&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;conver&#9;null&#9;null&#10;style&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;u&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;no&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Notification/NotificationFetcher.php&#10;forumthr&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumThread.php&#10;thread&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;forumCont&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/ForumsController.php&#10;inde&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/pages/index.blade.php&#10;us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;pa&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;Forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumComment.php&#10;comme&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Forum/PostCommentCommandHandler.php&#10;Us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;user&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;gallery&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/layouts/gallery.blade.php&#10;User&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;va&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/vendor/less/variables.less&#10;routes&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;st&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;a&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;adm&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;admi&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;Use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;alb&#9;FILE&#9;file:///Users/bjorn/Code/FL/vendor/jeroen-g/laravel-photo-gallery/src/JeroenG/LaravelPhotoGallery/Repositories/EloquentAlbumRepository.php&#10;route&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;variable&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;nav&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/views/layouts/partials/nav.blade.php&#10;variabl&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;style.cs&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;appli&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/ApplicationsController.php&#10;applic&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;ro&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;command&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Commanding/CommandHandler.php&#10;regis&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/RegistrationController.php&#10;sty&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;varia&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;variables.le&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;pages&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PagesController.php&#10;Sessions&#9;null&#9;null&#10;sessionC&#9;null&#9;null&#10;posts&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PostsController.php" />
     <property name="options.lastSelected" value="editing.templates" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -1501,7 +1501,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425934589346</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="adminflöde">
+      <created>1425935532129</created>
+      <option name="number" value="00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1425935532129</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1567,7 +1573,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Blog" />
     <MESSAGE value="fixat sessions" />
     <MESSAGE value="Fixat issues" />
     <MESSAGE value="Ordnade fler buggar" />
@@ -1592,7 +1597,8 @@
     <MESSAGE value="fixes" />
     <MESSAGE value="better notifications" />
     <MESSAGE value="forum quotes/edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="forum quotes/edit" />
+    <MESSAGE value="adminflöde" />
+    <option name="LAST_COMMIT_MESSAGE" value="adminflöde" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1934,14 +1940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1806">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="6993">
@@ -2013,18 +2011,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
+    <entry file="file://$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="9" column="110" selection-start-line="9" selection-start-column="110" selection-end-line="9" selection-end-column="110" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="2058">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Family/Listeners/AdminNotifier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5543071" vertical-offset="39" max-vertical-offset="3927">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="3927">
+          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20973782" vertical-offset="0" max-vertical-offset="801">
+          <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
           <folding />
         </state>
       </provider>

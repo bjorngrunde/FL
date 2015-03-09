@@ -6,8 +6,8 @@ class AdminController extends BaseController
 {
     public function index()
     {
-
-        $notifications = Notification::where('Type', 'like', 'Admin%')->where('user_id', '=', Auth::user()->id)->orderBy('created_at', 'desc')->take(10)->get();
+        $fetcher = new NotificationFetcher(Auth::user());
+        $notifications = $fetcher->setType('Admin%')->take(15)->fetch();
         return View::make('admin.dashboard', ['notifications' => $notifications]);
     }
 }
