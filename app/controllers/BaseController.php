@@ -2,7 +2,6 @@
 
 
 use Family\Commanding\ValidationCommandBus;
-
 class BaseController extends Controller {
 
     protected $CommandBus;

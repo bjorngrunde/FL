@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Family/BBCodeParser/BBCodeParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Family/BBCodeParser/BBCodeParser.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/show.blade.php" afterPath="$PROJECT_DIR$/app/views/posts/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -65,8 +66,8 @@
       <file leaf-file-name="BBCodeParser.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/golonka/bbcodeparser/src/Golonka/BBCode/BBCodeParser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4305">
-              <caret line="199" column="1" selection-start-line="199" selection-start-column="1" selection-end-line="199" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="4305">
+              <caret line="53" column="63" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="63" />
               <folding>
                 <marker date="1422971298000" expanded="false" signature="1092:1110" placeholder="..." />
               </folding>
@@ -74,14 +75,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BBCodeParser.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Family/BBCodeParser/BBCodeParser.php">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/posts/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6263982" vertical-offset="861" max-vertical-offset="4284">
-              <caret line="1" column="63" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
-              <folding>
-                <marker date="1425979387000" expanded="false" signature="1103:1121" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.23489933" vertical-offset="0" max-vertical-offset="1341">
+              <caret line="15" column="120" selection-start-line="15" selection-start-column="120" selection-end-line="15" selection-end-column="120" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
+              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,16 +127,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConversationsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/ConversationsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3546" max-vertical-offset="4368">
-              <caret line="194" column="25" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -151,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_20_123619_create_stickys_table.php" />
-        <option value="$PROJECT_DIR$/app/models/Sticky.php" />
         <option value="$PROJECT_DIR$/app/views/forum/category.blade.php" />
         <option value="$PROJECT_DIR$/app/views/forum/index.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/StatisticsController.php" />
@@ -202,6 +199,8 @@
         <option value="$PROJECT_DIR$/app/Family/Notification/NotificationFetcher.php" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/app/Family/BBCodeParser/BBCodeParser.php" />
+        <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/app/views/posts/show.blade.php" />
       </list>
     </option>
   </component>
@@ -488,6 +487,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="family" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -727,28 +748,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BBCodeParser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1642,7 +1641,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425936833396</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Parsers">
+      <created>1425979416539</created>
+      <option name="number" value="00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1425979416539</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1708,7 +1713,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixat issues" />
     <MESSAGE value="Ordnade fler buggar" />
     <MESSAGE value="fixade ilvl" />
     <MESSAGE value="Fixade counts" />
@@ -1733,7 +1737,8 @@
     <MESSAGE value="forum quotes/edit" />
     <MESSAGE value="adminflöde" />
     <MESSAGE value="Förbättrat notificationsFetcher med Type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Förbättrat notificationsFetcher med Type" />
+    <MESSAGE value="Parsers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parsers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1742,13 +1747,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bootstrap/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.061170213" vertical-offset="46" max-vertical-offset="1449">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/lightbox/jquery.lightbox.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
@@ -2150,6 +2148,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/golonka/bbcodeparser/src/Golonka/BBCode/BBCodeParserServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1341">
@@ -2160,21 +2166,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/golonka/bbcodeparser/src/Golonka/BBCode/BBCodeParser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4305">
-          <caret line="199" column="1" selection-start-line="199" selection-start-column="1" selection-end-line="199" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="4305">
+          <caret line="53" column="63" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="63" />
           <folding>
             <marker date="1422971298000" expanded="false" signature="1092:1110" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/BBCodeParser/BBCodeParser.php">
+    <entry file="file://$PROJECT_DIR$/app/views/posts/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6263982" vertical-offset="861" max-vertical-offset="4284">
-          <caret line="1" column="63" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
-          <folding>
-            <marker date="1425979387000" expanded="false" signature="1103:1121" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.23489933" vertical-offset="0" max-vertical-offset="1341">
+          <caret line="15" column="120" selection-start-line="15" selection-start-column="120" selection-end-line="15" selection-end-column="120" />
+          <folding />
         </state>
       </provider>
     </entry>
