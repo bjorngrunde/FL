@@ -57,7 +57,7 @@ $(document).ready(function(){
 
         var commentId = $(e.relatedTarget).data('comment-id');
         var user = $(e.relatedTarget).data('comment-user');
-        var content = $("." + commentId).find();
+        var content = $("." + commentId).html();
 
         $(e.currentTarget).find('textarea[name="body"]').val("[quote]" + content + " @"+user + "[/quote]");
     });
@@ -65,7 +65,7 @@ $(document).ready(function(){
     $('#comment_edit_form').on('show.bs.modal', function(e) {
 
         var commentId = $(e.relatedTarget).data('comment-id');
-        var content = $("." + commentId).find();
+        var content = $("." + commentId).html();
 
         $("#target_comment_edit_form").attr('action', '/forum/thread/comment/edit/'+commentId);
         $(e.currentTarget).find('textarea[name="body"]').val(content);
