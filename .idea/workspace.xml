@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Family/BBCodeParser/BBCodeParser.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/show.blade.php" afterPath="$PROJECT_DIR$/app/views/posts/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -79,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/posts/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.23489933" vertical-offset="0" max-vertical-offset="1341">
-              <caret line="15" column="120" selection-start-line="15" selection-start-column="120" selection-end-line="15" selection-end-column="120" />
+              <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -1647,7 +1645,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425979416539</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="Parsers">
+      <created>1425980651925</created>
+      <option name="number" value="00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1425980651925</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2177,7 +2181,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/posts/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23489933" vertical-offset="0" max-vertical-offset="1341">
-          <caret line="15" column="120" selection-start-line="15" selection-start-column="120" selection-end-line="15" selection-end-column="120" />
+          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
           <folding />
         </state>
       </provider>
