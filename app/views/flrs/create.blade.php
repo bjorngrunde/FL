@@ -51,13 +51,13 @@
 
         <div class="form-group">
         {{Form::label('startTime', 'Starttid')}}
-        {{Form::text('startTime', null, ['class' => 'startTid form-control'])}}
+        {{Form::text('startTime', '19:30', ['class' => 'startTid form-control'])}}
         {{errors_for('startTime', $errors)}}
         </div>
 
         <div class="form-group">
         {{Form::label('endTime', 'Sluttid')}}
-        {{Form::text('endTime', null, ['class' => 'slutTid form-control'])}}
+        {{Form::text('endTime', '23:00', ['class' => 'slutTid form-control'])}}
         {{errors_for('endTime', $errors)}}
         </div>
         </div>

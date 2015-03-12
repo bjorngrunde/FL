@@ -8,7 +8,6 @@ class EventValidation extends FormValidator
 {
     protected $rules = [
         'id'             =>      'required',
-        'description'       =>      'required',
         'time'              =>      'required|date',
         'startTime'         =>      'required',
         'endTime'           =>      'required'
