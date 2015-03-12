@@ -26,7 +26,7 @@
                 <a href="/admin/flrs/index">
                 <div class="text-default">
                 <i class="glyphicon glyphicon-calendar glyphicon-admin-dashboard"></i>
-                <h3 class="">Raid Schema</h3>
+                <h3 class="">Raids</h3>
                 </div>
                 </a>
             </div>

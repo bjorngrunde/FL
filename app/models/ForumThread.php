@@ -9,7 +9,7 @@ class ForumThread extends Eloquent
     use EventGenerator;
 
     protected $table = 'forum_threads';
-	protected $fillable = ['title', 'body', 'group_id', 'category_id', 'author_id'];
+	protected $fillable = ['title', 'body', 'group_id', 'category_id', 'author_id', 'count'];
 
     public function post($title, $body, $category_id, $author_id, $group_id)
     {
@@ -18,6 +18,7 @@ class ForumThread extends Eloquent
         $this->category_id = $category_id;
         $this->author_id = $author_id;
         $this->group_id = $group_id;
+        $this->count = 0;
 
         $this->save();
 

@@ -24,7 +24,8 @@
         <tr>
             <th><h6>{{$category->title}}</h6></th>
             <th><p>Skapad av</p></th>
-            <th><P>Svar</P></th>
+            <th><p>Besök</p></th>
+            <th><P>Kommentarer</P></th>
             <th><p>Senaste inlägg</p></th>
 
             @if(Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Utvecklare'))
@@ -44,6 +45,7 @@
                 <strong><p><a href="/forum/thread/{{$thread->id}}">@if($thread->locked->locked == 1) <span class="fa fa-lock"></span> @endif <span class="fa fa-thumb-tack"> </span> {{$thread->title}} </a></p></strong>
                 </td>
                 <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
+                <td>{{$thread->count}}</td>
                 <td>{{count($thread->comments)}}</td>
                 <td>
                     @if(count($thread->comments) > 0)
@@ -67,6 +69,7 @@
             <strong><p><a href="/forum/thread/{{$thread->id}}">@if($thread->locked->locked == 1) <span class="fa fa-lock"></span> @endif {{$thread->title}}</a></p></strong>
             </td>
             <td><small><span class="{{$thread->author->profile->klass}}">{{$thread->author->username}}</span></small></td>
+            <td>{{$thread->count}}</td>
             <td>{{count($thread->comments)}}</td>
             <td>
                 @if(count($thread->comments) > 0)

@@ -104,6 +104,8 @@ class ForumsController extends BaseController
     public function thread($id)
     {
         $thread = ForumThread::with('comments', 'locked', 'sticky')->find($id);
+        $thread->count += 1;
+        $thread->save();
         $categories = ForumCategory::all();
         $comments = ForumComment::whereThread_id($id)->paginate(15);
         return View::make('forum.thread', compact('comments'),['thread' => $thread, 'categories' => $categories] );
