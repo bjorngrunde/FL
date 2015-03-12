@@ -346,7 +346,13 @@ class ForumsController extends BaseController
         $locked->thread_id = $newThread->id;
         $locked->save();
 
+        $sticky = new Sticky;
+        $sticky->isSticky = 0;
+        $sticky->forum_thread_id = $newThread->id;
+        $sticky->save();
+
         $newThread->locked()->save($locked);
+        $newThread->sticky()->save($sticky);
 
         return Redirect::back()->withFlashMessage('DU har nu kopierat tråden '. $oldThread->title. ' till kategorin '. $category->title);
 

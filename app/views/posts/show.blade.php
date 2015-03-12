@@ -13,7 +13,7 @@
                  <li><p>Skriven av: <span class="{{$post->user->profile->klass}}">{{$post->user->username}}</span></p></li>
              </ul>
              <div class="col-md-12">
-                    {{BBCode::setParser('image', '/\[img\](.*?)\[\/img\]/s', '<img src="$1" class="img-responsive">')}}
+                    {{BBCode::setParser('image', '/\[img\](.*?)\[\/img\]/s', '<img src="$1" class="img-responsive">')}}<?php #ska implementeras ordengligt i nån push, ful-lösning. ?>
                   {{BBCode::parse($post->body)}}
              </div>
              </div>
