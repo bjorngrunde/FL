@@ -48,7 +48,7 @@ class ForumThread extends Eloquent
         $thread->body = $body;
         $thread->save();
 
-        $this->raise(new ThreadWasUpdated($this));
+        $this->raise(new ThreadWasUpdated($thread));
         return $this;
     }
     public function author()
