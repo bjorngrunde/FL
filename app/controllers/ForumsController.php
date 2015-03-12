@@ -149,10 +149,11 @@ class ForumsController extends BaseController
             return Redirect::to('/forum')->withFlashMessage('Tråden existerar inte!');
         }
 
+        $id = $thread->id;
         $title = Input::get('title');
         $body = Input::get('body');
 
-        $command = new UpdateThreadCommand($title, $body);
+        $command = new UpdateThreadCommand($title, $body, $id);
 
         $this->CommandBus->execute($command);
 

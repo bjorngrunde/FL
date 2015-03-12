@@ -23,7 +23,8 @@ class UpdateThreadCommandHandler implements CommandHandler
     {
         $forumThread = $this->forumThread->edit(
             $command->title,
-            $command->body
+            $command->body,
+            $command->id
         );
         $this->dispatcher->dispatch($forumThread->releaseEvents());
     }

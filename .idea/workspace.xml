@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2015_03_12_070013_add_count_to_forum_thread_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ForumThread.php" afterPath="$PROJECT_DIR$/app/models/ForumThread.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ForumsController.php" afterPath="$PROJECT_DIR$/app/controllers/ForumsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forum/category.blade.php" afterPath="$PROJECT_DIR$/app/views/forum/category.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommand.php" afterPath="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommandHandler.php" afterPath="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommandHandler.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -45,11 +44,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForumsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ForumsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ForumsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17225951" vertical-offset="6447" max-vertical-offset="8337">
-              <caret line="324" column="48" selection-start-line="324" selection-start-column="48" selection-end-line="324" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2478" max-vertical-offset="8358">
+              <caret line="155" column="61" selection-start-line="155" selection-start-column="58" selection-end-line="155" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateThreadCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateThreadCommandHandler.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommandHandler.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateThreadValidator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadValidator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+              <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -75,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForumThread.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ForumThread.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/ForumThread.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="42" max-vertical-offset="1722">
-              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.46979865" vertical-offset="231" max-vertical-offset="1743">
+              <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -95,41 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_03_01_113840_add_thumbnail_to_photos_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_03_01_113840_add_thumbnail_to_photos_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="819">
-              <caret line="30" column="11" selection-start-line="27" selection-start-column="8" selection-end-line="30" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1659">
-              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="1659">
-              <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="notiser.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/notifications/notiser.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
-              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+              <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -171,9 +170,7 @@
         <option value="$PROJECT_DIR$/app/Family/Registration/PostRegistrationCommandHandler.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/PostThreadCommandHandler.php" />
         <option value="$PROJECT_DIR$/app/views/forum/newThread.blade.php" />
-        <option value="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommandHandler.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/ThreadWasUpdated.php" />
-        <option value="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommand.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/UpdateThreadValidator.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/PostCommentCommand.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/PostCommentValidator.php" />
@@ -196,9 +193,11 @@
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/app/views/admin/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_03_12_070013_add_count_to_forum_thread_table.php" />
-        <option value="$PROJECT_DIR$/app/models/ForumThread.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ForumsController.php" />
         <option value="$PROJECT_DIR$/app/views/forum/category.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ForumsController.php" />
+        <option value="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommand.php" />
+        <option value="$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommandHandler.php" />
+        <option value="$PROJECT_DIR$/app/models/ForumThread.php" />
       </list>
     </option>
   </component>
@@ -270,114 +269,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="golonka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bbcodeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="golonka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bbcodeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Golonka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BBCode" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="golonka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bbcodeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Golonka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BBCode" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Facades" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -463,267 +354,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="posts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Registration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Notification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Listeners" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -746,64 +377,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="family" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -831,7 +404,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumThread.php&#10;app&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/js/app.js&#10;notif&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Notification/NotificationFetcher.php&#10;admin&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/AdminNotifier.php&#10;rout&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;rou&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;thre&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;page&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;conver&#9;null&#9;null&#10;style&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;u&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;no&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Notification/NotificationFetcher.php&#10;forumthr&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumThread.php&#10;thread&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;forumCont&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/ForumsController.php&#10;inde&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/pages/index.blade.php&#10;us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;pa&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;Forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumComment.php&#10;comme&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Forum/PostCommentCommandHandler.php&#10;Us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;user&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;gallery&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/layouts/gallery.blade.php&#10;User&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;va&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/vendor/less/variables.less&#10;routes&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;st&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;a&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;adm&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;admi&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;Use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;alb&#9;FILE&#9;file:///Users/bjorn/Code/FL/vendor/jeroen-g/laravel-photo-gallery/src/JeroenG/LaravelPhotoGallery/Repositories/EloquentAlbumRepository.php&#10;route&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;variable&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;nav&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/views/layouts/partials/nav.blade.php&#10;variabl&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;style.cs&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;appli&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/ApplicationsController.php&#10;applic&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;ro&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;command&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Commanding/CommandHandler.php&#10;regis&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/RegistrationController.php&#10;sty&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;varia&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;variables.le&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;pages&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PagesController.php&#10;Sessions&#9;null&#9;null&#10;sessionC&#9;null&#9;null&#10;posts&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PostsController.php" />
+    <property name="SearchEverywhereHistoryKey" value="for&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumThread.php&#10;forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumThread.php&#10;app&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/js/app.js&#10;notif&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Notification/NotificationFetcher.php&#10;admin&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/AdminNotifier.php&#10;rout&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;rou&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/routes.php&#10;thre&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;page&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;conver&#9;null&#9;null&#10;style&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;u&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;no&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Notification/NotificationFetcher.php&#10;forumthr&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumThread.php&#10;thread&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/forum/thread.blade.php&#10;forumCont&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/ForumsController.php&#10;inde&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/pages/index.blade.php&#10;us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;pa&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/PagesController.php&#10;Forum&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/ForumComment.php&#10;comme&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Forum/PostCommentCommandHandler.php&#10;Us&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;user&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/Family/Listeners/UserNotifier.php&#10;gallery&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/views/layouts/gallery.blade.php&#10;User&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/models/User.php&#10;va&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/vendor/less/variables.less&#10;routes&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;st&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;a&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;adm&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;admi&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Listeners/AdminNotifier.php&#10;Use&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/User.php&#10;alb&#9;FILE&#9;file:///Users/bjorn/Code/FL/vendor/jeroen-g/laravel-photo-gallery/src/JeroenG/LaravelPhotoGallery/Repositories/EloquentAlbumRepository.php&#10;route&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;variable&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;nav&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/views/layouts/partials/nav.blade.php&#10;variabl&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/vendor/less/variables.less&#10;style.cs&#9;FILE&#9;file:///Users/bjorn/Code/FL/public/css/style.css&#10;appli&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/ApplicationsController.php&#10;applic&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/models/Application.php&#10;ro&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/routes.php&#10;command&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/Family/Commanding/CommandHandler.php&#10;regis&#9;FILE&#9;file:///Users/bjorn/Code/FL/app/controllers/RegistrationController.php&#10;sty&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/style.css&#10;varia&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;variables.le&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/public/css/less/variables.less&#10;pages&#9;FILE&#9;file://C:/Users/Bjorn/Projects/family/app/controllers/PagesController.php&#10;Sessions&#9;null&#9;null&#10;sessionC&#9;null&#9;null" />
     <property name="options.lastSelected" value="editing.templates" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -1709,7 +1282,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426143280367</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="counter">
+      <created>1426145571093</created>
+      <option name="number" value="00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1426145571093</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1775,7 +1354,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="fixade ilvl" />
     <MESSAGE value="Fixade counts" />
     <MESSAGE value="Lade till en well" />
     <MESSAGE value="Byggde simpel sökfunktion" />
@@ -1800,7 +1378,8 @@
     <MESSAGE value="Förbättrat notificationsFetcher med Type" />
     <MESSAGE value="Parsers" />
     <MESSAGE value="bug, stickys" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug, stickys" />
+    <MESSAGE value="counter" />
+    <option name="LAST_COMMIT_MESSAGE" value="counter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1898,34 +1477,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
           <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2625" vertical-offset="0" max-vertical-offset="720">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4375" vertical-offset="0" max-vertical-offset="720">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-          <folding>
-            <element signature="e#32#63#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommandHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.525" vertical-offset="0" max-vertical-offset="735">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding>
-            <element signature="e#32#69#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2151,16 +1702,8 @@
         <state vertical-scroll-proportion="0.4854586" vertical-offset="189" max-vertical-offset="2121">
           <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
           <folding>
-            <element signature="e#38#82#0#PHP" expanded="true" />
+            <element signature="e#38#82#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/notifications/notiser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2220,14 +1763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ForumThread.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="42" max-vertical-offset="1722">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/forum/category.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="580" max-vertical-offset="2772">
@@ -2236,10 +1771,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/notifications/notiser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ForumsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17225951" vertical-offset="6447" max-vertical-offset="8337">
-          <caret line="324" column="48" selection-start-line="324" selection-start-column="48" selection-end-line="324" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2478" max-vertical-offset="8358">
+          <caret line="155" column="61" selection-start-line="155" selection-start-column="58" selection-end-line="155" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommandHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Family/Forum/UpdateThreadCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ForumThread.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46979865" vertical-offset="231" max-vertical-offset="1743">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
           <folding />
         </state>
       </provider>

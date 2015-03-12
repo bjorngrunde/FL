@@ -41,11 +41,12 @@ class ForumThread extends Eloquent
 
     }
 
-    public function edit($title, $body)
+    public function edit($title, $body, $id)
     {
-        $this->title = $title;
-        $this->body = $body;
-        $this->save();
+        $thread = ForumThread::find($id);
+        $thread->title = $title;
+        $thread->body = $body;
+        $thread->save();
 
         $this->raise(new ThreadWasUpdated($this));
         return $this;
