@@ -326,3 +326,7 @@ h6 small {
 .small-grey{
     color: #888;
 }
+
+code {
+    background-color: #151515;
+}

@@ -396,4 +396,20 @@ class ForumsController extends BaseController
 
 
     }
+
+    public function getQuote($id)
+    {
+        if(Request::ajax())
+        {
+            $quote = ForumComment::find($id);
+            if($quote == null)
+            {
+                return Response::json('Kunda inte hitta kommentar!');
+            }
+            $comment = $quote->body;
+
+            return Response::json($comment);
+        }
+
+    }
 }

@@ -108,7 +108,7 @@ Route::group(['before' => 'auth'], function(){
         Route::get('/new/thread/{id}', ['as' => 'newThread', 'uses' => 'ForumsController@newThread']);
         Route::get('/thread/edit/{id}', ['as' => 'thread.edit', 'uses' => 'ForumsController@editThread']);
         Route::get('/thread/{id}/delete', ['as' => 'forum-delete-comment', 'uses' => 'ForumsController@deleteThread']);
-
+        Route::get('/getForumQuote/{id}', 'ForumsController@getQuote');
 
 
         Route::group(['before' => 'csrf'], function(){

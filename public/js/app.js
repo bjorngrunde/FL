@@ -57,17 +57,25 @@ $(document).ready(function(){
 
         var commentId = $(e.relatedTarget).data('comment-id');
         var user = $(e.relatedTarget).data('comment-user');
-        var content = $("." + commentId).html();
+        var url = 'http://family.dev:8000/forum/getForumQuote/'+ commentId;
 
-        $(e.currentTarget).find('textarea[name="body"]').val("[quote]" + content + " @"+user + "[/quote]");
+        $.get(url, function(data){
+            /*console.log(data);*/
+            $(e.currentTarget).find('.forum_editor').attr('value', '');
+            $(e.currentTarget).find('.forum_editor').val("[quote]" + data + " @"+user + "[/quote]");
+        });
+
+
     });
 
     $('#comment_edit_form').on('show.bs.modal', function(e) {
 
         var commentId = $(e.relatedTarget).data('comment-id');
-        var content = $("." + commentId).html();
+        var url = 'http://family.dev:8000/forum/getForumQuote/'+ commentId;
 
+        $.get(url, function(data){
         $("#target_comment_edit_form").attr('action', '/forum/thread/comment/edit/'+commentId);
-        $(e.currentTarget).find('textarea[name="body"]').val(content);
+        $(e.currentTarget).find('.forum_edit_editor').val(data);
+        });
     });
 });

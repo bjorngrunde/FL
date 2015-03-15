@@ -1,5 +1,9 @@
 @extends('layouts.home')
 
+@section('css')
+<link rel="stylesheet" href="/js/wysiBB/theme/default/wbbtheme.css" />
+@stop
+
 @section('content')
 <div class="row">
     <div class="col-sm-12">
@@ -12,8 +16,8 @@
         {{Form::text('title', null, ['class' => 'form-control'])}}
         </div>
         <div class="form-group">
-        {{Form::label('bory' , 'Innehåll')}}
-        {{Form::textarea('body', null, ['class' => 'form-control'])}}
+        {{Form::label('body' , 'Innehåll')}}
+        {{Form::textarea('body', null, ['class' => 'form-control forum-new-thread'])}}
         </div>
         <div class="form-group text-center">
         {{Form::submit('Spara', ['class' => 'btn btn-primary btn-sm'])}}
@@ -25,8 +29,18 @@
 @stop
 
 @section('javascript')
-<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/wysiBB/jquery.wysibb.min.js"></script>
+<script src="/js/wysiBB/lang/sv.js"></script>
 <script>
-    tinymce.init({selector:'textarea'});
-</script>
+$(document).ready(function() {
+        var wbbOpt = {
+         buttons: "bold,italic,underline,strike,fontsize,|,img,video,link,|,bullist,numlist,|,code,quote, table",
+        lang: "sv"
+        }
+
+        $(".forum-new-thread").wysibb(wbbOpt);
+        });
+        </script>
+<script>
 @stop

@@ -1,5 +1,7 @@
 @extends('layouts.home')
-
+@section('css')
+<link rel="stylesheet" href="/js/wysiBB/theme/default/wbbtheme.css" />
+@stop
 @section('content')
 
 <div class="row">
@@ -68,7 +70,7 @@
      <br /> <br /><small>{{$thread->created_at}}</small>
         </div>
             <div class="col-sm-10">
-
+                {{BBCode::setParser('video', '/\[video\](.*?)\[\/video\]/s', '<iframe width="560" height="315" src="//www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>')}}
              <p>{{BBCode::parse($thread->body)}}</p>
             </div>
             <div class="col-sm-12">
@@ -103,9 +105,9 @@
               <br /><br /><small>{{$comment->created_at}}</small>
 
             </div>
-            <div class="col-sm-10">
-
-                <p class="{{$comment->id}}">{{ BBCode::parse($comment->body) }}</p>
+            <div class="col-sm-10" id="{{$comment->id}}">
+                  {{BBCode::setParser('video', '/\[video\](.*?)\[\/video\]/s', '<iframe width="560" height="315" src="//www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>')}}
+                <p>{{ BBCode::parse($comment->body) }}</p>
 
             </div>
             </div>
@@ -129,7 +131,7 @@
 </div>
 
 
- <div class="modal fade" id="comment_form" tabindex="-1" role="dialog" aria-hidden="true">
+ <div class="modal fade" id="comment_form" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -140,12 +142,10 @@
                             <h4 class="modal-title">Kommentera</h4>
                         </div>
                         <div class="modal-body">
-                        <p> <small>Använd BBcode för att lägga in bilder, tex: <span class="text-info">[img] </span>länk<span class="text-info">[/img]</span> <br /> Använd ren syntax, tex:<span class="text-info"> [url]</span> www.familylegion.se <span class="text-info">[/url]</span> istället för <span class="text-info">[url=familylegion.com]</small>
-</p>
                             {{Form::open(['method' => 'post', 'route' => ['forum-store-comment', $thread->id],'id' => 'target_comment_form'])}}
                             <div class="form-group">
 
-                            {{Form::textarea('body', null, ['class' => 'form-control'])}}
+                            {{Form::textarea('body', null, ['class' => 'form-control forum_editor', 'id' => 'comment_form'])}}
                             </div>
                             {{Form::close()}}
                         </div>
@@ -157,7 +157,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="comment-quote-form" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="comment-quote-form" role="dialog" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -168,12 +168,11 @@
                                         <h4 class="modal-title">Citera</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <p> <small>Använd BBcode för att lägga in bilder, tex: <span class="text-info">[img] </span>länk<span class="text-info">[/img]</span> <br /> Använd ren syntax, tex:<span class="text-info"> [url]</span> www.familylegion.se <span class="text-info">[/url]</span> istället för <span class="text-info">[url=familylegion.com]</small>
-            </p>
+
                                         {{Form::open(['method' => 'post', 'route' => ['forum-store-comment', $thread->id],'id' => 'target_comment_quote_form'])}}
                                         <div class="form-group">
 
-                                        {{Form::textarea('body', null, ['class' => 'form-control'])}}
+                                        {{Form::textarea('body', null, ['class' => 'form-control forum_editor'])}}
                                         </div>
                                         {{Form::close()}}
                                     </div>
@@ -185,7 +184,7 @@
                             </div>
                         </div>
 
-            <div class="modal fade" id="comment_edit_form" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="comment_edit_form"  role="dialog" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -196,12 +195,11 @@
                                         <h4 class="modal-title">Redigera Kommentar</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <p> <small>Använd BBcode för att lägga in bilder, tex: <span class="text-info">[img] </span>länk<span class="text-info">[/img]</span> <br /> Använd ren syntax, tex:<span class="text-info"> [url]</span> www.familylegion.se <span class="text-info">[/url]</span> istället för <span class="text-info">[url=familylegion.com]</small>
-            </p>
+
                                         <form method="POST" action="" id="target_comment_edit_form">
                                         {{Form::token()}}
                                         <div class="form-group">
-                                            <textarea name="body" class="form-control" val="" rows="6"></textarea>
+                                            <textarea name="body" class="form-control forum_edit_editor" val="" rows="6"></textarea>
                                         </div>
                                         </form>
 
@@ -214,7 +212,7 @@
                             </div>
                         </div>
 
-            <div class="modal fade" id="comment_quote_form" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="comment_quote_form"  role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -225,12 +223,11 @@
                             <h4 class="modal-title">Kommentera</h4>
                         </div>
                         <div class="modal-body">
-                        <p> <small>Använd BBcode för att lägga in bilder, tex: <span class="text-info">[img] </span>länk<span class="text-info">[/img]</span> <br /> Använd ren syntax, tex:<span class="text-info"> [url]</span> www.familylegion.se <span class="text-info">[/url]</span> istället för <span class="text-info">[url=familylegion.com]</small>
-</p>
+
                             {{Form::open(['method' => 'post', 'route' => ['forum-store-comment', $thread->id],'id' => 'target_comment_quote_form'])}}
                             <div class="form-group">
 
-                            {{Form::textarea('body', '[quote]"'.BBcode::parse(strip_tags($thread->body)).'" -@'.$thread->author->username.'[/quote]', ['class' => 'form-control',])}}
+                            {{Form::textarea('body', '[quote]"'.BBcode::parse(strip_tags($thread->body)).'" -@'.$thread->author->username.'[/quote]', ['class' => 'form-control forum_editor',])}}
                             </div>
                             {{Form::close()}}
                         </div>
@@ -349,6 +346,19 @@
                         @endif
 @stop
 @section('javascript')
+<script src="/js/wysiBB/jquery.wysibb.min.js"></script>
+<script src="/js/wysiBB/lang/sv.js"></script>
+<script>
+$(document).ready(function() {
+        var wbbOpt = {
+        buttons: "bold,italic,underline,|,img,video,link,|,bullist,numlist,|,code,quote",
+        lang: "sv"
+        }
+
+        $(".forum_editor").wysibb(wbbOpt);
+        $(".forum_edit_editor").wysibb(wbbOpt);
+        });
+        </script>
 <script>
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
