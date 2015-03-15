@@ -57,7 +57,7 @@ $(document).ready(function(){
 
         var commentId = $(e.relatedTarget).data('comment-id');
         var user = $(e.relatedTarget).data('comment-user');
-        var url = 'http://family.dev:8000/forum/getForumQuote/'+ commentId;
+        var url = 'http://beta.thefamilylegion.se/forum/getForumQuote/'+ commentId;
 
         $.get(url, function(data){
             /*console.log(data);*/
@@ -71,7 +71,7 @@ $(document).ready(function(){
     $('#comment_edit_form').on('show.bs.modal', function(e) {
 
         var commentId = $(e.relatedTarget).data('comment-id');
-        var url = 'http://family.dev:8000/forum/getForumQuote/'+ commentId;
+        var url = 'http://beta.thefamilylegion.se/forum/getForumQuote/'+ commentId;
 
         $.get(url, function(data){
         $("#target_comment_edit_form").attr('action', '/forum/thread/comment/edit/'+commentId);

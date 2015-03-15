@@ -6,29 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/theme/fonts/wysibbiconfont-wb.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/theme/fonts/wysibbiconfont-wb.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/theme/fonts/wysibbiconfont-wb.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Family/Parser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/jquery.wysibb.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/ua.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/lang/vn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wysiBB/theme/default/wbbtheme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ForumsController.php" afterPath="$PROJECT_DIR$/app/controllers/ForumsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forum/editThread.blade.php" afterPath="$PROJECT_DIR$/app/views/forum/editThread.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forum/newThread.blade.php" afterPath="$PROJECT_DIR$/app/views/forum/newThread.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/forum/thread.blade.php" afterPath="$PROJECT_DIR$/app/views/forum/thread.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -67,8 +45,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8164794" vertical-offset="963" max-vertical-offset="1827">
-              <caret line="77" column="64" selection-start-line="77" selection-start-column="64" selection-end-line="77" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.3445693" vertical-offset="963" max-vertical-offset="1827">
+              <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -1536,13 +1514,20 @@
       <option name="project" value="LOCAL" />
       <updated>1426148345229</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="forum media fixes">
+      <created>1426439199305</created>
+      <option name="number" value="00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1426439199305</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08981481" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1558,7 +1543,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08981481" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1602,7 +1586,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Lade till en well" />
     <MESSAGE value="Byggde simpel sökfunktion" />
     <MESSAGE value="Fix bug sök" />
     <MESSAGE value="FFixade bug och lade till server error pages" />
@@ -1627,7 +1610,8 @@
     <MESSAGE value="counter" />
     <MESSAGE value="fix" />
     <MESSAGE value="Raid fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Raid fixes" />
+    <MESSAGE value="forum media fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="forum media fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1885,6 +1869,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1328">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1906,6 +1891,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.90604025" vertical-offset="360" max-vertical-offset="1701">
           <caret line="75" column="2" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2011,8 +1997,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8164794" vertical-offset="963" max-vertical-offset="1827">
-          <caret line="77" column="64" selection-start-line="77" selection-start-column="64" selection-end-line="77" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.3445693" vertical-offset="963" max-vertical-offset="1827">
+          <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
           <folding />
         </state>
       </provider>
