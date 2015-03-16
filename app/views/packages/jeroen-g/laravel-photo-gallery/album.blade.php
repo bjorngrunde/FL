@@ -13,14 +13,14 @@
              @endif
             </div>
         </div>
-        <div class="panel-body text-center">
+        <div class="panel-body">
         @if($albumPhotos->count())
             @foreach($albumPhotos as $photo)
                 <div class="col-sm-3 col-md-3 col-lg-3">
                     <a href="{{ asset('uploads/photos/' .$photo->thumbnail)}}" data-lightbox-gallery="{{$album->album_name}}" data-lightbox-title="{{$photo->photo_name}}" class="lightbox">
                     <img src="{{asset('uploads/thumbnails/'. $photo->thumbnail)}}" class="img-responsive dark-sh-well-no-radius-img"/> </a>
-                    <a href="/gallery/album/{{$album->album_id}}/photo/{{$photo->photo_id}}"><h5>{{$photo->photo_name}}</h5></a>
-                    <small>{{$photo->photo_description}} </small>
+                    <a href="/gallery/album/{{$album->album_id}}/photo/{{$photo->photo_id}}"><h5 class="text-center">{{$photo->photo_name}}</h5></a>
+                    <small class="text-center">{{$photo->photo_description}} </small>
                 </div>
     		@endforeach
         <div class="col-md-12">

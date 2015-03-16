@@ -6,23 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe174b4-4ed5-4403-9f49-0ddf6e597f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Family/Comments/CommentWasPosted.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Family/Comments/PostCommentCommand.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Family/Comments/PostCommentCommandHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Family/Comments/lol.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Family/Forum/CommentWasPosted.php" afterPath="$PROJECT_DIR$/app/Family/Forum/ForumCommentWasPosted.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CommentsController.php" afterPath="$PROJECT_DIR$/app/controllers/CommentsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ForumComment.php" afterPath="$PROJECT_DIR$/app/models/ForumComment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ForumsController.php" afterPath="$PROJECT_DIR$/app/controllers/ForumsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Family/Listeners/UserNotifier.php" afterPath="$PROJECT_DIR$/app/Family/Listeners/UserNotifier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/vendor/less/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/css/vendor/less/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/packages/fbf/laravel-comments/form.blade.php" afterPath="$PROJECT_DIR$/app/views/packages/fbf/laravel-comments/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/notifications/notiser.js" afterPath="$PROJECT_DIR$/public/js/notifications/notiser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/packages/fbf/laravel-comments/routes.php" afterPath="$PROJECT_DIR$/app/config/packages/fbf/laravel-comments/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/vendor/less/variables.less" afterPath="$PROJECT_DIR$/public/css/vendor/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/packages/jeroen-g/laravel-photo-gallery/album.blade.php" afterPath="$PROJECT_DIR$/app/views/packages/jeroen-g/laravel-photo-gallery/album.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="family.iws" />
@@ -58,14 +42,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserNotifier.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserNotifier.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Family/Listeners/UserNotifier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67114097" vertical-offset="3174" max-vertical-offset="4515">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3174" max-vertical-offset="4515">
               <caret line="194" column="40" selection-start-line="194" selection-start-column="40" selection-end-line="194" selection-end-column="40" />
               <folding>
                 <element signature="e#35#69#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="album.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/packages/jeroen-g/laravel-photo-gallery/album.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.34451902" vertical-offset="0" max-vertical-offset="1341">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,16 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/start/global.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="822" max-vertical-offset="2247">
-              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="lol.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Family/Comments/lol.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -165,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/Family/Registration/PostRegistrationCommandHandler.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/PostThreadCommandHandler.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/UpdateThreadValidator.php" />
         <option value="$PROJECT_DIR$/app/Family/Forum/PostCommentCommand.php" />
@@ -216,6 +199,7 @@
         <option value="$PROJECT_DIR$/app/controllers/CommentsController.php" />
         <option value="$PROJECT_DIR$/public/css/vendor/less/variables.less" />
         <option value="$PROJECT_DIR$/app/Family/Listeners/UserNotifier.php" />
+        <option value="$PROJECT_DIR$/app/views/packages/jeroen-g/laravel-photo-gallery/album.blade.php" />
       </list>
     </option>
   </component>
@@ -503,6 +487,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jeroen-g" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-photo-gallery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1666,7 +1658,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426439448938</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Commandodrivna kommentarer">
+      <created>1426515143056</created>
+      <option name="number" value="00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1426515143056</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1732,7 +1730,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Byggde simpel sökfunktion" />
     <MESSAGE value="Fix bug sök" />
     <MESSAGE value="FFixade bug och lade till server error pages" />
     <MESSAGE value="Profile fix" />
@@ -1757,7 +1754,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="Raid fixes" />
     <MESSAGE value="forum media fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="forum media fixes" />
+    <MESSAGE value="Commandodrivna kommentarer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commandodrivna kommentarer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1766,13 +1764,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/admin/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1659">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_03_01_113840_add_thumbnail_to_photos_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="819">
@@ -2090,7 +2081,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <caret line="13" column="78" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="78" />
           <folding>
-            <element signature="e#35#72#0#PHP" expanded="true" />
+            <element signature="e#35#72#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2171,11 +2162,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Family/Listeners/UserNotifier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67114097" vertical-offset="3174" max-vertical-offset="4515">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3174" max-vertical-offset="4515">
           <caret line="194" column="40" selection-start-line="194" selection-start-column="40" selection-end-line="194" selection-end-column="40" />
           <folding>
             <element signature="e#35#69#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/packages/jeroen-g/laravel-photo-gallery/album.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34451902" vertical-offset="0" max-vertical-offset="1341">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
