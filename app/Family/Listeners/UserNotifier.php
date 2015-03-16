@@ -86,16 +86,13 @@ class UserNotifier extends EventListener
 
     public function whenCommentWasPosted(CommentWasPosted $event)
     {
-        switch($event->comment->commentable_type)
-        {
+        switch($event->comment->commentable_type) {
             case 'Raid':
                 $commenter = Comment::whereCommentable_id($event->comment->commentable_id)->whereCommentable_type($event->comment->commentable_type)->get();
                 $raid = Raid::find($event->comment->commentable_id);
-                foreach($commenter as $author)
-                {
+                foreach ($commenter as $author) {
                     $user = User::find($author->user_id);
-                    if($user->id != $event->comment->user_id)
-                    {
+                    if ($user->id != $event->comment->user_id) {
                         $user->newNotification()
                             ->from(Auth::user())
                             ->withType('RaidCommentWasPosted')
@@ -110,16 +107,14 @@ class UserNotifier extends EventListener
 
                 $commenter = Comment::whereCommentable_id($event->comment->commentable_id)->whereCommentable_type($event->comment->commentable_type)->get();
                 $application = Application::find($event->comment->commentable_id);
-                foreach($commenter as $author)
-                {
+                foreach ($commenter as $author) {
                     $user = User::find($author->user_id);
-                    if($user->id != $event->comment->user_id)
-                    {
+                    if ($user->id != $event->comment->user_id) {
                         $user->newNotification()
                             ->from(Auth::user())
                             ->withType('ApplicationCommentWasPosted')
                             ->withSubject('En ny kommentar')
-                            ->withBody('<li><a href="/admin/applications/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på:<br /><span class="blue">' . $application->name.' '. $application->lastName. 's ansökan </span></a></li>')
+                            ->withBody('<li><a href="/admin/applications/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på:<br /><span class="blue">' . $application->name . ' ' . $application->lastName . 's ansökan </span></a></li>')
                             ->regarding($event->comment)
                             ->deliver();
                     }
@@ -129,80 +124,80 @@ class UserNotifier extends EventListener
 
                 $commenter = Comment::whereCommentable_id($event->comment->commentable_id)->whereCommentable_type($event->comment->commentable_type)->get();
                 $album = Album::find($event->comment->commentable_id);
-                foreach($commenter as $author)
-                {
+                foreach ($commenter as $author) {
                     $user = User::find($author->user_id);
-                    if($user->id != $event->comment->user_id && $user->id != $album->user_id)
-                    {
+                    if ($user->id != $event->comment->user_id && $user->id != $album->user_id) {
                         $user->newNotification()
                             ->from(Auth::user())
                             ->withType('AlbumCommentWasPosted')
                             ->withSubject('En ny kommentar')
-                            ->withBody('<li><a href="/gallery/album/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på:<br /><span class="blue">' . $album->album_name.' </span></a></li>')
+                            ->withBody('<li><a href="/gallery/album/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på:<br /><span class="blue">' . $album->album_name . ' </span></a></li>')
                             ->regarding($event->comment)
                             ->deliver();
                     }
                 }
                 $user = User::find($album->user_id);
+                if($user->id != Auth::user()->id){
                 $user->newNotification()
                     ->from(Auth::user())
                     ->withType('AlbumCommentWasPosted')
                     ->withSubject('En ny kommentar')
-                    ->withBody('<li><a href="/gallery/album/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på ditt Album:<br /><span class="blue">' . $album->album_name.'</span></a></li>')
+                    ->withBody('<li><a href="/gallery/album/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på ditt Album:<br /><span class="blue">' . $album->album_name . '</span></a></li>')
                     ->regarding($event->comment)
                     ->deliver();
+                }
                 break;
             case 'Photo':
                 $commenter = Comment::whereCommentable_id($event->comment->commentable_id)->whereCommentable_type($event->comment->commentable_type)->get();
                 $photo = Photo::find($event->comment->commentable_id);
-                foreach($commenter as $author)
-                {
+                foreach ($commenter as $author) {
                     $user = User::find($author->user_id);
-                    if($user->id != $event->comment->user_id && $user->id != $photo->user_id)
-                    {
+                    if ($user->id != $event->comment->user_id && $user->id != $photo->user_id) {
                         $user->newNotification()
                             ->from(Auth::user())
                             ->withType('PhotoCommentWasPosted')
                             ->withSubject('En ny kommentar')
-                            ->withBody('<li><a href="/gallery/album/'.$photo->album_id.'/photo/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på bilden:<br /><span class="blue">' . $photo->photo_name.' </span></a></li>')
+                            ->withBody('<li><a href="/gallery/album/' . $photo->album_id . '/photo/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på bilden:<br /><span class="blue">' . $photo->photo_name . ' </span></a></li>')
                             ->regarding($event->comment)
                             ->deliver();
                     }
                 }
                 $user = User::find($photo->user_id);
+                if($user->id != Auth::user()->id){
                 $user->newNotification()
                     ->from(Auth::user())
                     ->withType('PhotoCommentWasPosted')
                     ->withSubject('En ny kommentar')
-                    ->withBody('<li><a href="gallery/album/'.$photo->album_id.'/photo/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på ditt foto:<br /><span class="blue">' . $photo->photo_name.'</span></a></li>')
+                    ->withBody('<li><a href="gallery/album/' . $photo->album_id . '/photo/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på ditt foto:<br /><span class="blue">' . $photo->photo_name . '</span></a></li>')
                     ->regarding($event->comment)
                     ->deliver();
+                }
                 break;
             case 'Post':
                 $commenter = Comment::whereCommentable_id($event->comment->commentable_id)->whereCommentable_type($event->comment->commentable_type)->get();
                 $post = Post::find($event->comment->commentable_id);
-                foreach($commenter as $author)
-                {
+                foreach ($commenter as $author) {
                     $user = User::find($author->user_id);
-                    if($user->id != $event->comment->user_id && $user->id != $post->user_id)
-                    {
+                    if ($user->id != $event->comment->user_id && $user->id != $post->user_id) {
                         $user->newNotification()
                             ->from(Auth::user())
                             ->withType('PostCommentWasPosted')
                             ->withSubject('En ny kommentar')
-                            ->withBody('<li><a href="/news/post/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på nyheten:<br /><span class="blue">' . $post->title.' </span></a></li>')
+                            ->withBody('<li><a href="/news/post/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på nyheten:<br /><span class="blue">' . $post->title . ' </span></a></li>')
                             ->regarding($event->comment)
                             ->deliver();
                     }
                 }
                 $user = User::find($post->user_id);
-                $user->newNotification()
-                    ->from(Auth::user())
-                    ->withType('PostCommentWasPosted')
-                    ->withSubject('En ny kommentar')
-                    ->withBody('<li><a href="/news/post/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på din nyhet:<br /><span class="blue">' . $post->title.'</span></a></li>')
-                    ->regarding($event->comment)
-                    ->deliver();
+                if (Auth::user()->id != $post->user_id){
+                    $user->newNotification()
+                        ->from(Auth::user())
+                        ->withType('PostCommentWasPosted')
+                        ->withSubject('En ny kommentar')
+                        ->withBody('<li><a href="/news/post/' . $event->comment->commentable_id . '"> {{users}} har lämnat en kommentar på din nyhet:<br /><span class="blue">' . $post->title . '</span></a></li>')
+                        ->regarding($event->comment)
+                        ->deliver();
+                }
                 break;
         }
 
