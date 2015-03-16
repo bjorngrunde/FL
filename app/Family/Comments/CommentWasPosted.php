@@ -1,13 +1,14 @@
 <?php
 
-namespace Family\Forum;
-use ForumComment;
+namespace Family\Comments;
+
+use Comment;
 class CommentWasPosted
 {
     public $comment;
 
-    public function __construct(ForumComment $comment)
+    public function __construct(Comment $comment)
     {
         $this->comment = $comment;
     }
-}
+} 

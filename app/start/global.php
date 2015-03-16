@@ -103,3 +103,8 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+App::bind('Fbf\LaravelComments\CommentsController', function() {
+    return new Fbf\LaravelComments\CommentsController(new Comment);
+});
+

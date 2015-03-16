@@ -4674,8 +4674,8 @@ tbody.collapse.in {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #ffffff;
-  background-color: #3498db;
+  color: #3498db;
+  background-color: #151515;
 }
 /* line 86, dropdowns.less */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bjorn\/Code\/FL\/public\/css\/vendor\/less\/dropdowns\.less}line{font-family:\0000386}}
@@ -8925,3 +8925,4 @@ button.close {
     display: none !important;
   }
 }
+/*# sourceMappingURL=bootstrap.min.css.map */

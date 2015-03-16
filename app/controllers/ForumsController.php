@@ -404,7 +404,7 @@ class ForumsController extends BaseController
             $quote = ForumComment::find($id);
             if($quote == null)
             {
-                return Response::json('Kunda inte hitta kommentar!');
+                return Response::json('Kunde inte hitta kommentar!');
             }
             $comment = $quote->body;
 

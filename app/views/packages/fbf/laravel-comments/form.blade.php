@@ -1,6 +1,6 @@
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
-{{ Form::open(array('action' => array('Fbf\LaravelComments\CommentsController@create'), 'class' => 'form__comment')) }}
+{{ Form::open(array('action' => array('CommentsController@create'), 'class' => 'form__comment')) }}
 
 	{{-- This is used to return the user back to this page --}}
 	{{ Form::hidden('return', Request::url()) }}

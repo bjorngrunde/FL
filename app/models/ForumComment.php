@@ -1,7 +1,7 @@
 <?php
 
 use Family\Eventing\EventGenerator;
-use Family\Forum\CommentWasPosted;
+use Family\Forum\ForumCommentWasPosted;
 class ForumComment extends Eloquent
 {
     use EventGenerator;
@@ -19,7 +19,7 @@ class ForumComment extends Eloquent
 
         $this->save();
 
-        $this->raise(new CommentWasPosted($this));
+        $this->raise(new ForumCommentWasPosted($this));
 
         return $this;
     }

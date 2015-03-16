@@ -1,14 +1,9 @@
 <?php
 
-class CommentsController extends \Fbf\LaravelComments\CommentsController
+use Family\Comments\PostCommentCommand;
+class CommentsController extends BaseController
 {
 
-    protected $comment;
-
-    public function __construct(Comment $comment)
-    {
-        $this->comment = $comment;
-    }
 
     public function create()
     {
@@ -17,7 +12,9 @@ class CommentsController extends \Fbf\LaravelComments\CommentsController
         {
             return Redirect::to('/');
         }
-        try {
+
+
+
             $commentable = Input::get('commentable');
             if (empty($commentable))
             {
@@ -33,13 +30,20 @@ class CommentsController extends \Fbf\LaravelComments\CommentsController
             {
                 throw new Exception();
             }
-            $data = array(
-                'commentable_type' => $commentableType,
-                'commentable_id' => $commentableId,
-                'comment' => Input::get('comment'),
-                'user_id' => Auth::user()->id,
+
+            $commentable_type = $commentableType;
+            $commentable_id = $commentableId;
+            $comment = Input::get('comment');
+            $user_id = Auth::user()->id;
+
+            $command = new PostCommentCommand(
+                $commentable_type,
+                $commentable_id,
+                $comment,
+                $user_id
             );
-            $rules = $this->comment->getRules($commentableType);
+            $this->CommandBus->execute($command);
+            /*$rules = $this->comment->getRules($commentableType);
             $validator = Validator::make($data, $rules);
             if ($validator->fails())
             {
@@ -47,18 +51,18 @@ class CommentsController extends \Fbf\LaravelComments\CommentsController
             }
             $this->comment->fill($data);
             $this->comment->save();
-            $newCommentId = $this->comment->id;
+            $newCommentId = $this->comment->id; */
 
 
 
-            return Redirect::to($return.'#C'.$newCommentId);
+            return Redirect::back()->withFlashMessage('Du har kommenterat');
 
-        } catch (\Exception $e) {
+       /*catch (\Exception $e) {
 
             return Redirect::to($return.'#'.trans('laravel-comments::messages.add_form_anchor'))
                 ->with('laravel-comments::error', trans('laravel-comments::messages.unexpected_error'));
 
-        }
+        } */
 
     }
 
