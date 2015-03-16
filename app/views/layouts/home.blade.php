@@ -5,7 +5,8 @@
     <title>Family Legion</title>
     <meta name="description" content=""/>
 
-    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="/css/vendor/less/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="/js/jquery-ui-1.11.3/jquery-ui.css" rel="stylesheet">
