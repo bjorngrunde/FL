@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var i = 0;
-    var url = 'http://family.dev:8000/';
+    var url = 'http://beta.thefamilylegion.se/';
     $.get(url+'notifications', function(data){
         $.each(data, function(index, value) {
             $('#notificationMenu').append(value.body);
