@@ -12,9 +12,6 @@ class CommentsController extends BaseController
         {
             return Redirect::to('/');
         }
-
-
-
             $commentable = Input::get('commentable');
             if (empty($commentable))
             {
@@ -43,26 +40,8 @@ class CommentsController extends BaseController
                 $user_id
             );
             $this->CommandBus->execute($command);
-            /*$rules = $this->comment->getRules($commentableType);
-            $validator = Validator::make($data, $rules);
-            if ($validator->fails())
-            {
-                return Redirect::to($return)->withErrors($validator);
-            }
-            $this->comment->fill($data);
-            $this->comment->save();
-            $newCommentId = $this->comment->id; */
-
-
 
             return Redirect::back()->withFlashMessage('Du har kommenterat');
-
-       /*catch (\Exception $e) {
-
-            return Redirect::to($return.'#'.trans('laravel-comments::messages.add_form_anchor'))
-                ->with('laravel-comments::error', trans('laravel-comments::messages.unexpected_error'));
-
-        } */
 
     }
 

@@ -76,7 +76,6 @@ class ProfilesController extends Controller
                 Cache::add($user->username. '-glyphs', $glyphs, 600);
             }
         }
-        $forumFeed = ProfileFeed::forumFeed($user->threads, $user->comments, $user->raids);
         #$progression = $this->profileFeed->progression($this->profileData['progression']);
         $averageItemLevel = $WowJsonData['items']['averageItemLevel'];
 
@@ -87,7 +86,6 @@ class ProfilesController extends Controller
             'gear' => $gear,
             'talents' => $talents,
             'glyphs' => $glyphs,
-            'forumFeed' => $forumFeed,
             'averageItemLevel' => $averageItemLevel,
             'averageItemLevelEquipped' => $averageItemLevelEquipped
         ]);

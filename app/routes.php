@@ -54,15 +54,7 @@ Route::group(['before' => 'checkRole'], function(){
 Route::group(['before' => 'auth'], function(){
 
     # Comments
-    Route::post(
-        Config::get('laravel-comments::routes.base_uri'),
-        [
-            'before' => [
-                'csrf',
-            ],
-            'uses' => 'CommentsController@create'
-        ]
-    );
+    Route::post(Config::get('laravel-comments::routes.base_uri'), ['before' => ['csrf',], 'uses' => 'CommentsController@create']);
 
     # Dashboard
     Route::get('/dashboard', 'PagesController@index');

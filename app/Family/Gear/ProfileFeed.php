@@ -18,7 +18,7 @@ class ProfileFeed extends GearToLinks {
     {
     foreach($feed as $data)
     {
-        if($this->i < 7)
+        if($this->i < 16)
         {
             if($data['type'] == 'BOSSKILL')
             {
@@ -85,41 +85,5 @@ class ProfileFeed extends GearToLinks {
             }
         }
         return $this->glyphsCollection;
-    }
-
-    public function forumFeed($threads, $comments, $raids)
-    {
-        $threadsArray   =   $threads->toArray();
-        $commentsArray  =   $comments->toArray();
-        $raidsArray     =   $raids->toArray();
-
-        array_slice($threadsArray, 0, 3);
-        array_slice($commentsArray, 0, 3);
-        array_slice($raidsArray, 0, 3);
-
-        foreach($threadsArray as $thread)
-        {
-            $pushThread = 'Skapade tråden: <a href="/forum/thread/'.$thread['id'].'">'.$thread['title'].'</a>';
-            array_push($this->forumFeed, $pushThread);
-        }
-        foreach($commentsArray as $comment)
-        {
-            $body = strip_tags($comment['body']);
-            if(strlen($body) > 20)
-            {
-               $body = substr($body, 0, 20);
-            }
-            $pushComment = 'Lämnade en kommentar: <a href="/forum/thread/'.$comment['thread_id'].'">'.$body.'..</a>';
-            array_push($this->forumFeed, $pushComment);
-        }
-        foreach($raidsArray as $raid)
-        {
-            $pushRaid = 'Signade upp på: <a href="/flrs/show/'.$raid['id'].'">'.$raid['title']. ' ( '. $raid['mode']. ' ) </a>';
-            array_push($this->forumFeed, $pushRaid);
-        }
-
-        shuffle($this->forumFeed);
-
-        return $this->forumFeed;
     }
 } 
